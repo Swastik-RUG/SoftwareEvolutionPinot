@@ -1,0 +1,12 @@
+
+#Linux
+/usr/
+/opt/
+
+#OS X
+/System
+/Applications/Xcode.app
+
+#Windows
+C:\Program
+C:/Program
