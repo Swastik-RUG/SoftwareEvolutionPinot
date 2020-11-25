@@ -30,3 +30,6 @@ AST_DIR -> A temporary storage to create the AST files.
 The script also provides an exclude list **WORD_LIST="Your file"** to exclude any files from the compilation.  
 
 Note: The Script file is currently in its early stages and will undergo refactoring.  
+
+
+### A prebuilt version of the Pinot source code can be found in the "/SoftwareEvolutionPinot/tree/main/build-tools/cpa_out" folder.
