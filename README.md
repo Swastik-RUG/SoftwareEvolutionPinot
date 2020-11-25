@@ -32,4 +32,4 @@ The script also provides an exclude list **WORD_LIST="Your file"** to exclude an
 Note: The Script file is currently in its early stages and will undergo refactoring.  
 
 
-### A prebuilt version of the Pinot source code can be found in the "/SoftwareEvolutionPinot/tree/main/build-tools/cpa_out" folder.
+### A prebuilt CPA dump of the Pinot source code can be found in the "/SoftwareEvolutionPinot/tree/main/build-tools/cpa_out" folder.
