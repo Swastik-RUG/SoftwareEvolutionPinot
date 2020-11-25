@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local-project language="cpa" version="5.0.16419" xml-version="3">
+  <property name="header-pattern" value="h" />
+  <property name="case-sensitive" value="true" />
+  <property name="show-as-module" value="false" />
+  <property name="body-pattern" value="cpp" />
+  <property name="templates" value="hide" />
+  <property name="auto-tidy" value="true" />
+  <property name="only-interface-dependencies" value="false" />
+  <property name="relative-to" value="const(THIS_FILE)" />
+  <property name="action-set-mod" value="1" />
+  <property name="granularity" value="detail" />
+  <property name="name-map" value="true" />
+  <property name="model" value="raw" />
+  <property name="resolve-name-clashes" value="true" />
+  <property name="dependency-filter" />
+  <path kind="cva" file="../../Users/Sytse Oegema/Downloads/Pinotv1.cpa" />
+  <restructuring>
+    <set version="3" name="Action list 1" hiview="Codemap" active="true" todo="false" list="0" />
+  </restructuring>
+  <grid-set sep="/" version="5.0.16419" />
+</local-project>
