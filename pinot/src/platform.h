@@ -38,7 +38,7 @@
 #define platform_INCLUDED
 
 
-#include <config.h>
+#include "config.h"
 
 /*
    undefine any symbols defined by the autotools
