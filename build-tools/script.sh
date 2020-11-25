@@ -6,6 +6,9 @@ CPA_FILENAME="Pinotv1.cpa"
 file_ext="cpp"
 EXCLUDE_LIST=""
 
+mkdir "$AST_DIR"
+mkdir "cap_out"
+
 for entry in "$SRC_DIR"/*.$file_ext
 do
 	filename=$(echo "$entry" | rev | cut -d '/' -f 1| rev)
@@ -15,7 +18,7 @@ do
           echo "Ignored :$filename....."
         else
           echo "processing :$filename....."
-	  clang++ -c -fno-delayed-template-parsing -fno-color-diagnostics -Xclang -ast-dump "$entry" > "$AST_DIR/$filename.ast" 
+	  clang++ -c -ferror-limit=0 -fno-delayed-template-parsing -fno-color-diagnostics -Xclang -ast-dump "$entry" > "$AST_DIR/$filename.ast" 
         fi       
 done
 

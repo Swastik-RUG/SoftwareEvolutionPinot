@@ -38,7 +38,7 @@
 #define platform_INCLUDED
 
 
-#include <config.h>
+#include "config.h"
 
 /*
    undefine any symbols defined by the autotools
@@ -157,8 +157,8 @@ typedef unsigned int wint_t;
 # include <iostream>
 # include <fstream>
 #else
-# include <iostream.h>
-# include <fstream.h>
+# include <iostream>
+# include <fstream>
 #endif // ! HAVE_STD
 
 // VC++ pretends to support the C++ standard, but it does not.
@@ -166,12 +166,12 @@ typedef unsigned int wint_t;
 // the _set_new_handler method in <new.h> must be used.
 
 #ifdef HAVE_VCPP_SET_NEW_HANDLER
-# include <new.h>
+# include <new>
 #else
 # ifdef HAVE_STD
 #  include <new>
 # else
-#  include <new.h>
+#  include <new>
 # endif // ! HAVE_STD
 #endif // ! HAVE_VCPP_SET_NEW_HANDLER
 
