@@ -4,7 +4,7 @@ SRC_DIR="/mnt/d/Academics/SoftwareEvolution/pinot/src"
 AST_DIR="/mnt/d/Academics/SoftwareEvolution/pinot/src/ast_dump"
 CPA_FILENAME="Pinotv1.cpa"
 file_ext="cpp"
-EXCLUDE_LIST="ast.cpp"
+EXCLUDE_LIST=""
 
 for entry in "$SRC_DIR"/*.$file_ext
 do
