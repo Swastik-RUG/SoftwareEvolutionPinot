@@ -27,7 +27,7 @@ AST_DIR -> A temporary storage to create the AST files.
 **SRC_DIR="/mnt/d/Academics/SoftwareEvolution/pinot/src"**  
 **AST_DIR="/mnt/d/Academics/SoftwareEvolution/pinot/src/ast_dump"**  
 
-The script also provides an exclude list **WORD_LIST="Your file"** to exclude any files from the compilation.  
+The script also provides an exclude list **EXCLUDE_LIST="Your file"** to exclude any files from the compilation.  
 
 Note: The Script file is currently in its early stages and will undergo refactoring.  
 
