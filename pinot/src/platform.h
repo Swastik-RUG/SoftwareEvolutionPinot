@@ -157,8 +157,8 @@ typedef unsigned int wint_t;
 # include <iostream>
 # include <fstream>
 #else
-# include <iostream>
-# include <fstream>
+# include <iostream.h>
+# include <fstream.h>
 #endif // ! HAVE_STD
 
 // VC++ pretends to support the C++ standard, but it does not.
