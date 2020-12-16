@@ -46,6 +46,7 @@ jikesapi.h
 noinst_HEADERS = \
 access.h \
 ast.h \
+ControlAnalysis.h \
 bytecode.h \
 case.h \
 class.h \
