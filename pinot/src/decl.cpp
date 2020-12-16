@@ -16,6 +16,8 @@
 #include "option.h"
 #include "stream.h"
 
+#include "storagepool.h"
+
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
 #endif
@@ -4371,4 +4373,3 @@ void Semantic::ProcessInstanceInitializers(AstClassBody* class_body)
 #ifdef HAVE_JIKES_NAMESPACE
 } // Close namespace Jikes block
 #endif
-

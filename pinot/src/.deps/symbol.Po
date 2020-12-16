@@ -200,7 +200,8 @@ symbol.o: symbol.cpp /usr/include/stdc-predef.h symbol.h platform.h \
  /usr/include/c++/9/bits/invoke.h /usr/include/c++/9/bits/stl_multimap.h \
  /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/set \
  /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
- ast.h depend.h semantic.h error.h table.h zip.h unzip.h case.h option.h
+ ast.h depend.h semantic.h error.h table.h zip.h unzip.h case.h option.h \
+ storagepool.h
 
 /usr/include/stdc-predef.h:
 
@@ -755,3 +756,5 @@ unzip.h:
 case.h:
 
 option.h:
+
+storagepool.h:

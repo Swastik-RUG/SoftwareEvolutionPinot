@@ -201,7 +201,7 @@ error.o: error.cpp /usr/include/stdc-predef.h error.h platform.h config.h \
  /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/set \
  /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
  semantic.h ast.h depend.h diagnose.h parser.h lpginput.h javasym.h \
- javadef.h javaprs.h javaact.h option.h stream.h
+ javadef.h javaprs.h storagepool.h javaact.h option.h stream.h
 
 /usr/include/stdc-predef.h:
 
@@ -756,6 +756,8 @@ javasym.h:
 javadef.h:
 
 javaprs.h:
+
+storagepool.h:
 
 javaact.h:
 

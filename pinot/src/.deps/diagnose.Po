@@ -187,8 +187,8 @@ diagnose.o: diagnose.cpp /usr/include/stdc-predef.h diagnose.h platform.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc /usr/include/inttypes.h parser.h \
- lpginput.h javasym.h javadef.h javaprs.h javaact.h jikesapi.h tuple.h \
- control.h symbol.h lookup.h long.h double.h access.h set.h \
+ lpginput.h javasym.h javadef.h javaprs.h storagepool.h ast.h control.h \
+ symbol.h lookup.h tuple.h jikesapi.h long.h double.h access.h set.h \
  /usr/include/c++/9/vector /usr/include/c++/9/bits/stl_construct.h \
  /usr/include/c++/9/bits/stl_uninitialized.h \
  /usr/include/c++/9/bits/stl_vector.h \
@@ -201,7 +201,7 @@ diagnose.o: diagnose.cpp /usr/include/stdc-predef.h diagnose.h platform.h \
  /usr/include/c++/9/bits/invoke.h /usr/include/c++/9/bits/stl_multimap.h \
  /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/set \
  /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
- semantic.h ast.h depend.h error.h case.h spell.h option.h stream.h
+ depend.h javaact.h semantic.h error.h case.h spell.h option.h stream.h
 
 /usr/include/stdc-predef.h:
 
@@ -689,17 +689,19 @@ javadef.h:
 
 javaprs.h:
 
-javaact.h:
+storagepool.h:
 
-jikesapi.h:
-
-tuple.h:
+ast.h:
 
 control.h:
 
 symbol.h:
 
 lookup.h:
+
+tuple.h:
+
+jikesapi.h:
 
 long.h:
 
@@ -751,11 +753,11 @@ set.h:
 
 /usr/include/c++/9/bits/stl_multiset.h:
 
-semantic.h:
-
-ast.h:
-
 depend.h:
+
+javaact.h:
+
+semantic.h:
 
 error.h:
 

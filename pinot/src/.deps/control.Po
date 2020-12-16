@@ -201,8 +201,8 @@ control.o: control.cpp /usr/include/stdc-predef.h control.h platform.h \
  /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/set \
  /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
  scanner.h stream.h parser.h lpginput.h javasym.h javadef.h javaprs.h \
- javaact.h semantic.h ast.h depend.h error.h bytecode.h class.h op.h \
- segment.h case.h option.h /usr/include/c++/9/iomanip \
+ storagepool.h ast.h depend.h javaact.h semantic.h error.h bytecode.h \
+ class.h op.h segment.h case.h option.h /usr/include/c++/9/iomanip \
  /usr/include/c++/9/locale /usr/include/c++/9/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h \
@@ -761,13 +761,15 @@ javadef.h:
 
 javaprs.h:
 
-javaact.h:
-
-semantic.h:
+storagepool.h:
 
 ast.h:
 
 depend.h:
+
+javaact.h:
+
+semantic.h:
 
 error.h:
 

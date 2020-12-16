@@ -201,7 +201,7 @@ incrmnt.o: incrmnt.cpp /usr/include/stdc-predef.h platform.h config.h \
  /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/set \
  /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
  scanner.h stream.h parser.h lpginput.h javasym.h javadef.h javaprs.h \
- javaact.h semantic.h ast.h depend.h error.h case.h
+ storagepool.h ast.h depend.h javaact.h semantic.h error.h case.h
 
 /usr/include/stdc-predef.h:
 
@@ -751,13 +751,15 @@ javadef.h:
 
 javaprs.h:
 
-javaact.h:
-
-semantic.h:
+storagepool.h:
 
 ast.h:
 
 depend.h:
+
+javaact.h:
+
+semantic.h:
 
 error.h:
 

@@ -11,6 +11,9 @@
 #include "ast.h"
 #include "stream.h"
 
+#include "storagepool.h"
+
+
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
 #endif
@@ -672,4 +675,3 @@ int Parser::ParseCheck(int stck[], int stack_top, int first_token,
 #ifdef HAVE_JIKES_NAMESPACE
 } // Close namespace Jikes block
 #endif
-

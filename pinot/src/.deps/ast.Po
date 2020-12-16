@@ -200,7 +200,7 @@ ast.o: ast.cpp /usr/include/stdc-predef.h ast.h control.h platform.h \
  /usr/include/c++/9/bits/invoke.h /usr/include/c++/9/bits/stl_multimap.h \
  /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/set \
  /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
- depend.h stream.h
+ depend.h stream.h storagepool.h
 
 /usr/include/stdc-predef.h:
 
@@ -741,3 +741,5 @@ set.h:
 depend.h:
 
 stream.h:
+
+storagepool.h:

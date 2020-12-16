@@ -201,7 +201,7 @@ body.o: body.cpp /usr/include/stdc-predef.h platform.h config.h \
  /usr/include/c++/9/bits/invoke.h /usr/include/c++/9/bits/stl_multimap.h \
  /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/set \
  /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
- depend.h error.h option.h stream.h
+ depend.h error.h option.h stream.h storagepool.h
 
 /usr/include/stdc-predef.h:
 
@@ -748,3 +748,5 @@ error.h:
 option.h:
 
 stream.h:
+
+storagepool.h:

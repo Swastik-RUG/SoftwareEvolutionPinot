@@ -12,6 +12,7 @@
 
 #include "platform.h"
 #include "lpginput.h"
+#include "storagepool.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
@@ -203,4 +204,3 @@ protected:
 #endif
 
 #endif // parser_INCLUDED
-
