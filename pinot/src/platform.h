@@ -38,7 +38,7 @@
 #define platform_INCLUDED
 
 
-#include "config.h"
+#include <config.h>
 
 /*
    undefine any symbols defined by the autotools
@@ -166,12 +166,12 @@ typedef unsigned int wint_t;
 // the _set_new_handler method in <new.h> must be used.
 
 #ifdef HAVE_VCPP_SET_NEW_HANDLER
-# include <new>
+# include <new.h>
 #else
 # ifdef HAVE_STD
 #  include <new>
 # else
-#  include <new>
+#  include <new.h>
 # endif // ! HAVE_STD
 #endif // ! HAVE_VCPP_SET_NEW_HANDLER
 

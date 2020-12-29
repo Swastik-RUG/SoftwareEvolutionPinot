@@ -188,22 +188,30 @@ control.o: control.cpp /usr/include/stdc-predef.h control.h platform.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
  /usr/include/c++/9/bits/fstream.tcc /usr/include/inttypes.h symbol.h \
  lookup.h tuple.h jikesapi.h long.h double.h access.h set.h \
- /usr/include/c++/9/vector /usr/include/c++/9/bits/stl_construct.h \
+ utility/Flatten.h platform.h symbol.h tuple.h /usr/include/c++/9/vector \
+ /usr/include/c++/9/bits/stl_construct.h \
  /usr/include/c++/9/bits/stl_uninitialized.h \
  /usr/include/c++/9/bits/stl_vector.h \
  /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
- /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \
+ /usr/include/c++/9/set /usr/include/c++/9/bits/stl_tree.h \
  /usr/include/c++/9/ext/aligned_buffer.h \
- /usr/include/c++/9/bits/stl_map.h /usr/include/c++/9/tuple \
- /usr/include/c++/9/utility /usr/include/c++/9/bits/stl_relops.h \
- /usr/include/c++/9/array /usr/include/c++/9/bits/uses_allocator.h \
- /usr/include/c++/9/bits/invoke.h /usr/include/c++/9/bits/stl_multimap.h \
- /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/set \
  /usr/include/c++/9/bits/stl_set.h /usr/include/c++/9/bits/stl_multiset.h \
- scanner.h stream.h parser.h lpginput.h javasym.h javadef.h javaprs.h \
- storagepool.h ast.h depend.h javaact.h semantic.h error.h bytecode.h \
- class.h op.h segment.h case.h option.h /usr/include/c++/9/iomanip \
- /usr/include/c++/9/locale /usr/include/c++/9/bits/locale_facets_nonio.h \
+ /usr/include/c++/9/bits/erase_if.h patterns/ControlAnalysis.h \
+ patterns/ChainAnalysis.h patterns/SingletonAnalysis.h set.h \
+ patterns/FactoryAnalysis.h utility/ContainerType.h \
+ patterns/FlyWeightAnalysis.h patterns/CreationAnalysis.h \
+ utility/Snapshot.h utility/Utility.h utility/Delegation.h \
+ utility/Table.h /usr/include/c++/9/map /usr/include/c++/9/bits/stl_map.h \
+ /usr/include/c++/9/tuple /usr/include/c++/9/utility \
+ /usr/include/c++/9/bits/stl_relops.h /usr/include/c++/9/array \
+ /usr/include/c++/9/bits/uses_allocator.h \
+ /usr/include/c++/9/bits/invoke.h /usr/include/c++/9/bits/stl_multimap.h \
+ utility/Env.h utility/State.h utility/MethodBodyTable.h \
+ utility/GenTable.h utility/Assoc.h scanner.h stream.h parser.h \
+ lpginput.h javasym.h javadef.h javaprs.h storagepool.h ast.h depend.h \
+ javaact.h semantic.h error.h bytecode.h class.h op.h segment.h case.h \
+ option.h /usr/include/c++/9/iomanip /usr/include/c++/9/locale \
+ /usr/include/c++/9/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/9/bits/locale_facets_nonio.tcc \
@@ -705,6 +713,14 @@ access.h:
 
 set.h:
 
+utility/Flatten.h:
+
+platform.h:
+
+symbol.h:
+
+tuple.h:
+
 /usr/include/c++/9/vector:
 
 /usr/include/c++/9/bits/stl_construct.h:
@@ -717,11 +733,43 @@ set.h:
 
 /usr/include/c++/9/bits/vector.tcc:
 
-/usr/include/c++/9/map:
+/usr/include/c++/9/set:
 
 /usr/include/c++/9/bits/stl_tree.h:
 
 /usr/include/c++/9/ext/aligned_buffer.h:
+
+/usr/include/c++/9/bits/stl_set.h:
+
+/usr/include/c++/9/bits/stl_multiset.h:
+
+/usr/include/c++/9/bits/erase_if.h:
+
+patterns/ControlAnalysis.h:
+
+patterns/ChainAnalysis.h:
+
+patterns/SingletonAnalysis.h:
+
+set.h:
+
+patterns/FactoryAnalysis.h:
+
+utility/ContainerType.h:
+
+patterns/FlyWeightAnalysis.h:
+
+patterns/CreationAnalysis.h:
+
+utility/Snapshot.h:
+
+utility/Utility.h:
+
+utility/Delegation.h:
+
+utility/Table.h:
+
+/usr/include/c++/9/map:
 
 /usr/include/c++/9/bits/stl_map.h:
 
@@ -739,13 +787,15 @@ set.h:
 
 /usr/include/c++/9/bits/stl_multimap.h:
 
-/usr/include/c++/9/bits/erase_if.h:
+utility/Env.h:
 
-/usr/include/c++/9/set:
+utility/State.h:
 
-/usr/include/c++/9/bits/stl_set.h:
+utility/MethodBodyTable.h:
 
-/usr/include/c++/9/bits/stl_multiset.h:
+utility/GenTable.h:
+
+utility/Assoc.h:
 
 scanner.h:
 
