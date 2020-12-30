@@ -12,6 +12,8 @@
 #include "control.h"
 #include "stream.h"
 
+#include "storagepool.h"
+
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
 #endif
@@ -223,4 +225,3 @@ void Semantic::ComputeFinalValue(VariableSymbol* variable)
 #ifdef HAVE_JIKES_NAMESPACE
 } // Close namespace Jikes block
 #endif
-

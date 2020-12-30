@@ -18,6 +18,8 @@
 #include "case.h"
 #include "option.h"
 
+#include "storagepool.h"
+
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
 #endif
@@ -335,18 +337,18 @@ bool TypeSymbol::IsSelfContaining()
 TypeSymbol* TypeSymbol::IsOnetoMany(VariableSymbol *vsym, DelegationTable *d_table)
 {
 	if (vsym -> Type() -> Primitive())
-		return NULL;	
-	
+		return NULL;
+
 	if (vsym -> Type() -> IsSelfContaining())
 		return vsym -> Type();
-	
+
 	if (vsym -> Type() -> IsArray())
 		// can be 2D, 3D, etc.
 		return vsym -> Type() -> base_type;
 	else
 	{
 		// check if type implements java.util.Collection
-		bool flag = false;		
+		bool flag = false;
 		if (vsym -> Type() -> ACC_INTERFACE()
 		&& (strcmp(vsym -> Type() -> fully_qualified_name -> value, "java/util/List") == 0))
 			flag = true;
@@ -354,7 +356,7 @@ TypeSymbol* TypeSymbol::IsOnetoMany(VariableSymbol *vsym, DelegationTable *d_tab
 		&& vsym -> Type() -> supertypes_closure
 		&& (vsym -> Type() -> supertypes_closure->Size() > 1))
 		{
-			Symbol *sym = vsym -> Type() -> supertypes_closure->FirstElement();		
+			Symbol *sym = vsym -> Type() -> supertypes_closure->FirstElement();
 			while (sym && !(flag = (strcmp(sym->TypeCast()->fully_qualified_name -> value, "java/util/Collection") == 0)))
 				sym = vsym -> Type() -> supertypes_closure->NextElement();
 		}
@@ -374,7 +376,7 @@ TypeSymbol* TypeSymbol::IsOnetoMany(VariableSymbol *vsym, DelegationTable *d_tab
 				&& entry->base_opt->symbol->VariableCast()
 				&& (entry->base_opt->symbol->VariableCast() == vsym)
 				&& ((strcmp(entry->method->Utf8Name(), "add") == 0)
-					|| ((strcmp(entry->method->Utf8Name(), "addElement") == 0) 
+					|| ((strcmp(entry->method->Utf8Name(), "addElement") == 0)
 						&& (strcmp(vsym->Type()->fully_qualified_name->value, "java/util/Vector") == 0)))
 				)
 				{
@@ -406,11 +408,11 @@ TypeSymbol* TypeSymbol::IsOnetoMany(VariableSymbol *vsym, DelegationTable *d_tab
 							else
 								generic_type = cast_exp->expression->symbol->VariableCast()->Type();
 						}
-						
+
 					}
 				}
 			}
-			return generic_type;				
+			return generic_type;
 		}
 	}
 }
@@ -420,7 +422,7 @@ bool TypeSymbol::IsOnetoMany(TypeSymbol *target)
     		if (target-> IsSelfContaining())
 			return true;
 		else
-		{			
+		{
 			// for class vars
 			for (unsigned i = 0; i < declaration -> NumClassVariables(); i++)
     			{
@@ -455,7 +457,7 @@ bool TypeSymbol::IsOnetoMany(TypeSymbol *target)
         				}
 				}
 			}
-			
+
 		}
 		return false;
 }
@@ -3013,4 +3015,3 @@ TypeSymbol* TypeSymbol::GetPlaceholderType()
 #ifdef HAVE_JIKES_NAMESPACE
 } // Close namespace Jikes block
 #endif
-

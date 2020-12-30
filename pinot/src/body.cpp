@@ -13,6 +13,8 @@
 #include "option.h"
 #include "stream.h"
 
+#include "storagepool.h"
+
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
 #endif
@@ -297,7 +299,7 @@ void Semantic::ProcessLocalVariableStatement(Ast* stmt)
                 ReportSemError(SemanticError::UNCONVENTIONAL_VARIABLE_NAME,
                                name -> identifier_token, name_symbol -> Name());
             }
-            
+
             ProcessVariableInitializer(variable_declarator);
         }
     }
@@ -759,7 +761,7 @@ void Semantic::ProcessForeachStatement(Ast* stmt)
                            component_type -> ExternalName(),
                            index_type -> ContainingPackageName(),
                            index_type -> ExternalName());
-            
+
         }
         // Need synthetic local variable to stash iterator.
         enclosing_block_symbol -> helper_variable_index =
@@ -1565,7 +1567,7 @@ void Semantic::ProcessTryStatement(Ast* stmt)
         {
             ReportSemError(SemanticError::EJ_EMPTY_FINALLY_BLOCK, block_body);
         }
-        
+
         //
         // If the finally ends abruptly, then it discards any throw generated
         // by the try or catch blocks.
@@ -1631,7 +1633,7 @@ void Semantic::ProcessTryStatement(Ast* stmt)
                                       name, name_symbol, false);
 
         AstBlock* block_body = clause -> block;
-        
+
         //
         // Warn about empty catch blocks.
         //
@@ -2660,4 +2662,3 @@ void Semantic::ProcessExecutableBodies(AstClassBody* class_body)
 #ifdef HAVE_JIKES_NAMESPACE
 } // Close namespace Jikes block
 #endif
-

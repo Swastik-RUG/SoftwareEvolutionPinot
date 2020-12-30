@@ -804,6 +804,8 @@ void Parser::InitRuleAction()
 #include "ast.h"
 #include "stream.h"
 
+#include "storagepool.h"
+
 #undef HEADERS
 #include "javaact.h"
 

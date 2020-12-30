@@ -19,6 +19,8 @@
 #include <dlfcn.h>
 #include <stdlib.h>
 
+#include "storagepool.h"
+
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
 #endif
@@ -30,7 +32,7 @@ bool PINOT_DEBUG;
 SymbolSet mediators;
 int nMediatorFacadeDual = 0, nFlyweightGoFVersion = 0, nImmutable = 0;
 /**
- *	Utility functions	
+ *	Utility functions
  */
 
 ContainerType *Utility::IdentifyContainerType(VariableSymbol *vsym)
@@ -43,14 +45,14 @@ ContainerType *Utility::IdentifyContainerType(VariableSymbol *vsym)
 	if (type->IsArray())
 		// can be 2D, 3D, etc.
 		return new ArrayContainer(vsym);
-	
+
 	if (strcmp(type->fully_qualified_name->value, "java/util/Vector") == 0)
 		return new VectorContainer(vsym);
 	else if (strcmp(type->fully_qualified_name->value, "java/util/ArrayList") == 0)
 		return new ArrayListContainer(vsym);
 	else if (strcmp(type->fully_qualified_name->value, "java/util/LinkedList") == 0)
 		return new ArrayListContainer(vsym);
-	
+
 
        if (type->supertypes_closure)
        {
@@ -64,7 +66,7 @@ ContainerType *Utility::IdentifyContainerType(VariableSymbol *vsym)
 			sym = type->supertypes_closure->NextElement();
 		}
        }
-	return NULL;	
+	return NULL;
 }
 void Utility::RemoveJavaBaseClass(SymbolSet& set)
 {
@@ -165,7 +167,7 @@ bool isCached(wchar_t* name, vector<wchar_t*>* cache)
 				i++;
 		}
 	}
-	return flag;	
+	return flag;
 }
 
 bool intersection(vector<wchar_t*>* list1, vector<wchar_t*>* list2)
@@ -186,7 +188,7 @@ bool intersection(vector<wchar_t*>* list1, vector<wchar_t*>* list2)
 			}
 			if (!flag)
 				i++;
-		}	
+		}
 	}
 	return flag;
 }
@@ -214,7 +216,7 @@ void PrintSingletonXMI(TypeSymbol *class_sym , VariableSymbol *instance_sym, Met
 void FindPrototype(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* assoc_table)
 {
 	vector<wchar_t*>* prototypes = NULL;
-		   
+
 	prototypes = gen_table -> getSuccessors(L"Cloneable", GenTable::IMPL);
 
 	if (prototypes)
@@ -225,7 +227,7 @@ void FindPrototype(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* a
 		       int j;
 			for (j = 0; j < assoc_table -> getSize(); j++)
 			{
-				if ((assoc_table -> getKindAt(j) == Assoc::MR) 
+				if ((assoc_table -> getKindAt(j) == Assoc::MR)
 				&& (wcscmp(assoc_table -> getTypeAt(j), (*prototypes)[i]) == 0))
 				{
 				 	wchar_t* factory = assoc_table -> getClassNameAt(j);
@@ -266,20 +268,20 @@ void FindSingleton1(ClassSymbolTable *cs_table, StoragePool *ast_pool)
 {
 	if (PINOT_DEBUG)
 		Coutput << "Identifying the Singleton Pattern" << endl;
-	
-	for (unsigned c = 0; c < cs_table -> size(); c++) 
-	{		
+
+	for (unsigned c = 0; c < cs_table -> size(); c++)
+	{
 		TypeSymbol *unit_type = (*cs_table)[c];
 
 		if (PINOT_DEBUG)
 			Coutput << "Analyzing class: " << unit_type->fully_qualified_name->value << endl;
 
 		//if (unit_type->Anonymous()) break;
-		
+
 		bool instantiable = true; //for Singleton pattern, either class is abtract or ctor is private
 		VariableSymbol *instance = NULL;
 		MethodSymbol *GetInstance = NULL;
-		
+
 		if (unit_type -> ACC_ABSTRACT())
 			instantiable = false;
 
@@ -290,7 +292,7 @@ void FindSingleton1(ClassSymbolTable *cs_table, StoragePool *ast_pool)
 			{
 				instance = vsym;
 				break;
-			}			
+			}
 		}
 
 		for (unsigned i = 0; (instantiable || !GetInstance) && (i < unit_type->NumMethodSymbols()); i++)
@@ -321,7 +323,7 @@ void FindSingleton1(ClassSymbolTable *cs_table, StoragePool *ast_pool)
 			{
 				Coutput << ((GetInstance-> ACC_SYNCHRONIZED()) ? "Multithreaded " : "") << "Singleton Pattern" << endl
 					      << unit_type->Utf8Name() << " is a Singleton class" << endl
-					      << instance->Utf8Name() << " is the Singleton instance" << endl 
+					      << instance->Utf8Name() << " is the Singleton instance" << endl
 					      << GetInstance->Utf8Name() << " creates and returns " << instance->Utf8Name() << endl
 					      << "File location: " << unit_type->file_symbol->FileName() << endl
 					      << ((GetInstance->ACC_SYNCHRONIZED()) ? "Double-checked Locking not used.\n" : "\n")	 << endl;
@@ -334,9 +336,9 @@ void FindSingleton1(ClassSymbolTable *cs_table, StoragePool *ast_pool)
 void FindSingleton(ClassSymbolTable *cs_table, MethodSymbolTable* ms_table)
 {
 	vector<TypeSymbol*> candidates_t;
-	
-	for (unsigned i = 0; i<ms_table->size(); i++) 
-	{	
+
+	for (unsigned i = 0; i<ms_table->size(); i++)
+	{
 		MethodSymbol *method = (*ms_table)[i];
 		if (method -> declaration -> kind == Ast::CONSTRUCTOR)
 		{
@@ -349,8 +351,8 @@ void FindSingleton(ClassSymbolTable *cs_table, MethodSymbolTable* ms_table)
 	}
 
 	unsigned c;
-	for (c = 0; c < cs_table -> size(); c++) 
-	{		
+	for (c = 0; c < cs_table -> size(); c++)
+	{
 		TypeSymbol *unit_type = (*cs_table)[c];
 		if (unit_type -> ACC_ABSTRACT())
 		{
@@ -391,9 +393,9 @@ void FindSingleton(ClassSymbolTable *cs_table, MethodSymbolTable* ms_table)
 					get_method_sym = method -> method_symbol;
 
 			}
-			
+
 			if (instance_sym && get_method_sym)
-			{			
+			{
 				AstMethodDeclaration *method_declaration = get_method_sym -> declaration -> MethodDeclarationCast();
 				AstMethodBody *method_body = method_declaration -> method_body_opt;
 
@@ -432,12 +434,12 @@ void FindSingleton(ClassSymbolTable *cs_table, MethodSymbolTable* ms_table)
 							      << candidates_t[i] -> Utf8Name() << " is a Singleton class"
 							      << endl
 							      << instance_sym -> Utf8Name() << " is the Singleton instance"
-							      << endl 
+							      << endl
 							      << get_method_sym -> Utf8Name() << " returns a " << instance_sym -> Utf8Name()
 							      << endl
 							      << "File location: " << candidates_t[i] -> file_symbol -> FileName()
 							      << endl
-							      << ((get_method_sym-> ACC_SYNCHRONIZED()) ? L"Double-checked Locking not used.\n" : L"\n")							      
+							      << ((get_method_sym-> ACC_SYNCHRONIZED()) ? L"Double-checked Locking not used.\n" : L"\n")
 							      << endl;
 						nSingleton++;
 					}
@@ -449,7 +451,7 @@ void FindSingleton(ClassSymbolTable *cs_table, MethodSymbolTable* ms_table)
 							      << class_name << L" is a Singleton class"
 							      << endl
 							      << instance_name << L" is the Singleton instance"
-							      << endl 
+							      << endl
 							      << get_method << L" returns a " << instance_name
 							      << endl
 							      << L"File location: " << file_name
@@ -467,7 +469,7 @@ void FindSingleton(ClassSymbolTable *cs_table, MethodSymbolTable* ms_table)
 							      << class_name << L" is a Singleton class"
 							      << endl
 							      << instance_name << L" is the Singleton instance"
-							      << endl 
+							      << endl
 							      << get_method << L" returns a " << instance_name
 							      << endl
 							      << L"File location: " << file_name
@@ -487,7 +489,7 @@ void FindChainOfResponsibility(ClassSymbolTable *cs_table, MethodSymbolTable* ms
 
 	SymbolSet CoR_cache;
 	SymbolSet D_cache;
-	
+
 	vector<MethodSymbol*> cache;
 	int i;
 	for (i = 0; i< d_table -> size(); i++)
@@ -517,7 +519,7 @@ void FindChainOfResponsibility(ClassSymbolTable *cs_table, MethodSymbolTable* ms
 						Coutput << entry -> enclosing -> Utf8Name() << " is a handle operation" << endl;
 						Coutput << entry -> vsym -> Utf8Name()  << " of type " << entry -> vsym -> Type() -> Utf8Name() << " propogates the request" << endl;
 
-						char* file_name = entry -> enclosing -> containing_type -> file_symbol -> FileName();						
+						char* file_name = entry -> enclosing -> containing_type -> file_symbol -> FileName();
 						Coutput << L"File Location: " << file_name << endl << endl;
 						cache.push_back(entry->enclosing);
 						CoR_cache.AddElement(entry -> vsym -> Type());
@@ -530,7 +532,7 @@ void FindChainOfResponsibility(ClassSymbolTable *cs_table, MethodSymbolTable* ms
 							Coutput << entry -> enclosing -> Utf8Name() << " is a decorate operation" << endl;
 							Coutput << entry -> vsym -> Utf8Name()  << " of type " << entry -> vsym -> Type() -> Utf8Name() << " is the Decoratee class" << endl;
 
-							char* file_name = entry -> enclosing -> containing_type -> file_symbol -> FileName();						
+							char* file_name = entry -> enclosing -> containing_type -> file_symbol -> FileName();
 							Coutput << L"File Location: " << file_name << endl << endl;
 							cache.push_back(entry->enclosing);
 							D_cache.AddElement(entry -> vsym -> Type());
@@ -551,7 +553,7 @@ void FindBridge(ClassSymbolTable *cs_table, DelegationTable *d_table)
 {
 	multimap<TypeSymbol*,TypeSymbol*> cache;
 	multimap<TypeSymbol*,TypeSymbol*> negatives;
-	
+
 	int i;
 	for (i = 0; i < d_table -> size(); i++)
 	{
@@ -562,7 +564,7 @@ void FindBridge(ClassSymbolTable *cs_table, DelegationTable *d_table)
 		&& entry->from->subtypes->Size()
 		&& entry->to->ACC_INTERFACE()
 		&& entry->from->file_symbol->IsJava()
-		&& entry->to->file_symbol->IsJava()		
+		&& entry->to->file_symbol->IsJava()
 		&& (!cs_table -> Converge(entry -> from, entry -> to)))
 		{
 			multimap<TypeSymbol*,TypeSymbol*>::iterator p = cache.begin();
@@ -589,18 +591,18 @@ void FindBridge(ClassSymbolTable *cs_table, DelegationTable *d_table)
 /*
 				Coutput << "Subclasses of " << entry -> from -> Utf8Name() << ": ";
 				cs_table -> PrintSubclasses(entry -> from);
-				
-				Coutput << "Subtypes of " << entry -> to -> Utf8Name() << ": ";				
+
+				Coutput << "Subtypes of " << entry -> to -> Utf8Name() << ": ";
 				cs_table -> PrintSubtypes(entry -> to);
-				
-				Coutput << "Subinterfaces of " << entry -> to -> Utf8Name() << ": ";				
+
+				Coutput << "Subinterfaces of " << entry -> to -> Utf8Name() << ": ";
 				cs_table -> PrintSubinterfaces(entry -> to);
 
 				d_table -> Delegates(entry -> to, entry -> from);
 				d_table -> ShowDelegations(entry -> from, entry -> to);
 */
 				Coutput << endl;
-				
+
 			}
 		}
 	}
@@ -627,7 +629,7 @@ void FindFlyweight(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* a
 			else if (!isCached(class_name, pools))
 			{
 				pools -> push_back(class_name);
-			}				
+			}
 		}
 	}
 
@@ -640,7 +642,7 @@ void FindFlyweight(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* a
 			wchar_t* package_name = assoc_table -> getPackageNameAt(i);
 			wchar_t* flyweight_factory = assoc_table -> getClassNameAt(i);
 			wchar_t* get_flyweight = assoc_table -> getMethodNameAt(i);
-			
+
 			AstMethodDeclaration *method_declaration = dynamic_cast<AstMethodDeclaration*>
 													(mb_table -> getAstLocation(flyweight_factory, get_flyweight));
 			AstMethodBody *method_body = method_declaration -> method_body_opt;
@@ -660,7 +662,7 @@ void FindFlyweight(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* a
 				//Coutput  << "package name: " << package_name << endl
 				//	<< "class name: " << flyweight_factory << endl
 				//	<< "method name: " << get_flyweight << endl;
-					
+
 
 
 				// Check for variables of type "flyweight" declared in this method
@@ -674,8 +676,8 @@ void FindFlyweight(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* a
 					if (method_body -> returnsVar(temp))
 					{
 						// If not, reject this class as a flyweight factory.
-	
-						// Look for a specific statechart on the var that gets returned from this method. 
+
+						// Look for a specific statechart on the var that gets returned from this method.
 						// (1) SET --yes--> RETURN
 						// (2) SET --no --> CREATE ----> SET ----> RETURN
 
@@ -687,20 +689,20 @@ void FindFlyweight(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* a
 						&& (isCached( pool_name, statechart -> getStateParticipantsAt(0)))
 						&& (statechart -> getStateKindAt(1) == State::CONDITION)
 						&& (statechart -> getStateKindAt(2) == State::CREATE)
-						&& ((statechart -> getStateKindAt(3) == State::SET))						
+						&& ((statechart -> getStateKindAt(3) == State::SET))
 						&& (isCached( pool_name, statechart -> getStateParticipantsAt(3)))
-						&& ((statechart -> getStateKindAt(4) == State::RETURN)))						
+						&& ((statechart -> getStateKindAt(4) == State::RETURN)))
 						{
 
 						Coutput << "Flyweight Pattern." << endl;
 						Coutput << flyweight_factory
-							     <<  " is a Flyweight factory class. " 
+							     <<  " is a Flyweight factory class. "
 							     << endl;
 
 						Coutput << pool
 							     << " is a flyweight object pool."
 							     << endl;
-						
+
 						Coutput << get_flyweight
 							     <<  " returns a flyweight object."
 							     << endl;
@@ -715,7 +717,7 @@ void FindFlyweight(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* a
 						}
 					}
 				}
-			}			
+			}
 		}
 	}
 }
@@ -724,8 +726,8 @@ void FindFlyweight1(MethodSymbolTable *ms_table)
 {
 	if (PINOT_DEBUG)
 		Coutput << "Identifying the Flyweight pattern" << endl;
-	      	
-	for (unsigned i=0; i<ms_table->size(); i++) 
+
+	for (unsigned i=0; i<ms_table->size(); i++)
 	{
 		MethodSymbol *msym = (*ms_table)[i];
 
@@ -735,7 +737,7 @@ void FindFlyweight1(MethodSymbolTable *ms_table)
 		TypeSymbol *unit_type = msym->containing_type;
 		if ((msym->declaration->kind==Ast::METHOD)
 		&& msym->declaration->MethodDeclarationCast()->method_body_opt
-		&& msym->Type()->file_symbol 
+		&& msym->Type()->file_symbol
 		&& !unit_type->IsFamily(msym->Type())
 		)
 		{
@@ -749,10 +751,10 @@ void FindFlyweight1(MethodSymbolTable *ms_table)
 				Coutput << "Flyweight Pattern." << endl;
 				Coutput << unit_type->Utf8Name() << " is a flyweight factory." << endl;
 				Coutput << flyweight.GetFlyweightPool()->Utf8Name() << " is the flyweight pool." << endl;
-				Coutput << msym->Utf8Name() 
+				Coutput << msym->Utf8Name()
 					<< " is the factory method, producing flyweight objects of type "
 					<< msym->Type()->Utf8Name() << endl;
-				Coutput << "File location: " << unit_type->file_symbol->FileName() << endl << endl;				
+				Coutput << "File location: " << unit_type->file_symbol->FileName() << endl << endl;
 			}
 		}
 	}
@@ -772,7 +774,7 @@ void FindFlyweight2(ClassSymbolTable *cs_table, WriteAccessTable *w_table, ReadA
        //	  - such variables are typically declared "static final" and are initialized (pre-populated)
 
       	unsigned c;
-	for (c= 0; c < cs_table -> size(); c++) 
+	for (c= 0; c < cs_table -> size(); c++)
 	{
 		TypeSymbol *unit_type = (*cs_table)[c];
 		if (unit_type->ACC_FINAL())
@@ -817,7 +819,7 @@ void FindFlyweight2(ClassSymbolTable *cs_table, WriteAccessTable *w_table, ReadA
 			for (i=0; i < unit_type->NumVariableSymbols(); i++)
 			{
 				if (unit_type->VariableSym(i)->Type()->file_symbol
-				&& unit_type->VariableSym(i)->ACC_STATIC() 
+				&& unit_type->VariableSym(i)->ACC_STATIC()
 				&& unit_type->VariableSym(i)->ACC_FINAL()
 				//&& (unit_type != unit_type->VariableSym(i)->Type())
 				)
@@ -831,7 +833,7 @@ void FindFlyweight2(ClassSymbolTable *cs_table, WriteAccessTable *w_table, ReadA
 						Coutput << "File location: " <<  unit_type->file_symbol->FileName() << endl << endl;
 						goto done;
 					}
-					else 
+					else
 					{
 						VariableSymbol *vsym = unit_type->VariableSym(i);
 						MethodSymbol *msym = NULL;
@@ -845,11 +847,11 @@ void FindFlyweight2(ClassSymbolTable *cs_table, WriteAccessTable *w_table, ReadA
 							//MethodSymbol *t2 = p->second;
 							if (strcmp(vsym->Type()->fully_qualified_name->value, "java/lang/String")
 							&& (p -> first == vsym))
-								msym = p->second;						
+								msym = p->second;
 							else if (Utility::Aliasing(p->first, vsym))
 								msym = p->second;
 						}
-					
+
 						if (msym)
 						{
 							nFlyweight++;
@@ -882,9 +884,9 @@ bool Connectivity(MethodSymbol* start, TypeSymbol *end, MethodSymbolTable *ms_ta
 		{
 			if (type->MethodSym(i)->declaration)
 			{
-				if ((type->MethodSym(i)->declaration->ConstructorDeclarationCast() 
+				if ((type->MethodSym(i)->declaration->ConstructorDeclarationCast()
 					&& type->MethodSym(i)->declaration->ConstructorDeclarationCast()->constructor_body)
-				|| (type->MethodSym(i)->declaration->MethodDeclarationCast() 
+				|| (type->MethodSym(i)->declaration->MethodDeclarationCast()
 					&& type->MethodSym(i)->declaration->MethodDeclarationCast()->method_body_opt))
 					type->MethodSym(i)->mark = 'B';
 			}
@@ -934,7 +936,7 @@ bool Connectivity(MethodSymbol* start, TypeSymbol *end, MethodSymbolTable *ms_ta
 				if (msym->invokers)
 					set.Union(*msym->invokers);
 			}
-			sym = set.NextElement();			
+			sym = set.NextElement();
 		}
 	}
 	return false;
@@ -959,10 +961,10 @@ bool DelegatesSuccessors(TypeSymbol *t1, TypeSymbol *t2)
 	return false;
 }
 
-void FindStrategy(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAccessTable *w_table, ReadAccessTable *r_table, MethodSymbolTable *ms_table) 
+void FindStrategy(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAccessTable *w_table, ReadAccessTable *r_table, MethodSymbolTable *ms_table)
 {
 	multimap<TypeSymbol*,TypeSymbol*> cache;
-	
+
 	int i;
 	for (i = 0; i < d_table -> size(); i++)
 	{
@@ -978,7 +980,7 @@ void FindStrategy(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAcc
 		{
 			multimap<TypeSymbol*,TypeSymbol*>::iterator p = cache.begin();
 			for (; (p != cache.end()) && ((p -> first != entry -> from) || (p -> second != entry -> to)) ; p++);
-			if ((p == cache.end()) 
+			if ((p == cache.end())
 			&& (!DelegatesSuccessors(entry -> from, entry -> to))
 			)
 			{
@@ -1043,7 +1045,7 @@ void FindStrategy(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAcc
 							Coutput << entry -> from -> Utf8Name()
 								<< " is the Context class."
 								<< endl
-								<< entry -> to -> Utf8Name()						
+								<< entry -> to -> Utf8Name()
 								<< " is the State interface."
 								<< endl;
 							Coutput << "Concrete State classes: ";
@@ -1051,7 +1053,7 @@ void FindStrategy(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAcc
 							Coutput << "Delegation through "
 								<< vsym -> Utf8Name()
 								<< " of type "
-								<< vsym -> Type() -> Utf8Name()							
+								<< vsym -> Type() -> Utf8Name()
 								<< endl
 								<< dsym -> Utf8Name()
 								<< " changes the state variable "
@@ -1074,7 +1076,7 @@ void FindStrategy(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAcc
 							Coutput << entry -> from -> Utf8Name()
 								<< " is the Context class."
 								<< endl
-								<< entry -> to -> Utf8Name()						
+								<< entry -> to -> Utf8Name()
 								<< " is the Strategy interface."
 								<< endl;
 							Coutput << "Concrete Strategy classes: ";
@@ -1082,7 +1084,7 @@ void FindStrategy(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAcc
 							Coutput << "Delegation through "
 								<< vsym -> Utf8Name()
 								<< " of type "
-								<< vsym -> Type() -> Utf8Name()							
+								<< vsym -> Type() -> Utf8Name()
 								<< endl
 								<< "File Location: "
 								<< entry -> from -> file_symbol -> FileName()
@@ -1090,14 +1092,14 @@ void FindStrategy(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAcc
 								<< entry -> to -> file_symbol -> FileName()
 								<< endl
 								<< endl;
-						}						
+						}
 					}
 				}
 			}
 		}
-	}	
+	}
 }
-void FindStrategy1(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAccessTable *w_table, ReadAccessTable *r_table, MethodSymbolTable *ms_table) 
+void FindStrategy1(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAccessTable *w_table, ReadAccessTable *r_table, MethodSymbolTable *ms_table)
 {
 	multimap<TypeSymbol*,TypeSymbol*> cache;
 
@@ -1110,7 +1112,7 @@ void FindStrategy1(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAc
 		for (unsigned i = 0; i < context->NumVariableSymbols(); i++)
 		{
 			VariableSymbol *vsym = context->VariableSym(i);
-			if (vsym->Type()->file_symbol 
+			if (vsym->Type()->file_symbol
 			&& vsym->Type()->file_symbol->IsJava()
 			&& vsym->Type()->ACC_ABSTRACT()
 			&& !vsym->Type()->IsFamily(context)
@@ -1128,12 +1130,12 @@ void FindStrategy1(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAc
 					if (p->first==vsym)
 					{
 						flag = true;
-						if (p->second->declaration 
-						&& p->second->declaration->MethodDeclarationCast() 
+						if (p->second->declaration
+						&& p->second->declaration->MethodDeclarationCast()
 						&& Connectivity(p->second, vsym->Type(), ms_table))
 							dsym = p->second;
 					}
-				}			
+				}
 				if (dsym)
 				{
 					nState++;
@@ -1167,11 +1169,11 @@ void FindStrategy1(ClassSymbolTable *cs_table, DelegationTable *d_table, WriteAc
 						<< endl
 						<< endl;
 				}
-				
+
 			}
 		}
 		}
-	}	
+	}
 }
 
 void FindComposite(ClassSymbolTable *cs_table, DelegationTable *d_table)
@@ -1193,7 +1195,7 @@ void FindComposite(ClassSymbolTable *cs_table, DelegationTable *d_table)
 					//TypeSymbol *contained_type = unit_type->IsOnetoMany(vd->symbol, d_table);
 					if (!container_type)
 						break;
-					
+
 					if (container_type->kind == ContainerType::ARRAY)
 					{
 						if ((unit_type != vd->symbol->Type()->base_type)
@@ -1208,7 +1210,7 @@ void FindComposite(ClassSymbolTable *cs_table, DelegationTable *d_table)
 							if (vd->symbol->Type()->base_type->file_symbol->IsClassOnly() && getenv("PINOT_HOME"))
 								Coutput << "$PINOT_HOME/lib/rt.jar" << vd->symbol->Type()->base_type->fully_qualified_name->value << ".class" << endl << endl;
 							else
-								Coutput << "File Location: " << vd->symbol->Type()->base_type->file_symbol->FileName() << endl << endl;							
+								Coutput << "File Location: " << vd->symbol->Type()->base_type->file_symbol->FileName() << endl << endl;
 						}
 					}
 					else
@@ -1248,7 +1250,7 @@ void FindComposite(ClassSymbolTable *cs_table, DelegationTable *d_table)
 						Coutput << "File Location: " << unit_type->file_symbol->FileName() << endl;
 						Coutput << "File Location: " << set.FirstElement()->TypeCast()->file_symbol->FileName() << endl << endl;
 
-						
+
 						/*
 						if ((contained_type != unit_type) && contained_type && unit_type -> IsSubtype(contained_type))
 						{
@@ -1283,16 +1285,16 @@ void FindMediator(ClassSymbolTable *cs_table, DelegationTable *d_table)
 			SymbolSet colleagues;
 			SymbolSet observers;
 			SymbolSet *dset = unit_type -> references;
-			Symbol *sym = (dset) ? dset->FirstElement() : NULL; 
+			Symbol *sym = (dset) ? dset->FirstElement() : NULL;
 			while (sym)
 			{
 				TypeSymbol *type = sym -> TypeCast();
 				if (!type->Primitive()
 				&& type -> ACC_ABSTRACT()
-				&& !type -> ACC_INTERFACE()				
-				&& type -> references 
-				&& (unit_type != type) 
-				&& type -> file_symbol-> IsJava() 
+				&& !type -> ACC_INTERFACE()
+				&& type -> references
+				&& (unit_type != type)
+				&& type -> file_symbol-> IsJava()
 				&& type -> references -> IsElement(unit_type)
 				&& unit_type -> IsOnetoMany(type))
 				{
@@ -1359,7 +1361,7 @@ bool IsJavaContainer(VariableSymbol *vsym)
 }
 VariableSymbol *IteratorVar(AstExpression *expression)
 {
-	/* 
+	/*
 		1 - java.util.Iterator
 		2 - array index
 		3 - recursion
@@ -1384,7 +1386,7 @@ VariableSymbol *IteratorVar(AstExpression *expression)
 	{
 		return resolved->NameCast()->symbol ->VariableCast();
 	}
-	return 0;	
+	return 0;
 }
 VariableSymbol *ListVar(VariableSymbol *vsym)
 {
@@ -1393,7 +1395,7 @@ VariableSymbol *ListVar(VariableSymbol *vsym)
 		return NULL;
 
 	AstExpression *var_initializer = Utility::RemoveCasting(vsym->declarator->variable_initializer_opt->ExpressionCast());
-	
+
 	// vsym -> IsLocal()
 	// vsym is an iterator that implements java.util.Iterator
 	if (strcmp( vsym->Type()->fully_qualified_name->value, "java/util/Iterator") == 0)
@@ -1405,7 +1407,7 @@ VariableSymbol *ListVar(VariableSymbol *vsym)
 			if (strcmp(init_call -> symbol -> MethodCast() -> Utf8Name(), "iterator") == 0)
 				return (init_call->base_opt->symbol->Kind() == Symbol::VARIABLE)
 					? init_call->base_opt->symbol->VariableCast()
-					: 0;		
+					: 0;
 			// iterator initialized later in an assignment statement
 			// 	vsym->owner is a Symbol, but if vsym is local then the owner is a MethodSymbol
 			//	verify assignment statement
@@ -1419,7 +1421,7 @@ VariableSymbol *ListVar(VariableSymbol *vsym)
 			AstMethodInvocation *init_call = vsym -> declarator -> variable_initializer_opt -> MethodInvocationCast();
 			// iterator initialized at declaration
 			if (strcmp(init_call -> symbol -> MethodCast() -> Utf8Name(), "listIterator") == 0)
-				return init_call -> base_opt -> NameCast() -> symbol -> VariableCast();		
+				return init_call -> base_opt -> NameCast() -> symbol -> VariableCast();
 			// iterator initialized later in an assignment statement
 			// 	vsym->owner is a Symbol, but if vsym is local then the owner is a MethodSymbol
 			//	verify assignment statement
@@ -1449,12 +1451,12 @@ VariableSymbol *ListVar(VariableSymbol *vsym)
 				AstMethodInvocation *i_init_call = iterator->declarator->variable_initializer_opt->MethodInvocationCast();
 				// iterator initialized at declaration
 				if (strcmp(i_init_call->symbol->MethodCast()->Utf8Name(), "iterator") == 0)
-					return i_init_call->base_opt->symbol->VariableCast();		
+					return i_init_call->base_opt->symbol->VariableCast();
 			}
 		}
-			
+
 	}
-	return NULL;					
+	return NULL;
 }
 void FindObserver(ClassSymbolTable *cs_table, DelegationTable *d_table)
 {
@@ -1491,11 +1493,11 @@ void FindObserver(ClassSymbolTable *cs_table, DelegationTable *d_table)
 										<< entry -> method -> Utf8Name() << " is the update method." << endl;
 									Coutput << "Subject class(es):";
 									entry -> enclosing -> callers -> Print();
-									Coutput << "File Location: " << unit_type->file_symbol->FileName() << endl << endl;									
+									Coutput << "File Location: " << unit_type->file_symbol->FileName() << endl << endl;
 								}
 							*/
-								if (!entry->enclosing->callers 
-									|| (!entry->enclosing->callers -> IsElement(generic_type) 
+								if (!entry->enclosing->callers
+									|| (!entry->enclosing->callers -> IsElement(generic_type)
 										//&& !entry->enclosing->callers -> IsElement(unit_type)
 									     )
 								     )
@@ -1506,11 +1508,11 @@ void FindObserver(ClassSymbolTable *cs_table, DelegationTable *d_table)
 									&& entry -> enclosing -> declaration -> MethodDeclarationCast() -> method_body_opt)
 										entry -> enclosing -> declaration -> MethodDeclarationCast() -> method_body_opt -> Accept(controlflow);
 
-									if (controlflow.result 
+									if (controlflow.result
 									&& controlflow.IsRepeated()
 									&& entry -> base_opt
 									&& (iterator = IteratorVar(entry->base_opt))
-									&& ((iterator == vd->symbol) 
+									&& ((iterator == vd->symbol)
 										|| (vd->symbol == unit_type -> Shadows(iterator))
 										|| (vd -> symbol == ListVar(iterator))))
 									{
@@ -1526,9 +1528,9 @@ void FindObserver(ClassSymbolTable *cs_table, DelegationTable *d_table)
 											entry -> enclosing -> callers -> Print();
 										else
 											Coutput << endl;
-										Coutput << "File Location: " << unit_type->file_symbol->FileName() << endl << endl;									
+										Coutput << "File Location: " << unit_type->file_symbol->FileName() << endl << endl;
 									}
-								}							
+								}
 							}
 							else if ((generic_type == entry -> enclosing -> containing_type) && (unit_type == entry -> to))
 							{
@@ -1542,11 +1544,11 @@ void FindObserver(ClassSymbolTable *cs_table, DelegationTable *d_table)
 											Coutput << unit_type -> Utf8Name() << " is the mediator class." << endl
 															<< vd -> symbol -> Utf8Name() << " controls a list of colleagues of type "
 															<< generic_type -> Utf8Name() << "." << endl;
-											Coutput << entry -> method -> Utf8Name() 
+											Coutput << entry -> method -> Utf8Name()
 												<< " invokes the mediator. " << endl;
 											Coutput << "Subtype(s) of colleague(s): ";
-											generic_type -> subtypes -> Print();		
-											Coutput << "File Location: " << unit_type->file_symbol->FileName() << endl << endl;									
+											generic_type -> subtypes -> Print();
+											Coutput << "File Location: " << unit_type->file_symbol->FileName() << endl << endl;
 							    }
 							}
 						}
@@ -1575,14 +1577,14 @@ void FindMediator2(ClassSymbolTable *cs_table)
 				while (sym1)
 				{
 					TypeSymbol *caller = sym1->TypeCast();
-					Symbol *sym2 = msym->invokees->FirstElement();	
+					Symbol *sym2 = msym->invokees->FirstElement();
 					while(sym2)
 					{
 						TypeSymbol *callee = sym2->MethodCast()->containing_type;
-						if (caller->file_symbol 
+						if (caller->file_symbol
 						&& caller->file_symbol->IsJava()
 						&& caller->call_dependents
-						&& callee->file_symbol 
+						&& callee->file_symbol
 						&& callee->file_symbol->IsJava()
 						&& callee->call_dependents
 						&& !caller->call_dependents->IsElement(callee)
@@ -1595,7 +1597,7 @@ void FindMediator2(ClassSymbolTable *cs_table)
 								unit_type->mediator_colleagues = new SymbolSet(0);
 							unit_type->mediator_colleagues->AddElement(caller);
 							unit_type->mediator_colleagues->AddElement(callee);
-							
+
 						       /* trying to get rid of STL map
 							map<TypeSymbol*, SymbolSet*>::iterator m = cache.find(unit_type);
 							if (m == cache.end())
@@ -1603,21 +1605,21 @@ void FindMediator2(ClassSymbolTable *cs_table)
 								SymbolSet *set = new SymbolSet(0);
 								set->AddElement(caller);
 								set->AddElement(callee);
-								cache.insert(pair<TypeSymbol*, SymbolSet*>(unit_type, set));								
+								cache.insert(pair<TypeSymbol*, SymbolSet*>(unit_type, set));
 							}
 							else
 							{
 								m->second->AddElement(caller);
-								m->second->AddElement(callee);								
+								m->second->AddElement(callee);
 							}
 							*/
-							
+
 						}
 						sym2 = msym->invokees->NextElement();
 					}
-					sym1 = msym->callers->NextElement();						
+					sym1 = msym->callers->NextElement();
 				}
-			}				
+			}
 			i++;
 		}
 	}
@@ -1631,7 +1633,7 @@ void FindMediator2(ClassSymbolTable *cs_table)
 		Coutput << "Mediator: " << pattern->first->Utf8Name() << endl;
 		Coutput << "Colleagues: ";
 		pattern->second->Print();
-		Coutput << "FileLocation: " << pattern->first->file_symbol->FileName() << endl << endl;	
+		Coutput << "FileLocation: " << pattern->first->file_symbol->FileName() << endl << endl;
 
 		mediators.AddElement(pattern->first);
 	}
@@ -1646,22 +1648,22 @@ void FindMediator2(ClassSymbolTable *cs_table)
 			Coutput << "Mediator: " << (*cs_table)[c]->Utf8Name() << endl;
 			Coutput << "Colleagues: ";
 			(*cs_table)[c]->mediator_colleagues->Print();
-			Coutput << "FileLocation: " << (*cs_table)[c]->file_symbol->FileName() << endl << endl;	
+			Coutput << "FileLocation: " << (*cs_table)[c]->file_symbol->FileName() << endl << endl;
 
 			mediators.AddElement((*cs_table)[c]);
 		}
-	}	
+	}
 }
 void FindTemplateMethod(DelegationTable *d_table)
 {
   vector<TypeSymbol*> cache;
   for (int i = 0; i < d_table -> size(); i++)
     {
-      DelegationEntry* entry = d_table -> Entry(i);	
+      DelegationEntry* entry = d_table -> Entry(i);
 /*
   if (strcmp(entry -> method -> Utf8Name(), "handleConnect") == 0)
   entry->method->declaration->MethodDeclarationCast()->Print();
-  
+
   if (strcmp(entry -> method -> Utf8Name(), "target") == 0)
   entry->method->declaration->MethodDeclarationCast()->Print();
 */
@@ -1679,7 +1681,7 @@ void FindTemplateMethod(DelegationTable *d_table)
 	      AstMethodDeclaration* method_declaration = entry -> method -> declaration -> MethodDeclarationCast();
 	      if (entry -> method -> ACC_ABSTRACT()
 		  || (method_declaration -> method_body_opt == 0)
-		  || ((method_declaration -> method_body_opt -> Statement(0) -> kind == Ast::RETURN) 
+		  || ((method_declaration -> method_body_opt -> Statement(0) -> kind == Ast::RETURN)
 		      && (method_declaration -> method_body_opt -> Statement(0) -> ReturnStatementCast() -> expression_opt == 0 ))
 		  )
 		{
@@ -1688,7 +1690,7 @@ void FindTemplateMethod(DelegationTable *d_table)
 		  Coutput << "Template Method Found." << endl;
 		  Coutput << entry -> from -> Utf8Name() << " is the template class" << endl;
 		  Coutput << entry -> enclosing -> Utf8Name() << " is the template method" << endl;
-		  Coutput << entry -> method -> Utf8Name() << " is a primitive method" << endl;			
+		  Coutput << entry -> method -> Utf8Name() << " is a primitive method" << endl;
 		  Coutput << "File Location: " << entry -> from -> file_symbol -> FileName() << endl << endl;
 		}
 	    }
@@ -1701,7 +1703,7 @@ void FindFactory(ClassSymbolTable *cs_table, MethodSymbolTable *ms_table, Storag
   SymbolSet abstract_factories;
   map<TypeSymbol*, TypeSymbol*> inheritance;
   map<TypeSymbol*, SymbolSet*> concrete_factories;
-  
+
   for (unsigned i=0; i<ms_table->size(); i++)
     {
     	MethodSymbol *method = (*ms_table)[i];
@@ -1733,10 +1735,10 @@ void FindFactory(ClassSymbolTable *cs_table, MethodSymbolTable *ms_table, Storag
 			{
 				ci->second->Union(factory.types);
 			}
-			
+
 			Coutput << "Factory Method pattern." << endl
 				<< abstract_factory_method -> containing_type -> Utf8Name() << " is a Factory Method class." << endl;
-		  
+
 		  	Coutput << method -> containing_type -> Utf8Name()
 				<< " is a concrete Factory Method class."
 			  	<< endl
@@ -1745,7 +1747,7 @@ void FindFactory(ClassSymbolTable *cs_table, MethodSymbolTable *ms_table, Storag
 			factory.types.Print();
 		       Coutput << " which extends "
 		       	<< method -> Type() -> Utf8Name()
-		         	<< endl			 
+		         	<< endl
 			  	<< "File Location: " << method->containing_type->file_symbol->FileName()
 			  	<< endl << endl;
 		}
@@ -1775,7 +1777,7 @@ void FindFactory(ClassSymbolTable *cs_table, MethodSymbolTable *ms_table, Storag
 		nAbstractFactory++;
 	sym = abstract_factories.NextElement();
     }
-    
+
 }
 
 void FindVisitor(ClassSymbolTable *cs_table, MethodSymbolTable *ms_table)
@@ -1790,13 +1792,13 @@ void FindVisitor(ClassSymbolTable *cs_table, MethodSymbolTable *ms_table)
 		&& method -> ACC_PUBLIC()
 		)
 		{
-			bool flag1 = false;			
+			bool flag1 = false;
 			unsigned i = 0;
 			while (!flag1 && (i < method -> NumFormalParameters()))
-			{					
+			{
 				if (method -> FormalParameter(i) -> Type() -> ACC_ABSTRACT()
 				&& method -> FormalParameter(i) -> Type() -> file_symbol
-				&& method -> FormalParameter(i) -> Type() -> file_symbol -> IsJava()				
+				&& method -> FormalParameter(i) -> Type() -> file_symbol -> IsJava()
 				&& !method -> containing_type -> IsFamily(method -> FormalParameter(i) -> Type())
 				)
 				{
@@ -1804,7 +1806,7 @@ void FindVisitor(ClassSymbolTable *cs_table, MethodSymbolTable *ms_table)
 					while ((p != cache.end())
 						&& (!method -> containing_type -> IsSubtype(p -> first) && !method -> FormalParameter(i) -> Type() -> IsSubtype(p -> second)))
 						p++;
-					
+
 					if (p == cache.end())
 						{
 					VariableSymbol *vsym = method -> FormalParameter(i);
@@ -1840,7 +1842,7 @@ void FindVisitor(ClassSymbolTable *cs_table, MethodSymbolTable *ms_table)
 										{
 											nVisitor++;
 											flag1 = flag2 = flag3 = true;
-											Coutput << "Visitor pattern found." 
+											Coutput << "Visitor pattern found."
 												<< endl
 												<< method -> FormalParameter(i) -> Type() -> Utf8Name()
 												<< " is an abstract Visitor class."
@@ -1866,11 +1868,11 @@ void FindVisitor(ClassSymbolTable *cs_table, MethodSymbolTable *ms_table)
 											if (call -> arguments -> Argument(k) -> kind == Ast::THIS_EXPRESSION)
 												Coutput << "THIS pointer is exposed to visitor ";
 											else
-												Coutput << call -> arguments -> Argument(k) -> NameCast() -> symbol -> VariableCast() -> Utf8Name() 
+												Coutput << call -> arguments -> Argument(k) -> NameCast() -> symbol -> VariableCast() -> Utf8Name()
 													<< " is exposed to visitor ";
 											Coutput << method -> FormalParameter(i) -> Type() -> Utf8Name() << endl;
 											Coutput << "File Location: "
-												<< method -> containing_type -> file_symbol -> FileName() 
+												<< method -> containing_type -> file_symbol -> FileName()
 												<< endl << endl;
 										}
 										k++;
@@ -1943,10 +1945,10 @@ void FindProxy(ClassSymbolTable *cs_table, DelegationTable *d_table)
 								real->call_dependents->RemoveElement(unit_type);
 								if (!unit_type->call_dependents || !unit_type->call_dependents->Intersects(*real->call_dependents))
 									real_set.AddElement(real);
-								real->call_dependents->AddElement(unit_type);								
+								real->call_dependents->AddElement(unit_type);
 							}
 							if (real_set.Size())
-							{								
+							{
 								flag = true;
 								nProxy++;
 								Coutput << "Proxy Pattern." << endl
@@ -1964,12 +1966,12 @@ void FindProxy(ClassSymbolTable *cs_table, DelegationTable *d_table)
 									sym = real_set.NextElement();
 								}
 								Coutput << endl;
-								Coutput << "File Location: " << unit_type -> file_symbol -> FileName() << endl << endl;								
+								Coutput << "File Location: " << unit_type -> file_symbol -> FileName() << endl << endl;
 							}
 							else
 								sym2 = parents -> NextElement();
-							
-						}						
+
+						}
 						else
 							sym2 = parents -> NextElement();
 					}
@@ -1980,7 +1982,7 @@ void FindProxy(ClassSymbolTable *cs_table, DelegationTable *d_table)
 					sym1 = instances -> NextElement();
 			}
 		}
-	}	
+	}
 }
 
 void FindAdapter(ClassSymbolTable *cs_table)
@@ -1999,8 +2001,8 @@ void FindAdapter(ClassSymbolTable *cs_table)
 			{
 				TypeSymbol *ref_type = sym->VariableCast() -> Type();
 				if (!ref_type -> IsArray()
-				&& !ref_type -> Primitive()					
-				&& (unit_type != ref_type)			
+				&& !ref_type -> Primitive()
+				&& (unit_type != ref_type)
 				//&& !ref_type -> ACC_INTERFACE()
 				//&& !ref_type -> ACC_ABSTRACT()
 				&& !unit_type -> IsFamily(ref_type)
@@ -2019,7 +2021,7 @@ void FindAdapter(ClassSymbolTable *cs_table)
 						if (unit_type->supertypes_closure->IsElement(type) && type->call_dependents)
 							unit_dependents.Union(*type->call_dependents);
 					}
-					
+
 					ref_type -> call_dependents -> RemoveElement(unit_type);
 					if ((!unit_dependents.Intersects(*ref_type->call_dependents))
 					&& sym->VariableCast()->concrete_types)
@@ -2031,15 +2033,15 @@ void FindAdapter(ClassSymbolTable *cs_table)
 						Coutput << unit_type -> Utf8Name()
 							<< " is an adapter class." << endl
 							<< ref_type -> Utf8Name()
-							<< " is the adaptee class." << endl 
+							<< " is the adaptee class." << endl
 							<< "File Location: " << unit_type -> file_symbol -> FileName() << endl
 							<< "File Location: " << ref_type->file_symbol->FileName() << endl << endl;
 					}
-					ref_type -> call_dependents -> AddElement(unit_type);					
+					ref_type -> call_dependents -> AddElement(unit_type);
 				}
 				sym = unit_type -> instances -> NextElement();
 			}
-		}		
+		}
 	}
 }
 
@@ -2050,7 +2052,7 @@ void FindFacade(ClassSymbolTable *cs_table)
 	{
 		TypeSymbol *unit_type = (*cs_table)[p];
 		SymbolSet all_dependents(0), hidden_types(0);
-		if (!unit_type -> ACC_ABSTRACT() 
+		if (!unit_type -> ACC_ABSTRACT()
 		&& unit_type -> call_dependents
 		&& unit_type -> associates)
 		{
@@ -2067,7 +2069,7 @@ void FindFacade(ClassSymbolTable *cs_table)
 					type->call_dependents->RemoveElement(unit_type);
 					if (!unit_type -> IsFamily(type)
 					&& !type -> IsNested()
-					&& (!type -> call_dependents 
+					&& (!type -> call_dependents
 						||!unit_type -> call_dependents -> Intersects(*type -> call_dependents))
 					)
 					{
@@ -2079,7 +2081,7 @@ void FindFacade(ClassSymbolTable *cs_table)
 				}
 				sym = unit_type -> associates -> NextElement();
 			}
-			if ((hidden_types.Size() > 1) 
+			if ((hidden_types.Size() > 1)
 				//&& !unit_type -> call_dependents -> Intersects(all_dependents)
 				)
 			{
@@ -2140,7 +2142,7 @@ void PrintSingletonXMI(TypeSymbol *class_sym , VariableSymbol *instance_sym, Met
 	static int uuid = 32768;
 
 	assert(fd.is_open());
-	
+
 	if (uid == 0)
 	{
 		uid++;
@@ -2213,7 +2215,7 @@ void PrintSingletonXMI(TypeSymbol *class_sym , VariableSymbol *instance_sym, Met
 		fd << "</XMI>" << endl;
 		fd.close();
 	}
-	
+
 }
 
 /*
@@ -2233,15 +2235,15 @@ void CreationAnalysis::visit(AstBlock* block)
 	// Assumption: isolated entry and exit
 	int lstmt = block -> NumStatements() - 1;
 	// check the last statement and see what type it returns
-	if ( lstmt >= 0)		
+	if ( lstmt >= 0)
 	{
 		if (block -> Statement(lstmt) -> kind == Ast::RETURN)
 		{
 			AstReturnStatement *return_stmt = block -> Statement(lstmt) -> ReturnStatementCast();
-			AstExpression *expression = (return_stmt -> expression_opt -> kind == Ast::CAST) 
+			AstExpression *expression = (return_stmt -> expression_opt -> kind == Ast::CAST)
 									? return_stmt -> expression_opt -> CastExpressionCast() -> expression
 									: return_stmt -> expression_opt;
-			
+
 			if (expression -> kind == Ast::CLASS_CREATION)
 			{
 				expression -> ClassCreationExpressionCast() -> Accept(*this);
@@ -2252,7 +2254,7 @@ void CreationAnalysis::visit(AstBlock* block)
 				VariableSymbol *vsym = expression->symbol->VariableCast();
 				if (vsym->declarator && vsym->declarator->variable_initializer_opt)
 				{
-					AstExpression *expr = (vsym->declarator->variable_initializer_opt -> kind == Ast::CAST) 
+					AstExpression *expr = (vsym->declarator->variable_initializer_opt -> kind == Ast::CAST)
 										? vsym->declarator->variable_initializer_opt -> CastExpressionCast() -> expression
 										: vsym->declarator->variable_initializer_opt->ExpressionCast();
 					if (expr->kind==Ast::CLASS_CREATION)
@@ -2268,10 +2270,10 @@ void CreationAnalysis::visit(AstBlock* block)
 
 						// should also consider variable initialization upon declaration
 						if ((block -> Statement(i) -> kind == Ast::EXPRESSION_STATEMENT)
-						&& ((expression_stmt = block -> Statement(i) -> ExpressionStatementCast()) -> expression -> kind == Ast::ASSIGNMENT) 
-						&& ((assignment_stmt = expression_stmt -> expression-> AssignmentExpressionCast()) -> lhs(vsym)))					
+						&& ((expression_stmt = block -> Statement(i) -> ExpressionStatementCast()) -> expression -> kind == Ast::ASSIGNMENT)
+						&& ((assignment_stmt = expression_stmt -> expression-> AssignmentExpressionCast()) -> lhs(vsym)))
 						{
-							AstExpression *expr = (assignment_stmt -> expression -> kind == Ast::CAST) 
+							AstExpression *expr = (assignment_stmt -> expression -> kind == Ast::CAST)
 												? assignment_stmt -> expression -> CastExpressionCast() -> expression
 												: assignment_stmt -> expression;
 							if (expr-> kind == Ast::CLASS_CREATION)
@@ -2287,13 +2289,13 @@ void CreationAnalysis::visit(AstBlock* block)
 			else if (expression -> kind == Ast::CALL)
 			{
 				AstMethodInvocation *invocation = expression -> MethodInvocationCast();
-				MethodSymbol *method = (invocation -> symbol -> Kind() == Symbol::METHOD) 
+				MethodSymbol *method = (invocation -> symbol -> Kind() == Symbol::METHOD)
 									? invocation -> symbol -> MethodCast()
 									: NULL;
 				if (method && !cache.IsElement(method))
 				{
-					AstMethodDeclaration *declaration = (method && method -> declaration && method -> declaration -> kind == Ast::METHOD) 
-												? method -> declaration -> MethodDeclarationCast() 
+					AstMethodDeclaration *declaration = (method && method -> declaration && method -> declaration -> kind == Ast::METHOD)
+												? method -> declaration -> MethodDeclarationCast()
 												: NULL;
 					if (declaration && declaration -> method_body_opt)
 					{
@@ -2374,14 +2376,14 @@ void ControlAnalysis::visit(AstWhileStatement* while_statement)
 void ControlAnalysis::visit(AstForStatement* for_statement)
 {
 	visit(for_statement -> statement);
-	if (!containing_stmt && result) 
+	if (!containing_stmt && result)
 		containing_stmt = for_statement;
 	if (result)
-		rt_stack.push_back(for_statement);		
+		rt_stack.push_back(for_statement);
 }
 void ControlAnalysis::visit(AstStatement *statement)
 {
-	switch(statement -> kind) 
+	switch(statement -> kind)
 	{
 		case Ast::IF:
 			visit(statement -> IfStatementCast());
@@ -2400,9 +2402,9 @@ void ControlAnalysis::visit(AstStatement *statement)
 			break;
 		case Ast::BLOCK:
 			visit(statement -> BlockCast());
-			break;			
+			break;
 		default:
-			break;		
+			break;
 	}
 }
 void ControlAnalysis::visit(AstExpression *expression)
@@ -2423,7 +2425,7 @@ void ControlAnalysis::visit(AstExpression *expression)
 				break;
 			default:
 				break;
-		}		
+		}
 	}
 }
 
@@ -2473,7 +2475,7 @@ void FlyweightAnalysis::visit(AstForStatement* for_statement)
 {
 	UpdateSummary();
 	conditions.push_back(for_statement->end_expression_opt);
-	visit(for_statement->statement);	
+	visit(for_statement->statement);
 	UpdateSummary();
 	conditions.pop_back();
 }
@@ -2483,7 +2485,7 @@ void FlyweightAnalysis::visit(AstTryStatement* try_statement)
 }
 void FlyweightAnalysis::visit(AstStatement *statement)
 {
-	switch(statement -> kind) 
+	switch(statement -> kind)
 	{
 		case Ast::IF:
 			visit(statement -> IfStatementCast());
@@ -2505,7 +2507,7 @@ void FlyweightAnalysis::visit(AstStatement *statement)
 			break;
 		case Ast::BLOCK:
 			visit(statement -> BlockCast());
-			break;			
+			break;
 		case Ast::RETURN:
 			visit(statement -> ReturnStatementCast());
 			break;
@@ -2513,7 +2515,7 @@ void FlyweightAnalysis::visit(AstStatement *statement)
 			visit(statement -> LocalVariableStatementCast());
 			break;
 		default:
-			break;		
+			break;
 	}
 }
 void FlyweightAnalysis::visit(AstExpression *expression)
@@ -2567,7 +2569,7 @@ void FlyweightAnalysis::visit(AstIfStatement* statement)
 }
 void FlyweightAnalysis::visit(AstAssignmentExpression *expression)
 {
-	if (expression->left_hand_side->symbol->VariableCast() 
+	if (expression->left_hand_side->symbol->VariableCast()
 	&& (expression->left_hand_side->symbol->VariableCast()->Type() == flyweight))
 		statements.push_back(expression);
 	else if (expression->left_hand_side->symbol->TypeCast()
@@ -2598,10 +2600,10 @@ void FlyweightAnalysis::visit(AstReturnStatement* statement)
 		else if (statement->expression_opt->symbol->TypeCast()
 		&& (statement->expression_opt->symbol->TypeCast() == flyweight))
 			statements.push_back(statement);
-	}	
+	}
 }
 void FlyweightAnalysis::UpdateSummary()
-{	
+{
 	if (statements.size())
 	{
 		Snapshot *snapshot = new Snapshot();
@@ -2739,7 +2741,7 @@ bool VectorContainer::IsPutMethod(MethodSymbol *msym)
 }
 bool HashSetContainer::IsPutMethod(MethodSymbol *msym)
 {
-	if ((strcmp(msym->Utf8Name(), "add") == 0) 
+	if ((strcmp(msym->Utf8Name(), "add") == 0)
 	&& (strcmp(msym->SignatureString(), "(Ljava/lang/Object;)Z") == 0))
 		return true;
 	else
@@ -2848,7 +2850,7 @@ void FlyweightAnalysis::AssignRoles()
 							if (!container_type)
 								container_type = Utility::IdentifyContainerType(call->base_opt->symbol->VariableCast());
 							if (container_type && container_type->IsGetMethod(call->symbol->MethodCast()))
-								snapshot->roles->push_back(new Role(var_declarator->symbol, Role::RETRIEVE));								
+								snapshot->roles->push_back(new Role(var_declarator->symbol, Role::RETRIEVE));
 						}
 					}
 					else if (var_declarator->variable_initializer_opt->kind == Ast::ARRAY_ACCESS)
@@ -2905,8 +2907,8 @@ void FlyweightAnalysis::AssignRoles()
 							if (!container_type)
 								container_type = Utility::IdentifyContainerType(call->base_opt->symbol->VariableCast());
 							if (container_type && container_type->IsGetMethod(call->symbol->MethodCast()))
-								snapshot->roles->push_back(new Role(assignment->left_hand_side->symbol->VariableCast(), Role::RETRIEVE));								
-						}					
+								snapshot->roles->push_back(new Role(assignment->left_hand_side->symbol->VariableCast(), Role::RETRIEVE));
+						}
 					}
 				}
 			}
@@ -2918,7 +2920,7 @@ void FlyweightAnalysis::AssignRoles()
 					if (!container_type)
 						container_type = Utility::IdentifyContainerType(call->base_opt->symbol->VariableCast());
 					if (container_type && container_type->IsPutMethod(call->symbol->MethodCast()))
-						snapshot->roles->push_back(new Role(container_type->GetPutValue(call), Role::REGISTER));								
+						snapshot->roles->push_back(new Role(container_type->GetPutValue(call), Role::REGISTER));
 				}
 			}
 			else if (stmt->kind == Ast::RETURN)
@@ -2939,7 +2941,7 @@ void FlyweightAnalysis::AssignRoles()
 			}
 		}
 	}
-	
+
 }
 bool FlyweightAnalysis::IsFlyweightFactory()
 {
@@ -2985,7 +2987,7 @@ bool FlyweightAnalysis::IsFlyweightFactory()
 				}
 			}
 			else if ((returned_var == role->vsym) && (role->tag == Role::REGISTER))
-			{				
+			{
 				create_pending = true;
 			}
 			else if (create_pending && (returned_var == role->vsym) && (role->tag == Role::CREATE))
@@ -2994,7 +2996,7 @@ bool FlyweightAnalysis::IsFlyweightFactory()
 				bitmap[n] = 'N';
 				//Coutput << "returns new flyweight object in " << returned_var->Utf8Name() << endl;
 				create_pending = false;
-				val_recorded = snapshot;				
+				val_recorded = snapshot;
 			}
 			else if ((returned_var == role->vsym) && (role->tag == Role::RETRIEVE))
 			{
@@ -3042,7 +3044,7 @@ ChainAnalysis::ResultTag ChainAnalysis::AnalyzeCallChain()
 		path.push_back(snapshot->index);
 		TracePath(snapshot);
 	}
-	
+
 	// analyze exec paths HERE
 
 	// for footprints, check for duplicates
@@ -3073,7 +3075,7 @@ void ChainAnalysis::TraceBinaryExpression(AstBinaryExpression *expression, Snaps
 	&& expression->left_expression->MethodInvocationCast()->base_opt
 	&& expression->left_expression->MethodInvocationCast()->symbol->MethodCast()
 	&& (expression->left_expression->MethodInvocationCast()->base_opt->symbol == variable)
-	&& ((expression->left_expression->MethodInvocationCast()->symbol == method) 
+	&& ((expression->left_expression->MethodInvocationCast()->symbol == method)
 		|| (strcmp(expression->left_expression->MethodInvocationCast()->symbol->MethodCast()->Utf8Name(), method->Utf8Name()) == 0))
 	&& (strcmp(expression->left_expression->MethodInvocationCast()->symbol->MethodCast()->SignatureString(), method->SignatureString()) == 0)
 	)
@@ -3082,7 +3084,7 @@ void ChainAnalysis::TraceBinaryExpression(AstBinaryExpression *expression, Snaps
 	&& expression->right_expression->MethodInvocationCast()->base_opt
 	&& expression->right_expression->MethodInvocationCast()->symbol->MethodCast()
 	&& (expression->right_expression->MethodInvocationCast()->base_opt->symbol == variable)
-	&& ((expression->right_expression->MethodInvocationCast()->symbol == method) 
+	&& ((expression->right_expression->MethodInvocationCast()->symbol == method)
 		|| (strcmp(expression->right_expression->MethodInvocationCast()->symbol->MethodCast()->Utf8Name(), method->Utf8Name()) == 0))
 	&& (strcmp(expression->right_expression->MethodInvocationCast()->symbol->MethodCast()->SignatureString(), method->SignatureString()) == 0)
 	)
@@ -3093,7 +3095,7 @@ void ChainAnalysis::TraceBinaryExpression(AstBinaryExpression *expression, Snaps
 		TraceBinaryExpression(expression->right_expression->BinaryExpressionCast(), snapshot);
 }
 void ChainAnalysis::TracePath(Snapshot *snapshot)
-{	
+{
 	set<signed> next(snapshot->previous);
 
 	for (unsigned j = snapshot->statements->size() - 1; j < snapshot->statements->size(); j--)
@@ -3103,13 +3105,13 @@ void ChainAnalysis::TracePath(Snapshot *snapshot)
 		{
 			if (statement->ReturnStatementCast()->expression_opt)
 			{
-				AstExpression *expression = Utility::RemoveCasting(statement->ReturnStatementCast()->expression_opt);		
+				AstExpression *expression = Utility::RemoveCasting(statement->ReturnStatementCast()->expression_opt);
 				if (expression->kind == Ast::CALL)
 				{
 					AstMethodInvocation *call = expression->MethodInvocationCast();
 					VariableSymbol *vsym = (call->base_opt) 	?  call->base_opt->symbol->VariableCast() : NULL;
 					MethodSymbol *msym = call->symbol->MethodCast();
-					if ((vsym == variable) 
+					if ((vsym == variable)
 					&& ((msym == method) || (strcmp(msym->Utf8Name(), method->Utf8Name()) == 0))
 					&& (strcmp(msym->SignatureString(), method->SignatureString()) == 0))
 					{
@@ -3127,7 +3129,7 @@ void ChainAnalysis::TracePath(Snapshot *snapshot)
 			AstMethodInvocation *call = statement->MethodInvocationCast();
 			VariableSymbol *vsym = (call->base_opt) 	?  call->base_opt->symbol->VariableCast() : NULL;
 			MethodSymbol *msym = call->symbol->MethodCast();
-			if ((vsym == variable) 
+			if ((vsym == variable)
 			&& ((msym == method) ||(strcmp(msym->Utf8Name(), method->Utf8Name()) == 0))
 			&& (strcmp(msym->SignatureString(), method->SignatureString()) == 0))
 			{
@@ -3148,16 +3150,16 @@ void ChainAnalysis::TracePath(Snapshot *snapshot)
 		{
 			paths.push_back(path);
 		}
-	}	
+	}
 }
-		
+
 SymbolSet SingletonAnalysis::visited;
 bool SingletonAnalysis::ReturnsSingleton()
 {
 	visited.AddElement(method);
 	flatten.BuildSummary();
 	//flatten.DumpSummary();
-	
+
 	for (unsigned t = 0; t < flatten.traces.size(); t++)
 	{
 		Snapshot *snapshot = flatten.traces[t];
@@ -3197,7 +3199,7 @@ bool SingletonAnalysis::ReturnsSingleton()
 		{
 			// check whether there are other static variables to track
 			// but if "instance == null" is in conjoints, then stop checking
-			// otherwise, check if these additional variables are 
+			// otherwise, check if these additional variables are
 			// 1. modified so that this snapshot will never be entered again, and
 			// 2. these vars are not changed anywhere besides snapshot (flow-insensitive)
 
@@ -3220,7 +3222,7 @@ bool SingletonAnalysis::ReturnsSingleton()
 					&& vsym->ACC_STATIC()
 					&& (strcmp(vsym->Type()->Utf8Name(), "boolean") == 0))
 						constraints.insert(pair<VariableSymbol*, AstExpression*>(vsym, expression));
-				}	
+				}
 			}
 			else if (conjoints[i]->kind == Ast::PRE_UNARY)
 			{
@@ -3241,7 +3243,7 @@ bool SingletonAnalysis::ReturnsSingleton()
 					&& (pre_unary->expression->BinaryExpressionCast()->right_expression->kind == Ast::NULL_LITERAL))
 						return true;
 					else
-						return false;					
+						return false;
 				}
 			}
 			else if (conjoints[i]->symbol->VariableCast())
@@ -3278,7 +3280,7 @@ bool SingletonAnalysis::ReturnsSingleton()
 								||((p->second->kind == Ast::BINARY)
 									&& p->second->BinaryExpressionCast()->left_expression->symbol->VariableCast()
 									&& (p->second->BinaryExpressionCast()->right_expression->kind == Ast::FALSE_LITERAL)))
-									goto Ugly;								
+									goto Ugly;
 							}
 							else if (assignment->expression->kind == Ast::FALSE_LITERAL)
 							{
@@ -3286,14 +3288,14 @@ bool SingletonAnalysis::ReturnsSingleton()
 								||((p->second->kind == Ast::BINARY)
 									&& p->second->BinaryExpressionCast()->left_expression->symbol->VariableCast()
 									&& (p->second->BinaryExpressionCast()->right_expression->kind == Ast::TRUE_LITERAL)))
-									goto Ugly;								
+									goto Ugly;
 							}
 						}
 					}
 				}
 			}
 			return false;
-						
+
 			// flow-insensitive analysis in summary
 			Ugly: SymbolSet modified;
 			for (unsigned i =0; i < flatten.summary.size(); i++)
@@ -3310,7 +3312,7 @@ bool SingletonAnalysis::ReturnsSingleton()
 							if (assignment->left_hand_side->symbol->VariableCast()
 							&& (constraints.find(assignment->left_hand_side->symbol->VariableCast()) != constraints.end()))
 								modified.AddElement(assignment->left_hand_side->symbol->VariableCast());
-								// skip analysis on the right_hand_side expression							
+								// skip analysis on the right_hand_side expression
 						}
 					}
 				}
@@ -3360,11 +3362,11 @@ void SingletonAnalysis::TracePath(Snapshot* snapshot)
 				{
 					// Check: are we currnetly under the scope where condition says instance == null?
 					// How to check a segment of code is only executed once, regardless of flag?
-					
+
 					AstMethodInvocation *call = expression->MethodInvocationCast();
 					if ((strcmp(call->symbol->MethodCast()->Utf8Name(), "newInstance") == 0)
 					&& (((call->base_opt->kind == Ast::NAME) && (strcmp(call->base_opt->symbol->VariableCast()->Type()->Utf8Name(), "Class") == 0))
-						|| ((call->base_opt->kind == Ast::CALL) 
+						|| ((call->base_opt->kind == Ast::CALL)
 							&& (strcmp(call->base_opt->symbol->MethodCast()->Utf8Name(), "forName") == 0)
 							&& (call->base_opt->MethodInvocationCast()->base_opt ->kind== Ast::NAME)
 						&& (strcmp(call->base_opt->MethodInvocationCast()->base_opt->symbol->TypeCast()->Utf8Name(), "Class") == 0)))
@@ -3392,12 +3394,12 @@ void SingletonAnalysis::TracePath(Snapshot* snapshot)
 			path.push_back(*p);
 			TracePath(flatten.summary[*p]);
 			path.pop_back();
-		}					
+		}
 		else
 		{
 			//paths.push_back('E');
 			exec_paths.push_back(path);
-		}										
+		}
 	}
 }
 bool SingletonAnalysis::ReturnsSingleton1()
@@ -3414,7 +3416,7 @@ bool SingletonAnalysis::ReturnsSingleton1()
 			(flatten.summary[*p]->previous).insert(i);
 	}
 	flatten.DumpSummary();
-	
+
 	for (unsigned t = 0; t < flatten.traces.size(); t++)
 	{
 		Snapshot *return_snapshot = NULL;
@@ -3429,7 +3431,7 @@ bool SingletonAnalysis::ReturnsSingleton1()
 			snapshots.pop_back();
 			/*
 			if ((i == flatten.traces[t]->index)
-			|| ((i < flatten.traces[t]->index) 
+			|| ((i < flatten.traces[t]->index)
 				&& (flatten.TransitionFlow(snapshot->condition, flatten.summary[i + 1]->condition) != Flatten::NOTRANSITION)))
 			{
 			*/
@@ -3449,7 +3451,7 @@ bool SingletonAnalysis::ReturnsSingleton1()
 						{
 							return_snapshot = snapshot;
 							return_path = paths.size();
-							paths.push_back('E');							
+							paths.push_back('E');
 						}
 						else
 							return false;
@@ -3522,8 +3524,8 @@ bool SingletonAnalysis::ReturnsSingleton1()
 	}
 	if ((nc==1) && (ne == 1))
 		return true;
-	else if ((ne == 1) 
-		&& variable->declarator->variable_initializer_opt 
+	else if ((ne == 1)
+		&& variable->declarator->variable_initializer_opt
 		&& (variable->declarator->variable_initializer_opt->kind == Ast::CLASS_CREATION))
 		return true;
 	else
@@ -3537,7 +3539,7 @@ SymbolSet FactoryAnalysis::types;
 bool FactoryAnalysis::IsFactoryMethod()
 {
 	//Coutput << "Analyzing " << method->Utf8Name() << endl;
-	
+
 	visited.AddElement(method);
 	method->declaration->MethodDeclarationCast()->method_body_opt->Accept(flatten);
 	//flatten.DumpSummary();
@@ -3558,7 +3560,7 @@ bool FactoryAnalysis::IsFactoryMethod()
 					if (return_stmt->expression_opt)
 					{
 						AstExpression *expression = Utility::RemoveCasting(return_stmt->expression_opt);
-						
+
 						if (expression->symbol->VariableCast())
 							returned_var = expression->symbol->VariableCast();
 						else if (expression->symbol->MethodCast())
@@ -3588,7 +3590,7 @@ bool FactoryAnalysis::IsFactoryMethod()
 							if (expression->kind == Ast::NULL_LITERAL)
 								return false;
 						}
-					}					
+					}
 				}
 				else if (stmt->kind == Ast::ASSIGNMENT)
 				{
@@ -3623,25 +3625,25 @@ bool FactoryAnalysis::IsFactoryMethod()
 							// aliasing
 							returned_var = expression->symbol->VariableCast();
 						}
-					}					
+					}
 				}
 				else if (stmt->kind == Ast::VARIABLE_DECLARATOR)
 				{
 					AstVariableDeclarator *var_declarator = stmt->VariableDeclaratorCast();
 					if (var_declarator->symbol == returned_var)
 					{
-						if (var_declarator->variable_initializer_opt 
+						if (var_declarator->variable_initializer_opt
 						&& var_declarator->variable_initializer_opt->ExpressionCast())
 						{
 							AstExpression *expression = Utility::RemoveCasting(var_declarator->variable_initializer_opt->ExpressionCast());
 							if (expression->kind == Ast::CLASS_CREATION)
 							{
 								//types.AddElement(expression->symbol->MethodCast()->Type());
-								types.AddElement(expression->ClassCreationExpressionCast()->class_type->symbol->TypeCast());								
+								types.AddElement(expression->ClassCreationExpressionCast()->class_type->symbol->TypeCast());
 								break;
 							}
 							else if (expression->kind == Ast::NULL_LITERAL)
-								return false;						
+								return false;
 							else if (expression->kind == Ast::CALL)
 							{
 								// inter-procedural
@@ -3666,7 +3668,7 @@ bool FactoryAnalysis::IsFactoryMethod()
 							return false;
 					}
 				}
-			}			
+			}
 		}
 	}
 	return (types.Size() && !types.IsElement(method->Type()));
@@ -3675,7 +3677,7 @@ bool FactoryAnalysis::IsFactoryMethod()
 bool FactoryAnalysis::IsCreationMethod()
 {
 	//Coutput << "Analyzing " << method->Utf8Name() << endl;
-	
+
 	visited.AddElement(method);
 	method->declaration->MethodDeclarationCast()->method_body_opt->Accept(flatten);
 	//flatten.DumpSummary();
@@ -3696,7 +3698,7 @@ bool FactoryAnalysis::IsCreationMethod()
 					if (return_stmt->expression_opt)
 					{
 						AstExpression *expression = Utility::RemoveCasting(return_stmt->expression_opt);
-						
+
 						if (expression->symbol->VariableCast())
 							returned_var = expression->symbol->VariableCast();
 						else if (expression->symbol->MethodCast())
@@ -3726,7 +3728,7 @@ bool FactoryAnalysis::IsCreationMethod()
 							if (expression->kind == Ast::NULL_LITERAL)
 								return false;
 						}
-					}					
+					}
 				}
 				else if (stmt->kind == Ast::ASSIGNMENT)
 				{
@@ -3760,14 +3762,14 @@ bool FactoryAnalysis::IsCreationMethod()
 							// aliasing
 							returned_var = expression->symbol->VariableCast();
 						}
-					}					
+					}
 				}
 				else if (stmt->kind == Ast::VARIABLE_DECLARATOR)
 				{
 					AstVariableDeclarator *var_declarator = stmt->VariableDeclaratorCast();
 					if (var_declarator->symbol == returned_var)
 					{
-						if (var_declarator->variable_initializer_opt 
+						if (var_declarator->variable_initializer_opt
 						&& var_declarator->variable_initializer_opt->ExpressionCast())
 						{
 							AstExpression *expression = var_declarator->variable_initializer_opt->ExpressionCast();
@@ -3777,7 +3779,7 @@ bool FactoryAnalysis::IsCreationMethod()
 								break;
 							}
 							else if (expression->kind == Ast::NULL_LITERAL)
-								return false;						
+								return false;
 							else if (expression->kind == Ast::CALL)
 							{
 								// inter-procedural
@@ -3802,7 +3804,7 @@ bool FactoryAnalysis::IsCreationMethod()
 							return false;
 					}
 				}
-			}			
+			}
 		}
 	}
 	return ((types.Size() == 1) && types.IsElement(method->Type()));
@@ -3819,7 +3821,7 @@ void EmitGeneralization(GenTable * gen_table, TypeSymbol * unit_type)
     	wchar_t* package_name = unit_type -> FileLoc();
     	wchar_t* class_name = const_cast<wchar_t*>(unit_type -> Name());
 	wchar_t* super_name = const_cast<wchar_t*>(unit_type -> super -> Name());
-	
+
     	vector<wchar_t*>* interfaces = NULL;
 	for (unsigned k = 0; k < unit_type -> NumInterfaces(); k++)
     	{
@@ -3842,7 +3844,7 @@ void EmitGeneralization(GenTable * gen_table, TypeSymbol * unit_type)
 }
 
 void EmitBlockAssociation(TypeSymbol * unit_type, MethodSymbol * enclosing_method, AstBlock * block, DelegationTable * d_table, WriteAccessTable * w_table, ReadAccessTable *r_table)
-{	
+{
 	for (unsigned i = 0; i < block -> NumStatements(); i++)
 		EmitStatementAssociation(unit_type, enclosing_method, block -> Statement(i), d_table, w_table, r_table);
 }
@@ -3854,13 +3856,13 @@ void EmitDelegation(TypeSymbol * unit_type, MethodSymbol * enclosing_method, Ast
     	// resolution expression.
     	//
     	AstMethodInvocation* method_call = expression -> resolution_opt
-    		? expression -> resolution_opt -> MethodInvocationCast() : expression;	
+    		? expression -> resolution_opt -> MethodInvocationCast() : expression;
 	assert(method_call);
 
 	MethodSymbol *msym = (MethodSymbol*) method_call -> symbol;
-	VariableSymbol *vsym = (method_call -> base_opt 
-							&& method_call -> base_opt -> kind == Ast::NAME 
-							&& (method_call -> base_opt -> symbol -> Kind() == Symbol::VARIABLE)) 
+	VariableSymbol *vsym = (method_call -> base_opt
+							&& method_call -> base_opt -> kind == Ast::NAME
+							&& (method_call -> base_opt -> symbol -> Kind() == Symbol::VARIABLE))
 						? method_call -> base_opt -> symbol -> VariableCast()
 						: NULL;
 
@@ -3872,11 +3874,11 @@ void EmitDelegation(TypeSymbol * unit_type, MethodSymbol * enclosing_method, Ast
 	if (!msym -> callers)
 		msym -> callers = new SymbolSet(0);
 	msym -> callers -> AddElement(unit_type);
-	
+
 	if (!msym -> invokers)
 		msym -> invokers = new SymbolSet(0);
 	msym -> invokers -> AddElement(enclosing_method);
-	
+
 	if (!enclosing_method -> invokees)
 		enclosing_method -> invokees = new SymbolSet(0);
 	enclosing_method -> invokees -> AddElement(msym);
@@ -3884,10 +3886,10 @@ void EmitDelegation(TypeSymbol * unit_type, MethodSymbol * enclosing_method, Ast
 	if (!unit_type -> associates)
 		unit_type -> associates = new SymbolSet(0);
 	unit_type -> associates -> AddElement(msym -> containing_type);
-	
+
 	if (method_call -> base_opt)
 		EmitExpressionAssociation(unit_type, enclosing_method, method_call -> base_opt, d_table, w_table);
-	
+
 	AstArguments *args = expression -> arguments;
 	for (unsigned i = 0; i < args -> NumArguments(); i++)
 	{
@@ -3917,7 +3919,7 @@ void EmitWriteAccess(TypeSymbol * unit_type, MethodSymbol * enclosing_method, As
 {
 	AstExpression *left_expression = assignment->left_hand_side;
 	VariableSymbol *vsym = NULL;
-	
+
 	if (left_expression->kind == Ast::DOT)
 		vsym = left_expression->FieldAccessCast()->symbol->VariableCast();
 	else if ((left_expression -> kind == Ast::NAME) && (left_expression->symbol->Kind()==Symbol::VARIABLE))
@@ -3931,11 +3933,11 @@ void EmitWriteAccess(TypeSymbol * unit_type, MethodSymbol * enclosing_method, As
 	}
 #ifdef GOF_CONSOLE
 		if (vsym -> ContainingType() == unit_type)
-			Coutput << vsym -> ContainingType() -> Utf8Name() 
-				<< "::" 
-				<< enclosing_method -> Utf8Name() 
-				<< " accesses a private field " 
-				<< vsym -> Utf8Name() 
+			Coutput << vsym -> ContainingType() -> Utf8Name()
+				<< "::"
+				<< enclosing_method -> Utf8Name()
+				<< " accesses a private field "
+				<< vsym -> Utf8Name()
 				<< ": "
 				<< vsym -> Type () -> Utf8Name()
 				<< endl;
@@ -3945,7 +3947,7 @@ void EmitWriteAccess(TypeSymbol * unit_type, MethodSymbol * enclosing_method, As
 		w_table -> InsertWriteAccess(vsym, enclosing_method);
 
 		/*
-		AstExpression *rhs_expression = (assignment-> expression -> kind == Ast::CAST) 
+		AstExpression *rhs_expression = (assignment-> expression -> kind == Ast::CAST)
 			? assignment-> expression -> CastExpressionCast() -> expression
 			: assignment-> expression;
 		*/
@@ -3964,7 +3966,7 @@ void EmitWriteAccess(TypeSymbol * unit_type, MethodSymbol * enclosing_method, As
 				vsym->aliases = new SymbolSet();
 			vsym->aliases->AddElement(rhs_expression->symbol->VariableCast());
 		}
-		
+
 	}
 	EmitExpressionAssociation(unit_type, enclosing_method, assignment-> expression, d_table, w_table);
 }
@@ -3986,7 +3988,7 @@ void EmitExpressionAssociation(TypeSymbol * unit_type, MethodSymbol * enclosing_
 			break;
 		case Ast::ASSIGNMENT:
 			EmitWriteAccess(unit_type, enclosing_method, (AstAssignmentExpression*)expression, d_table, w_table);
-			EmitExpressionAssociation(unit_type, enclosing_method, ((AstAssignmentExpression*)expression) -> expression, d_table, w_table);			
+			EmitExpressionAssociation(unit_type, enclosing_method, ((AstAssignmentExpression*)expression) -> expression, d_table, w_table);
 			break;
 		case Ast::CONDITIONAL:
 			EmitExpressionAssociation(unit_type, enclosing_method, ((AstConditionalExpression*)expression) -> test_expression, d_table, w_table);
@@ -3997,12 +3999,12 @@ void EmitExpressionAssociation(TypeSymbol * unit_type, MethodSymbol * enclosing_
 			EmitExpressionAssociation(unit_type, enclosing_method, ((AstCastExpression*)expression )-> expression, d_table, w_table);
 			break;
 		case Ast::PARENTHESIZED_EXPRESSION:
-			EmitExpressionAssociation(unit_type, enclosing_method, ((AstParenthesizedExpression*)expression )-> expression, d_table, w_table);			
+			EmitExpressionAssociation(unit_type, enclosing_method, ((AstParenthesizedExpression*)expression )-> expression, d_table, w_table);
 			break;
 		case Ast::BINARY:
-			EmitExpressionAssociation(unit_type, enclosing_method, ((AstBinaryExpression*)expression )-> left_expression, d_table, w_table);			
-			EmitExpressionAssociation(unit_type, enclosing_method, ((AstBinaryExpression*)expression )-> right_expression, d_table, w_table);			
-			break;			
+			EmitExpressionAssociation(unit_type, enclosing_method, ((AstBinaryExpression*)expression )-> left_expression, d_table, w_table);
+			EmitExpressionAssociation(unit_type, enclosing_method, ((AstBinaryExpression*)expression )-> right_expression, d_table, w_table);
+			break;
 		default:
 			break;
 	}
@@ -4023,7 +4025,7 @@ void EmitStatementAssociation(TypeSymbol * unit_type, MethodSymbol * enclosing_m
     			AstLocalVariableStatement *local = (AstLocalVariableStatement *)statement;
 					for (unsigned i = 0; i < local -> NumVariableDeclarators(); i++)
 			        EmitStatementAssociation(unit_type, enclosing_method, local -> VariableDeclarator(i), d_table, w_table, r_table);
-			  }     
+			  }
     			break;
 	    	case Ast::EMPTY_STATEMENT: // JLS 14.5
        		break;
@@ -4032,7 +4034,7 @@ void EmitStatementAssociation(TypeSymbol * unit_type, MethodSymbol * enclosing_m
 					EmitExpressionAssociation(unit_type, enclosing_method, statement -> ExpressionStatementCast() -> expression, d_table, w_table);
         }
 					break;
-	    	case Ast::IF: // JLS 14.8 
+	    	case Ast::IF: // JLS 14.8
 	    	{
 	       	AstIfStatement* if_statement = (AstIfStatement*) statement;
 					EmitExpressionAssociation(unit_type, enclosing_method, if_statement -> expression, d_table, w_table);
@@ -4065,7 +4067,7 @@ void EmitStatementAssociation(TypeSymbol * unit_type, MethodSymbol * enclosing_m
 				case Ast::DO: // JLS 14.11
 				{
 	       	AstDoStatement* sp = statement -> DoStatementCast();
-					EmitExpressionAssociation(unit_type, enclosing_method, sp -> expression, d_table, w_table);					
+					EmitExpressionAssociation(unit_type, enclosing_method, sp -> expression, d_table, w_table);
 					EmitBlockAssociation(unit_type, enclosing_method, sp -> statement, d_table, w_table, r_table);
 				}
 					break;
@@ -4094,8 +4096,8 @@ void EmitStatementAssociation(TypeSymbol * unit_type, MethodSymbol * enclosing_m
 						if (rp -> expression_opt -> kind == Ast::NAME)
 							EmitReadAccess(unit_type, enclosing_method, rp -> expression_opt -> NameCast(), r_table);
 						else
-							EmitExpressionAssociation(unit_type, enclosing_method, rp -> expression_opt, d_table, w_table);			
-					}	
+							EmitExpressionAssociation(unit_type, enclosing_method, rp -> expression_opt, d_table, w_table);
+					}
 				}
 					break;
 				case Ast::SUPER_CALL:
@@ -4164,20 +4166,20 @@ void ExtractStructure(WriteAccessTable *w_table, ReadAccessTable *r_table, Deleg
     AstClassBody* class_body = unit_type -> declaration;
 
     class_body -> Lexify(*lex_stream);
-	
+
     wchar_t* class_name = const_cast<wchar_t*>(unit_type -> Name());
 
     EmitGeneralization(gen_table, unit_type); // to be eliminated.
     cs_table -> AddClassSymbol(unit_type);
-	
+
     unsigned i;
 
     if ((class_body -> NumClassVariables() + class_body -> NumInstanceVariables()) > 0)
     {
-	unit_type -> instances = new SymbolSet();    	
+	unit_type -> instances = new SymbolSet();
 	unit_type -> references = new SymbolSet();
     }
-		
+
     //
     // Process static variables.
     //
@@ -4185,7 +4187,7 @@ void ExtractStructure(WriteAccessTable *w_table, ReadAccessTable *r_table, Deleg
     {
         AstFieldDeclaration* field_decl = class_body -> ClassVariable(i);
 
-	 TypeSymbol *type = (field_decl -> type -> symbol -> IsArray()) 
+	 TypeSymbol *type = (field_decl -> type -> symbol -> IsArray())
 	 					? field_decl -> type -> symbol -> base_type
 	 					: field_decl -> type -> symbol;
   	 unit_type -> references -> AddElement(type);
@@ -4222,7 +4224,7 @@ void ExtractStructure(WriteAccessTable *w_table, ReadAccessTable *r_table, Deleg
     {
         AstFieldDeclaration* field_decl  = class_body -> InstanceVariable(i);
 
-	 TypeSymbol *type = (field_decl -> type -> symbol -> IsArray()) 
+	 TypeSymbol *type = (field_decl -> type -> symbol -> IsArray())
 	 					? field_decl -> type -> symbol -> base_type
 	 					: field_decl -> type -> symbol;
 	 unit_type -> references -> AddElement(type);
@@ -4242,7 +4244,7 @@ void ExtractStructure(WriteAccessTable *w_table, ReadAccessTable *r_table, Deleg
                 assert(init -> IsConstant() && vd -> symbol -> ACC_FINAL());
                 constant_instance_fields.Next() = vd;
 
-		  AstExpression *expr = (init -> kind == Ast::CAST) 
+		  AstExpression *expr = (init -> kind == Ast::CAST)
 							? init -> CastExpressionCast() -> expression
 							: init;
 		  if (expr -> kind == Ast::CLASS_CREATION)
@@ -4250,7 +4252,7 @@ void ExtractStructure(WriteAccessTable *w_table, ReadAccessTable *r_table, Deleg
 			if (!vsym -> concrete_types)
 				vsym -> concrete_types = new SymbolSet(0);
 			vsym -> concrete_types -> AddElement(expr -> ClassCreationExpressionCast() -> class_type -> symbol -> TypeCast());
-		  }			
+		  }
             }
             if (vd->variable_initializer_opt && vd->variable_initializer_opt->ExpressionCast())
 	     {
@@ -4261,7 +4263,7 @@ void ExtractStructure(WriteAccessTable *w_table, ReadAccessTable *r_table, Deleg
 					vd->symbol->aliases = new SymbolSet();
 				vd->symbol->aliases->AddElement(rhs_expression->symbol->VariableCast());
 			}
-	     }			
+	     }
         }
     }
 
@@ -4389,9 +4391,9 @@ void ExtractStructure(WriteAccessTable *w_table, ReadAccessTable *r_table, Deleg
     /*
     for (i = 0; i < unit_type -> NumPrivateAccessConstructors(); i++)
     {
-    
-		Coutput << "private access class ctor: " << class_name << endl; 
-	
+
+		Coutput << "private access class ctor: " << class_name << endl;
+
           MethodSymbol* constructor_sym = unit_type -> PrivateAccessConstructor(i);
           AstConstructorDeclaration* constructor = constructor_sym -> declaration -> ConstructorDeclarationCast();
 
@@ -4454,9 +4456,9 @@ void PrintRelation(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* a
                  		switch(class_body -> ClassBodyDeclaration(j) -> kind)
                  		{
                      		case Ast::FIELD:
-                             		class_body -> ClassBodyDeclaration(j) -> PrintAssociation(assoc_table, 
+                             		class_body -> ClassBodyDeclaration(j) -> PrintAssociation(assoc_table,
 																		  package_name,
-																		  const_cast<wchar_t*>((*lex_stream).NameString(class_body -> identifier_token)), 
+																		  const_cast<wchar_t*>((*lex_stream).NameString(class_body -> identifier_token)),
 																		  *lex_stream);
 						break;
                      		case Ast::CONSTRUCTOR:
@@ -4498,11 +4500,11 @@ void PrintRelation(MethodBodyTable* mb_table, GenTable* gen_table, AssocTable* a
 						counter3++;
 
 						AstMethodDeclaration* cloned_declaration = DYNAMIC_CAST<AstMethodDeclaration*>(method_declaration -> Clone(ast_pool, *lex_stream));
-						mb_table -> addMethodBodyAddr(package_name, _className, _methodName, cloned_declaration);			
-						
-                              		class_body -> ClassBodyDeclaration(j) -> PrintAssociation(assoc_table, 
+						mb_table -> addMethodBodyAddr(package_name, _className, _methodName, cloned_declaration);
+
+                              		class_body -> ClassBodyDeclaration(j) -> PrintAssociation(assoc_table,
 																		  package_name,
-																		  const_cast<wchar_t*>((*lex_stream).NameString(class_body -> identifier_token)), 
+																		  const_cast<wchar_t*>((*lex_stream).NameString(class_body -> identifier_token)),
 																		  *lex_stream);
 						method_declaration -> GoFTag = true;
                          			}
@@ -4550,10 +4552,10 @@ bool WriteAccessTable::IsWrittenBy(VariableSymbol *vsym, MethodSymbol *msym, Del
 	for (p = table -> begin(); p != table -> end(); p++)
 	{
 		if (p -> first == vsym)
-		{ 
+		{
 			if ((p -> second == msym) || (d_table -> TraceCall(p -> second, msym)))
-				return true;				
-		}		
+				return true;
+		}
 	}
 	return false;
 }
@@ -4561,7 +4563,7 @@ bool WriteAccessTable::IsWrittenBy(VariableSymbol *vsym, MethodSymbol *msym, Del
 int DelegationTable::IsBidirectional(TypeSymbol *t1,TypeSymbol *t2)
 {
 	//
-	// return code: 
+	// return code:
 	//
 	// 		3: bidirectional
 	// 		2: -->
@@ -4576,7 +4578,7 @@ int DelegationTable::IsBidirectional(TypeSymbol *t1,TypeSymbol *t2)
 		forward =  ((forward == 0) && (entry->from == t1) && (entry -> to == t2)) ? 1 : forward;
 		backward =  ((backward == 0) && (entry->from == t2) && (entry -> to == t1)) ?  1 : backward;
 	}
-	return (2*forward + backward);	
+	return (2*forward + backward);
 }
 
 bool DelegationTable::TraceCall(MethodSymbol *start, MethodSymbol *target)
@@ -4586,7 +4588,7 @@ bool DelegationTable::TraceCall(MethodSymbol *start, MethodSymbol *target)
 		DelegationEntry *entry = (*table)[i];
 		if (entry -> method == start)
 		{
-			if ((entry -> enclosing == target) 
+			if ((entry -> enclosing == target)
 			||(entry -> enclosing -> Overrides(target))
 			|| TraceCall(entry -> enclosing, target))
 				return true;
@@ -4611,7 +4613,7 @@ int DelegationTable::UniqueDirectedCalls ()
 			if (stack.size() > 0)
 			{
 				multimap<TypeSymbol*, TypeSymbol*>::iterator p = stack.begin();
-				while (((p->first != entry -> from) || (p->second != entry -> to))					
+				while (((p->first != entry -> from) || (p->second != entry -> to))
 					&& (p != stack.end()))
 					p++;
 				if (p == stack.end())
@@ -4637,13 +4639,13 @@ bool DelegationTable::DelegatesSuccessors(TypeSymbol *from, TypeSymbol *to)
 			TypeSymbol *resolve = (entry -> base_opt) ? ResolveType(entry -> base_opt) : NULL;
 			if (resolve && (to != resolve))
 			{
-#ifdef GOF_CONSOLE			
-					Coutput << "From: " << from -> Utf8Name() 
-						<< " To: " << to -> Utf8Name() 
-						<< " RESOLVE: " << resolve -> Utf8Name() 
-						<< " (" << entry -> method -> Utf8Name() << ")" 
+#ifdef GOF_CONSOLE
+					Coutput << "From: " << from -> Utf8Name()
+						<< " To: " << to -> Utf8Name()
+						<< " RESOLVE: " << resolve -> Utf8Name()
+						<< " (" << entry -> method -> Utf8Name() << ")"
 						<< endl;
-#endif			
+#endif
 					return true;
 			}
 		}
@@ -4654,7 +4656,7 @@ bool DelegationTable::DelegatesSuccessors(TypeSymbol *from, TypeSymbol *to)
 TypeSymbol *DelegationTable::ResolveType(AstExpression *expression)
 {
 	assert (expression);
-	
+
 	switch(expression -> kind)
 	{
 		case Ast::NAME:
@@ -4684,7 +4686,7 @@ TypeSymbol *DelegationTable::ResolveType(AstExpression *expression)
 			return  ((MethodSymbol*) method_call -> symbol) -> Type();
 			}
 		case Ast::CAST:
-			return ResolveType(expression -> CastExpressionCast() -> expression);			
+			return ResolveType(expression -> CastExpressionCast() -> expression);
 		case Ast::PARENTHESIZED_EXPRESSION:
 			return ResolveType(expression -> ParenthesizedExpressionCast() -> expression);
 		default:
@@ -4695,18 +4697,18 @@ TypeSymbol *DelegationTable::ResolveType(AstExpression *expression)
 MethodSymbol *DelegationTable::Delegates(TypeSymbol *from, TypeSymbol *to)
 {
 	assert(from -> ACC_INTERFACE() && (! to -> ACC_INTERFACE()));
-	
-	unsigned i = 0;	
+
+	unsigned i = 0;
 	while (i < table -> size())
 	{
 		DelegationEntry *entry = (*table)[i];
 		if (((entry -> from == from) || entry -> from -> Implements(from))
 		&& ((entry -> to == to) || entry -> to -> IsSubclass(to)))
 		{
-#ifdef GOF_CONSOLE	
-			Coutput << entry -> from -> Utf8Name() 
-				<< " delegates " 
-				<< entry -> to -> Utf8Name() 
+#ifdef GOF_CONSOLE
+			Coutput << entry -> from -> Utf8Name()
+				<< " delegates "
+				<< entry -> to -> Utf8Name()
 				<< "::"
 				<< entry -> method -> Utf8Name()
 				<< endl;
@@ -4722,13 +4724,13 @@ void DelegationTable::InsertDelegation(TypeSymbol *from, TypeSymbol *to, AstExpr
 {
 	unsigned i = 0;
 	while ((i < table -> size())
-		&& (((*table)[i] -> from != from) 
-		   ||((*table)[i] -> to != to) 
+		&& (((*table)[i] -> from != from)
+		   ||((*table)[i] -> to != to)
 		   ||((*table)[i] -> base_opt != base_opt)
 		   ||((*table)[i] -> vsym != vsym)
-		   ||((*table)[i] -> method != method) 
+		   ||((*table)[i] -> method != method)
 		   ||((*table)[i] -> enclosing != enclosing)
-		   ||((*table)[i] -> call != call))) i++;	
+		   ||((*table)[i] -> call != call))) i++;
 
 	if (i == table -> size())
 		table -> push_back(new DelegationEntry(from, to, base_opt, vsym, method, enclosing, call));
@@ -4743,22 +4745,22 @@ void DelegationTable::ShowDelegations(TypeSymbol *from, TypeSymbol *to)
 			DelegationEntry *entry = (*table)[i];
 			bool flag1, flag2;
 
-			flag1 = (entry -> from -> ACC_INTERFACE() && entry -> from -> IsSubinterface(from)) 
-				? true 
+			flag1 = (entry -> from -> ACC_INTERFACE() && entry -> from -> IsSubinterface(from))
+				? true
 				: (!entry -> from -> ACC_INTERFACE() && entry -> from -> Implements(from))
 				? true
 				: false;
-				
-			flag2 = (entry -> to -> ACC_INTERFACE() && entry -> to -> IsSubinterface(to)) 
-				? true 
+
+			flag2 = (entry -> to -> ACC_INTERFACE() && entry -> to -> IsSubinterface(to))
+				? true
 				: (!entry -> to -> ACC_INTERFACE() && entry -> to -> Implements(to))
 				? true
 				: false;
 
 			if (flag1 && flag2)
 			{
-				Coutput << entry -> from -> Utf8Name() 
-					<< " --> " 
+				Coutput << entry -> from -> Utf8Name()
+					<< " --> "
 					<< entry -> to -> Utf8Name()
 					<< " (";
 
@@ -4767,7 +4769,7 @@ void DelegationTable::ShowDelegations(TypeSymbol *from, TypeSymbol *to)
 				else if (entry -> base_opt -> kind == Ast::THIS_CALL)
 					Coutput << "this";
 				else if ((entry -> base_opt -> kind == Ast::CAST) && (entry -> base_opt -> CastExpressionCast() -> expression -> kind == Ast::NAME))
-					Coutput << entry -> base_opt -> CastExpressionCast() -> expression -> symbol -> VariableCast() -> Utf8Name();							
+					Coutput << entry -> base_opt -> CastExpressionCast() -> expression -> symbol -> VariableCast() -> Utf8Name();
 				else if ((entry -> base_opt -> kind == Ast::NAME) && (entry -> base_opt -> symbol -> Kind() == Symbol::VARIABLE))
 					Coutput << entry -> base_opt -> symbol -> VariableCast() -> Utf8Name();
 				else if ((entry -> base_opt -> kind == Ast::NAME) && (entry -> base_opt -> symbol -> Kind() == Symbol::TYPE))
@@ -4789,12 +4791,12 @@ void DelegationTable::ShowDelegations(TypeSymbol *from, TypeSymbol *to)
 			DelegationEntry *entry = (*table)[i];
 			bool flag1, flag2;
 
-			flag1 = (!entry -> from -> ACC_INTERFACE() && entry -> from -> IsSubclass(from)) 
-				? true 
+			flag1 = (!entry -> from -> ACC_INTERFACE() && entry -> from -> IsSubclass(from))
+				? true
 				: false;
-				
-			flag2 = (entry -> to -> ACC_INTERFACE() && entry -> to -> IsSubinterface(to)) 
-				? true 
+
+			flag2 = (entry -> to -> ACC_INTERFACE() && entry -> to -> IsSubinterface(to))
+				? true
 				: (!entry -> to -> ACC_INTERFACE() && entry -> to -> Implements(to))
 				? true
 				: false;
@@ -4803,13 +4805,13 @@ void DelegationTable::ShowDelegations(TypeSymbol *from, TypeSymbol *to)
 
 			if (flag1 && flag2)
 			{
-				Coutput << entry -> from -> Utf8Name() 
-					<< " --> " 
+				Coutput << entry -> from -> Utf8Name()
+					<< " --> "
 					<< entry -> to -> Utf8Name()
 					<< " (";
 
 				if (entry -> base_opt)
-					Coutput << ResolveType(entry -> base_opt) -> Utf8Name();	
+					Coutput << ResolveType(entry -> base_opt) -> Utf8Name();
 /*
 				if (entry -> base_opt == NULL)
 					Coutput << "";
@@ -4818,7 +4820,7 @@ void DelegationTable::ShowDelegations(TypeSymbol *from, TypeSymbol *to)
 				else if (entry -> base_opt -> kind == Ast::PARENTHESIZED_EXPRESSION)
 					Coutput << "(...)";
 				else if ((entry -> base_opt -> kind == Ast::CAST) && (entry -> base_opt -> CastExpressionCast() -> expression -> kind == Ast::NAME))
-					Coutput << entry -> base_opt -> CastExpressionCast() -> expression -> symbol -> VariableCast() -> Utf8Name();							
+					Coutput << entry -> base_opt -> CastExpressionCast() -> expression -> symbol -> VariableCast() -> Utf8Name();
 				else if ((entry -> base_opt -> kind == Ast::NAME) && (entry -> base_opt -> symbol -> Kind() == Symbol::VARIABLE))
 					Coutput << entry -> base_opt -> symbol -> VariableCast() -> Utf8Name();
 				else if ((entry -> base_opt -> kind == Ast::NAME) && (entry -> base_opt -> symbol -> Kind() == Symbol::TYPE))
@@ -4860,7 +4862,7 @@ void DelegationTable::DumpTable()
 	for (i = 0; i < table -> size(); i++)
 	{
 		DelegationEntry *entry = (*table)[i];
-		Coutput << entry -> from -> Utf8Name() 
+		Coutput << entry -> from -> Utf8Name()
 			<< " --> "
 			<< entry -> to -> Utf8Name()
 			<< " ("
@@ -4914,7 +4916,7 @@ bool ClassSymbolTable::Converge(TypeSymbol* super1, TypeSymbol* super2)
 			else
 				flag1 = type -> IsSubclass(super1);
 
-		
+
 			if (super2 -> ACC_INTERFACE())
 				flag2 = type -> Implements(super2);
 			else
@@ -4922,7 +4924,7 @@ bool ClassSymbolTable::Converge(TypeSymbol* super1, TypeSymbol* super2)
 		}
 	}
 
-#ifdef GOF_CONSOLE	
+#ifdef GOF_CONSOLE
 	if (flag1 && flag2)
 		Coutput << (--p) -> first << " converges " << super1->Utf8Name() << " and " << super2->Utf8Name() << endl;
 #endif
@@ -4932,7 +4934,7 @@ bool ClassSymbolTable::Converge(TypeSymbol* super1, TypeSymbol* super2)
 
 void ClassSymbolTable::AddClassSymbol(TypeSymbol *sym)
 {
-	table->push_back(sym);	
+	table->push_back(sym);
 }
 
 TypeSymbol *ClassSymbolTable::GetSymbol(wchar_t * cls)
@@ -4941,7 +4943,7 @@ TypeSymbol *ClassSymbolTable::GetSymbol(wchar_t * cls)
 	{
 		TypeSymbol *sym = (*table)[c];
 		if (wcscmp(cls, sym-> Name()) == 0)
-			return sym;			
+			return sym;
 	}
 	return NULL;
 }
@@ -4961,8 +4963,8 @@ bool ClassSymbolTable::IsFamily(TypeSymbol* t1, TypeSymbol *t2)
 				return (t1->Implements(type) && t2->Implements(type));
 			else
 				return (t1->IsSubclass(type) && t2->IsSubclass(type));
-			
-		}		
+
+		}
 	}
 	return false;
 }
@@ -4995,7 +4997,7 @@ vector<TypeSymbol*> *ClassSymbolTable::GetAncestors(TypeSymbol *type)
 void ClassSymbolTable::PrintSubclasses(TypeSymbol* super)
 {
 	assert (! super -> ACC_INTERFACE());
-	
+
 	for (unsigned c = 0; c < table->size(); c++)
 	{
 		if ((!(*table)[c]->ACC_INTERFACE())
@@ -5008,7 +5010,7 @@ void ClassSymbolTable::PrintSubclasses(TypeSymbol* super)
 void ClassSymbolTable::PrintSubinterfaces(TypeSymbol* inter)
 {
 	assert (inter -> ACC_INTERFACE());
-	
+
 	for (unsigned c = 0; c < table->size(); c++)
 	{
 		if (((*table)[c]->ACC_INTERFACE())
@@ -5021,7 +5023,7 @@ void ClassSymbolTable::PrintSubinterfaces(TypeSymbol* inter)
 void ClassSymbolTable::PrintSubtypes(TypeSymbol *inter)
 {
 	assert (inter -> ACC_INTERFACE());
-	
+
 	for (unsigned c = 0; c < table->size(); c++)
 	{
 		if ((!(*table)[c]->ACC_INTERFACE()) && ((*table)[c]->Implements(inter)))
@@ -5030,7 +5032,7 @@ void ClassSymbolTable::PrintSubtypes(TypeSymbol *inter)
 			if ((*table)[c]->IsInner())
 				Coutput << "(inner) ";
 			else if ((*table)[c]->ACC_PRIVATE())
-				Coutput << "(private) ";				
+				Coutput << "(private) ";
 			else
 				Coutput  << " ";
 		}
@@ -5049,13 +5051,13 @@ void ClassSymbolTable::ExpandSubtypes()
 		{
 			Coutput << "subtypes_closure: ";
 			p->second->subtypes_closure->Print();
-			
+
 		}
 		if (p->second->subtypes && p->second->subtypes->Size())
 		{
 			Coutput << "subtypes: ";
 			p->second->subtypes->Print();
-			
+
 		}
 		Coutput << endl;
 	*/
@@ -5067,10 +5069,10 @@ void ClassSymbolTable::ExpandSubtypes()
 				&& !(*table)[p]->subtypes->IsElement((*table)[q])
 				&& (*table)[q]->IsSubtype((*table)[p])
 				)
-					(*table)[p]->subtypes->AddElement((*table)[q]);			
+					(*table)[p]->subtypes->AddElement((*table)[q]);
 			}
 		}
-	}	
+	}
 }
 
 void MethodSymbolTable::AddMethodSymbol(MethodSymbol *sym)
@@ -5088,7 +5090,7 @@ MethodSymbol *MethodSymbolTable::GetSymbol(char *cls, char *mtd, char *fname)
 		if ((strcmp(method_symbol->Utf8Name(), mtd) == 0)
 		&& (strcmp(unit_type -> Utf8Name(), cls) == 0)
 		&& (strcmp(unit_type -> file_symbol -> FileName(), fname) == 0))
-			return method_symbol;			
+			return method_symbol;
 	}
 	return NULL;
 }
@@ -5103,7 +5105,7 @@ Ast *MethodSymbolTable::GetAstDeclaration(wchar_t *pkg, wchar_t *cls, wchar_t *m
 		if ((wcscmp(method_symbol -> Name(), mtd) == 0)
 		&& (wcscmp(unit_type -> Name(), cls) == 0)
 		&& (wcscmp(unit_type -> FileLoc(), pkg) == 0))
-			return method_symbol -> declaration;			
+			return method_symbol -> declaration;
 	}
 	return NULL;
 }
@@ -5120,11 +5122,11 @@ void MethodSymbolTable::PrintDeclaration(char *cls, char *mtd, char *fname)
 	       	MethodSymbol *method_symbol = (*table)[i];
 			TypeSymbol *type = method_symbol -> containing_type;
 			Coutput << "file name: " << type -> file_symbol -> FileName() << endl;
-			Coutput << "class name: " << type -> Utf8Name() << endl;		
+			Coutput << "class name: " << type -> Utf8Name() << endl;
 			method_symbol -> declaration -> Print();
 			Coutput << mtd << ": " << dynamic_cast<AstMethodDeclaration*>(method_symbol -> declaration) -> method_body_opt -> NumStatements() << endl;
 		}
-	}		
+	}
 }
 
 void MethodSymbolTable::PrintBody(char *cls, char *mtd, char *fname)
@@ -5143,13 +5145,13 @@ void MethodSymbolTable::PrintBody(char *cls, char *mtd, char *fname)
 	{
 	       MethodSymbol *method_symbol = (*table)[i];
 		dynamic_cast<AstMethodDeclaration*>(method_symbol -> declaration) -> method_body_opt -> Print();
-	}		
+	}
 }
 
 void MethodSymbolTable::ExpandCallDependents()
 {
 	// does NOT expand typesymbol->call_dependents
-	
+
 	for (unsigned i=0; i<table->size(); i++)
 	{
 		MethodSymbol *method = (*table)[i];
@@ -5168,9 +5170,9 @@ void MethodSymbolTable::ExpandCallDependents()
 					MethodSymbol *msym = sym->MethodCast();
 					msym->invokees->AddElement(method);
 					sym = overridden->invokers->NextElement();
-				}				
+				}
 			}
-			
+
 			if (overridden ->callers)
 			{
 				if (!method->callers)
@@ -5178,7 +5180,7 @@ void MethodSymbolTable::ExpandCallDependents()
 				method->callers->Union(*overridden->callers);
 			}
 		}
-	}	
+	}
 }
 
 void MethodSymbolTable::ClearMarks()
@@ -5187,13 +5189,13 @@ void MethodSymbolTable::ClearMarks()
 	{
 		if ((*table)[i]->mark != 'W')
 			(*table)[i]->mark = 'W';
-	}	
+	}
 }
 
 Env::State EnvTable::getState(wchar_t* var)
 {
 	unsigned i = 0;
-	while ((i < table -> size()) 
+	while ((i < table -> size())
 	&& (wcscmp((*table)[i] -> var, var) != 0))
 		i++;
 	return (*table)[i] -> state;
@@ -5202,7 +5204,7 @@ Env::State EnvTable::getState(wchar_t* var)
 void EnvTable::changeState(wchar_t* var, Env::State state)
 {
 	unsigned i = 0;
-	while ((i < table -> size()) 
+	while ((i < table -> size())
 	&& (wcscmp((*table)[i] -> var, var) != 0))
 		i++;
 
@@ -5260,7 +5262,7 @@ vector<wchar_t*>* GenTable::getAncestors(GenTable::Kind kind, wchar_t* cls, wcha
 		//*&& (wcscmp((entry -> package_name), pkg) == 0))
 			flag = true;
 		else
-			i++;			
+			i++;
 	}
 
 	Gen* entry = (*table)[i];
@@ -5284,23 +5286,23 @@ vector<wchar_t*>* GenTable::getAncestors(GenTable::Kind kind, wchar_t* cls, wcha
 		if ((entry -> kind != Gen::INTERFACE) && (entry -> interfaces))
 		{
 			unsigned j;
-			for (j = 0; j < entry -> interfaces -> size(); j++)			
+			for (j = 0; j < entry -> interfaces -> size(); j++)
 				ancestors -> push_back((*entry -> interfaces)[j]);
 		}
 
 		if (entry -> kind == Gen::INTERFACE)
 			ancestors -> push_back(entry -> class_name);
-		return ancestors;			
+		return ancestors;
 	}
 	return NULL;
 }
 
 wchar_t* GenTable::getSuper(wchar_t* cls, wchar_t* pkg)
-{	
+{
 	unsigned i = 0;
 	Gen*entry = NULL;
 	while (!entry && (i < table -> size()))
-	{		
+	{
 		if (wcscmp(((*table)[i] -> class_name), cls) == 0)
 		{
 			if ((((*table)[i] -> package_name == NULL) && (pkg == NULL))
@@ -5310,7 +5312,7 @@ wchar_t* GenTable::getSuper(wchar_t* cls, wchar_t* pkg)
 				i++;
 		}
 		else
-			i++;			
+			i++;
 	}
 	return (entry)?entry -> super_name:NULL;
 }
@@ -5320,7 +5322,7 @@ vector<wchar_t*>* GenTable::getSuccessors(wchar_t* super, GenTable::Kind kind)
 	vector<wchar_t*>* list = NULL;
 	unsigned i;
 	if (kind == GenTable::IMPL)
-	{		
+	{
 		for  (i = 0; i < table -> size(); i++)
 		{
 			Gen* entry = (*table)[i];
@@ -5354,7 +5356,7 @@ vector<wchar_t*>* GenTable::getSuccessors(wchar_t* super, GenTable::Kind kind)
 						list -> push_back(entry -> class_name);
 				}
 			}
-		}	
+		}
 	}
 	return list;
 }
@@ -5443,7 +5445,7 @@ wchar_t* AssocTable::getName(Assoc::Kind kind, Assoc::Mode mode, wchar_t* type, 
 		else
 			i++;
 	}
-	return (flag) ? entry -> name : NULL;	
+	return (flag) ? entry -> name : NULL;
 }
 
 wchar_t* AssocTable::getType(Assoc::Kind kind, Assoc::Mode mode, wchar_t* name, wchar_t* pkg, wchar_t* cls)
@@ -5464,7 +5466,7 @@ wchar_t* AssocTable::getType(Assoc::Kind kind, Assoc::Mode mode, wchar_t* name, 
 		else
 			i++;
 	}
-	return (flag) ? entry -> type : NULL;	
+	return (flag) ? entry -> type : NULL;
 }
 
 bool AssocTable::isInvoked(wchar_t* name, wchar_t* cls)
@@ -5514,15 +5516,15 @@ void MethodBodyTable::dumpTable()
 	for (i = 0; i < table -> size(); i++)
 	{
 		MethodBodyAddr* entry = (*table)[i];
-		Coutput << entry -> class_name 
+		Coutput << entry -> class_name
 			     << "::"
-			     << entry -> method_name 
+			     << entry -> method_name
 			     << endl;
 
 		if (entry -> ast_location -> kind == Ast::CONSTRUCTOR)
 		{
 			Coutput << L"***constructor***" << endl;
-			dynamic_cast<AstConstructorDeclaration*>(entry -> ast_location) -> Print();			
+			dynamic_cast<AstConstructorDeclaration*>(entry -> ast_location) -> Print();
 		}
 		else
 		{
@@ -5542,7 +5544,7 @@ void GenTable::dumpTable()
 		Gen* entry = (*table)[i];
 		if (entry -> kind == Gen::CLASS)
 		{
-			Coutput << entry -> class_name << " |--> " 
+			Coutput << entry -> class_name << " |--> "
 			 	     << ((entry -> super_name) ? entry -> super_name : L"java.lang.Object")
 			     	     << " ";
 
@@ -5555,7 +5557,7 @@ void GenTable::dumpTable()
 					unsigned end = entry -> interfaces -> size() - 1;
 
 					Coutput << (*(entry -> interfaces))[j];
-			
+
 					if (j < end)
 						Coutput << ", ";
 				}
@@ -5574,7 +5576,7 @@ void GenTable::dumpTable()
 					unsigned end = entry -> interfaces -> size() - 1;
 
 					Coutput << (*(entry -> interfaces))[j];
-			
+
 					if (j < end)
 						Coutput << ", ";
 				}
@@ -5661,7 +5663,7 @@ void Statechart::Print()
 				Coutput << "CONDITION state.";
 				break;
 			default:
-				break;			
+				break;
 		}
 		Coutput << endl;
 
@@ -5691,7 +5693,7 @@ void Flatten::BuildSummary()
 		for (p = (summary[i]->next).begin(); p != (summary[i]->next).end(); p++)
 			(summary[*p]->previous).insert(i);
 	}
-}	
+}
 bool Flatten::Compare(AstExpression *b1, AstExpression *b2)
 {
 	if (b1->symbol && (b1->symbol == b2->symbol))
@@ -5700,7 +5702,7 @@ bool Flatten::Compare(AstExpression *b1, AstExpression *b2)
 	{
 		if (b1->kind == Ast::BINARY)
 		{
-			return (Compare(b1->BinaryExpressionCast()->left_expression, b2->BinaryExpressionCast()->left_expression) 
+			return (Compare(b1->BinaryExpressionCast()->left_expression, b2->BinaryExpressionCast()->left_expression)
 				 && Compare(b1->BinaryExpressionCast()->right_expression, b2->BinaryExpressionCast()->right_expression));
 		}
 		else if (b1->kind == Ast::PRE_UNARY)
@@ -5744,7 +5746,7 @@ Flatten::TransitionTag Flatten::TransitionFlow(AstExpression *b1, AstExpression 
 		{
 			bool neg1 = ((v1[i]->kind == Ast::PRE_UNARY) && (v1[i]->PreUnaryExpressionCast()->Tag() == AstPreUnaryExpression::NOT));
 			AstExpression *expr1 = (neg1) ? v1[i]->PreUnaryExpressionCast()->expression : v1[i];
-			
+
 			for (unsigned j = 0; j < v2.size(); j++)
 			{
 				bool neg2 = ((v2[j]->kind == Ast::PRE_UNARY) && (v2[j]->PreUnaryExpressionCast()->Tag() == AstPreUnaryExpression::NOT));
@@ -5771,7 +5773,7 @@ void Flatten::PushCondition(AstExpression *expression)
 		condition->conjoint = true;
 		condition->BinaryExpressionCast()->left_expression = temp;
 		condition->BinaryExpressionCast()->right_expression = expression;
-	}	
+	}
 }
 void Flatten::PopCondition()
 {
@@ -5783,7 +5785,7 @@ void Flatten::PopCondition()
 			{
 				AstExpression *temp = condition->BinaryExpressionCast()->right_expression;
 				if (temp->kind == Ast::PRE_UNARY)
-				{					
+				{
 					condition->BinaryExpressionCast()->right_expression = temp->PreUnaryExpressionCast()->expression;
 				}
 				else
@@ -5834,9 +5836,9 @@ void Flatten::visit(AstWhileStatement* while_statement)
 void Flatten::visit(AstForStatement* for_statement)
 {
 	UpdateSummary();
-	
-	PushCondition(for_statement->end_expression_opt);	
-	visit(for_statement->statement);	
+
+	PushCondition(for_statement->end_expression_opt);
+	visit(for_statement->statement);
 	UpdateSummary();
 
 	PopCondition();
@@ -5851,7 +5853,7 @@ void Flatten::visit(AstSynchronizedStatement* synch_statement)
 }
 void Flatten::visit(AstStatement *statement)
 {
-	switch(statement -> kind) 
+	switch(statement -> kind)
 	{
 		case Ast::IF:
 			visit(statement -> IfStatementCast());
@@ -5873,13 +5875,13 @@ void Flatten::visit(AstStatement *statement)
 			break;
 		case Ast::BLOCK:
 			visit(statement -> BlockCast());
-			break;			
+			break;
 		case Ast::RETURN:
 			visit(statement -> ReturnStatementCast());
 			break;
 		case Ast::LOCAL_VARIABLE_DECLARATION:
 			visit(statement -> LocalVariableStatementCast());
-			break;		
+			break;
 		default:
 			statements.push_back(statement);
 			break;
@@ -5904,7 +5906,7 @@ void Flatten::visit(AstExpression *expression)
 			break;
 		case Ast::CALL:
 			visit(expression->MethodInvocationCast());
-			break;			
+			break;
 		default:
 			statements.push_back(expression);
 			break;
@@ -5912,7 +5914,7 @@ void Flatten::visit(AstExpression *expression)
 }
 void visit(AstConditionalExpression *cond_expression)
 {
-	// TODO: should add conditional BLOCK statements 
+	// TODO: should add conditional BLOCK statements
 }
 void Flatten::visit(AstMethodInvocation* call)
 {
@@ -5938,7 +5940,7 @@ void Flatten::visit(AstIfStatement* statement)
 	}
 	set<signed> pred2(pred);
 	AstExpression *top = condition;
-	
+
 	PushCondition(statement->expression);
 	//visit(statement->expression);
 	visit(statement->true_statement);
@@ -5961,8 +5963,8 @@ void Flatten::visit(AstIfStatement* statement)
 	}
 	else
 	{
-		if ((*summary[summary.size() - 1]->statements)[summary[summary.size() - 1]->statements->size() - 1]->kind != Ast::RETURN) 
-			pred.insert(summary.size() - 1);		
+		if ((*summary[summary.size() - 1]->statements)[summary[summary.size() - 1]->statements->size() - 1]->kind != Ast::RETURN)
+			pred.insert(summary.size() - 1);
 		// pred <<Union>> pred2
 		set<signed>::iterator p;
 		for (p = pred2.begin(); p != pred2.end(); p++)
@@ -5993,7 +5995,7 @@ void Flatten::visit(AstReturnStatement* statement)
 	capture_trace = true;
 }
 void Flatten::UpdateSummary()
-{	
+{
 	if (statements.size())
 	{
 		Snapshot *snapshot = new Snapshot();
@@ -6004,7 +6006,7 @@ void Flatten::UpdateSummary()
 			snapshot->condition = condition->Clone(ast_pool)->ExpressionCast();
 		}
 		snapshot->index = summary.size();
-		set<signed>::iterator p;	
+		set<signed>::iterator p;
 		for(p = pred.begin(); p != pred.end(); p++)
 		{
 			if (*p >= 0)
@@ -6032,12 +6034,12 @@ void Flatten::DumpSummary()
 		Coutput << "In-coming snapshots: ";
 		for (p = (snapshot->previous).begin(); p != (snapshot->previous).end(); p++)
 			Coutput << *p << " ";
-		Coutput << endl;		
+		Coutput << endl;
 		// outgoiong edges
 		Coutput << "Out-going snapshots: ";
 		for (p = (snapshot->next).begin(); p != (snapshot->next).end(); p++)
 			Coutput << *p << " ";
-		Coutput << endl;		
+		Coutput << endl;
 		Coutput << "STATEMENTS:" << endl;
 		unsigned j;
 		for (j = 0; j < snapshot->statements->size(); j++)
@@ -6046,7 +6048,7 @@ void Flatten::DumpSummary()
 			(*snapshot->statements)[j]->Print();
 		}
 		Coutput << "CONDITIONS:" << endl;
-		
+
 		if (snapshot->condition)
 			snapshot->condition->Print();
 		Coutput << endl;
@@ -6175,7 +6177,7 @@ Control::Control(char** arguments, Option& option_)
     , input_files_processed(0)
     , class_files_read(0)
     , class_files_written(0)
-    , line_count(0)   
+    , line_count(0)
 #endif // JIKES_DEBUG
     // Package cache.  unnamed and lang are initialized in constructor body.
     , annotation_package(NULL)
@@ -6184,7 +6186,7 @@ Control::Control(char** arguments, Option& option_)
 {
 PINOT_DEBUG = (getenv("PINOT_DEBUG")) ? true :  false;
 option.bytecode = false;
-	
+
 // breakpoint 0.
 // getchar();
     r_table = new ReadAccessTable();
@@ -6429,7 +6431,7 @@ option.bytecode = false;
 	ms_table->ExpandCallDependents();
 	cs_table->ExpandSubtypes();
 // breakpoint 2.
-// getchar();	
+// getchar();
 
     Coutput << endl;
     Coutput << "--------- Original GoF Patterns ----------" << endl << endl;
@@ -6439,7 +6441,7 @@ option.bytecode = false;
 
     FindChainOfResponsibility(cs_table, ms_table, d_table, ast_pool);
     FindBridge(cs_table, d_table);
-    FindStrategy1(cs_table, d_table, w_table, r_table, ms_table);	
+    FindStrategy1(cs_table, d_table, w_table, r_table, ms_table);
     //FindFlyweight(mb_table, gen_table, assoc_table);
     FindFlyweight1(ms_table);
     FindFlyweight2(cs_table, w_table, r_table);
@@ -6453,13 +6455,13 @@ option.bytecode = false;
     FindProxy(cs_table, d_table);
     FindAdapter(cs_table);
     FindFacade(cs_table);
-    
+
     //    FindThreadSafeInterface(d_table);
 
 #ifdef PLUGIN_ENABLED
     Coutput << endl;
     Coutput << "--------- User-defined Patterns ----------" << endl<< endl;
-	
+
 
   void *handle = dlopen("/home/madonna/sandbox/pinot/src/plugins.dll", RTLD_LAZY);
   if (!handle)
@@ -6506,7 +6508,7 @@ option.bytecode = false;
     Coutput << "Adapter";
     Coutput.width(30 - sizeof("Adapter"));
     Coutput << nAdapter << endl;
-    
+
     Coutput << "Bridge";
     Coutput.width(30 - sizeof("Bridge"));
     Coutput << nBridge<< endl;
@@ -6533,7 +6535,7 @@ option.bytecode = false;
 		Coutput << "------------------------------" << endl;
     Coutput << "Behavioral Patterns" << endl;
     Coutput << "==============================" << endl;
-    
+
     Coutput << "Chain of Responsibility";
     Coutput.width(30 - sizeof("Chain of Responsibility"));
     Coutput << nCoR<< endl;
@@ -6562,7 +6564,7 @@ option.bytecode = false;
     Coutput.width(30 - sizeof("Visitor"));
     Coutput << nVisitor << endl;
 		Coutput << "------------------------------" << endl;
-		Coutput << endl;	
+		Coutput << endl;
 
     Coutput << "Number of classes processed: " << gen_table -> getSize() << endl;
     Coutput << "Number of files processed: " << num_files << endl;
@@ -6821,7 +6823,7 @@ option.bytecode = false;
         }
     }
 
-	
+
     delete ast_pool;
     delete main_file_clone; // delete the clone of the main source file...
     delete [] input_files;
@@ -7620,7 +7622,7 @@ void Control::ProcessBodies(TypeSymbol* type, StoragePool* ast_pool)
 	     //
 	     for (unsigned k = 0; k < types -> Length(); k++)
 	     {
-	     		TypeSymbol *type = (*types)[k];			
+	     		TypeSymbol *type = (*types)[k];
 	      		ExtractStructure(w_table, r_table, d_table, cs_table, mb_table, ms_table, gen_table, assoc_table, type, ast_pool);
 	     }
 
@@ -7806,8 +7808,7 @@ void Control::CleanUp(FileSymbol* file_symbol)
     }
 }
 
- 
+
 #ifdef HAVE_JIKES_NAMESPACE
 } // Close namespace Jikes block
 #endif
-
