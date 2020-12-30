@@ -10,9 +10,9 @@
 #ifndef error_INCLUDED
 #define error_INCLUDED
 
-#include "declarations/platform.h"
-#include "declarations/tuple.h"
-#include "declarations/jikes/jikesapi.h"
+#include "../platform.h"
+#include "../tuple.h"
+#include "jikesapi.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

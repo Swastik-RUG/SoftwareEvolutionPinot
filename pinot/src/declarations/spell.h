@@ -11,8 +11,8 @@
 #ifndef spell_INCLUDED
 #define spell_INCLUDED
 
-#include "declarations/platform.h"
-#include "declarations/case.h"
+#include "../declarations/platform.h"
+#include "../declarations/case.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

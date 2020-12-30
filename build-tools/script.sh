@@ -2,7 +2,7 @@
 
 SRC_DIR="/mnt/d/Academics/SoftwareEvolution/pinot/src"
 AST_DIR="/mnt/d/Academics/SoftwareEvolution/pinot/src/ast_dump"
-CPA_FILENAME="Pinotv1.cpa"
+CPA_FILENAME="Pinotv_partitioned.cpa"
 file_ext="cpp"
 EXCLUDE_LIST=""
 
@@ -18,7 +18,7 @@ do
           echo "Ignored :$filename....."
         else
           echo "processing :$filename....."
-	  clang++ -c -ferror-limit=0 -fno-delayed-template-parsing -fno-color-diagnostics -Xclang -ast-dump "$entry" > "$AST_DIR/$filename.ast" 
+	  clang++ -c -ferror-limit=0 -fno-delayed-template-parsing -fno-color-diagnostics -Wno-everything -Xclang -ast-dump "$entry" > "$AST_DIR/$filename.ast" 
         fi       
 done
 

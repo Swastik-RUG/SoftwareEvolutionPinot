@@ -1,9 +1,9 @@
 #ifndef FlyWeightAnalysis_NAME_H
 #define FlyWeightAnalysis_NAME_H
 
-#include "declarations/platform.h"
-#include "declarations/symbol/symbol.h"
-#include "declarations/tuple.h"
+#include "../declarations/platform.h"
+#include "../declarations/symbol/symbol.h"
+#include "../declarations/tuple.h"
 #include <vector>
 
 #ifdef HAVE_JIKES_NAMESPACE

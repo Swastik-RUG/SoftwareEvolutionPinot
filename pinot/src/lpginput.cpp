@@ -8,6 +8,6 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "declarations/lpginput.h"
+#include "./declarations/lpginput.h"
 #include "javadcl.h"
 

@@ -10,7 +10,7 @@
 #ifndef long_INCLUDED
 #define long_INCLUDED
 
-#include "declarations/platform.h"
+#include "../declarations/platform.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

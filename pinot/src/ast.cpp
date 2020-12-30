@@ -8,9 +8,9 @@
 //
 
 #include "ast.h"
-#include "declarations/symbol/symbol.h"
+#include "./declarations/symbol/symbol.h"
 #ifdef JIKES_DEBUG
-#include "declarations/stream.h"
+#include "./declarations/stream.h"
 #endif // JIKES_DEBUG
 
 #include "storagepool.h"

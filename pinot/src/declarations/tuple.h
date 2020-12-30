@@ -11,7 +11,7 @@
 #ifndef tuple_INCLUDED
 #define tuple_INCLUDED
 
-#include "declarations/jikes/jikesapi.h"
+#include "../declarations/jikes/jikesapi.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

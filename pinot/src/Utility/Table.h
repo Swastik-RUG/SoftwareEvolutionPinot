@@ -1,9 +1,9 @@
 #ifndef Table_NAME_H
 #define Table_NAME_H
 
-#include "declarations/platform.h"
-#include "declarations/symbol/symbol.h"
-#include "declarations/tuple.h"
+#include "../declarations/platform.h"
+#include "../declarations/symbol/symbol.h"
+#include "../declarations/tuple.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes

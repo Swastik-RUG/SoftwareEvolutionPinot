@@ -7,12 +7,12 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "declarations/option.h"
+#include "./declarations/option.h"
 #include "javasym.h"
-#include "declarations/jikes/error.h"
-#include "declarations/case.h"
+#include "./declarations/jikes/error.h"
+#include "./declarations/case.h"
 #include "tab.h"
-#include "declarations/stream.h"
+#include "./declarations/stream.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

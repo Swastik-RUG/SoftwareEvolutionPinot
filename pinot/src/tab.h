@@ -11,7 +11,7 @@
 #ifndef tab_INCLUDED
 #define tab_INCLUDED
 
-#include "declarations/platform.h"
+#include "./declarations/platform.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

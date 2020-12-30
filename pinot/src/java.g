@@ -799,10 +799,10 @@ void Parser::InitRuleAction()
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "declarations/platform.h"
+#include "./declarations/platform.h"
 #include "parser.h"
 #include "ast.h"
-#include "declarations/stream.h"
+#include "./declarations/stream.h"
 
 #include "storagepool.h"
 

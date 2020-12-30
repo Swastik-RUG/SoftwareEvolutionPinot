@@ -7,13 +7,13 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "declarations/scanner.h"
-#include "declarations/control.h"
-#include "declarations/jikes/error.h"
+#include "./declarations/scanner.h"
+#include "./declarations/control.h"
+#include "./declarations/jikes/error.h"
 #include "javadef.h"
 #include "javasym.h"
-#include "declarations/option.h"
-#include "declarations/code.h"
+#include "./declarations/option.h"
+#include "./declarations/code.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

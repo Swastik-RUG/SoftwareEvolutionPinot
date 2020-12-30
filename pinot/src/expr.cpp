@@ -7,16 +7,16 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "declarations/platform.h"
-#include "declarations/double.h"
+#include "./declarations/platform.h"
+#include "./declarations/double.h"
 #include "parser.h"
 #include "semantic.h"
-#include "declarations/control.h"
-#include "declarations/table.h"
-#include "declarations/tuple.h"
-#include "declarations/spell.h"
-#include "declarations/option.h"
-#include "declarations/stream.h"
+#include "./declarations/control.h"
+#include "./declarations/table.h"
+#include "./declarations/tuple.h"
+#include "./declarations/spell.h"
+#include "./declarations/option.h"
+#include "./declarations/stream.h"
 
 #include "storagepool.h"
 

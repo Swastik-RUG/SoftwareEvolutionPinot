@@ -8,7 +8,7 @@
 //
 
 #include "ast.h"
-#include "declarations/stream.h"
+#include "./declarations/stream.h"
 
 #ifdef JIKES_DEBUG
 

@@ -1,10 +1,10 @@
 #ifndef SingletonAnalysis_NAME_H
 #define SingletonAnalysis_NAME_H
 
-#include "declarations/platform.h"
-#include "declarations/symbol/symbol.h"
-#include "declarations/tuple.h"
-#include "set.h"
+#include "../declarations/platform.h"
+#include "../declarations/symbol/symbol.h"
+#include "../declarations/tuple.h"
+#include "../set.h"
 #include <vector>
 
 #ifdef HAVE_JIKES_NAMESPACE

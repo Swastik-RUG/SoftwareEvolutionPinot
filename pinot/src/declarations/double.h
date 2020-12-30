@@ -60,8 +60,8 @@
 #ifndef double_INCLUDED
 #define double_INCLUDED
 
-#include "declarations/platform.h"
-#include "declarations/long.h"
+#include "../declarations/platform.h"
+#include "../declarations/long.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

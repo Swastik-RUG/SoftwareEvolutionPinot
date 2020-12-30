@@ -9,7 +9,7 @@
 
 #include "parser.h"
 #include "ast.h"
-#include "declarations/stream.h"
+#include "./declarations/stream.h"
 
 #include "storagepool.h"
 

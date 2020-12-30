@@ -57,9 +57,9 @@
 //
 //
 
-#include "declarations/double.h"
-#include "declarations/long.h"
-#include "declarations/code.h"
+#include "./declarations/double.h"
+#include "./declarations/long.h"
+#include "./declarations/code.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

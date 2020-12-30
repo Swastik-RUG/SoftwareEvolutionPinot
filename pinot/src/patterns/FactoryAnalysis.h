@@ -1,9 +1,9 @@
 #ifndef FactoryAnalysis_NAME_H
 #define FactoryAnalysis_NAME_H
 
-#include "declarations/platform.h"
-#include "declarations/symbol/symbol.h"
-#include "declarations/tuple.h"
+#include "../declarations/platform.h"
+#include "../declarations/symbol/symbol.h"
+#include "../declarations/tuple.h"
 #include <vector>
 
 #ifdef HAVE_JIKES_NAMESPACE

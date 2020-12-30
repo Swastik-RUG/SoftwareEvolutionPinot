@@ -7,11 +7,11 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "declarations/symbol/lookup.h"
-#include "declarations/symbol/symbol.h"
-#include "declarations/code.h"
+#include "./declarations/symbol/lookup.h"
+#include "./declarations/symbol/symbol.h"
+#include "./declarations/code.h"
 #include "ast.h"
-#include "declarations/case.h"
+#include "./declarations/case.h"
 #include <cwchar>
 
 #ifdef HAVE_JIKES_NAMESPACE

@@ -10,10 +10,10 @@
 #ifndef symbol_INCLUDED
 #define symbol_INCLUDED
 
-#include "declarations/platform.h"
+#include "../platform.h"
 #include "lookup.h"
-#include "declarations/access.h"
-#include "declarations/tuple.h"
+#include "../access.h"
+#include "../tuple.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

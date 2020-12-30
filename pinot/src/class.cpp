@@ -8,10 +8,10 @@
 //
 
 #include "class.h"
-#include "declarations/code.h"
-#include "declarations/control.h"
-#include "declarations/op.h"
-#include "declarations/option.h"
+#include "./declarations/code.h"
+#include "./declarations/control.h"
+#include "./declarations/op.h"
+#include "./declarations/option.h"
 #include "semantic.h"
 #include "zip.h"
 

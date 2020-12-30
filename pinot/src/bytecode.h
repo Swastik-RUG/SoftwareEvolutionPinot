@@ -9,13 +9,13 @@
 #ifndef bytecode_INCLUDED
 #define bytecode_INCLUDED
 
-#include "declarations/platform.h"
-#include "declarations/tuple.h"
+#include "./declarations/platform.h"
+#include "./declarations/tuple.h"
 #include "ast.h"
 #include "class.h"
-#include "declarations/op.h"
-#include "declarations/segment.h"
-#include "declarations/control.h"
+#include "./declarations/op.h"
+#include "./declarations/segment.h"
+#include "./declarations/control.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

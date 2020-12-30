@@ -11,9 +11,9 @@
 #ifndef zip_INCLUDED
 #define zip_INCLUDED
 
-#include "declarations/platform.h"
+#include "./declarations/platform.h"
 
-#include "declarations/tuple.h"
+#include "./declarations/tuple.h"
 #include "unzip.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
