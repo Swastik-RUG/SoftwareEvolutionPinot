@@ -6,15 +6,15 @@
 // Copyright (C) 1996, 2004 IBM Corporation and others.  All Rights Reserved.
 // You must accept the terms of that agreement to use this software.
 //
-#include "platform.h"
+#include "declarations/platform.h"
 #include "semantic.h"
-#include "control.h"
+#include "declarations/control.h"
 #include "depend.h"
-#include "table.h"
-#include "tuple.h"
-#include "spell.h"
-#include "option.h"
-#include "stream.h"
+#include "declarations/table.h"
+#include "declarations/tuple.h"
+#include "declarations/spell.h"
+#include "declarations/option.h"
+#include "declarations/stream.h"
 
 #include "storagepool.h"
 

@@ -124,13 +124,13 @@ HEADERS = $(include_HEADERS) $(noinst_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run aclocal-1.8
+ACLOCAL = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run aclocal-1.8
 AMDEP_FALSE = #
 AMDEP_TRUE = 
-AMTAR = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run tar
-AUTOCONF = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run autoconf
-AUTOHEADER = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run autoheader
-AUTOMAKE = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run automake-1.8
+AMTAR = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run tar
+AUTOCONF = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run autoconf
+AUTOHEADER = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run autoheader
+AUTOMAKE = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run automake-1.8
 AWK = gawk
 CPPFLAGS = 
 CXX = g++
@@ -157,7 +157,7 @@ LTLIBOBJS =
 MAINT = #
 MAINTAINER_MODE_FALSE = 
 MAINTAINER_MODE_TRUE = #
-MAKEINFO = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run makeinfo
+MAKEINFO = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run makeinfo
 OBJEXT = o
 PACKAGE = jikes
 PACKAGE_BUGREPORT = 
@@ -193,14 +193,14 @@ host_os = linux-gnu
 host_vendor = unknown
 includedir = ${prefix}/include
 infodir = ${prefix}/info
-install_sh = /mnt/c/Code/pinottest/pinot/install-sh
+install_sh = /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localstatedir = ${prefix}/var
 mandir = ${prefix}/man
 mkdir_p = mkdir -p -- .
 oldincludedir = /usr/include
-prefix = /mnt/c/Code/pinottest/PREFIX
+prefix = /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/build
 program_transform_name = s,x,x,
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
@@ -247,43 +247,43 @@ unzip.cpp \
 zip.cpp
 
 include_HEADERS = \
-jikesapi.h
+declarations/jikes/jikesapi.h
 
 noinst_HEADERS = \
-access.h \
+declarations/access.h \
 ast.h \
 bytecode.h \
-case.h \
+declarations/case.h \
 class.h \
-code.h \
-control.h \
+declarations/code.h \
+declarations/control.h \
 depend.h \
 diagnose.h \
-double.h \
-error.h \
+declarations/double.h \
+declarations/jikes/error.h \
 javaact.h \
 javadcl.h \
 javadef.h \
 javaprs.h \
 javasym.h \
-jikesapi.h \
-long.h \
-lookup.h \
-lpginput.h \
-op.h \
-option.h \
+declarations/jikes/jikesapi.h \
+declarations/long.h \
+declarations/symbol/lookup.h \
+declarations/lpginput.h \
+declarations/op.h \
+declarations/option.h \
 parser.h \
-platform.h \
-scanner.h \
-segment.h \
+declarations/platform.h \
+declarations/scanner.h \
+declarations/segment.h \
 semantic.h \
 set.h \
-spell.h \
-stream.h \
-symbol.h \
+declarations/spell.h \
+declarations/stream.h \
+declarations/symbol/symbol.h \
 tab.h \
-table.h \
-tuple.h \
+declarations/table.h \
+declarations/tuple.h \
 unzip.h \
 zip.h
 
@@ -300,7 +300,7 @@ EXTRA_DIST = java.g gencode.java
 #javaprs.h \
 #javasym.h
 
-#BUILT_SOURCES = $(PARSER_FILES) code.cpp code.h
+#BUILT_SOURCES = $(PARSER_FILES) code.cpp declarations/code.h
 
 # FIXME: hardcoded at the moment, makes bootstrap difficult...
 #JAVA = java
@@ -655,7 +655,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-includeHEADERS \
 #	(cd $(srcdir); $(JAVA) -classpath . gencode)
 #	@mv -f code.tmp $@
 
-#code.cpp code.h: code.stamp
+#code.cpp declarations/code.h: code.stamp
 #	@if test -f $@; then :; else \
 #	  rm -f code.stamp; \
 #	  $(MAKE) $(AM_MAKEFLAGS) code.stamp; \

@@ -41,44 +41,44 @@ unzip.cpp \
 zip.cpp
 
 include_HEADERS = \
-jikesapi.h
+declarations/jikes/jikesapi.h
 
 noinst_HEADERS = \
-access.h \
+declarations/access.h \
 ast.h \
 ControlAnalysis.h \
 bytecode.h \
-case.h \
+declarations/case.h \
 class.h \
-code.h \
-control.h \
+declarations/code.h \
+declarations/control.h \
 depend.h \
 diagnose.h \
-double.h \
-error.h \
+declarations/double.h \
+declarations/jikes/error.h \
 javaact.h \
 javadcl.h \
 javadef.h \
 javaprs.h \
 javasym.h \
-jikesapi.h \
-long.h \
-lookup.h \
-lpginput.h \
-op.h \
-option.h \
+declarations/jikes/jikesapi.h \
+declarations/long.h \
+declarations/symbol/lookup.h \
+declarations/lpginput.h \
+declarations/op.h \
+declarations/option.h \
 parser.h \
-platform.h \
-scanner.h \
-segment.h \
+declarations/platform.h \
+declarations/scanner.h \
+declarations/segment.h \
 semantic.h \
 set.h \
-spell.h \
-stream.h \
-symbol.h \
+declarations/spell.h \
+declarations/stream.h \
+declarations/symbol/symbol.h \
 tab.h \
-table.h \
-tuple.h \
+declarations/table.h \
+declarations/tuple.h \
 unzip.h \
 zip.h
 
@@ -96,7 +96,7 @@ javadef.h \
 javaprs.h \
 javasym.h
 
-BUILT_SOURCES = $(PARSER_FILES) code.cpp code.h
+BUILT_SOURCES = $(PARSER_FILES) code.cpp declarations/code.h
 
 javaact.stamp: $(srcdir)/java.g
 	@rm -f javaact.tmp

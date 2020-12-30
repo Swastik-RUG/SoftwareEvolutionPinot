@@ -7,10 +7,10 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "platform.h"
+#include "declarations/platform.h"
 #include "javasym.h"
-#include "control.h"
-#include "stream.h"
+#include "declarations/control.h"
+#include "declarations/stream.h"
 
 #ifdef JIKES_DEBUG
 

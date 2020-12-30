@@ -7,16 +7,16 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "symbol.h"
-#include "stream.h"
-#include "control.h"
+#include "declarations/symbol/symbol.h"
+#include "declarations/stream.h"
+#include "declarations/control.h"
 #include "ast.h"
 #include "semantic.h"
-#include "table.h"
+#include "declarations/table.h"
 #include "zip.h"
 #include "set.h"
-#include "case.h"
-#include "option.h"
+#include "declarations/case.h"
+#include "declarations/option.h"
 
 #include "storagepool.h"
 

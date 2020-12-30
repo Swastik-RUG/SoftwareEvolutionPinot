@@ -189,7 +189,7 @@ class gencode
             }
         }
 
-        System.out.println("Generating code.h with shift of " + bestShift);
+        System.out.println("Generating declarations/code.h with shift of " + bestShift);
         int blkSize = 1 << bestShift;
         char[] blocks = new char[info.length >> bestShift];
         for (int j = 0; j < info.length; j += blkSize)
@@ -201,10 +201,10 @@ class gencode
         }
 
         //
-        // Process the code.h file
+        // Process the declarations/code.h file
         //
-        PrintStream hfile = new PrintStream(new FileOutputStream("code.h"));
-        printHeader(hfile, new String[] {"\"platform.h\""});
+        PrintStream hfile = new PrintStream(new FileOutputStream("declarations/code.h"));
+        printHeader(hfile, new String[] {"\"declarations/platform.h\""});
         hfile.println("#ifndef code_INCLUDED");
         hfile.println("#define code_INCLUDED");
         hfile.println();
@@ -349,7 +349,7 @@ class gencode
         //
         System.out.println("Generating code.cpp");
         PrintStream cfile = new PrintStream(new FileOutputStream("code.cpp"));
-        printHeader(cfile, new String[] {"\"code.h\""});
+        printHeader(cfile, new String[] {"\"declarations/code.h\""});
         cfile.println("char Code::codes[" + bestBlkStr.length() + "] =");
         cfile.println("{");
         for (int j = 0; j < bestBlkStr.length(); j += 5)

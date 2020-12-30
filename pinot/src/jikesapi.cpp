@@ -7,10 +7,10 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "platform.h"
-#include "control.h"
-#include "jikesapi.h"
-#include "option.h"
+#include "declarations/platform.h"
+#include "declarations/control.h"
+#include "declarations/jikes/jikesapi.h"
+#include "declarations/option.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 using namespace Jikes;

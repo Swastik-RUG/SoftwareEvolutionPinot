@@ -7,11 +7,11 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "control.h"
+#include "declarations/control.h"
 #ifndef ast_INCLUDED
 #define ast_INCLUDED
 
-#include "platform.h"
+#include "declarations/platform.h"
 #include "depend.h"
 
 #ifdef HAVE_JIKES_NAMESPACE

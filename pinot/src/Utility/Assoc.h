@@ -1,8 +1,8 @@
 #ifndef Assoc_NAME_H
 #define Assoc_NAME_H
 
-#include "platform.h"
-#include "symbol.h"
+#include "declarations/platform.h"
+#include "declarations/symbol/symbol.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes

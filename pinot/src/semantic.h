@@ -10,11 +10,11 @@
 #ifndef semantic_INCLUDED
 #define semantic_INCLUDED
 
-#include "platform.h"
+#include "declarations/platform.h"
 #include "ast.h"
-#include "error.h"
-#include "symbol.h"
-#include "tuple.h"
+#include "declarations/jikes/error.h"
+#include "declarations/symbol/symbol.h"
+#include "declarations/tuple.h"
 #include "set.h"
 
 #ifdef HAVE_JIKES_NAMESPACE

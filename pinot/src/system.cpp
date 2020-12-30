@@ -7,12 +7,12 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "platform.h"
-#include "control.h"
+#include "declarations/platform.h"
+#include "declarations/control.h"
 #include "semantic.h"
 #include "zip.h"
-#include "option.h"
-#include "case.h"
+#include "declarations/option.h"
+#include "declarations/case.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

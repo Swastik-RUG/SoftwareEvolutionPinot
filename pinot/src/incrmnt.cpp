@@ -7,12 +7,12 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "platform.h"
-#include "control.h"
-#include "scanner.h"
+#include "declarations/platform.h"
+#include "declarations/control.h"
+#include "declarations/scanner.h"
 #include "parser.h"
 #include "semantic.h"
-#include "case.h"
+#include "declarations/case.h"
 #include "set.h"
 
 #include "storagepool.h"

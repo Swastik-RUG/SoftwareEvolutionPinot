@@ -1,9 +1,9 @@
 #ifndef SingletonAnalysis_NAME_H
 #define SingletonAnalysis_NAME_H
 
-#include "platform.h"
-#include "symbol.h"
-#include "tuple.h"
+#include "declarations/platform.h"
+#include "declarations/symbol/symbol.h"
+#include "declarations/tuple.h"
 #include "set.h"
 #include <vector>
 

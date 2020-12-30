@@ -10,12 +10,12 @@
 #include "bytecode.h"
 #include "ast.h"
 #include "class.h"
-#include "control.h"
+#include "declarations/control.h"
 #include "semantic.h"
-#include "stream.h"
-#include "symbol.h"
-#include "table.h"
-#include "option.h"
+#include "declarations/stream.h"
+#include "declarations/symbol/symbol.h"
+#include "declarations/table.h"
+#include "declarations/option.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

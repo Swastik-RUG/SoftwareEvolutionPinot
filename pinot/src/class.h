@@ -9,11 +9,11 @@
 #ifndef class_INCLUDED
 #define class_INCLUDED
 
-#include "platform.h"
-#include "access.h"
-#include "tuple.h"
-#include "long.h"
-#include "double.h"
+#include "declarations/platform.h"
+#include "declarations/access.h"
+#include "declarations/tuple.h"
+#include "declarations/long.h"
+#include "declarations/double.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

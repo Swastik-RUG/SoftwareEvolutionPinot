@@ -8,12 +8,12 @@
 //
 
 #include "diagnose.h"
-#include "control.h"
+#include "declarations/control.h"
 #include "semantic.h"
-#include "case.h"
-#include "spell.h"
-#include "option.h"
-#include "stream.h"
+#include "declarations/case.h"
+#include "declarations/spell.h"
+#include "declarations/option.h"
+#include "declarations/stream.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

@@ -7,14 +7,14 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "stream.h"
-#include "code.h"
+#include "declarations/stream.h"
+#include "declarations/code.h"
 #include "zip.h"
-#include "symbol.h"
-#include "control.h"
+#include "declarations/symbol/symbol.h"
+#include "declarations/control.h"
 #include "semantic.h"
 #include "javasym.h"
-#include "option.h"
+#include "declarations/option.h"
 #include "tab.h"
 
 #ifdef HAVE_JIKES_NAMESPACE

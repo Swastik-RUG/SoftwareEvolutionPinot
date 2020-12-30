@@ -6,10 +6,10 @@
 // Copyright (C) 1996, 2004 IBM Corporation and others.  All Rights Reserved.
 // You must accept the terms of that agreement to use this software.
 //
-#include "platform.h"
+#include "declarations/platform.h"
 #include "semantic.h"
-#include "control.h"
-#include "option.h"
+#include "declarations/control.h"
+#include "declarations/option.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

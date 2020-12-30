@@ -10,8 +10,8 @@
 #ifndef parser_INCLUDED
 #define parser_INCLUDED
 
-#include "platform.h"
-#include "lpginput.h"
+#include "declarations/platform.h"
+#include "declarations/lpginput.h"
 #include "storagepool.h"
 
 #ifdef HAVE_JIKES_NAMESPACE

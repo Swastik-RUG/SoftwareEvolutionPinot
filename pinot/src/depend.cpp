@@ -8,11 +8,11 @@
 //
 
 #include "depend.h"
-#include "control.h"
+#include "declarations/control.h"
 #include "ast.h"
 #include "semantic.h"
-#include "option.h"
-#include "stream.h"
+#include "declarations/option.h"
+#include "declarations/stream.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

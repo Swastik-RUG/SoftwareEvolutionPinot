@@ -7,7 +7,7 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "op.h"
+#include "declarations/op.h"
 #include "class.h"
 
 #ifdef HAVE_JIKES_NAMESPACE

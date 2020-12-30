@@ -7,14 +7,14 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "error.h"
-#include "control.h"
+#include "declarations/jikes/error.h"
+#include "declarations/control.h"
 #include "semantic.h"
 #include "ast.h"
 #include "diagnose.h"
-#include "option.h"
-#include "jikesapi.h"
-#include "stream.h"
+#include "declarations/option.h"
+#include "declarations/jikes/jikesapi.h"
+#include "declarations/stream.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

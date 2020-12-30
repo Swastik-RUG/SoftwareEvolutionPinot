@@ -319,8 +319,8 @@ Makefile.in:@MAINTAINER_MODE_TRUE@	@if test -f $@; then :; else \
 Makefile.in:@MAINTAINER_MODE_TRUE@	  rm -f code.stamp; \
 Makefile.in:	@rm -f jikes$(EXEEXT)
 Makefile.in:	$(CXXLINK) -o jikes$(EXEEXT) $(jikes_OBJECTS) -lstdc++ -lefence
-access.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-access.h:        return (acc & - acc) == acc;
+declarations/access.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/access.h:        return (acc & - acc) == acc;
 ast.cpp:        assert(base_size <= pool -> Blksize());
 ast.cpp:        base = (T**) pool -> Alloc(sizeof(T*) * base_size);
 ast.cpp:               (base_size - old_base_size) * sizeof(T*));
@@ -3753,13 +3753,13 @@ bytecode.h:        code_attribute -> AddCode((u >> 16) & 0xff);
 bytecode.h:        code_attribute -> AddCode((u >>  8) & 0xff);
 bytecode.h:        code_attribute -> AddCode(u & 0xff);
 Binary file bytecode.o matches
-case.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-case.h:// NOTE that this class is hard-wired to work on an ASCII machine.
-case.h:// make the array "lower" non-static. In such a case, each object
-case.h:    // string. If the character is not found, return -1.
-case.h:        return -1;
-case.h:        return -1;
-case.h:    // Compare two null-terminated character strings, s1 and s2
+declarations/case.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/case.h:// NOTE that this class is hard-wired to work on an ASCII machine.
+declarations/case.h:// make the array "lower" non-static. In such a case, each object
+declarations/case.h:    // string. If the character is not found, return -1.
+declarations/case.h:        return -1;
+declarations/case.h:        return -1;
+declarations/case.h:    // Compare two null-terminated character strings, s1 and s2
 Binary file case.o matches
 class.cpp:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $
 class.cpp:    if (constant -> Large())
@@ -4269,11 +4269,11 @@ class.h:            attributes[i] -> Print(constant_pool);
 Binary file class.o matches
 code.cpp:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
 code.cpp:// DO NOT MODIFY THIS FILE - it is generated using gencode.java.
-code.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-code.h:// DO NOT MODIFY THIS FILE - it is generated using gencode.java.
-code.h:    // with some self-explanatory functions defined on CODE.
-code.h:        return (hi << 10) + lo + (0x10000 - (0xd800 << 10) - 0xdc00);
-code.h:        return c - (c <= U_9 ? U_0 : c < U_a ? U_A - 10 : U_a - 10);
+declarations/code.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/code.h:// DO NOT MODIFY THIS FILE - it is generated using gencode.java.
+declarations/code.h:    // with some self-explanatory functions defined on CODE.
+declarations/code.h:        return (hi << 10) + lo + (0x10000 - (0xd800 << 10) - 0xdc00);
+declarations/code.h:        return c - (c <= U_9 ? U_0 : c < U_a ? U_A - 10 : U_a - 10);
 Binary file code.o matches
 config.h:/* Define as nonzero to enable experimental `-source 1.5' features. */
 config.h:/* defined if bool is a built-in C++ type */
@@ -4513,19 +4513,19 @@ control.cpp:            sem -> compilation_unit -> Unparse(sem -> lex_stream,
 control.cpp:        sem -> PrintMessages();
 control.cpp:        if (sem -> return_code > 0)
 control.cpp:        file_symbol -> CleanUp();
-control.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-control.h:        if (! name_symbol -> Utf8_literal)
-control.h:            name_symbol -> Utf8_literal =
-control.h:                ConvertUnicodeToUtf8(name_symbol -> Name());
+declarations/control.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/control.h:        if (! name_symbol -> Utf8_literal)
+declarations/control.h:            name_symbol -> Utf8_literal =
+declarations/control.h:                ConvertUnicodeToUtf8(name_symbol -> Name());
 Binary file control.o matches
 cscope.out:cscope 15 $HOME/sandbox/jikes/jikes-1.22/src               0000802132
-cscope.out: & -áccË=
+cscope.out: & -ÔøΩccÔøΩ=ÔøΩ
 cscope.out:710 --
 cscope.out: -> LeftToken(); }
 cscope.out: -> RightToken(); }
-cscope.out: ? block_°©emít†-> 
-cscope.out: ? deföed_v¨übÀ†-> 
-cscope.out: ? ba£_›à-> 
+cscope.out: ? block_ÔøΩÔøΩemÔøΩtÔøΩ-> 
+cscope.out: ? defÔøΩed_vÔøΩÔøΩbÀ†-> 
+cscope.out: ? baÔøΩ_›à-> 
 cscope.out: -> 
 cscope.out: -> LeftToken(); }
 cscope.out: -> 
@@ -4534,131 +4534,131 @@ cscope.out: ? bounds_›à->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? ba£_›à-> 
+cscope.out: ? baÔøΩ_›à-> 
 cscope.out: -> LeftToken();
-cscope.out: ?Åy≥_¨gumíts_›à-> 
+cscope.out: ?ÔøΩyÔøΩ_ÔøΩgumÔøΩts_›à-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> RightToken(); }
-cscope.out: ? membî_vÆue_∑ú†-> 
+cscope.out: ? membÔøΩ_vÔøΩue_ÔøΩÔøΩÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out:(0) -> LeftToken(); }
-cscope.out:(Ë- 1Ë-> 
-cscope.out: ? modifõrs_›à-> 
-cscope.out: ? imp‹t_de˛¨©i⁄†-> 
-cscope.out: ?Åy≥_de˛¨©i⁄†-> 
+cscope.out:(ÔøΩ- 1ÔøΩ-> 
+cscope.out: ? modifÔøΩrs_›à-> 
+cscope.out: ? impÔøΩt_deÔøΩÔøΩÔøΩi⁄†-> 
+cscope.out: ?ÔøΩyÔøΩ_deÔøΩÔøΩÔøΩi⁄†-> 
 cscope.out: -> 
-cscope.out:(0Ë-> 
-cscope.out:(0Ë-> 
-cscope.out:(Ë- 1Ë-> 
+cscope.out:(0ÔøΩ-> 
+cscope.out:(0ÔøΩ-> 
+cscope.out:(ÔøΩ- 1ÔøΩ-> 
 cscope.out:() - 1) ->
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? in°™˚_v¨übÀ†-> 
-cscope.out: ? cœss_v¨übÀ†-> 
-cscope.out: ? mëhod†-> 
-cscope.out: ? c⁄°ru˘‹†-> 
-cscope.out: ? sètic_öôülizî†-> 
-cscope.out: ? in°™˚_öôülizî†-> 
-cscope.out: ? i¬î_˛as£†-> 
-cscope.out: ? i¬î_íum†-> 
-cscope.out: ? i¬î_öãrÁ˚†-> 
-cscope.out: ? i¬î_™nŸ©i⁄†-> 
-cscope.out: ?Ém±y_de˛¨©i⁄†-> 
-cscope.out: ? bound†-> 
-cscope.out:(NumBounds(Ë- 1Ë-> 
-cscope.out: ?Ö¨amëî†-> 
-cscope.out: ? i¡îÁ˚†-> 
-cscope.out: ? modifõrs_›à-> 
+cscope.out: ? inÔøΩÔøΩÔøΩ_vÔøΩÔøΩbÀ†-> 
+cscope.out: ? cÔøΩss_vÔøΩÔøΩbÀ†-> 
+cscope.out: ? mÔøΩhodÔøΩ-> 
+cscope.out: ? c⁄°ruÔøΩ‹†-> 
+cscope.out: ? sÔøΩtic_ÔøΩÔøΩÔøΩlizÔøΩÔøΩ-> 
+cscope.out: ? inÔøΩÔøΩÔøΩ_ÔøΩÔøΩÔøΩlizÔøΩÔøΩ-> 
+cscope.out: ? i¬î_ÔøΩasÔøΩÔøΩ-> 
+cscope.out: ? i¬î_ÔøΩumÔøΩ-> 
+cscope.out: ? i¬î_ÔøΩÔøΩrÔøΩÔøΩÔøΩ-> 
+cscope.out: ? i¬î_ÔøΩnŸ©i⁄†-> 
+cscope.out: ?ÔøΩmÔøΩy_deÔøΩÔøΩÔøΩi⁄†-> 
+cscope.out: ? boundÔøΩ-> 
+cscope.out:(NumBounds(ÔøΩ- 1ÔøΩ-> 
+cscope.out: ?ÔøΩÔøΩamÔøΩÔøΩÔøΩ-> 
+cscope.out: ? iÔøΩÔøΩÔøΩÔøΩÔøΩ-> 
+cscope.out: ? modifÔøΩrs_›à-> 
 cscope.out: -> 
-cscope.out: ? v¨übÀ_öôülizî†-> 
-cscope.out: ? bøckës_›à-> 
-cscope.out: ? bøckës_›à-> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: ? v¨übÀ_de˛¨©‹†-> 
-cscope.out: ? modifõrs_›à-> 
-cscope.out: -> 
-cscope.out: ? modifõrs_›à-> 
+cscope.out: ? vÔøΩÔøΩbÔøΩ_ÔøΩÔøΩÔøΩlizÔøΩÔøΩ-> 
+cscope.out: ? bÔøΩckÔøΩs_›à-> 
+cscope.out: ? bÔøΩckÔøΩs_›à-> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? f‹mÆ_∑ømëî†-> 
-cscope.out: ? bøckës_›à-> 
-cscope.out: ? bøckës_›à-> 
-cscope.out: ?Åhrow†-> 
-cscope.out: ? modifõrs_›à-> 
-cscope.out: ?Åy≥_∑ømëîs_›à-> 
 cscope.out: -> 
-cscope.out: ? mëhod_body_›à-> 
-cscope.out: ? modifõrs_›à-> 
+cscope.out: ? vÔøΩÔøΩbÔøΩ_deÔøΩÔøΩÔøΩ‹†-> 
+cscope.out: ? modifÔøΩrs_›à-> 
+cscope.out: -> 
+cscope.out: ? modifÔøΩrs_›à-> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ?árgumít†-> 
-cscope.out: ? shadow_¨gumít†-> 
-cscope.out: ?Åy≥_¨gumíts_›à-> 
-cscope.out: ? ba£_›à-> 
-cscope.out: ?Åy≥_¨gumíts_›à-> 
-cscope.out: ?Åhrow†-> 
-cscope.out: ? modifõrs_›à-> 
-cscope.out: ?Åy≥_∑ømëîs_›à-> 
+cscope.out: ? fÔøΩmÔøΩ_ÔøΩÔøΩmÔøΩÔøΩÔøΩ-> 
+cscope.out: ? bÔøΩckÔøΩs_›à-> 
+cscope.out: ? bÔøΩckÔøΩs_›à-> 
+cscope.out: ?ÔøΩhrowÔøΩ-> 
+cscope.out: ? modifÔøΩrs_›à-> 
+cscope.out: ?ÔøΩyÔøΩ_ÔøΩÔøΩmÔøΩÔøΩs_›à-> 
+cscope.out: -> 
+cscope.out: ? mÔøΩhod_body_›à-> 
+cscope.out: ? modifÔøΩrs_›à-> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? i¡îÁ˚†-> 
-cscope.out: ?Énum_c⁄°™t†-> 
-cscope.out: ? modifõrs_›à-> 
+cscope.out: ?ÔøΩrgumÔøΩtÔøΩ-> 
+cscope.out: ? shadow_ÔøΩgumÔøΩtÔøΩ-> 
+cscope.out: ?ÔøΩyÔøΩ_ÔøΩgumÔøΩts_›à-> 
+cscope.out: ? baÔøΩ_›à-> 
+cscope.out: ?ÔøΩyÔøΩ_ÔøΩgumÔøΩts_›à-> 
+cscope.out: ?ÔøΩhrowÔøΩ-> 
+cscope.out: ? modifÔøΩrs_›à-> 
+cscope.out: ?ÔøΩyÔøΩ_ÔøΩÔøΩmÔøΩÔøΩs_›à-> 
 cscope.out: -> 
-cscope.out: ? modifõrs_›à-> 
-cscope.out: ? cœss_body_›à-> 
-cscope.out: ?árgumíts_›à-> 
-cscope.out: ? i¡îÁ˚†-> 
-cscope.out: ? modifõrs_›à-> 
 cscope.out: -> 
-cscope.out: ? modifõrs_›à-> 
+cscope.out: ? iÔøΩÔøΩÔøΩÔøΩÔøΩ-> 
+cscope.out: ?ÔøΩnum_c⁄°ÔøΩtÔøΩ-> 
+cscope.out: ? modifÔøΩrs_›à-> 
+cscope.out: -> 
+cscope.out: ? modifÔøΩrs_›à-> 
+cscope.out: ? cÔøΩss_body_›à-> 
+cscope.out: ?ÔøΩrgumÔøΩts_›à-> 
+cscope.out: ? iÔøΩÔøΩÔøΩÔøΩÔøΩ-> 
+cscope.out: ? modifÔøΩrs_›à-> 
+cscope.out: -> 
+cscope.out: ? modifÔøΩrs_›à-> 
 cscope.out: - 1;
 cscope.out: -> 
-cscope.out: ? v¨übÀ_de˛¨©‹†-> 
-cscope.out: ? modifõrs_›à-> 
+cscope.out: ? vÔøΩÔøΩbÔøΩ_deÔøΩÔøΩÔøΩ‹†-> 
+cscope.out: ? modifÔøΩrs_›à-> 
 cscope.out: -> 
 cscope.out:() - 1) ->
 cscope.out: -> LeftToken(); }
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? fÆ£_°©emít_›à-> 
+cscope.out: ? fÔøΩÔøΩ_ÔøΩÔøΩemÔøΩt_›à-> 
 cscope.out: -> 
 cscope.out: -> LeftToken(); }
 cscope.out: -> 
-cscope.out: ? swôch_œbñ†-> 
-cscope.out:(0Ë-> 
+cscope.out: ? swÔøΩch_ÔøΩbÔøΩÔøΩ-> 
+cscope.out:(0ÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? f‹_öô_°©emít†-> 
-cscope.out: ? f‹_upd©e_°©emít†-> 
+cscope.out: ? fÔøΩ_ÔøΩÔøΩ_ÔøΩÔøΩemÔøΩtÔøΩ-> 
+cscope.out: ? fÔøΩ_updÔøΩe_ÔøΩÔøΩemÔøΩtÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? c©ch_˛au£†-> 
-cscope.out: ? föÆly_˛au£_›à-> 
-cscope.out:(Ë- 1Ë-> 
+cscope.out: ? cÔøΩch_ÔøΩauÔøΩÔøΩ-> 
+cscope.out: ? fÔøΩÔøΩly_ÔøΩauÔøΩ_›à-> 
+cscope.out:(ÔøΩ- 1ÔøΩ-> 
 cscope.out: -> LeftToken(); }
-cscope.out: ? ba£_›à-> 
-cscope.out: ? ba£_›à-> 
-cscope.out: ? ba£_›à-> 
-cscope.out: ? cœss_body_›à-> 
+cscope.out: ? baÔøΩ_›à-> 
+cscope.out: ? baÔøΩ_›à-> 
+cscope.out: ? baÔøΩ_›à-> 
+cscope.out: ? cÔøΩss_body_›à-> 
 cscope.out: -> 
-cscope.out: ? dim_ex¥†-> 
-cscope.out: ? bøckës_›à-> 
+cscope.out: ? dim_exÔøΩÔøΩ-> 
+cscope.out: ? bÔøΩckÔøΩs_›à-> 
 cscope.out: -> 
-cscope.out: ? bøckës_›à-> 
-cscope.out:(Ë- 1Ë-> 
+cscope.out: ? bÔøΩckÔøΩs_›à-> 
+cscope.out:(ÔøΩ- 1ÔøΩ-> 
 cscope.out: -> LeftToken(); }
-cscope.out: ? ba£_›à-> 
+cscope.out: ? baÔøΩ_›à-> 
 cscope.out: -> 
 cscope.out: -> LeftToken(); }
 cscope.out: -> LeftToken(); }
@@ -4766,7 +4766,7 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: && cœss_body -> 
+cscope.out: && cÔøΩss_body -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -4863,11 +4863,11 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: &&Üh†-> 
-cscope.out:Ë-> 
-cscope.out: &&Üh†-> 
-cscope.out:Ë-> 
-cscope.out: ?Üh†-> 
+cscope.out: &&ÔøΩhÔøΩ-> 
+cscope.out:ÔøΩ-> 
+cscope.out: &&ÔøΩhÔøΩ-> 
+cscope.out:ÔøΩ-> 
+cscope.out: ?ÔøΩhÔøΩ-> 
 cscope.out: ? sym -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -4880,7 +4880,7 @@ cscope.out: ->
 cscope.out: -> index) = index;
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:(Ë-> 
+cscope.out:(ÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -4892,7 +4892,7 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:(Ë-> 
+cscope.out:(ÔøΩ-> 
 cscope.out: -> 
 cscope.out: ->
 cscope.out: -> 
@@ -4924,7 +4924,7 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: :Åy≥ -> 
+cscope.out: :ÔøΩyÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -4938,7 +4938,7 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:(Ë-> 
+cscope.out:(ÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: + 1) ^ 1) - 1);
@@ -4954,11 +4954,9 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out:] -> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
-cscope.out:] -> 
-cscope.out:] -> 
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
@@ -4973,9 +4971,11 @@ cscope.out:] ->
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:] -> 
+cscope.out:]ÔøΩ-> 
+cscope.out:] -> 
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
@@ -5005,19 +5005,19 @@ cscope.out:]] ->
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
-cscope.out:] -> 
-cscope.out:] ->
-cscope.out:] ->
-cscope.out:] ->
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
 cscope.out:] ->
+cscope.out:] ->
+cscope.out:] ->
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:] ->
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
+cscope.out:] -> 
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:1254 --
@@ -5034,21 +5034,21 @@ cscope.out:] ->
 cscope.out: -> 
 cscope.out:] -> 
 cscope.out:] -> 
-cscope.out:(Ë- 
-cscope.out: -
+cscope.out:(ÔøΩ- 
+cscope.out: -ÔøΩ
 cscope.out: -> 
 cscope.out: -> 
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out: < -128 || value > 127)
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out: < -32768 || value > 32767)
 cscope.out:] -> 
 cscope.out:] -> 
@@ -5056,7 +5056,7 @@ cscope.out:] ->
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
-cscope.out: && "invalid constant-valuedáttribute");
+cscope.out: && "invalid constant-valuedÔøΩttribute");
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
@@ -5093,11 +5093,11 @@ cscope.out:] ->
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out: -> 
-cscope.out: ?áâr_c⁄°™tvÆuê-> 
+cscope.out: ?ÔøΩÔøΩr_c⁄°ÔøΩtvÔøΩuÔøΩ-> 
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
@@ -5105,9 +5105,9 @@ cscope.out:] ->
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out:] -> 
-cscope.out:]Ë-> 
+cscope.out:]ÔøΩ-> 
 cscope.out: -> 
 cscope.out:] -> 
 cscope.out:] -> 
@@ -5119,7 +5119,7 @@ cscope.out:] ->
 cscope.out:] -> 
 cscope.out:]] -> 
 cscope.out: -> 
-cscope.out: ?áâr_sour˚fûê-> 
+cscope.out: ?ÔøΩÔøΩr_sourÔøΩfÔøΩÔøΩ-> 
 cscope.out: -> 
 cscope.out: - 
 cscope.out: = 32; i; i -= 4)
@@ -5136,24 +5136,24 @@ cscope.out:] ->
 cscope.out:] -> 
 cscope.out:] -> 
 cscope.out: + (0x10000 - (0xd800 << 10) - 0xdc00);
-cscope.out: - (¯<
+cscope.out: - (ÔøΩ<ÔøΩ
 cscope.out: - 10 : U_a - 10);
-cscope.out: "Vîsi⁄ 1.22 - 3 O˘obî 2004"
+cscope.out: "VÔøΩsiÔøΩ 1.22 - 3 OÔøΩobÔøΩ 2004"
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: = -1, 
 cscope.out:.Length() - 1); }
-cscope.out:.Lígth(Ë- 1] : 
+cscope.out:.LÔøΩgth(ÔøΩ- 1] : 
 cscope.out: = -1 };
 cscope.out: + 1 - 
-cscope.out:Ë- 
+cscope.out:ÔøΩ- 
 cscope.out:-() const;
-cscope.out:-(c⁄° IEEEÊﬂà
+cscope.out:-(c⁄° IEEEÔøΩﬂà
 cscope.out: + (-
 cscope.out:-=(c⁄° 
-cscope.out: = *thi†- 
-cscope.out:--(Ë{  *
+cscope.out: = *thiÔøΩ- 
+cscope.out:--(ÔøΩ{  *
 cscope.out: -= 1; }
 cscope.out:--()
 cscope.out: -= 1;
@@ -5161,14 +5161,14 @@ cscope.out:() - Sign()
 cscope.out:) ? -1 : *this > op;
 cscope.out: - 32,
 cscope.out: + 1 - 
-cscope.out:)Ë- 
+cscope.out:)ÔøΩ- 
 cscope.out: | -(
 cscope.out:-() const;
-cscope.out:-(c⁄° IEEEdoubÀ 
+cscope.out:-(c⁄° IEEEdoubÔøΩ 
 cscope.out: + (-
 cscope.out:-=(c⁄° 
-cscope.out: = *thi†- 
-cscope.out:--(Ë{  *
+cscope.out: = *thiÔøΩ- 
+cscope.out:--(ÔøΩ{  *
 cscope.out: -= 1; }
 cscope.out:--()
 cscope.out: -= 1;
@@ -5178,26 +5178,26 @@ cscope.out: - 1]); }
 cscope.out:-(c⁄° 
 cscope.out: -> 
 cscope.out:--; }
-cscope.out:[0]Ë- (
-cscope.out:Ë{  -
+cscope.out:[0]ÔøΩ- (
+cscope.out:ÔøΩ{  -
 cscope.out:-(c⁄° 
 cscope.out:-() const;
 cscope.out:-=(c⁄° 
 cscope.out:--();
 cscope.out:--();
 cscope.out:67 --
-cscope.out: = (hash_vÆuê<< 5Ë- hash_vÆuê+ *
+cscope.out: = (hash_vÔøΩuÔøΩ<< 5ÔøΩ- hash_vÔøΩuÔøΩ+ *
 cscope.out:78 --
-cscope.out: = (hash_vÆuê<< 5Ë- hash_vÆuê+ *
+cscope.out: = (hash_vÔøΩuÔøΩ<< 5ÔøΩ- hash_vÔøΩuÔøΩ+ *
 cscope.out: -> 
-cscope.out: ? Utf8_lôîÆ -> 
-cscope.out: ? Utf8_lôîÆ -> 
-cscope.out:(Ë-> 
+cscope.out: ? Utf8_lÔøΩÔøΩÔøΩ -> 
+cscope.out: ? Utf8_lÔøΩÔøΩÔøΩ -> 
+cscope.out:(ÔøΩ-> 
 cscope.out: - 1)];
 cscope.out: + (i - 1)]; }
-cscope.out:]Ë- 
-cscope.out:]Ë- 
-cscope.out:]Ë- 
+cscope.out:]ÔøΩ- 
+cscope.out:]ÔøΩ- 
+cscope.out:]ÔøΩ- 
 cscope.out: = 3; i >= 0; i--)
 cscope.out: - 10 + 
 cscope.out: -> fill(c); }
@@ -5208,7 +5208,7 @@ cscope.out:.Length() - 1] : 0;
 cscope.out: - 1)
 cscope.out: - 1)
 cscope.out:.Length() - 1); }
-cscope.out:(Ë- 1] : 
+cscope.out:(ÔøΩ- 1] : 
 cscope.out:() - 1; i >= 0; i--)
 cscope.out:] -> 
 cscope.out:() - 1; i >= 0; i--)
@@ -5216,10 +5216,10 @@ cscope.out:] ->
 cscope.out:() - 1; i >= 0; i--)
 cscope.out:] -> 
 cscope.out:() - 1);
-cscope.out:.Lígth(Ë- 1] : 
+cscope.out:.LÔøΩgth(ÔøΩ- 1] : 
 cscope.out: - 1);
 cscope.out: - 1);
-cscope.out:(Ë- 1] : 
+cscope.out:(ÔøΩ- 1] : 
 cscope.out:() - 1];
 cscope.out:() - 1);
 cscope.out:() - 1];
@@ -5233,46 +5233,46 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: &&Åhis_v¨übÀ -> 
-cscope.out: &&Åhis_mëhod -> 
+cscope.out: &&ÔøΩhis_vÔøΩÔøΩbÔøΩ -> 
+cscope.out: &&ÔøΩhis_mÔøΩhod -> 
 cscope.out:() - 1);
 cscope.out:() - 1];
-cscope.out: ->Üex_stream),
+cscope.out: ->ÔøΩex_stream),
 cscope.out: -> compilation_unit),
 cscope.out: -> directory_symbol),
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:(),á° -> 
+cscope.out:(),ÔøΩÔøΩ -> 
 cscope.out: -> 
-cscope.out: ?Éº‹ -> 
-cscope.out:(Ë-> 
-cscope.out:(Ë&& ThisMëhod(Ë-> 
-cscope.out:(Ë&& ThisV¨übÀ(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
+cscope.out: ?ÔøΩÔøΩÔøΩ -> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ&& ThisMÔøΩhod(ÔøΩ-> 
+cscope.out:(ÔøΩ&& ThisVÔøΩÔøΩbÔøΩ(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
 cscope.out: -> 
-cscope.out:(),á° -> 
+cscope.out:(),ÔøΩÔøΩ -> 
 cscope.out: ->* 
 cscope.out: -> 
 cscope.out: -> 
@@ -5285,7 +5285,7 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> Identity(); }
-cscope.out: ? c⁄Êi˘ -> 
+cscope.out: ? cÔøΩÔøΩiÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out:() - 1;
@@ -5325,7 +5325,7 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:(Ë-> 
+cscope.out:(ÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> Identity())
@@ -5335,47 +5335,47 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:(Ë-> 
+cscope.out:(ÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: - 1Ë/ cñl_sizê* (
-cscope.out: - 1Ë/ cñl_sizê* (
-cscope.out: - 1Ë/ 
+cscope.out: - 1ÔøΩ/ cÔøΩl_sizÔøΩ* (
+cscope.out: - 1ÔøΩ/ cÔøΩl_sizÔøΩ* (
+cscope.out: - 1ÔøΩ/ 
 cscope.out:; i >= 0; i--)
-cscope.out: - 1Ë/ cñl_sizê* (
+cscope.out: - 1ÔøΩ/ cÔøΩl_sizÔøΩ* (
 cscope.out: - 1) / cell_size;
 cscope.out: - 1) / cell_size;
 cscope.out: - 1) / cell_size;
-cscope.out: - 1Ë/ 
+cscope.out: - 1ÔøΩ/ 
 cscope.out:) 1 << (i % cell_size)) - (CELL) 1
 cscope.out:663 --
-cscope.out: - 1Ë/ 
+cscope.out: - 1ÔøΩ/ 
 cscope.out: >= 0; i--)
-cscope.out: - 1Ë/ 
+cscope.out: - 1ÔøΩ/ 
 cscope.out: >= 0; i--)
 cscope.out:-(c⁄° 
-cscope.out:Ë-
+cscope.out:ÔøΩ-ÔøΩ
 cscope.out:-=(c⁄° 
-cscope.out: - 1Ë/ 
+cscope.out: - 1ÔøΩ/ 
 cscope.out: >= 0; i--)
 cscope.out: - 1) / cell_size;
 cscope.out: - 1) / cell_size;
-cscope.out: - 1Ë/ 
+cscope.out: - 1ÔøΩ/ 
 cscope.out: - 1) / cell_size - 1)
 cscope.out:--] = 
 cscope.out:)) - (CELL) 1
 cscope.out:772 - (
 cscope.out:-(c⁄° 
-cscope.out:Ë-
+cscope.out:ÔøΩ-ÔøΩ
 cscope.out:-=(c⁄° 
-cscope.out: -
-cscope.out: -
+cscope.out: -ÔøΩ
+cscope.out: -ÔøΩ
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:];ÉÀmít;ÉÀmíàñemíà-> 
+cscope.out:];ÔøΩÔøΩmÔøΩt;ÔøΩÔøΩmÔøΩÔøΩÔøΩemÔøΩÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -5390,12 +5390,12 @@ cscope.out: - 1;
 cscope.out:.Length() - 1;
 cscope.out: <= 0 ? 0 : i - 1; }
 cscope.out:() - 1);
-cscope.out:(Ë? NumTokís(Ë- 1 : i].
+cscope.out:(ÔøΩ? NumTokÔøΩs(ÔøΩ- 1 : i].
 cscope.out:() - 1) + 1 : 0;
 cscope.out: - 1) < Line(i);
 cscope.out: + 1] - 1;
 cscope.out:(--
-cscope.out:(Ë- 
+cscope.out:(ÔøΩ- 
 cscope.out: -> Name(); }
 cscope.out: -> NameLength(); }
 cscope.out: -> 
@@ -5412,12 +5412,12 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ?É¡rõ†-> 
-cscope.out: ?É¡rõ†-> 
+cscope.out: ?ÔøΩÔøΩrÔøΩÔøΩ-> 
+cscope.out: ?ÔøΩÔøΩrÔøΩÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:Ë-> 
+cscope.out:ÔøΩ-> 
 cscope.out:() -> IsZip(); }
 cscope.out: -> 
 cscope.out: -> 
@@ -5432,7 +5432,7 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out:() -> IsZip(); }
-cscope.out:(Ë-> 
+cscope.out:(ÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> Name(); }
@@ -5443,7 +5443,7 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:Ë-> 
+cscope.out:ÔøΩ-> 
 cscope.out: -> Name(); }
 cscope.out: -> NameLength(); }
 cscope.out: -> 
@@ -5452,25 +5452,23 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? fûe_loˇti⁄ -> 
-cscope.out: ? f‹mÆ_∑ømëî†-> 
+cscope.out: ? fÔøΩe_loÔøΩtiÔøΩ -> 
+cscope.out: ? fÔøΩmÔøΩ_ÔøΩÔøΩmÔøΩÔøΩÔøΩ-> 
 cscope.out: -> 
-cscope.out: ?Åhrow†-> 
+cscope.out: ?ÔøΩhrowÔøΩ-> 
 cscope.out: -> 
-cscope.out: ?Åhrows_sig«tuª†-> 
+cscope.out: ?ÔøΩhrows_sigÔøΩtuÔøΩÔøΩ-> 
 cscope.out: -> 
-cscope.out: ?Éxã∫Æ_«me_symbﬁ -> 
+cscope.out: ?ÔøΩxÔøΩÔøΩÔøΩ_ÔøΩme_symbÔøΩ -> 
 cscope.out: -> 
-cscope.out: ?Éxã∫Æ_«me_symbﬁ -> 
-cscope.out: -> 
-cscope.out: -> 
+cscope.out: ?ÔøΩxÔøΩÔøΩÔøΩ_ÔøΩme_symbÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: &&Éxã∫Æ_«me_symbﬁ -> 
 cscope.out: -> 
 cscope.out: -> 
+cscope.out: &&ÔøΩxÔøΩÔøΩÔøΩ_ÔøΩme_symbÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -5483,13 +5481,15 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? cœss_lôîÆ†-> 
 cscope.out: -> 
-cscope.out: ?Çe°ed_ty≥†-> 
 cscope.out: -> 
-cscope.out: ? i¡îÁ˚†-> 
+cscope.out: ? cÔøΩss_lÔøΩÔøΩÔøΩÔøΩ-> 
 cscope.out: -> 
-cscope.out: ?án⁄ymous_ty≥†-> 
+cscope.out: ?ÔøΩeÔøΩed_tyÔøΩÔøΩ-> 
+cscope.out: -> 
+cscope.out: ? iÔøΩÔøΩÔøΩÔøΩÔøΩ-> 
+cscope.out: -> 
+cscope.out: ?ÔøΩnÔøΩymous_tyÔøΩÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -5501,26 +5501,16 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ?Éxã∫Æ_«me_symbﬁ -> 
+cscope.out: ?ÔøΩxÔøΩÔøΩÔøΩ_ÔøΩme_symbÔøΩ -> 
 cscope.out: -> 
-cscope.out: ?Éxã∫Æ_«me_symbﬁ -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: &&Éxã∫Æ_«me_symbﬁ -> 
+cscope.out: ?ÔøΩxÔøΩÔøΩÔøΩ_ÔøΩme_symbÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: ? mëhod -> 
-cscope.out:Ë-> 
+cscope.out: &&ÔøΩxÔøΩÔøΩÔøΩ_ÔøΩme_symbÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -5528,18 +5518,28 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:Ë-> 
-cscope.out:Ë-> 
-cscope.out: && su≥∏-> 
+cscope.out: -> 
+cscope.out: ? mÔøΩhod -> 
+cscope.out:ÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ?Åype -> base_type :Åype;
-cscope.out: ->Çum_dimensions &&
-cscope.out: -> 
-cscope.out: ->Çum_dimensions &&
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? fûe_loˇti⁄ -> 
+cscope.out: -> 
+cscope.out: -> 
+cscope.out: -> 
+cscope.out:ÔøΩ-> 
+cscope.out:ÔøΩ-> 
+cscope.out: && suÔøΩÔøΩ-> 
+cscope.out: -> 
+cscope.out: -> 
+cscope.out: ?ÔøΩype -> base_type :ÔøΩype;
+cscope.out: ->ÔøΩum_dimensions &&
+cscope.out: -> 
+cscope.out: ->ÔøΩum_dimensions &&
+cscope.out: -> 
+cscope.out: -> 
+cscope.out: ? fÔøΩe_loÔøΩtiÔøΩ -> 
 cscope.out: -> 
 cscope.out: - 1);
 cscope.out: -> 
@@ -5547,13 +5547,13 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:(Ë-> 
+cscope.out:(ÔøΩ-> 
 cscope.out: -> 
-cscope.out:Ë-> 
+cscope.out:ÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ?áºay -> 
+cscope.out: ?ÔøΩÔøΩay -> 
 cscope.out: -> 
 cscope.out: -> Name(); }
 cscope.out: -> NameLength(); }
@@ -5563,17 +5563,17 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? fûe_loˇti⁄ -> 
-cscope.out: ?Éxã∫Æ_«me_symbﬁ -> 
+cscope.out: ? fÔøΩe_loÔøΩtiÔøΩ -> 
+cscope.out: ?ÔøΩxÔøΩÔøΩÔøΩ_ÔøΩme_symbÔøΩ -> 
 cscope.out: -> 
-cscope.out: ?Éxã∫Æ_«me_symbﬁ -> 
-cscope.out: -> 
-cscope.out: -> 
+cscope.out: ?ÔøΩxÔøΩÔøΩÔøΩ_ÔøΩme_symbÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: &&Éxã∫Æ_«me_symbﬁ -> 
+cscope.out: -> 
+cscope.out: -> 
+cscope.out: &&ÔøΩxÔøΩÔøΩÔøΩ_ÔøΩme_symbÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -5581,12 +5581,12 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out:(-1)
 cscope.out: -> 
-cscope.out:(Ë|| ow√∏-> 
+cscope.out:(ÔøΩ|| ow√∏-> 
 cscope.out: -> 
-cscope.out: ? mëhod_ow√∏-> 
+cscope.out: ? mÔøΩhod_ow√∏-> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? mëhod_ow√∏-> 
+cscope.out: ? mÔøΩhod_ow√∏-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -5598,127 +5598,127 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ?án⁄ymous_symbﬁ_poﬁ -> 
+cscope.out: ?ÔøΩnÔøΩymous_symbÔøΩ_poÔøΩ -> 
 cscope.out: -> 
-cscope.out: ?Åy≥_symbﬁ_poﬁ -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: ? mëhod_symbﬁ_poﬁ -> 
+cscope.out: ?ÔøΩyÔøΩ_symbÔøΩ_poÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? v¨übÀ_symbﬁ_poﬁ -> 
+cscope.out: ? mÔøΩhod_symbÔøΩ_poÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? othî_symbﬁ_poﬁ -> 
+cscope.out: ? vÔøΩÔøΩbÔøΩ_symbÔøΩ_poÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out:(Ë-> 
-cscope.out: -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out: -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out: -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out: -> 
-cscope.out: ?ÅabÀ -> 
+cscope.out: ? othÔøΩ_symbÔøΩ_poÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:; symbﬁ = symbﬁ -> 
+cscope.out:(ÔøΩ-> 
 cscope.out: -> 
-cscope.out:(Ë&& symbﬁ -> 
-cscope.out:(Ë-> 
+cscope.out: ?ÔøΩabÔøΩ -> 
 cscope.out: -> 
-cscope.out:; symbﬁ = symbﬁ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
 cscope.out: -> 
-cscope.out:(Ë&& symbﬁ -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out:(Ë-> 
+cscope.out: ?ÔøΩabÔøΩ -> 
 cscope.out: -> 
-cscope.out:; symbﬁ = symbﬁ -> 
-cscope.out: -> 
-cscope.out:(Ë&& symbﬁ -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out:(Ë-> 
-cscope.out: -> 
-cscope.out:; symbﬁ = symbﬁ -> 
-cscope.out: -> 
-cscope.out:(Ë&& symbﬁ -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
+cscope.out: ?ÔøΩabÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: = symbﬁ, symbﬁ = symbﬁ -> 
 cscope.out: -> 
-cscope.out: ->Çext;
+cscope.out: -> 
+cscope.out:; symbÔøΩ = symbÔøΩ -> 
+cscope.out: -> 
+cscope.out:(ÔøΩ&& symbÔøΩ -> 
+cscope.out:(ÔøΩ-> 
+cscope.out: -> 
+cscope.out:; symbÔøΩ = symbÔøΩ -> 
+cscope.out: -> 
+cscope.out:(ÔøΩ&& symbÔøΩ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
+cscope.out:(ÔøΩ-> 
+cscope.out: -> 
+cscope.out:; symbÔøΩ = symbÔøΩ -> 
+cscope.out: -> 
+cscope.out:(ÔøΩ&& symbÔøΩ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
+cscope.out:(ÔøΩ-> 
+cscope.out: -> 
+cscope.out:; symbÔøΩ = symbÔøΩ -> 
+cscope.out: -> 
+cscope.out:(ÔøΩ&& symbÔøΩ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out: -> 
+cscope.out: -> 
+cscope.out: -> 
+cscope.out: -> 
+cscope.out: = symbÔøΩ, symbÔøΩ = symbÔøΩ -> 
+cscope.out: -> 
+cscope.out: ->ÔøΩext;
 cscope.out:() - 1;
 cscope.out: -> 
-cscope.out:Ë-> 
-cscope.out: ->Öool_index;
+cscope.out:ÔøΩ-> 
+cscope.out: ->ÔøΩool_index;
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out:; symbﬁ = symbﬁ -> 
+cscope.out:; symbÔøΩ = symbÔøΩ -> 
 cscope.out: -> 
-cscope.out:(Ë&& symbﬁ -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out:; c™did©êˇndid©ê-> 
+cscope.out:(ÔøΩ&& symbÔøΩ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: -> 
-cscope.out: -> 
-cscope.out: ->Çext_method;
-cscope.out: -> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out: -> 
-cscope.out:; symbﬁ = symbﬁ -> 
-cscope.out: -> 
-cscope.out:(Ë&& symbﬁ -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out:(Ë-> 
-cscope.out: -> 
-cscope.out:; symbﬁ = symbﬁ -> 
-cscope.out: -> 
-cscope.out:(Ë&& symbﬁ -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out: ?ÅabÀ -> 
-cscope.out: -> 
-cscope.out:; symbﬁ = symbﬁ -> 
-cscope.out: -> 
-cscope.out:(Ë&& symbﬁ -> 
-cscope.out:(Ë-> 
-cscope.out: ? c⁄Êi˘ -> 
+cscope.out:; cÔøΩdidÔøΩÔøΩÔøΩÔøΩndidÔøΩÔøΩ-> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? c⁄Êi˘ -> 
+cscope.out: -> 
+cscope.out: ->ÔøΩext_method;
+cscope.out: -> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out: -> 
+cscope.out:; symbÔøΩ = symbÔøΩ -> 
+cscope.out: -> 
+cscope.out:(ÔøΩ&& symbÔøΩ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out:(ÔøΩ-> 
+cscope.out: -> 
+cscope.out:; symbÔøΩ = symbÔøΩ -> 
+cscope.out: -> 
+cscope.out:(ÔøΩ&& symbÔøΩ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
+cscope.out: ?ÔøΩabÔøΩ -> 
+cscope.out: -> 
+cscope.out:; symbÔøΩ = symbÔøΩ -> 
+cscope.out: -> 
+cscope.out:(ÔøΩ&& symbÔøΩ -> 
+cscope.out:(ÔøΩ-> 
+cscope.out: ? cÔøΩÔøΩiÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
-cscope.out: ? c⁄Êi˘ -> 
+cscope.out: ? cÔøΩÔøΩiÔøΩ -> 
+cscope.out: -> 
+cscope.out: -> 
+cscope.out: -> 
+cscope.out: ? cÔøΩÔøΩiÔøΩ -> 
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: -> 
@@ -5780,9 +5780,9 @@ cscope.out: ->
 cscope.out: -> 
 cscope.out:() - 1; i >= 0; i--)
 cscope.out: -> 
-cscope.out:Ë-> 
+cscope.out:ÔøΩ-> 
 cscope.out: -> 
-cscope.out:Ë-> 
+cscope.out:ÔøΩ-> 
 cscope.out:-
 cscope.out:-,
 cscope.out:-
@@ -5801,38 +5801,38 @@ cscope.out:-
 cscope.out:-
 cscope.out:-
 cscope.out:-
-cscope.out:-Redu˚ 
+cscope.out:-ReduÔøΩ 
 cscope.out: > 255. 16-
-cscope.out:[0]Ë- (
-cscope.out:Ë{  -
+cscope.out:[0]ÔøΩ- (
+cscope.out:ÔøΩ{  -
 cscope.out: - 
-cscope.out:()]Ë- 
-cscope.out: =0 ? -1 : (¿- 1Ë>> 
-cscope.out:Ë- 1; k > 
+cscope.out:()]ÔøΩ- 
+cscope.out: =ÔøΩ0 ? -1 : (ÔøΩ- 1ÔøΩ>> 
+cscope.out:ÔøΩ- 1; k > 
 cscope.out:; k--)
-cscope.out: -
+cscope.out: -ÔøΩ
 cscope.out: -> 
 cscope.out:--;
 cscope.out: - 1];
 cscope.out: - 1];
 cscope.out: - 4);
 cscope.out: - 8);
-cscope.out:)Ë-> 
-cscope.out:Ë-> 
-cscope.out: - 1Ë>> Tu∂e<T>::
+cscope.out:)ÔøΩ-> 
+cscope.out:ÔøΩ-> 
+cscope.out: - 1ÔøΩ>> TuÔøΩe<T>::
 cscope.out: - 
 cscope.out:517 --
-cscope.out:(Ë-> 
-cscope.out: - 1Ë>> buf„r.
+cscope.out:(ÔøΩ-> 
+cscope.out: - 1ÔøΩ>> bufÔøΩr.
 cscope.out: -> 
 cscope.out: -> 
 cscope.out: - size);
-cscope.out:-=“);}
-cscope.out:Ë((d)->
+cscope.out:-=ÔøΩ);}
+cscope.out:ÔøΩ((d)->
 cscope.out: ((d)->
-cscope.out:Ë(((*Ë(dË+ (d)->
-cscope.out:Ë- &(d)->
-cscope.out:Ë( (d)->
+cscope.out:ÔøΩ(((*ÔøΩ(dÔøΩ+ (d)->
+cscope.out:ÔøΩ- &(d)->
+cscope.out:ÔøΩ( (d)->
 cscope.out: > 1 ?  (d)->d_name : \
 cscope.out: (-128)
 cscope.out: (-32767-1)
@@ -5858,7 +5858,7 @@ cscope.out:(9223372036854775807)-1)
 cscope.out: (-9223372036854775807L-1)
 cscope.out: (-2147483647-1)
 cscope.out: (-2147483647-1)
-cscope.out: =-1L && 
+cscope.out: =ÔøΩ-1L && 
 cscope.out: -1
 cscope.out: -1
 cscope.out: -1
@@ -5871,14 +5871,14 @@ cscope.out: -1
 cscope.out: -1
 cscope.out:[48 -  (
 cscope.out:68 -  (
-cscope.out:Ë-  (
-cscope.out:Ë((buf)->
-cscope.out: - (buf)->°_mode)
-cscope.out:Ë((buf)->
-cscope.out: - (buf)->°_mode)
-cscope.out:Ë((buf)->
-cscope.out: - (buf)->°_mode)
-cscope.out: (-2147483647»- 1l)
+cscope.out:ÔøΩ-  (
+cscope.out:ÔøΩ((buf)->
+cscope.out: - (buf)->ÔøΩ_mode)
+cscope.out:ÔøΩ((buf)->
+cscope.out: - (buf)->ÔøΩ_mode)
+cscope.out:ÔøΩ((buf)->
+cscope.out: - (buf)->ÔøΩ_mode)
+cscope.out: (-2147483647ÔøΩ- 1l)
 cscope.out: - 0) >= 500) && \
 cscope.out: && (_XOPEN_SOURCE - 0) < 500
 cscope.out: - 0) >= 199309L
@@ -5886,14 +5886,14 @@ cscope.out: - 0) >= 199506L
 cscope.out: - 0) >= 200112L
 cscope.out: - 0) >= 500
 cscope.out: - 0) >= 600
-cscope.out:Ë((£t)->
-cscope.out:Ë((£t)->
+cscope.out:ÔøΩ((ÔøΩt)->
+cscope.out:ÔøΩ((ÔøΩt)->
 cscope.out:->
 cscope.out:)->
 cscope.out:)->
 cscope.out:)->
-cscope.out:Ë- 1Ë% (8 *  ())))
-cscope.out:Ë(((sigË- 1Ë/ (8 *  ()))
+cscope.out:ÔøΩ- 1ÔøΩ% (8 *  ())))
+cscope.out:ÔøΩ(((sigÔøΩ- 1ÔøΩ/ (8 *  ()))
 cscope.out:60 --
 cscope.out:->
 cscope.out:65 --
@@ -5935,8 +5935,8 @@ cscope.out:->
 cscope.out:->
 cscope.out:->
 cscope.out:->
-cscope.out:), "1" (__¿- 1 + (c⁄° *Ë
-cscope.out: - 1 + (*Ë
+cscope.out:), "1" (__ÔøΩ- 1 + (c⁄° *ÔøΩ
+cscope.out: - 1 + (*ÔøΩ
 cscope.out:->
 cscope.out:->
 cscope.out:->
@@ -5950,11 +5950,11 @@ cscope.out: - 1;
 cscope.out: - 1;
 cscope.out: - 1;
 cscope.out: - 1;
-cscope.out: - 1Ë- 
-cscope.out: - 1Ë- 
-cscope.out: - 1Ë- 
-cscope.out: - 1Ë- 
-cscope.out:Ë+ 1Ë- (size_t)(c⁄° *)(__xË=1)
+cscope.out: - 1ÔøΩ- 
+cscope.out: - 1ÔøΩ- 
+cscope.out: - 1ÔøΩ- 
+cscope.out: - 1ÔøΩ- 
+cscope.out:ÔøΩ+ 1ÔøΩ- (size_t)(c⁄° *)(__xÔøΩ=ÔøΩ1)
 cscope.out:->
 cscope.out:->
 cscope.out:->
@@ -6056,9 +6056,9 @@ cscope.out:879 - ((
 cscope.out:[-1] = '\0';
 cscope.out: - 1] = '\0'; \
 cscope.out: - 1); \
-cscope.out: < -128 || __¯> 255 ? __¯: (
-cscope.out: >-128 && __¯< 256 ? (*
-cscope.out: >-128 && __¯< 256 ? (*
+cscope.out: < -128 || __ÔøΩ> 255 ? __ÔøΩ: (
+cscope.out: >ÔøΩ-128 && __ÔøΩ< 256 ? (*
+cscope.out: >ÔøΩ-128 && __ÔøΩ< 256 ? (*
 cscope.out:)->
 cscope.out:)->
 cscope.out:)->
@@ -8607,65 +8607,65 @@ double.cpp:    if (k -= 11)
 double.cpp:        hi = 0x3ff00000 | y << k | z >> (32 - k);
 double.cpp:        y = xa > data ? *--xa : 0;
 double.cpp:        lo = z << k | y >> (32 - k);
-double.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-double.h:    // compiler-supported IEEE operations.  If not, then this class
-double.h:        MAX_DIGITS = BIAS + FRACT_SIZE + 1 - MAX_DEC_EXP
-double.h:        NEG_ZERO = 0x80000000, // -0.0
-double.h:        NEG_INF = 0xFF800000, // -Inf
-double.h:        return ((value.word & EXP_BITS) >> FRACT_SIZE) - BIAS;
-double.h:    // fields, rather than generating a non-const every time.  However,
-double.h:    // Floating-point operations
-double.h:    inline IEEEfloat operator++() { return *this += 1; } // pre-increment
-double.h:    inline IEEEfloat operator++(int) // post-increment
-double.h:    IEEEfloat operator-() const;        // unary minus
-double.h:    inline IEEEfloat operator-(const IEEEfloat op) const // binary subtraction
-double.h:        return *this + (-op);
-double.h:    inline IEEEfloat& operator-=(const IEEEfloat op) // subtract and assign
-double.h:        return *this = *this - op;
-double.h:    inline IEEEfloat operator--() { return *this -= 1; } // pre-decrement
-double.h:    inline IEEEfloat operator--(int) // post-decrement
-double.h:        *this -= 1;
-double.h:    // Comparison operators.  Recall that NaN does not compare, and 0.0 == -0.0
-double.h:    bool operator<(const IEEEfloat) const; // less-than
-double.h:    bool operator>(const IEEEfloat) const; // greater-than
-double.h:    bool operator<=(const IEEEfloat) const; // less-than or equal
-double.h:    bool operator>=(const IEEEfloat) const; // greater-than or equal
-double.h:    //  * -0.0f and 0.0f are different, with positive 0 comparing as greater
-double.h:            : (IsZero() && op.IsZero()) ? op.Sign() - Sign()
-double.h:            : (*this < op) ? -1 : *this > op;
-double.h:    // compiler-supported IEEE operations.  If not, then this class
-double.h:        FRACT_SIZE_HI = FRACT_SIZE - 32, // mantissa bits in high word
-double.h:        MAX_DIGITS = BIAS + FRACT_SIZE + 1 - MAX_DEC_EXP
-double.h:        NEG_ZERO_HI = 0x80000000, // -0.0
-double.h:        NEG_INF_HI = 0xFFF00000, // -Inf
-double.h:        return ((HighWord() & EXP_BITS) >> (FRACT_SIZE_HI)) - BIAS;
-double.h:        return ((high & ABS_BITS) | ((low | -(i4) low) >> 31)) > EXP_BITS;
-double.h:    // fields, rather than generating a non-const every time, as in
-double.h:    // Floating-point operations
-double.h:    inline IEEEdouble operator++() { return *this += 1; } // pre-increment
-double.h:    inline IEEEdouble operator++(int) // post-increment
-double.h:    IEEEdouble operator-() const;         // unary minus
-double.h:    inline IEEEdouble operator-(const IEEEdouble op) const // binary subtract
-double.h:        return *this + (-op);
-double.h:    inline IEEEdouble& operator-=(const IEEEdouble op) // subtract and assign
-double.h:        return *this = *this - op;
-double.h:    inline IEEEdouble operator--() { return *this -= 1; } // pre-decrement
-double.h:    inline IEEEdouble operator--(int) // post-decrement
-double.h:        *this -= 1;
-double.h:    // Comparison operators.  Recall that NaN does not compare, and 0.0 == -0.0
-double.h:    bool operator<(const IEEEdouble) const; // less-than
-double.h:    bool operator>(const IEEEdouble) const; // greater-than
-double.h:    bool operator<=(const IEEEdouble) const; // less-than or equal
-double.h:    bool operator>=(const IEEEdouble) const; // greater-than or equal
-double.h:    //  * -0.0 and 0.0 are different, with positive 0 comparing as greater
-double.h:            : (IsZero() && op.IsZero()) ? op.Sign() - Sign()
-double.h:            : (*this < op) ? -1 : *this > op;
-double.h:    // return count of high-order 0's in x
-double.h:    // return count of low-order 0's in y, shift y so that
-double.h:    inline int hi0bits() const { assert(data); return hi0bits(data[wds - 1]); }
-double.h:    inline BigInt& operator++() { return *this += 1; } // pre-increment
-double.h:    BigInt operator-(const BigInt& op) const;
-double.h:    this -> k = k;
+declarations/double.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/double.h:    // compiler-supported IEEE operations.  If not, then this class
+declarations/double.h:        MAX_DIGITS = BIAS + FRACT_SIZE + 1 - MAX_DEC_EXP
+declarations/double.h:        NEG_ZERO = 0x80000000, // -0.0
+declarations/double.h:        NEG_INF = 0xFF800000, // -Inf
+declarations/double.h:        return ((value.word & EXP_BITS) >> FRACT_SIZE) - BIAS;
+declarations/double.h:    // fields, rather than generating a non-const every time.  However,
+declarations/double.h:    // Floating-point operations
+declarations/double.h:    inline IEEEfloat operator++() { return *this += 1; } // pre-increment
+declarations/double.h:    inline IEEEfloat operator++(int) // post-increment
+declarations/double.h:    IEEEfloat operator-() const;        // unary minus
+declarations/double.h:    inline IEEEfloat operator-(const IEEEfloat op) const // binary subtraction
+declarations/double.h:        return *this + (-op);
+declarations/double.h:    inline IEEEfloat& operator-=(const IEEEfloat op) // subtract and assign
+declarations/double.h:        return *this = *this - op;
+declarations/double.h:    inline IEEEfloat operator--() { return *this -= 1; } // pre-decrement
+declarations/double.h:    inline IEEEfloat operator--(int) // post-decrement
+declarations/double.h:        *this -= 1;
+declarations/double.h:    // Comparison operators.  Recall that NaN does not compare, and 0.0 == -0.0
+declarations/double.h:    bool operator<(const IEEEfloat) const; // less-than
+declarations/double.h:    bool operator>(const IEEEfloat) const; // greater-than
+declarations/double.h:    bool operator<=(const IEEEfloat) const; // less-than or equal
+declarations/double.h:    bool operator>=(const IEEEfloat) const; // greater-than or equal
+declarations/double.h:    //  * -0.0f and 0.0f are different, with positive 0 comparing as greater
+declarations/double.h:            : (IsZero() && op.IsZero()) ? op.Sign() - Sign()
+declarations/double.h:            : (*this < op) ? -1 : *this > op;
+declarations/double.h:    // compiler-supported IEEE operations.  If not, then this class
+declarations/double.h:        FRACT_SIZE_HI = FRACT_SIZE - 32, // mantissa bits in high word
+declarations/double.h:        MAX_DIGITS = BIAS + FRACT_SIZE + 1 - MAX_DEC_EXP
+declarations/double.h:        NEG_ZERO_HI = 0x80000000, // -0.0
+declarations/double.h:        NEG_INF_HI = 0xFFF00000, // -Inf
+declarations/double.h:        return ((HighWord() & EXP_BITS) >> (FRACT_SIZE_HI)) - BIAS;
+declarations/double.h:        return ((high & ABS_BITS) | ((low | -(i4) low) >> 31)) > EXP_BITS;
+declarations/double.h:    // fields, rather than generating a non-const every time, as in
+declarations/double.h:    // Floating-point operations
+declarations/double.h:    inline IEEEdouble operator++() { return *this += 1; } // pre-increment
+declarations/double.h:    inline IEEEdouble operator++(int) // post-increment
+declarations/double.h:    IEEEdouble operator-() const;         // unary minus
+declarations/double.h:    inline IEEEdouble operator-(const IEEEdouble op) const // binary subtract
+declarations/double.h:        return *this + (-op);
+declarations/double.h:    inline IEEEdouble& operator-=(const IEEEdouble op) // subtract and assign
+declarations/double.h:        return *this = *this - op;
+declarations/double.h:    inline IEEEdouble operator--() { return *this -= 1; } // pre-decrement
+declarations/double.h:    inline IEEEdouble operator--(int) // post-decrement
+declarations/double.h:        *this -= 1;
+declarations/double.h:    // Comparison operators.  Recall that NaN does not compare, and 0.0 == -0.0
+declarations/double.h:    bool operator<(const IEEEdouble) const; // less-than
+declarations/double.h:    bool operator>(const IEEEdouble) const; // greater-than
+declarations/double.h:    bool operator<=(const IEEEdouble) const; // less-than or equal
+declarations/double.h:    bool operator>=(const IEEEdouble) const; // greater-than or equal
+declarations/double.h:    //  * -0.0 and 0.0 are different, with positive 0 comparing as greater
+declarations/double.h:            : (IsZero() && op.IsZero()) ? op.Sign() - Sign()
+declarations/double.h:            : (*this < op) ? -1 : *this > op;
+declarations/double.h:    // return count of high-order 0's in x
+declarations/double.h:    // return count of low-order 0's in y, shift y so that
+declarations/double.h:    inline int hi0bits() const { assert(data); return hi0bits(data[wds - 1]); }
+declarations/double.h:    inline BigInt& operator++() { return *this += 1; } // pre-increment
+declarations/double.h:    BigInt operator-(const BigInt& op) const;
+declarations/double.h:    this -> k = k;
 Binary file double.o matches
 dump.cpp:                FindColumn(comments[com].location - 1) + 1);
 dump.cpp:                    FindColumn(comments[com].location - 1) + 1);
@@ -8824,12 +8824,12 @@ error.cpp:        "This catch block is unreachable because there is no non-null 
 error.cpp:        "represent a compile-time constant, but is enclosed in an inner "
 error.cpp:        "Invalid reference in inner class \"%T1\" to a non-final "
 error.cpp:        "non-static member type \"%T3\" of the enclosing type \"%T5\".";
-error.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-error.h:// WARNING: It is not thread-safe - calling Array() in multiple threads may
-error.h:    // The returned value is not thread-safe, and is only guaranteed valid
-error.h:        // JDK 1.5 (JLS3) feature-related errors.
-error.h:        // More type-related errors.
-error.h:    void ExitingClone() { clone_count--; }
+declarations/jikes/error.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/jikes/error.h:// WARNING: It is not thread-safe - calling Array() in multiple threads may
+declarations/jikes/error.h:    // The returned value is not thread-safe, and is only guaranteed valid
+declarations/jikes/error.h:        // JDK 1.5 (JLS3) feature-related errors.
+declarations/jikes/error.h:        // More type-related errors.
+declarations/jikes/error.h:    void ExitingClone() { clone_count--; }
 Binary file error.o matches
 expr.cpp:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $
 expr.cpp:        semantic -> ReportSemError(SemanticError::CONSTANT_OVERFLOW, expr,
@@ -14001,9 +14001,9 @@ jikesapi.cpp:    if (result && (result->getBuffer() == NULL))
 jikesapi.cpp:    if (result && (! result -> isValid()))
 jikesapi.cpp:        maxSize -= size;
 jikesapi.cpp:    JikesAPI::getInstance() -> stat(fileName, &status);
-jikesapi.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-jikesapi.h:    char* extdirs;       // Location of external drop-in jars
-jikesapi.h:    // 0 if false, non-zero if true
+declarations/jikes/jikesapi.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/jikes/jikesapi.h:    char* extdirs;       // Location of external drop-in jars
+declarations/jikes/jikesapi.h:    // 0 if false, non-zero if true
 Binary file jikesapi.o matches
 long.cpp:    // But, since not all compilers follow these rules, we special-case on
 long.cpp:        return BaseLong((HighWord() << n) | (lo >> (32 - n)), lo << n);
@@ -14038,21 +14038,21 @@ long.cpp:    // Correct compilers treat x >> 0 as x, and x >> 32+ as x<0 ? -1 : 
 long.cpp:    // But, since not all compilers follow these rules, we special-case on
 long.cpp:         return LongInt(hi >> n, (hi << (32 - n)) | (LowWord() >> n));
 long.cpp:    return LongInt(shift, hi >> (n - 32));
-long.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-long.h:    BaseLong operator-(const BaseLong) const; // binary subtraction
-long.h:    BaseLong operator-() const;     // unary minus
-long.h:    BaseLong& operator-=(const BaseLong); // subtract and assign
-long.h:    BaseLong operator--(int);      // postfix decrement
-long.h:    BaseLong operator--();     // prefix decrement
-long.h:    bool operator&&(const BaseLong) const; // logical AND (not short-circuit)
-long.h:    bool operator<(const LongInt) const; // less-than
-long.h:    bool operator>(const LongInt) const; // greater-than
-long.h:    bool operator<=(const LongInt) const; // less-than or equal
-long.h:    bool operator>=(const LongInt) const; // greater-than or equal
-long.h:    bool operator<(const ULongInt) const; // less-than
-long.h:    bool operator>(const ULongInt) const; // greater-than
-long.h:    bool operator<=(const ULongInt) const; // less-than or equal
-long.h:    bool operator>=(const ULongInt) const; // greater-than or equal
+declarations/long.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/long.h:    BaseLong operator-(const BaseLong) const; // binary subtraction
+declarations/long.h:    BaseLong operator-() const;     // unary minus
+declarations/long.h:    BaseLong& operator-=(const BaseLong); // subtract and assign
+declarations/long.h:    BaseLong operator--(int);      // postfix decrement
+declarations/long.h:    BaseLong operator--();     // prefix decrement
+declarations/long.h:    bool operator&&(const BaseLong) const; // logical AND (not short-circuit)
+declarations/long.h:    bool operator<(const LongInt) const; // less-than
+declarations/long.h:    bool operator>(const LongInt) const; // greater-than
+declarations/long.h:    bool operator<=(const LongInt) const; // less-than or equal
+declarations/long.h:    bool operator>=(const LongInt) const; // greater-than or equal
+declarations/long.h:    bool operator<(const ULongInt) const; // less-than
+declarations/long.h:    bool operator>(const ULongInt) const; // greater-than
+declarations/long.h:    bool operator<=(const ULongInt) const; // less-than or equal
+declarations/long.h:    bool operator>=(const ULongInt) const; // greater-than or equal
 Binary file long.o matches
 lookup.cpp:    prime_index = -1;
 lookup.cpp:        int i = hash(element -> device, element -> inode);
@@ -14267,18 +14267,18 @@ lookup.cpp:            memcmp(symbol -> Name(), str, len * sizeof(wchar_t)) == 0
 lookup.cpp:    symbol -> Initialize(str, hash_address, len);
 lookup.cpp:    symbol -> next = base[k];
 lookup.cpp:// JLS2 6.8 describes the well-established Java naming conventions.
-lookup.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-lookup.h:        while (--len >= 0)
-lookup.h:            hash_value = (hash_value << 5) - hash_value + *head++;
-lookup.h:        while (--len >= 0)
-lookup.h:            hash_value = (hash_value << 5) - hash_value + *head++;
-lookup.h:        Initialize(entry -> directory, name_, length_);
-lookup.h:// treat filenames in a case-insensitive fashion.
-lookup.h:        return Utf8_literal ? Utf8_literal -> value : (char*) NULL;
-lookup.h:        return Utf8_literal ? Utf8_literal -> length : 0;
-lookup.h:    return (unsigned) Identity() -> index;
+declarations/symbol/lookup.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/symbol/lookup.h:        while (--len >= 0)
+declarations/symbol/lookup.h:            hash_value = (hash_value << 5) - hash_value + *head++;
+declarations/symbol/lookup.h:        while (--len >= 0)
+declarations/symbol/lookup.h:            hash_value = (hash_value << 5) - hash_value + *head++;
+declarations/symbol/lookup.h:        Initialize(entry -> directory, name_, length_);
+declarations/symbol/lookup.h:// treat filenames in a case-insensitive fashion.
+declarations/symbol/lookup.h:        return Utf8_literal ? Utf8_literal -> value : (char*) NULL;
+declarations/symbol/lookup.h:        return Utf8_literal ? Utf8_literal -> length : 0;
+declarations/symbol/lookup.h:    return (unsigned) Identity() -> index;
 Binary file lookup.o matches
-lpginput.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/lpginput.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
 Binary file lpginput.o matches
 modifier.cpp:// . Modifiers not in the recommended order (controlled by +Pmodifier-order).
 modifier.cpp://   +Predundant-modifiers).
@@ -14456,7 +14456,7 @@ op.cpp:   -1, // OP_MONITOREXIT
 op.cpp:    0, // OP_MULTIANEWARRAY, caller must adjust 1-dims
 op.cpp:   -1, // OP_IFNULL
 op.cpp:   -1, // OP_IFNONNULL
-op.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/op.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
 Binary file op.o matches
 option.cpp:                end--;
 option.cpp:            s << "\"-source\" only recognizes Java releases 1.3 (JLS 2 "
@@ -14557,7 +14557,7 @@ option.cpp:            else if (strcmp(arguments.argv[i], "--zero-cautions") == 
 option.cpp:    // Specify defaults for -source and -target.
 option.cpp:    for (int k = filename_index.Length() - 1; k >= 0; k--)
 option.cpp:        first_file_index--;
-option.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/option.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
 Binary file option.o matches
 parser.cpp:        free_list_nodes = free_list_nodes -> next;
 parser.cpp:    else p = list_node_pool -> NewListNode();
@@ -14831,27 +14831,27 @@ platform.cpp:    "\nCopyright (C) IBM Corporation 1997-2003, 2004.\n"
 platform.cpp:    "- Licensed Materials - Program Property of IBM - All Rights Reserved.\n";
 platform.cpp:    U_MINUS, U_I, U_n, U_f, U_i, U_n, U_i, U_t, U_y, U_NU}; // "-Infinity"
 platform.cpp:    U_MINUS, U_0, U_DOT, U_0, U_NU}; // "-0.0"
-platform.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-platform.h:// the code for non-ascii platforms. At some point we'll want to be able to
-platform.h:// like, pull a cvs tree with the tag v1-06.
-platform.h:// the value are 16-bits or U8S_ for 8 bits. The initial underscore is
-platform.h:// All string-related values are represented internally in ASCII/UNICODE
-platform.h:    U_MINUS = 45,             U_MI = U_MINUS,             // L'-'
-platform.h:    static const wchar_t US_MINUS[]; // L"-"
-platform.h:    static const wchar_t US_MINUS_EQUAL[]; // L"-="
-platform.h:    static const wchar_t US_MINUS_MINUS[]; // L"--"
-platform.h:    static const wchar_t US_MI[]; // L"-"
-platform.h:    static const char U8S_neg_Infinity[]; // "-Infinity"
-platform.h:    static const char U8S_neg_Zero[]; // "-0.0"
-platform.h:    IntToString(u4, int width); // Unsigned zero-padded hexadecimal.
-platform.h:    int Length() { return (&info[TAIL_INDEX]) - str; }
-platform.h:    int Length() { return (&winfo[TAIL_INDEX]) - wstr; }
-platform.h:    int Length() { return (&info[TAIL_INDEX]) - str; }
-platform.h:                for (int i = 3; i >= 0; i--)
-platform.h:                        str[i] = U_A - 10 + d;
-platform.h:    char fill(char c) { return os -> fill(c); }
-platform.h:        os -> flush();
-platform.h:        return os -> width(w);
+declarations/platform.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/platform.h:// the code for non-ascii platforms. At some point we'll want to be able to
+declarations/platform.h:// like, pull a cvs tree with the tag v1-06.
+declarations/platform.h:// the value are 16-bits or U8S_ for 8 bits. The initial underscore is
+declarations/platform.h:// All string-related values are represented internally in ASCII/UNICODE
+declarations/platform.h:    U_MINUS = 45,             U_MI = U_MINUS,             // L'-'
+declarations/platform.h:    static const wchar_t US_MINUS[]; // L"-"
+declarations/platform.h:    static const wchar_t US_MINUS_EQUAL[]; // L"-="
+declarations/platform.h:    static const wchar_t US_MINUS_MINUS[]; // L"--"
+declarations/platform.h:    static const wchar_t US_MI[]; // L"-"
+declarations/platform.h:    static const char U8S_neg_Infinity[]; // "-Infinity"
+declarations/platform.h:    static const char U8S_neg_Zero[]; // "-0.0"
+declarations/platform.h:    IntToString(u4, int width); // Unsigned zero-padded hexadecimal.
+declarations/platform.h:    int Length() { return (&info[TAIL_INDEX]) - str; }
+declarations/platform.h:    int Length() { return (&winfo[TAIL_INDEX]) - wstr; }
+declarations/platform.h:    int Length() { return (&info[TAIL_INDEX]) - str; }
+declarations/platform.h:                for (int i = 3; i >= 0; i--)
+declarations/platform.h:                        str[i] = U_A - 10 + d;
+declarations/platform.h:    char fill(char c) { return os -> fill(c); }
+declarations/platform.h:        os -> flush();
+declarations/platform.h:        return os -> width(w);
 Binary file platform.o matches
 scanner.cpp:    current_token_index = lex -> GetNextToken(); // Get 0th token.
 scanner.cpp:    current_token = &(lex -> token_stream[current_token_index]);
@@ -15106,11 +15106,11 @@ segment.cpp:    return base[k] -> Image(target);
 segment.cpp:        array -= offset;
 segment.cpp:               (base_size - old_base_size) * sizeof(TripletSegment *));
 segment.cpp:    return base[k] -> Image(target)[target2];
-segment.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-segment.h:        MASK = ~ (BLKSIZE - 1)
-segment.h:// A map of int -> u2 pairs.
-segment.h:        MASK = ~ (BLKSIZE - 1)
-segment.h:// A map of (int, int) -> u2 triplets.
+declarations/segment.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/segment.h:        MASK = ~ (BLKSIZE - 1)
+declarations/segment.h:// A map of int -> u2 pairs.
+declarations/segment.h:        MASK = ~ (BLKSIZE - 1)
+declarations/segment.h:// A map of (int, int) -> u2 triplets.
 Binary file segment.o matches
 semantic.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
 semantic.h:    void Pop() { if (table.Length() > 0) table.Reset(table.Length() - 1); }
@@ -15343,13 +15343,13 @@ set.h:        element -> next = base[k];
 set.h:    element -> value = value;
 set.h:    static int prime_index = -1;
 Binary file set.o matches
-spell.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-spell.h:            //  ;      <---->     ,
-spell.h:            //  ;      <---->     :
-spell.h:            //  .      <---->     ,
-spell.h:            //  '      <---->     "
-spell.h:                if ((len1 - i1) > (len2 - i2))
-spell.h:                else if ((len2 - i2) > (len1 - i1))
+declarations/spell.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/spell.h:            //  ;      <---->     ,
+declarations/spell.h:            //  ;      <---->     :
+declarations/spell.h:            //  .      <---->     ,
+declarations/spell.h:            //  '      <---->     "
+declarations/spell.h:                if ((len1 - i1) > (len2 - i2))
+declarations/spell.h:                else if ((len2 - i2) > (len1 - i1))
 stream.cpp:    return lex_stream -> FileName();
 stream.cpp:            L"as it is now a keyword. Use -source 1.4 if you intended "
 stream.cpp:            L"as it will be a keyword once -source 1.5 is implemented.";
@@ -15448,18 +15448,18 @@ stream.cpp:                 histack[top] = i - 1;
 stream.cpp:                control.system_semantic ->
 stream.cpp:                    JikesAPI::getInstance() -> reportError(&bad_tokens[i]);
 stream.cpp:                JikesAPI::getInstance() -> reportError(&bad_tokens[i]);
-stream.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-stream.h:        return _decoder != (iconv_t) -1;
-stream.h:        source_tail = data_buffer + size - 1;
-stream.h:        return ++i < token_stream.Length() ? i : token_stream.Length() - 1;
-stream.h:    inline TokenIndex Previous(TokenIndex i) { return i <= 0 ? 0 : i - 1; }
-stream.h:                        : token_stream.Length() - 1);
-stream.h:        return tokens[i >= NumTokens() ? NumTokens() - 1 : i].Kind();
-stream.h:        return input_buffer ? FindColumn(tokens[i].Location() - 1) + 1 : 0;
-stream.h:        return i < 1 ? true : Line(i - 1) < Line(i);
-stream.h:        return locations[line_no + 1] - 1;
-stream.h:        while (Line(--start) == the_line);
-stream.h:        return bad_tokens.Length() - NumBadTokens();
+declarations/stream.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/stream.h:        return _decoder != (iconv_t) -1;
+declarations/stream.h:        source_tail = data_buffer + size - 1;
+declarations/stream.h:        return ++i < token_stream.Length() ? i : token_stream.Length() - 1;
+declarations/stream.h:    inline TokenIndex Previous(TokenIndex i) { return i <= 0 ? 0 : i - 1; }
+declarations/stream.h:                        : token_stream.Length() - 1);
+declarations/stream.h:        return tokens[i >= NumTokens() ? NumTokens() - 1 : i].Kind();
+declarations/stream.h:        return input_buffer ? FindColumn(tokens[i].Location() - 1) + 1 : 0;
+declarations/stream.h:        return i < 1 ? true : Line(i - 1) < Line(i);
+declarations/stream.h:        return locations[line_no + 1] - 1;
+declarations/stream.h:        while (Line(--start) == the_line);
+declarations/stream.h:        return bad_tokens.Length() - NumBadTokens();
 Binary file stream.o matches
 symbol.cpp:        int length = (Type() -> ContainingPackage() -> PackageNameLength() +
 symbol.cpp:                      Type() -> ExternalNameLength() +
@@ -16130,281 +16130,281 @@ symbol.cpp:        class_creation -> class_body_opt = class_body;
 symbol.cpp:        sem -> GetAnonymousType(class_creation, control.Object());
 symbol.cpp:        sem -> state_stack.Pop();
 symbol.cpp:        placeholder_type -> SetACC_SYNTHETIC();
-symbol.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
-symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
-symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:        return entries ? entries -> FindEntry(name, len)
-symbol.h:        return entries ? entries -> FindCaseInsensitiveEntry(name, length)
-symbol.h:        DirectoryEntry* entry = entries -> InsertEntry(this, name, length);
-symbol.h:        entries -> InsertCaseInsensitiveEntry(entry);
-symbol.h:        return owner -> PathCast() ? (PathSymbol*) owner
-symbol.h:            : ((DirectorySymbol*) owner) -> PathSym();
-symbol.h:    inline bool IsZip() { return PathSym() -> IsZip(); }
-symbol.h:    // This field holds the time of last data modification for a non-zip file
-symbol.h:        clone -> kind = kind;
-symbol.h:        clone -> directory_symbol = directory_symbol;
-symbol.h:        clone -> mtime = mtime;
-symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
-symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:        return directory_symbol -> PathSym();
-symbol.h:    inline bool IsZip() { return PathSym() -> IsZip(); }
-symbol.h:    inline Zip* Zipfile() { return PathSym() -> zipfile; }
-symbol.h:        char* file_name = file_symbol -> FileName();
-symbol.h:        unsigned length = file_symbol -> FileNameLength();
-symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
-symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:            DYNAMIC_CAST<AccessFlags*> (accessed_member) -> ACC_STATIC();
-symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
-symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:        return (wchar_t*) (file_location ? file_location -> location : NULL);
-symbol.h:        //  ( "this -> ProcessMethodSignature(sem, tok);" )
-symbol.h:        return formal_parameters ? formal_parameters -> Length() : 0;
-symbol.h:        formal_parameters -> Next() = variable;
-symbol.h:        return throws ? throws -> Length() : 0;
-symbol.h:        throws -> Next() = exception;
-symbol.h:        return throws_signatures ? throws_signatures -> Length() : 0;
-symbol.h:        throws_signatures -> Next() = signature;
-symbol.h:        return external_name_symbol ? external_name_symbol -> Name()
-symbol.h:            : name_symbol -> Name();
-symbol.h:        return external_name_symbol ? external_name_symbol -> NameLength()
-symbol.h:            : name_symbol -> NameLength();
-symbol.h:            ? external_name_symbol -> Utf8_literal -> value
-symbol.h:            : name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return external_name_symbol && external_name_symbol -> Utf8_literal
-symbol.h:            ? external_name_symbol -> Utf8_literal -> length
-symbol.h:            : name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:    const char* SignatureString() const { return signature -> value; }
-symbol.h:    // forms an inter-type cycle in its "extends" or "implements" relationship.
-symbol.h:    // forms an intra-type cycle in its "extends" or "implements" relationship;
-symbol.h:            ? local_constructor_call_environments -> Length() : 0;
-symbol.h:        local_constructor_call_environments -> Next() = environment;
-symbol.h:            ? private_access_methods -> Length() : 0;
-symbol.h:        private_access_methods -> Next() = method_symbol;
-symbol.h:            ? private_access_constructors -> Length() : 0;
-symbol.h:        private_access_constructors -> Next() = constructor_symbol;
-symbol.h:            ? constructor_parameters -> Length() : 0;
-symbol.h:        constructor_parameters -> Next() = variable_symbol;
-symbol.h:        return class_literals ? class_literals -> Length() : 0;
-symbol.h:        class_literals -> Next() = literal_symbol;
-symbol.h:        return nested_types ? nested_types -> Length() : 0;
-symbol.h:        nested_types -> Next() = type_symbol;
-symbol.h:        return interfaces ? interfaces -> Length() : 0;
-symbol.h:        interfaces -> Next() = type_symbol;
-symbol.h:        return anonymous_types ? anonymous_types -> Length() : 0;
-symbol.h:        anonymous_types -> Next() = type_symbol;
-symbol.h:        if (! outermost_type -> placeholder_type)
-symbol.h:            outermost_type -> placeholder_type = type_symbol;
-symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
-symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:        return external_name_symbol ? external_name_symbol -> Name()
-symbol.h:            : name_symbol -> Name();
-symbol.h:        return external_name_symbol ? external_name_symbol -> NameLength()
-symbol.h:            : name_symbol -> NameLength();
-symbol.h:            ? external_name_symbol -> Utf8_literal -> value
-symbol.h:            : name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return external_name_symbol && external_name_symbol -> Utf8_literal
-symbol.h:            ? external_name_symbol -> Utf8_literal -> length
-symbol.h:            : name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:        Symbol* sym = type -> owner;
-symbol.h:        while (! sym -> PackageCast())
-symbol.h:            MethodSymbol* method = sym -> MethodCast();
-symbol.h:            sym = (method ? method -> containing_type
-symbol.h:                   : ((TypeSymbol*) sym) -> owner);
-symbol.h:            TypeSymbol* type = owner -> TypeCast();
-symbol.h:            MethodSymbol* method = owner -> MethodCast();
-symbol.h:                return method -> containing_type;
-symbol.h:            TypeSymbol* type = owner -> TypeCast();
-symbol.h:            MethodSymbol* method = owner -> MethodCast();
-symbol.h:                return method -> containing_type;
-symbol.h:    // For JSR 201, control.int_class -> BoxedType() returns control.Integer(),
-symbol.h:        for (const TypeSymbol* type = this; type; type = type -> super)
-symbol.h:            if (Interface(i) -> IsSubinterface(super_interface))
-symbol.h:            if (Interface(i) -> IsSubinterface(inter))
-symbol.h:        return super && super -> Implements(inter);
-symbol.h:            return (type -> ACC_INTERFACE() && IsSubinterface(type)) ||
-symbol.h:                type -> base_type ? type -> base_type : type;
-symbol.h:            return (num_dimensions > type -> num_dimensions &&
-symbol.h:                    ((base -> ACC_INTERFACE() && Implements(base)) ||
-symbol.h:                (num_dimensions == type -> num_dimensions &&
-symbol.h:                 base_type -> IsSubtype(base));
-symbol.h:        return type -> ACC_INTERFACE() ? Implements(type) : IsSubclass(type);
-symbol.h:        return file_location ? file_location -> location : (wchar_t*) NULL;
-symbol.h:    // type as this (ie. Object[] -> GetArrayType(...,2) returns Object[][]).
-symbol.h:        return base_type -> Array(num_dimensions - 1);
-symbol.h:    const char* SignatureString() const { return signature -> value; }
-symbol.h:        return outermost_type -> owner -> PackageCast();
-symbol.h:    // Returns the fully-qualified '/' separated package name.
-symbol.h:        return outermost_type -> owner -> PackageCast() -> PackageName();
-symbol.h:             ! sym -> PackageCast(); sym = ((TypeSymbol*) sym) -> owner)
-symbol.h:            if (sym -> MethodCast())
-symbol.h:            ? nested_type_signatures -> Length() : 0;
-symbol.h:        nested_type_signatures -> Next() = signature;
-symbol.h:        return array ? array -> Length() : 0;
-symbol.h:        array -> Next() = type_symbol;
-symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
-symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:        return (wchar_t*) (file_location ? file_location -> location : NULL);
-symbol.h:        return external_name_symbol ? external_name_symbol -> Name()
-symbol.h:            : name_symbol -> Name();
-symbol.h:        return external_name_symbol ? external_name_symbol -> NameLength()
-symbol.h:            : name_symbol -> NameLength();
-symbol.h:            ? external_name_symbol -> Utf8_literal -> value
-symbol.h:            : name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return external_name_symbol && external_name_symbol -> Utf8_literal
-symbol.h:            ? external_name_symbol -> Utf8_literal -> length
-symbol.h:            : name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:        , local_variable_index(-1)
-symbol.h:        assert(owner -> TypeCast() || owner -> MethodCast());
-symbol.h:        MethodSymbol* method_owner = owner -> MethodCast();
-symbol.h:        return method_owner ? method_owner -> containing_type
-symbol.h:            : owner -> TypeCast();
-symbol.h:        MethodSymbol* method_owner = owner -> MethodCast();
-symbol.h:        return method_owner ? method_owner -> containing_type
-symbol.h:            : owner -> TypeCast();
-symbol.h:        signature = type_ -> signature;
-symbol.h:        // ( "this -> ProcessVariableSignature(sem, tok);" )
-symbol.h:    bool IsLocal() { return owner -> MethodCast() != NULL; }
-symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
-symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
-symbol.h:        return name_symbol -> Utf8_literal
-symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
-symbol.h:        return anonymous_symbol_pool ? anonymous_symbol_pool -> Length() : 0;
-symbol.h:        anonymous_symbol_pool -> Next() = symbol;
-symbol.h:        return type_symbol_pool ? type_symbol_pool -> Length() : 0;
-symbol.h:        symbol -> pool_index = NumTypeSymbols();
-symbol.h:        type_symbol_pool -> Next() = symbol;
-symbol.h:        return method_symbol_pool ? method_symbol_pool -> Length() : 0;
-symbol.h:        symbol -> pool_index = NumMethodSymbols();
-symbol.h:        method_symbol_pool -> Next() = symbol;
-symbol.h:        return variable_symbol_pool ? variable_symbol_pool -> Length() : 0;
-symbol.h:        symbol -> pool_index = NumVariableSymbols();
-symbol.h:        variable_symbol_pool -> Next() = symbol;
-symbol.h:        return other_symbol_pool ? other_symbol_pool -> Length() : 0;
-symbol.h:        other_symbol_pool -> Next() = symbol;
-symbol.h:            anonymous_symbol_pool -> Array();
-symbol.h:            method_symbol_pool -> Array();
-symbol.h:            variable_symbol_pool -> Array();
-symbol.h:            other_symbol_pool -> Array();
-symbol.h:        unsigned k = symbol -> Identity() -> index % hash_size;
-symbol.h:        symbol -> next = base[k];
-symbol.h:    return table ? table -> NumVariableSymbols() : 0;
-symbol.h:    return table -> VariableSym(i);
-symbol.h:    return table ? table -> NumVariableSymbols() : 0;
-symbol.h:    return table -> VariableSym(i);
-symbol.h:    return table ? table -> NumMethodSymbols() : 0;
-symbol.h:    return table -> MethodSym(i);
-symbol.h:    return table ? table -> NumTypeSymbols() : 0;
-symbol.h:    return table -> TypeSym(i);
-symbol.h:        table -> CompressSpace();
-symbol.h:        table -> CompressSpace();
-symbol.h:    directory_symbol -> owner = symbol;
-symbol.h:    symbol -> root_directory = directory_symbol;
-symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
-symbol.h:         symbol; symbol = symbol -> next)
-symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> PathCast())
-symbol.h:        Table() -> InsertDirectorySymbol(name_symbol, this,
-symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
-symbol.h:         symbol; symbol = symbol -> next)
-symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> DirectoryCast())
-symbol.h:    return table ? table -> FindDirectorySymbol(name_symbol)
-symbol.h:    return Table() -> InsertFileSymbol(name_symbol);
-symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
-symbol.h:         symbol; symbol = symbol -> next)
-symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> FileCast())
-symbol.h:    return table ? table -> FindFileSymbol(name_symbol)
-symbol.h:    return Table() -> InsertPackageSymbol(name_symbol, this);
-symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
-symbol.h:         symbol; symbol = symbol -> next)
-symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> PackageCast())
-symbol.h:  return table ? table -> FindPackageSymbol(name_symbol)
-symbol.h:    return Table() -> InsertAnonymousTypeSymbol(name_symbol);
-symbol.h:    return Table() -> InsertTypeSymbol(name_symbol);
-symbol.h:    return Table() -> InsertTypeSymbol(name_symbol);
-symbol.h:    return Table() -> InsertTypeSymbol(name_symbol);
-symbol.h:    unsigned k = type -> name_symbol -> index % hash_size;
-symbol.h:        base[k] = type -> next;
-symbol.h:        for (Symbol* symbol = previous -> next;
-symbol.h:             symbol != type; previous = symbol, symbol = symbol -> next)
-symbol.h:        previous -> next = type -> next;
-symbol.h:    unsigned last_index = NumTypeSymbols() - 1;
-symbol.h:    if (type -> pool_index != last_index)
-symbol.h:        TypeSym(last_index) -> pool_index = type -> pool_index;
-symbol.h:        TypeSym(type -> pool_index) = TypeSym(last_index);
-symbol.h:    type_symbol_pool -> Reset(last_index); // remove last slot in symbol_pool
-symbol.h:        table -> DeleteTypeSymbol(type);
-symbol.h:        symbol -> UnlinkFromParents();
-symbol.h:        table -> DeleteAnonymousTypes();
-symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
-symbol.h:         symbol; symbol = symbol -> next)
-symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> TypeCast())
-symbol.h:    return table ? table -> FindTypeSymbol(name_symbol)
-symbol.h:    return table ? table -> FindTypeSymbol(name_symbol)
-symbol.h:    const NameSymbol* name_symbol = symbol -> Identity();
-symbol.h:    for (candidate = base[name_symbol -> index % hash_size];
-symbol.h:         candidate; candidate = candidate -> next)
-symbol.h:        if (name_symbol == candidate -> Identity() &&
-symbol.h:            candidate -> MethodCast())
-symbol.h:        symbol -> next = symbol; // mark method as overloaded
-symbol.h:        symbol -> next_method = base_method -> next_method;
-symbol.h:        base_method -> next_method = symbol;
-symbol.h:    return Table() -> InsertMethodSymbol(new MethodSymbol(name_symbol));
-symbol.h:    Table() -> InsertMethodSymbol(method_symbol);
-symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
-symbol.h:         symbol; symbol = symbol -> next)
-symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> MethodCast())
-symbol.h:    return table ? table -> FindMethodSymbol(name_symbol)
-symbol.h:    return table ? table -> FindOverloadMethod(base_method, method_declarator)
-symbol.h:    return Table() -> InsertVariableSymbol(name_symbol);
-symbol.h:    return Table() -> InsertVariableSymbol(name_symbol);
-symbol.h:    Table() -> InsertVariableSymbol(variable_symbol);
-symbol.h:    Table() -> InsertVariableSymbol(variable_symbol);
-symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
-symbol.h:         symbol; symbol = symbol -> next)
-symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> VariableCast())
-symbol.h:    return table ? table -> FindVariableSymbol(name_symbol)
-symbol.h:    return table ? table -> FindVariableSymbol(name_symbol)
-symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
-symbol.h:         symbol; symbol = symbol -> next)
-symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> LabelCast())
-symbol.h:    return Table() -> InsertBlockSymbol(hash_size);
+declarations/symbol/symbol.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/symbol/symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
+declarations/symbol/symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
+declarations/symbol/symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:        return entries ? entries -> FindEntry(name, len)
+declarations/symbol/symbol.h:        return entries ? entries -> FindCaseInsensitiveEntry(name, length)
+declarations/symbol/symbol.h:        DirectoryEntry* entry = entries -> InsertEntry(this, name, length);
+declarations/symbol/symbol.h:        entries -> InsertCaseInsensitiveEntry(entry);
+declarations/symbol/symbol.h:        return owner -> PathCast() ? (PathSymbol*) owner
+declarations/symbol/symbol.h:            : ((DirectorySymbol*) owner) -> PathSym();
+declarations/symbol/symbol.h:    inline bool IsZip() { return PathSym() -> IsZip(); }
+declarations/symbol/symbol.h:    // This field holds the time of last data modification for a non-zip file
+declarations/symbol/symbol.h:        clone -> kind = kind;
+declarations/symbol/symbol.h:        clone -> directory_symbol = directory_symbol;
+declarations/symbol/symbol.h:        clone -> mtime = mtime;
+declarations/symbol/symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
+declarations/symbol/symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:        return directory_symbol -> PathSym();
+declarations/symbol/symbol.h:    inline bool IsZip() { return PathSym() -> IsZip(); }
+declarations/symbol/symbol.h:    inline Zip* Zipfile() { return PathSym() -> zipfile; }
+declarations/symbol/symbol.h:        char* file_name = file_symbol -> FileName();
+declarations/symbol/symbol.h:        unsigned length = file_symbol -> FileNameLength();
+declarations/symbol/symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
+declarations/symbol/symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:            DYNAMIC_CAST<AccessFlags*> (accessed_member) -> ACC_STATIC();
+declarations/symbol/symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
+declarations/symbol/symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:        return (wchar_t*) (file_location ? file_location -> location : NULL);
+declarations/symbol/symbol.h:        //  ( "this -> ProcessMethodSignature(sem, tok);" )
+declarations/symbol/symbol.h:        return formal_parameters ? formal_parameters -> Length() : 0;
+declarations/symbol/symbol.h:        formal_parameters -> Next() = variable;
+declarations/symbol/symbol.h:        return throws ? throws -> Length() : 0;
+declarations/symbol/symbol.h:        throws -> Next() = exception;
+declarations/symbol/symbol.h:        return throws_signatures ? throws_signatures -> Length() : 0;
+declarations/symbol/symbol.h:        throws_signatures -> Next() = signature;
+declarations/symbol/symbol.h:        return external_name_symbol ? external_name_symbol -> Name()
+declarations/symbol/symbol.h:            : name_symbol -> Name();
+declarations/symbol/symbol.h:        return external_name_symbol ? external_name_symbol -> NameLength()
+declarations/symbol/symbol.h:            : name_symbol -> NameLength();
+declarations/symbol/symbol.h:            ? external_name_symbol -> Utf8_literal -> value
+declarations/symbol/symbol.h:            : name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return external_name_symbol && external_name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? external_name_symbol -> Utf8_literal -> length
+declarations/symbol/symbol.h:            : name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:    const char* SignatureString() const { return signature -> value; }
+declarations/symbol/symbol.h:    // forms an inter-type cycle in its "extends" or "implements" relationship.
+declarations/symbol/symbol.h:    // forms an intra-type cycle in its "extends" or "implements" relationship;
+declarations/symbol/symbol.h:            ? local_constructor_call_environments -> Length() : 0;
+declarations/symbol/symbol.h:        local_constructor_call_environments -> Next() = environment;
+declarations/symbol/symbol.h:            ? private_access_methods -> Length() : 0;
+declarations/symbol/symbol.h:        private_access_methods -> Next() = method_symbol;
+declarations/symbol/symbol.h:            ? private_access_constructors -> Length() : 0;
+declarations/symbol/symbol.h:        private_access_constructors -> Next() = constructor_symbol;
+declarations/symbol/symbol.h:            ? constructor_parameters -> Length() : 0;
+declarations/symbol/symbol.h:        constructor_parameters -> Next() = variable_symbol;
+declarations/symbol/symbol.h:        return class_literals ? class_literals -> Length() : 0;
+declarations/symbol/symbol.h:        class_literals -> Next() = literal_symbol;
+declarations/symbol/symbol.h:        return nested_types ? nested_types -> Length() : 0;
+declarations/symbol/symbol.h:        nested_types -> Next() = type_symbol;
+declarations/symbol/symbol.h:        return interfaces ? interfaces -> Length() : 0;
+declarations/symbol/symbol.h:        interfaces -> Next() = type_symbol;
+declarations/symbol/symbol.h:        return anonymous_types ? anonymous_types -> Length() : 0;
+declarations/symbol/symbol.h:        anonymous_types -> Next() = type_symbol;
+declarations/symbol/symbol.h:        if (! outermost_type -> placeholder_type)
+declarations/symbol/symbol.h:            outermost_type -> placeholder_type = type_symbol;
+declarations/symbol/symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
+declarations/symbol/symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:        return external_name_symbol ? external_name_symbol -> Name()
+declarations/symbol/symbol.h:            : name_symbol -> Name();
+declarations/symbol/symbol.h:        return external_name_symbol ? external_name_symbol -> NameLength()
+declarations/symbol/symbol.h:            : name_symbol -> NameLength();
+declarations/symbol/symbol.h:            ? external_name_symbol -> Utf8_literal -> value
+declarations/symbol/symbol.h:            : name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return external_name_symbol && external_name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? external_name_symbol -> Utf8_literal -> length
+declarations/symbol/symbol.h:            : name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:        Symbol* sym = type -> owner;
+declarations/symbol/symbol.h:        while (! sym -> PackageCast())
+declarations/symbol/symbol.h:            MethodSymbol* method = sym -> MethodCast();
+declarations/symbol/symbol.h:            sym = (method ? method -> containing_type
+declarations/symbol/symbol.h:                   : ((TypeSymbol*) sym) -> owner);
+declarations/symbol/symbol.h:            TypeSymbol* type = owner -> TypeCast();
+declarations/symbol/symbol.h:            MethodSymbol* method = owner -> MethodCast();
+declarations/symbol/symbol.h:                return method -> containing_type;
+declarations/symbol/symbol.h:            TypeSymbol* type = owner -> TypeCast();
+declarations/symbol/symbol.h:            MethodSymbol* method = owner -> MethodCast();
+declarations/symbol/symbol.h:                return method -> containing_type;
+declarations/symbol/symbol.h:    // For JSR 201, control.int_class -> BoxedType() returns control.Integer(),
+declarations/symbol/symbol.h:        for (const TypeSymbol* type = this; type; type = type -> super)
+declarations/symbol/symbol.h:            if (Interface(i) -> IsSubinterface(super_interface))
+declarations/symbol/symbol.h:            if (Interface(i) -> IsSubinterface(inter))
+declarations/symbol/symbol.h:        return super && super -> Implements(inter);
+declarations/symbol/symbol.h:            return (type -> ACC_INTERFACE() && IsSubinterface(type)) ||
+declarations/symbol/symbol.h:                type -> base_type ? type -> base_type : type;
+declarations/symbol/symbol.h:            return (num_dimensions > type -> num_dimensions &&
+declarations/symbol/symbol.h:                    ((base -> ACC_INTERFACE() && Implements(base)) ||
+declarations/symbol/symbol.h:                (num_dimensions == type -> num_dimensions &&
+declarations/symbol/symbol.h:                 base_type -> IsSubtype(base));
+declarations/symbol/symbol.h:        return type -> ACC_INTERFACE() ? Implements(type) : IsSubclass(type);
+declarations/symbol/symbol.h:        return file_location ? file_location -> location : (wchar_t*) NULL;
+declarations/symbol/symbol.h:    // type as this (ie. Object[] -> GetArrayType(...,2) returns Object[][]).
+declarations/symbol/symbol.h:        return base_type -> Array(num_dimensions - 1);
+declarations/symbol/symbol.h:    const char* SignatureString() const { return signature -> value; }
+declarations/symbol/symbol.h:        return outermost_type -> owner -> PackageCast();
+declarations/symbol/symbol.h:    // Returns the fully-qualified '/' separated package name.
+declarations/symbol/symbol.h:        return outermost_type -> owner -> PackageCast() -> PackageName();
+declarations/symbol/symbol.h:             ! sym -> PackageCast(); sym = ((TypeSymbol*) sym) -> owner)
+declarations/symbol/symbol.h:            if (sym -> MethodCast())
+declarations/symbol/symbol.h:            ? nested_type_signatures -> Length() : 0;
+declarations/symbol/symbol.h:        nested_type_signatures -> Next() = signature;
+declarations/symbol/symbol.h:        return array ? array -> Length() : 0;
+declarations/symbol/symbol.h:        array -> Next() = type_symbol;
+declarations/symbol/symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
+declarations/symbol/symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:        return (wchar_t*) (file_location ? file_location -> location : NULL);
+declarations/symbol/symbol.h:        return external_name_symbol ? external_name_symbol -> Name()
+declarations/symbol/symbol.h:            : name_symbol -> Name();
+declarations/symbol/symbol.h:        return external_name_symbol ? external_name_symbol -> NameLength()
+declarations/symbol/symbol.h:            : name_symbol -> NameLength();
+declarations/symbol/symbol.h:            ? external_name_symbol -> Utf8_literal -> value
+declarations/symbol/symbol.h:            : name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return external_name_symbol && external_name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? external_name_symbol -> Utf8_literal -> length
+declarations/symbol/symbol.h:            : name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:        , local_variable_index(-1)
+declarations/symbol/symbol.h:        assert(owner -> TypeCast() || owner -> MethodCast());
+declarations/symbol/symbol.h:        MethodSymbol* method_owner = owner -> MethodCast();
+declarations/symbol/symbol.h:        return method_owner ? method_owner -> containing_type
+declarations/symbol/symbol.h:            : owner -> TypeCast();
+declarations/symbol/symbol.h:        MethodSymbol* method_owner = owner -> MethodCast();
+declarations/symbol/symbol.h:        return method_owner ? method_owner -> containing_type
+declarations/symbol/symbol.h:            : owner -> TypeCast();
+declarations/symbol/symbol.h:        signature = type_ -> signature;
+declarations/symbol/symbol.h:        // ( "this -> ProcessVariableSignature(sem, tok);" )
+declarations/symbol/symbol.h:    bool IsLocal() { return owner -> MethodCast() != NULL; }
+declarations/symbol/symbol.h:    virtual const wchar_t* Name() const { return name_symbol -> Name(); }
+declarations/symbol/symbol.h:    virtual unsigned NameLength() const { return name_symbol -> NameLength(); }
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> value : (char*) NULL;
+declarations/symbol/symbol.h:        return name_symbol -> Utf8_literal
+declarations/symbol/symbol.h:            ? name_symbol -> Utf8_literal -> length : 0;
+declarations/symbol/symbol.h:        return anonymous_symbol_pool ? anonymous_symbol_pool -> Length() : 0;
+declarations/symbol/symbol.h:        anonymous_symbol_pool -> Next() = symbol;
+declarations/symbol/symbol.h:        return type_symbol_pool ? type_symbol_pool -> Length() : 0;
+declarations/symbol/symbol.h:        symbol -> pool_index = NumTypeSymbols();
+declarations/symbol/symbol.h:        type_symbol_pool -> Next() = symbol;
+declarations/symbol/symbol.h:        return method_symbol_pool ? method_symbol_pool -> Length() : 0;
+declarations/symbol/symbol.h:        symbol -> pool_index = NumMethodSymbols();
+declarations/symbol/symbol.h:        method_symbol_pool -> Next() = symbol;
+declarations/symbol/symbol.h:        return variable_symbol_pool ? variable_symbol_pool -> Length() : 0;
+declarations/symbol/symbol.h:        symbol -> pool_index = NumVariableSymbols();
+declarations/symbol/symbol.h:        variable_symbol_pool -> Next() = symbol;
+declarations/symbol/symbol.h:        return other_symbol_pool ? other_symbol_pool -> Length() : 0;
+declarations/symbol/symbol.h:        other_symbol_pool -> Next() = symbol;
+declarations/symbol/symbol.h:            anonymous_symbol_pool -> Array();
+declarations/symbol/symbol.h:            method_symbol_pool -> Array();
+declarations/symbol/symbol.h:            variable_symbol_pool -> Array();
+declarations/symbol/symbol.h:            other_symbol_pool -> Array();
+declarations/symbol/symbol.h:        unsigned k = symbol -> Identity() -> index % hash_size;
+declarations/symbol/symbol.h:        symbol -> next = base[k];
+declarations/symbol/symbol.h:    return table ? table -> NumVariableSymbols() : 0;
+declarations/symbol/symbol.h:    return table -> VariableSym(i);
+declarations/symbol/symbol.h:    return table ? table -> NumVariableSymbols() : 0;
+declarations/symbol/symbol.h:    return table -> VariableSym(i);
+declarations/symbol/symbol.h:    return table ? table -> NumMethodSymbols() : 0;
+declarations/symbol/symbol.h:    return table -> MethodSym(i);
+declarations/symbol/symbol.h:    return table ? table -> NumTypeSymbols() : 0;
+declarations/symbol/symbol.h:    return table -> TypeSym(i);
+declarations/symbol/symbol.h:        table -> CompressSpace();
+declarations/symbol/symbol.h:        table -> CompressSpace();
+declarations/symbol/symbol.h:    directory_symbol -> owner = symbol;
+declarations/symbol/symbol.h:    symbol -> root_directory = directory_symbol;
+declarations/symbol/symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
+declarations/symbol/symbol.h:         symbol; symbol = symbol -> next)
+declarations/symbol/symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> PathCast())
+declarations/symbol/symbol.h:        Table() -> InsertDirectorySymbol(name_symbol, this,
+declarations/symbol/symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
+declarations/symbol/symbol.h:         symbol; symbol = symbol -> next)
+declarations/symbol/symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> DirectoryCast())
+declarations/symbol/symbol.h:    return table ? table -> FindDirectorySymbol(name_symbol)
+declarations/symbol/symbol.h:    return Table() -> InsertFileSymbol(name_symbol);
+declarations/symbol/symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
+declarations/symbol/symbol.h:         symbol; symbol = symbol -> next)
+declarations/symbol/symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> FileCast())
+declarations/symbol/symbol.h:    return table ? table -> FindFileSymbol(name_symbol)
+declarations/symbol/symbol.h:    return Table() -> InsertPackageSymbol(name_symbol, this);
+declarations/symbol/symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
+declarations/symbol/symbol.h:         symbol; symbol = symbol -> next)
+declarations/symbol/symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> PackageCast())
+declarations/symbol/symbol.h:  return table ? table -> FindPackageSymbol(name_symbol)
+declarations/symbol/symbol.h:    return Table() -> InsertAnonymousTypeSymbol(name_symbol);
+declarations/symbol/symbol.h:    return Table() -> InsertTypeSymbol(name_symbol);
+declarations/symbol/symbol.h:    return Table() -> InsertTypeSymbol(name_symbol);
+declarations/symbol/symbol.h:    return Table() -> InsertTypeSymbol(name_symbol);
+declarations/symbol/symbol.h:    unsigned k = type -> name_symbol -> index % hash_size;
+declarations/symbol/symbol.h:        base[k] = type -> next;
+declarations/symbol/symbol.h:        for (Symbol* symbol = previous -> next;
+declarations/symbol/symbol.h:             symbol != type; previous = symbol, symbol = symbol -> next)
+declarations/symbol/symbol.h:        previous -> next = type -> next;
+declarations/symbol/symbol.h:    unsigned last_index = NumTypeSymbols() - 1;
+declarations/symbol/symbol.h:    if (type -> pool_index != last_index)
+declarations/symbol/symbol.h:        TypeSym(last_index) -> pool_index = type -> pool_index;
+declarations/symbol/symbol.h:        TypeSym(type -> pool_index) = TypeSym(last_index);
+declarations/symbol/symbol.h:    type_symbol_pool -> Reset(last_index); // remove last slot in symbol_pool
+declarations/symbol/symbol.h:        table -> DeleteTypeSymbol(type);
+declarations/symbol/symbol.h:        symbol -> UnlinkFromParents();
+declarations/symbol/symbol.h:        table -> DeleteAnonymousTypes();
+declarations/symbol/symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
+declarations/symbol/symbol.h:         symbol; symbol = symbol -> next)
+declarations/symbol/symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> TypeCast())
+declarations/symbol/symbol.h:    return table ? table -> FindTypeSymbol(name_symbol)
+declarations/symbol/symbol.h:    return table ? table -> FindTypeSymbol(name_symbol)
+declarations/symbol/symbol.h:    const NameSymbol* name_symbol = symbol -> Identity();
+declarations/symbol/symbol.h:    for (candidate = base[name_symbol -> index % hash_size];
+declarations/symbol/symbol.h:         candidate; candidate = candidate -> next)
+declarations/symbol/symbol.h:        if (name_symbol == candidate -> Identity() &&
+declarations/symbol/symbol.h:            candidate -> MethodCast())
+declarations/symbol/symbol.h:        symbol -> next = symbol; // mark method as overloaded
+declarations/symbol/symbol.h:        symbol -> next_method = base_method -> next_method;
+declarations/symbol/symbol.h:        base_method -> next_method = symbol;
+declarations/symbol/symbol.h:    return Table() -> InsertMethodSymbol(new MethodSymbol(name_symbol));
+declarations/symbol/symbol.h:    Table() -> InsertMethodSymbol(method_symbol);
+declarations/symbol/symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
+declarations/symbol/symbol.h:         symbol; symbol = symbol -> next)
+declarations/symbol/symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> MethodCast())
+declarations/symbol/symbol.h:    return table ? table -> FindMethodSymbol(name_symbol)
+declarations/symbol/symbol.h:    return table ? table -> FindOverloadMethod(base_method, method_declarator)
+declarations/symbol/symbol.h:    return Table() -> InsertVariableSymbol(name_symbol);
+declarations/symbol/symbol.h:    return Table() -> InsertVariableSymbol(name_symbol);
+declarations/symbol/symbol.h:    Table() -> InsertVariableSymbol(variable_symbol);
+declarations/symbol/symbol.h:    Table() -> InsertVariableSymbol(variable_symbol);
+declarations/symbol/symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
+declarations/symbol/symbol.h:         symbol; symbol = symbol -> next)
+declarations/symbol/symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> VariableCast())
+declarations/symbol/symbol.h:    return table ? table -> FindVariableSymbol(name_symbol)
+declarations/symbol/symbol.h:    return table ? table -> FindVariableSymbol(name_symbol)
+declarations/symbol/symbol.h:    for (Symbol* symbol = base[name_symbol -> index % hash_size];
+declarations/symbol/symbol.h:         symbol; symbol = symbol -> next)
+declarations/symbol/symbol.h:        if (name_symbol == symbol -> Identity() && symbol -> LabelCast())
+declarations/symbol/symbol.h:    return Table() -> InsertBlockSymbol(hash_size);
 Binary file symbol.o matches
 system.cpp:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $
 system.cpp:// non-ASCII systems (where 'a' != U_a), it is slightly inefficient. Hence it
@@ -16613,90 +16613,90 @@ tab.cpp:            start -= 5;
 tab.cpp:    return (end - start);
 tab.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
 Binary file tab.o matches
-table.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-table.h:        return conflict ? conflict -> Length() : 0;
-table.h:            conflict -> Next() = conflict_symbol;
-table.h:            conflict -> Array();
-table.h:        for (unsigned k = 0; k < conflict -> Length(); k++)
-table.h:        return conflict ? conflict -> Length() : 0;
-table.h:            conflict -> Next() = conflict_symbol;
-table.h:            conflict -> Array();
-table.h:        for (unsigned k = 0; k < conflict -> Length(); k++)
-table.h:        return conflict ? conflict -> Length() : 0;
-table.h:            conflict -> Next() = conflict_symbol;
-table.h:            conflict -> Array();
-table.h:        for (unsigned k = 0; k < conflict -> Length(); k++)
-table.h:            array[i] -> CompressSpace();
-table.h:                array[i] -> type_symbol -> name_symbol -> index % hash_size;
-table.h:            array[i] -> next = base[k];
-table.h:        unsigned i = type_symbol -> name_symbol -> index % hash_size;
-table.h:        p -> next = base[i];
-table.h:        for (p = base[name_symbol -> index % hash_size]; p; p = p -> next)
-table.h:             if (p -> type_symbol -> name_symbol == name_symbol)
-table.h:            array[i] -> CompressSpace();
-table.h:            unsigned k = array[i] -> variable_symbol -> name_symbol -> index %
-table.h:            array[i] -> next = base[k];
-table.h:        unsigned i = variable_symbol -> name_symbol -> index % hash_size;
-table.h:        p -> next = base[i];
-table.h:        for (p = base[name_symbol -> index % hash_size]; p; p = p -> next)
-table.h:            if (p -> variable_symbol -> name_symbol == name_symbol)
-table.h:            array[i] -> CompressSpace();
-table.h:                array[i] -> method_symbol -> name_symbol;
-table.h:                unsigned k = name_symbol -> index % hash_size;
-table.h:                array[i] -> next = base[k];
-table.h:                array[i] -> next_method = NULL;
-table.h:                array[i] -> next_method = base_shadow -> next_method;
-table.h:                base_shadow -> next_method = array[i];
-table.h:        for (p = base[name_symbol -> index % hash_size]; p; p = p -> next)
-table.h:            if (p -> method_symbol -> name_symbol == name_symbol)
-table.h:        unsigned i = method_symbol -> name_symbol -> index % hash_size;
-table.h:        p -> next_method = NULL;
-table.h:        p -> next = base[i];
-table.h:        shadow -> next_method = base_shadow -> next_method;
-table.h:        base_shadow -> next_method = shadow;
-table.h:            FindMethodShadowSymbol(overload_method -> name_symbol);
-table.h:        return base_shadow -> next_method;
-table.h:        if (! overload_method -> IsTyped())
-table.h:            overload_method -> ProcessMethodSignature(sem, tok);
-table.h:        for (method_shadow = FindMethodShadowSymbol(overload_method ->
-table.h:             method_shadow = method_shadow -> next_method)
-table.h:            MethodSymbol* method = method_shadow -> method_symbol;
-table.h:            if (! method -> IsTyped())
-table.h:                method -> ProcessMethodSignature(sem, tok);
-table.h:            if (overload_method -> NumFormalParameters() ==
-table.h:                method -> NumFormalParameters())
-table.h:                for (i = method -> NumFormalParameters() - 1; i >= 0; i--)
-table.h:                    if (method -> FormalParameter(i) -> Type() !=
-table.h:                        overload_method -> FormalParameter(i) -> Type())
-tuple.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-tuple.h:                   (base_size - old_base_size) * sizeof(T*));
-tuple.h:        base[k] = (new T[Blksize()]) - size;
-tuple.h:    // I.e., that the array will be indexable in the range (0..n-1).
-tuple.h:            // will contain the (n-1)th element.
-tuple.h:            int slot = (n == 0 ? -1 : (n - 1) >> log_blksize);
-tuple.h:            for (int k = (size >> log_blksize) - 1; k > slot; k--)
-tuple.h:                size -= Blksize();
-tuple.h:        // See the comments above. We purposefully pre-adjusted the pointers
-tuple.h:        // base[i >> log_blocksize][i & ~(-1 << log_blocksize)].
-tuple.h:    inline void Push(const T& elt) { this -> Next() = elt; }
-tuple.h:        // Not "return (*this)[--top]" because that may violate an invariant
-tuple.h:        top--;
-tuple.h:        return (*this)[top - 1];
-tuple.h:        return (*this)[top - 1];
-tuple.h:                base_increment = 1U << (log_blksize - 4);
-tuple.h:                base_increment = 1U << (log_blksize - 8);
-tuple.h:            (const_cast<ConvertibleArray<T>*> (this)) -> Compact();
-tuple.h:            ((ConvertibleArray<T>*) this) -> Compact();
-tuple.h:        // problems with 0-length arrays.
-tuple.h:        // the last non-empty slot!
-tuple.h:        unsigned n = (Tuple<T>::top - 1) >> Tuple<T>::log_blksize;
-tuple.h:               (Tuple<T>::top - processed_size) * sizeof(T));
-tuple.h:        while (--n >= 0)
-tuple.h:            JikesAPI::getInstance() -> write(file_name, buffer.top);
-tuple.h:        // the last non-empty slot!
-tuple.h:        unsigned n = (buffer.top - 1) >> buffer.log_blksize;
-tuple.h:            file -> write(buffer.base[i] + size, buffer.Blksize());
-tuple.h:        file -> write(buffer.base[n] + size, buffer.top - size);
+declarations/table.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/table.h:        return conflict ? conflict -> Length() : 0;
+declarations/table.h:            conflict -> Next() = conflict_symbol;
+declarations/table.h:            conflict -> Array();
+declarations/table.h:        for (unsigned k = 0; k < conflict -> Length(); k++)
+declarations/table.h:        return conflict ? conflict -> Length() : 0;
+declarations/table.h:            conflict -> Next() = conflict_symbol;
+declarations/table.h:            conflict -> Array();
+declarations/table.h:        for (unsigned k = 0; k < conflict -> Length(); k++)
+declarations/table.h:        return conflict ? conflict -> Length() : 0;
+declarations/table.h:            conflict -> Next() = conflict_symbol;
+declarations/table.h:            conflict -> Array();
+declarations/table.h:        for (unsigned k = 0; k < conflict -> Length(); k++)
+declarations/table.h:            array[i] -> CompressSpace();
+declarations/table.h:                array[i] -> type_symbol -> name_symbol -> index % hash_size;
+declarations/table.h:            array[i] -> next = base[k];
+declarations/table.h:        unsigned i = type_symbol -> name_symbol -> index % hash_size;
+declarations/table.h:        p -> next = base[i];
+declarations/table.h:        for (p = base[name_symbol -> index % hash_size]; p; p = p -> next)
+declarations/table.h:             if (p -> type_symbol -> name_symbol == name_symbol)
+declarations/table.h:            array[i] -> CompressSpace();
+declarations/table.h:            unsigned k = array[i] -> variable_symbol -> name_symbol -> index %
+declarations/table.h:            array[i] -> next = base[k];
+declarations/table.h:        unsigned i = variable_symbol -> name_symbol -> index % hash_size;
+declarations/table.h:        p -> next = base[i];
+declarations/table.h:        for (p = base[name_symbol -> index % hash_size]; p; p = p -> next)
+declarations/table.h:            if (p -> variable_symbol -> name_symbol == name_symbol)
+declarations/table.h:            array[i] -> CompressSpace();
+declarations/table.h:                array[i] -> method_symbol -> name_symbol;
+declarations/table.h:                unsigned k = name_symbol -> index % hash_size;
+declarations/table.h:                array[i] -> next = base[k];
+declarations/table.h:                array[i] -> next_method = NULL;
+declarations/table.h:                array[i] -> next_method = base_shadow -> next_method;
+declarations/table.h:                base_shadow -> next_method = array[i];
+declarations/table.h:        for (p = base[name_symbol -> index % hash_size]; p; p = p -> next)
+declarations/table.h:            if (p -> method_symbol -> name_symbol == name_symbol)
+declarations/table.h:        unsigned i = method_symbol -> name_symbol -> index % hash_size;
+declarations/table.h:        p -> next_method = NULL;
+declarations/table.h:        p -> next = base[i];
+declarations/table.h:        shadow -> next_method = base_shadow -> next_method;
+declarations/table.h:        base_shadow -> next_method = shadow;
+declarations/table.h:            FindMethodShadowSymbol(overload_method -> name_symbol);
+declarations/table.h:        return base_shadow -> next_method;
+declarations/table.h:        if (! overload_method -> IsTyped())
+declarations/table.h:            overload_method -> ProcessMethodSignature(sem, tok);
+declarations/table.h:        for (method_shadow = FindMethodShadowSymbol(overload_method ->
+declarations/table.h:             method_shadow = method_shadow -> next_method)
+declarations/table.h:            MethodSymbol* method = method_shadow -> method_symbol;
+declarations/table.h:            if (! method -> IsTyped())
+declarations/table.h:                method -> ProcessMethodSignature(sem, tok);
+declarations/table.h:            if (overload_method -> NumFormalParameters() ==
+declarations/table.h:                method -> NumFormalParameters())
+declarations/table.h:                for (i = method -> NumFormalParameters() - 1; i >= 0; i--)
+declarations/table.h:                    if (method -> FormalParameter(i) -> Type() !=
+declarations/table.h:                        overload_method -> FormalParameter(i) -> Type())
+declarations/tuple.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/tuple.h:                   (base_size - old_base_size) * sizeof(T*));
+declarations/tuple.h:        base[k] = (new T[Blksize()]) - size;
+declarations/tuple.h:    // I.e., that the array will be indexable in the range (0..n-1).
+declarations/tuple.h:            // will contain the (n-1)th element.
+declarations/tuple.h:            int slot = (n == 0 ? -1 : (n - 1) >> log_blksize);
+declarations/tuple.h:            for (int k = (size >> log_blksize) - 1; k > slot; k--)
+declarations/tuple.h:                size -= Blksize();
+declarations/tuple.h:        // See the comments above. We purposefully pre-adjusted the pointers
+declarations/tuple.h:        // base[i >> log_blocksize][i & ~(-1 << log_blocksize)].
+declarations/tuple.h:    inline void Push(const T& elt) { this -> Next() = elt; }
+declarations/tuple.h:        // Not "return (*this)[--top]" because that may violate an invariant
+declarations/tuple.h:        top--;
+declarations/tuple.h:        return (*this)[top - 1];
+declarations/tuple.h:        return (*this)[top - 1];
+declarations/tuple.h:                base_increment = 1U << (log_blksize - 4);
+declarations/tuple.h:                base_increment = 1U << (log_blksize - 8);
+declarations/tuple.h:            (const_cast<ConvertibleArray<T>*> (this)) -> Compact();
+declarations/tuple.h:            ((ConvertibleArray<T>*) this) -> Compact();
+declarations/tuple.h:        // problems with 0-length arrays.
+declarations/tuple.h:        // the last non-empty slot!
+declarations/tuple.h:        unsigned n = (Tuple<T>::top - 1) >> Tuple<T>::log_blksize;
+declarations/tuple.h:               (Tuple<T>::top - processed_size) * sizeof(T));
+declarations/tuple.h:        while (--n >= 0)
+declarations/tuple.h:            JikesAPI::getInstance() -> write(file_name, buffer.top);
+declarations/tuple.h:        // the last non-empty slot!
+declarations/tuple.h:        unsigned n = (buffer.top - 1) >> buffer.log_blksize;
+declarations/tuple.h:            file -> write(buffer.base[i] + size, buffer.Blksize());
+declarations/tuple.h:        file -> write(buffer.base[n] + size, buffer.top - size);
 unparse.cpp:// Special top-level form
 unparse.cpp:    char* in_file_name = lex_stream -> FileName();
 unparse.cpp:        os << lex_stream -> NameString(label_opt) << ": ";

@@ -9,10 +9,10 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "platform.h"
+#include "declarations/platform.h"
 #include "parser.h"
 #include "ast.h"
-#include "stream.h"
+#include "declarations/stream.h"
 
 #undef HEADERS
 #include "javaact.h"

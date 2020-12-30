@@ -6,14 +6,14 @@
 // Copyright (C) 1996, 2004 IBM Corporation and others.  All Rights Reserved.
 // You must accept the terms of that agreement to use this software.
 //
-#include "control.h"
-#include "scanner.h"
+#include "declarations/control.h"
+#include "declarations/scanner.h"
 #include "parser.h"
 #include "semantic.h"
-#include "error.h"
+#include "declarations/jikes/error.h"
 #include "bytecode.h"
-#include "case.h"
-#include "option.h"
+#include "declarations/case.h"
+#include "declarations/option.h"
 #include <fstream>
 #include <iomanip>
 #include <dlfcn.h>
