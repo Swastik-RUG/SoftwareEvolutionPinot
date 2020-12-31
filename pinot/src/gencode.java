@@ -204,7 +204,7 @@ class gencode
         // Process the declarations/code.h file
         //
         PrintStream hfile = new PrintStream(new FileOutputStream("./declarations/code.h"));
-        printHeader(hfile, new String[] {"\"./declarations/platform.h\""});
+        printHeader(hfile, new String[] {"\"./declarations/platform/platform.h\""});
         hfile.println("#ifndef code_INCLUDED");
         hfile.println("#define code_INCLUDED");
         hfile.println();

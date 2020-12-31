@@ -10,7 +10,7 @@
 #ifndef symbol_INCLUDED
 #define symbol_INCLUDED
 
-#include "../platform.h"
+#include "../platform/platform.h"
 #include "lookup.h"
 #include "../access.h"
 #include "../tuple.h"

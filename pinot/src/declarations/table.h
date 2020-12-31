@@ -10,8 +10,8 @@
 #ifndef table_INCLUDED
 #define table_INCLUDED
 
-#include "../declarations/platform.h"
-#include "../declarations/symbol/symbol.h"
+#include "./platform/platform.h"
+#include "./symbol/symbol.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

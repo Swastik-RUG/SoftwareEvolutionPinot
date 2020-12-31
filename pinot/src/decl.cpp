@@ -6,7 +6,7 @@
 // Copyright (C) 1996, 2004 IBM Corporation and others.  All Rights Reserved.
 // You must accept the terms of that agreement to use this software.
 //
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 #include "semantic.h"
 #include "./declarations/control.h"
 #include "depend.h"

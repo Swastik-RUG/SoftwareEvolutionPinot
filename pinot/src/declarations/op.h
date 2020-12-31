@@ -10,8 +10,8 @@
 #ifndef op_INCLUDED
 #define op_INCLUDED
 
-#include "../declarations/platform.h"
-#include "../declarations/tuple.h"
+#include "./platform/platform.h"
+#include "tuple.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

@@ -7,7 +7,7 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 #include "./declarations/jikes/jikesapi.h"
 #include "./declarations/jikes/error.h"
 

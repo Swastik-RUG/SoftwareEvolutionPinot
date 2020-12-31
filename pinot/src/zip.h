@@ -11,7 +11,7 @@
 #ifndef zip_INCLUDED
 #define zip_INCLUDED
 
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 
 #include "./declarations/tuple.h"
 #include "unzip.h"

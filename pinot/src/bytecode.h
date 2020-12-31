@@ -9,7 +9,7 @@
 #ifndef bytecode_INCLUDED
 #define bytecode_INCLUDED
 
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 #include "./declarations/tuple.h"
 #include "ast.h"
 #include "class.h"

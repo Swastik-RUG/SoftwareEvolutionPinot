@@ -10,7 +10,7 @@
 #ifndef parser_INCLUDED
 #define parser_INCLUDED
 
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 #include "./declarations/lpginput.h"
 #include "storagepool.h"
 

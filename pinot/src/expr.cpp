@@ -7,8 +7,8 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "./declarations/platform.h"
-#include "./declarations/double.h"
+#include "./declarations/platform/platform.h"
+#include "./declarations/platform/double.h"
 #include "parser.h"
 #include "semantic.h"
 #include "./declarations/control.h"

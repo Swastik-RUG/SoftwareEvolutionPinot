@@ -11,9 +11,9 @@
 #ifndef option_INCLUDED
 #define option_INCLUDED
 
-#include "../declarations/platform.h"
-#include "../declarations/tuple.h"
-#include "../declarations/jikes/jikesapi.h"
+#include "./platform/platform.h"
+#include "tuple.h"
+#include "./jikes/jikesapi.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

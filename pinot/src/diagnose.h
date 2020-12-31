@@ -9,7 +9,7 @@
 #ifndef diagnose_INCLUDED
 #define diagnose_INCLUDED
 
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 #include "parser.h"
 #include "./declarations/jikes/jikesapi.h"
 #include "./declarations/tuple.h"

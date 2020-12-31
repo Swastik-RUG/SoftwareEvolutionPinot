@@ -11,7 +11,7 @@
 #ifndef set_INCLUDED
 #define set_INCLUDED
 
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 #include "./declarations/symbol/lookup.h"
 
 #ifdef HAVE_JIKES_NAMESPACE

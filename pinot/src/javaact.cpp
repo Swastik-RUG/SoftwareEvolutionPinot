@@ -9,7 +9,7 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 #include "parser.h"
 #include "ast.h"
 #include "./declarations/stream.h"

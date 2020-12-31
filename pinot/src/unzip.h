@@ -3,7 +3,7 @@
 #ifndef unzip_INCLUDED
 #define unzip_INCLUDED
 
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

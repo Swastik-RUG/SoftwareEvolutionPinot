@@ -34,9 +34,9 @@
 //
 //
 
-#include "./declarations/platform.h"
-#include "./declarations/long.h"
-#include "./declarations/double.h"
+#include "./declarations/platform/platform.h"
+#include "./declarations/platform/long.h"
+#include "./declarations/platform/double.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

@@ -1,7 +1,7 @@
 #ifndef CreationAnalysis_NAME_H
 #define CreationAnalysis_NAME_H
 
-#include "../declarations/platform.h"
+#include "../declarations/platform/platform.h"
 #include "../declarations/symbol/symbol.h"
 #include "../declarations/tuple.h"
 #include <vector>

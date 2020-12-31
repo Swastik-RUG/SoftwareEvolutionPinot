@@ -10,10 +10,10 @@
 #ifndef lookup_INCLUDED
 #define lookup_INCLUDED
 
-#include "../platform.h"
+#include "../platform/platform.h"
 #include "../tuple.h"
-#include "../long.h"
-#include "../double.h"
+#include "../platform/long.h"
+#include "../platform/double.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

@@ -78,7 +78,7 @@ PROGRAMS = $(bin_PROGRAMS)
 am_jikes_OBJECTS = ast.$(OBJEXT) body.$(OBJEXT) bytecode.$(OBJEXT) \
 	case.$(OBJEXT) class.$(OBJEXT) code.$(OBJEXT) \
 	control.$(OBJEXT) decl.$(OBJEXT) definite.$(OBJEXT) \
-	depend.$(OBJEXT) diagnose.$(OBJEXT) double.$(OBJEXT) \
+	depend.$(OBJEXT) diagnose.$(OBJEXT) declarations/platform/double.$(OBJEXT) \
 	dump.$(OBJEXT) error.$(OBJEXT) expr.$(OBJEXT) \
 	incrmnt.$(OBJEXT) init.$(OBJEXT) javaact.$(OBJEXT) \
 	jikes.$(OBJEXT) jikesapi.$(OBJEXT) long.$(OBJEXT) \
@@ -98,7 +98,7 @@ DEP_FILES = ./$(DEPDIR)/ast.Po ./$(DEPDIR)/body.Po \
 	./$(DEPDIR)/class.Po ./$(DEPDIR)/code.Po \
 	./$(DEPDIR)/control.Po ./$(DEPDIR)/decl.Po \
 	./$(DEPDIR)/definite.Po ./$(DEPDIR)/depend.Po \
-	./$(DEPDIR)/diagnose.Po ./$(DEPDIR)/double.Po \
+	./$(DEPDIR)/diagnose.Po ./$(DEPDIR)/declarations/platform/double.Po \
 	./$(DEPDIR)/dump.Po ./$(DEPDIR)/error.Po \
 	./$(DEPDIR)/expr.Po ./$(DEPDIR)/incrmnt.Po \
 	./$(DEPDIR)/init.Po ./$(DEPDIR)/javaact.Po \
@@ -218,7 +218,7 @@ decl.cpp \
 definite.cpp \
 depend.cpp \
 diagnose.cpp \
-double.cpp \
+declarations/platform/double.cpp \
 dump.cpp \
 error.cpp \
 expr.cpp \
@@ -259,7 +259,7 @@ declarations/code.h \
 declarations/control.h \
 depend.h \
 diagnose.h \
-declarations/double.h \
+declarations/platform/double.h \
 declarations/jikes/error.h \
 javaact.h \
 javadcl.h \
@@ -267,13 +267,13 @@ javadef.h \
 javaprs.h \
 javasym.h \
 declarations/jikes/jikesapi.h \
-declarations/long.h \
+declarations/platform/long.h \
 declarations/symbol/lookup.h \
 declarations/lpginput.h \
 declarations/op.h \
 declarations/option.h \
 parser.h \
-declarations/platform.h \
+declarations/platform/platform.h \
 declarations/scanner.h \
 declarations/segment.h \
 semantic.h \
@@ -401,7 +401,7 @@ include ./$(DEPDIR)/decl.Po
 include ./$(DEPDIR)/definite.Po
 include ./$(DEPDIR)/depend.Po
 include ./$(DEPDIR)/diagnose.Po
-include ./$(DEPDIR)/double.Po
+include ./$(DEPDIR)/declarations/platform/double.Po
 include ./$(DEPDIR)/dump.Po
 include ./$(DEPDIR)/error.Po
 include ./$(DEPDIR)/expr.Po

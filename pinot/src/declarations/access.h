@@ -10,7 +10,7 @@
 #ifndef access_INCLUDED
 #define access_INCLUDED
 
-#include "platform.h"
+#include "./platform/platform.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

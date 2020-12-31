@@ -8318,354 +8318,354 @@ diagnose.cpp:    JikesAPI::getInstance() -> reportError(&errors[k]);
 diagnose.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
 diagnose.h:    enum { NIL = -1 };
 Binary file diagnose.o matches
-double.cpp:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $
-double.cpp:        a  = -a; // even works for MIN_INT!
-double.cpp:        l = -a;
-double.cpp:        int exponent = FRACT_SIZE - 1, sticky = 0;
-double.cpp:    if (d.Exponent() < -BIAS - 30)
-double.cpp:            // A regular, normalized number - do work on the parts
-double.cpp:            *this = Normalize(d.Sign(), d.Exponent() - 2, fraction);
-double.cpp:            aadj1 = -1;
-double.cpp:            // special case - mantissa is power of 2
-double.cpp:            aadj1 = -aadj;
-double.cpp:        aadj1 = dsign ? aadj : -aadj;
-double.cpp:        value.word -= (FRACT_SIZE + 1) * MIN_FRACT;
-double.cpp:        if (Exponent() >= BIAS - FRACT_SIZE)
-double.cpp:            if (tmp.value.word == POS_INF - 1)
-double.cpp:            value.word = POS_INF - 1;
-double.cpp:        // correctly round *this + adj in some half-way cases.
-double.cpp:        if (y <= FRACT_SIZE - BIAS || aadj > 1)
-double.cpp:                aadj1 = -aadj1;
-double.cpp:        aadj -= aadj.IntValue();
-double.cpp:                    shift -= 4;
-double.cpp:                    shift -= 4;
-double.cpp:                    exponent = exponent * 10 + c - U_0;
-double.cpp:                                *this = - *this;
-double.cpp:                exponent = - exponent;
-double.cpp:            y = 10 * y + c - U_0;
-double.cpp:            if (c -= U_0)
-double.cpp:                L = c - U_0;
-double.cpp:                    L = 10 * L + c - U_0;
-double.cpp:                if (s - s1 > 8 || L > 19999)
-double.cpp:                    e = -e;
-double.cpp:        k = nd - MAX_DIGITS;
-double.cpp:        i = MAX_DIGITS - nd0;
-double.cpp:            nf -= k;
-double.cpp:            nf -= k;
-double.cpp:        roundup = s0[MAX_DIGITS - 1 + j] != U_4;
-double.cpp:    e1 = e -= nf;
-double.cpp:    // decimal point, followed by nd-nd0 digits.  The number we're
-double.cpp:                *this = -*this;
-double.cpp:                    *this = -*this;
-double.cpp:            i = 7 - nd;
-double.cpp:                e -= i;
-double.cpp:                    *this = -*this;
-double.cpp:        else if (e >= -10 )
-double.cpp:            *this /= tens[-e];
-double.cpp:                *this = -*this;
-double.cpp:    e1 += nd - k;
-double.cpp:            value.word -= (FRACT_SIZE + 1) * MIN_FRACT;
-double.cpp:            if (z > BIAS - FRACT_SIZE)
-double.cpp:            if (z > BIAS - FRACT_SIZE - 1)
-double.cpp:                value.word = POS_INF - 1;
-double.cpp:        e1 = -e1;
-double.cpp:    // Now the hard part -- adjusting *this to the correct value.
-double.cpp:            bb2 = bb5 = -e;
-double.cpp:            bd2 -= bbe;
-double.cpp:        i = j + bbbits - 1; // logb(*this)
-double.cpp:        if (i < 1 - BIAS) // denormal
-double.cpp:            j = FRACT_SIZE + 2 - bbbits;
-double.cpp:            bb2 -= i;
-double.cpp:            bd2 -= i;
-double.cpp:            bs2 -= i;
-double.cpp:        BigInt delta = bb - bd;
-double.cpp:        // Error is less than half an ulp -- check for
-double.cpp:            if (dsign || FractBits() || Exponent() <= 1 - BIAS
-double.cpp:                // boundary case -- decrement exponent
-double.cpp:                value.word--;
-double.cpp:        // exactly half-way between
-double.cpp:                value.word += dsign ? 1 : -1;
-double.cpp:        // more than 1/2 ulp off - try again
-double.cpp:        // has an ICE caused by register over-allocation if it is inline.
-double.cpp:        *this = -*this;
-double.cpp:        result <<= (exponent - FRACT_SIZE);
-double.cpp:        result >>= (FRACT_SIZE - exponent);
-double.cpp:    return sign ? -result : result;
-double.cpp:        result <<= (exponent - FRACT_SIZE);
-double.cpp:        result >>= (FRACT_SIZE - exponent);
-double.cpp:    return sign ? (LongInt) -result : result;
-double.cpp:        if (round && (sticky || (fraction & 1)) && exponent > -BIAS)
-double.cpp:            exponent--;
-double.cpp:    if (exponent <= -BIAS)
-double.cpp:        if (exponent < -BIAS - FRACT_SIZE)
-double.cpp:        while (exponent <= -BIAS)
-double.cpp:        exponent = -BIAS;
-double.cpp:    if (exponent == -BIAS)
-double.cpp:            exponent--;
-double.cpp:    L = (i4) f.ExpBits() - FRACT_SIZE * MIN_FRACT;
-double.cpp:        L = -L >> FRACT_SIZE;
-double.cpp:    k = b.hi0bits() - a.hi0bits() + 32 * (a.wds - b.wds);
-double.cpp:        fb.value.word -= k * MIN_FRACT;
-double.cpp:    // Now for the real work - do manipulations on copies
-double.cpp:        x = -x;
-double.cpp:        y = -y;
-double.cpp:        round = y << (32 + expy - expx);
-double.cpp:        y >>= expx - expy;
-double.cpp:        round = x << (32 + expx - expy);
-double.cpp:        x >>= expy - expx;
-double.cpp:    // Do the arithmetic. The excess magnitude of 32-bit arithmetic means
-double.cpp:    // pre-alignment avoids any question of INT_MIN negation problems.
-double.cpp:        x = -x;
-double.cpp:    return Normalize(signx, expx - 6, (u4) x);
-double.cpp:IEEEfloat IEEEfloat::operator- () const
-double.cpp:    return IEEEfloat(-value.float_value);
-double.cpp:    // Now for the real work - do manipulations on copies
-double.cpp:    // will be 46-48 bits (unsigned); shift it back to 28 bits for Normalize,
-double.cpp:    return Normalize(sign, exponent - 3, x);
-double.cpp:    // Now for the real work - do manipulations on copies
-double.cpp:    exponent = SplitInto(x) - op.SplitInto(y);
-double.cpp:        exponent--;
-double.cpp:            x -= y;
-double.cpp:    return Normalize(sign, exponent - 8, result);
-double.cpp:    // Now for the real work - do manipulations on copies
-double.cpp:    // This algorithm is from fdlibm.c - see above notice
-double.cpp:    exponent = SplitInto(x) - expy;
-double.cpp:    while (exponent--)
-double.cpp:        z = x - y;
-double.cpp:    z = x - y;
-double.cpp:    if (exponent == -IEEEfloat::Bias())
-double.cpp:            *this = Normalize(sign, 1 - IEEEfloat::Bias(),
-double.cpp:        a  = -a; // even works for MIN_INT!
-double.cpp:        l  = -a; // even works for MIN_LONG!
-double.cpp:                    shift -= 4;
-double.cpp:                    shift -= 4;
-double.cpp:                    exponent = exponent * 10 + c - U_0;
-double.cpp:                                *this = - *this;
-double.cpp:                exponent = - exponent;
-double.cpp:            y = 10 * y + c - U_0;
-double.cpp:            z = 10 * z + c - U_0;
-double.cpp:            if (c -= U_0)
-double.cpp:                L = c - U_0;
-double.cpp:                    L = 10 * L + c - U_0;
-double.cpp:                if (s - s1 > 8 || L > 19999)
-double.cpp:                    e = -e;
-double.cpp:        k = nd - MAX_DIGITS;
-double.cpp:        i = MAX_DIGITS - nd0;
-double.cpp:            nf -= k;
-double.cpp:            nf -= k;
-double.cpp:        roundup = s0[MAX_DIGITS - 1 + j] != U_4;
-double.cpp:    e1 = e -= nf;
-double.cpp:    // decimal point, followed by nd-nd0 digits.  The number we're
-double.cpp:        *this = *this * tens[k - 9] + z;
-double.cpp:                *this = -*this;
-double.cpp:                    *this = -*this;
-double.cpp:            i = 15 - nd;
-double.cpp:                e -= i;
-double.cpp:                    *this = -*this;
-double.cpp:        else if (e >= -22 )
-double.cpp:            *this /= tens[-e];
-double.cpp:                *this = -*this;
-double.cpp:    e1 += nd - k;
-double.cpp:            setHighWord(HighWord() - (FRACT_SIZE + 1) * MIN_FRACT);
-double.cpp:            if (z > BIAS - FRACT_SIZE)
-double.cpp:            if (z > BIAS - FRACT_SIZE - 1)
-double.cpp:                setHighAndLowWords(POS_INF_HI - 1, ZERO_LO - 1);
-double.cpp:        e1 = -e1;
-double.cpp:    // Now the hard part -- adjusting *this to the correct value.
-double.cpp:            bb2 = bb5 = -e;
-double.cpp:            bd2 -= bbe;
-double.cpp:        i = j + bbbits - 1; // logb(*this)
-double.cpp:        if (i < 1 - BIAS) // denormal
-double.cpp:            j = FRACT_SIZE + 2 - bbbits;
-double.cpp:            bb2 -= i;
-double.cpp:            bd2 -= i;
-double.cpp:            bs2 -= i;
-double.cpp:        BigInt delta = bb - bd;
-double.cpp:        // Error is less than half an ulp -- check for
-double.cpp:                || Exponent() <= 1 - BIAS || delta.IsZero())
-double.cpp:                // boundary case -- decrement exponent
-double.cpp:                BaseLong::operator --();
-double.cpp:        // exactly half-way between
-double.cpp:                BaseLong::operator +=(dsign ? 1 : -1);
-double.cpp:        // more than 1/2 ulp off - try again
-double.cpp:                aadj1 = -1;
-double.cpp:                // special case - mantissa is power of 2
-double.cpp:                aadj1 = -aadj;
-double.cpp:            //            aadj1 = dsign ? aadj : -aadj;
-double.cpp:                aadj1 = -aadj;
-double.cpp:            setHighWord(HighWord() - (FRACT_SIZE + 1) * MIN_FRACT);
-double.cpp:            if (Exponent() >= BIAS - FRACT_SIZE)
-double.cpp:                if (tmp.HighWord() == POS_INF_HI - 1 &&
-double.cpp:                    tmp.LowWord() == ZERO_LO - 1)
-double.cpp:                setHighAndLowWords(POS_INF_HI - 1, ZERO_LO - 1);
-double.cpp:            // correctly round *this + adj in some half-way cases.
-double.cpp:            if (y <= FRACT_SIZE - BIAS || aadj > 1)
-double.cpp:                    aadj1 = -aadj1;
-double.cpp:            aadj -= aadj.IntValue();
-double.cpp:        *this = -*this;
-double.cpp:    i4 result = (i4) (Fraction() >> (FRACT_SIZE - exponent)).LowWord();
-double.cpp:    return sign ? -result : result;
-double.cpp:        result <<= (exponent - FRACT_SIZE);
-double.cpp:        result >>= (FRACT_SIZE - exponent);
-double.cpp:    return sign ? (LongInt) -result : result;
-double.cpp:            exponent > -(int) BIAS)
-double.cpp:            exponent--;
-double.cpp:    if (exponent <= -BIAS)
-double.cpp:        if (exponent < -BIAS - FRACT_SIZE)
-double.cpp:        while (exponent <= -BIAS)
-double.cpp:        exponent = -BIAS;
-double.cpp:    if (exponent == -(int) BIAS)
-double.cpp:            exponent--;
-double.cpp:    L = (i4) d.ExpBits() - FRACT_SIZE * MIN_FRACT;
-double.cpp:        L = -L >> FRACT_SIZE_HI;
-double.cpp:            L -= FRACT_SIZE_HI;
-double.cpp:            d.setHighAndLowWords(0, L >= 31 ? 1 : 1 << (31 - L));
-double.cpp:    k = b.hi0bits() - a.hi0bits() + 32 * (a.wds - b.wds);
-double.cpp:        db.setHighWord(db.HighWord() - k * MIN_FRACT);
-double.cpp:    // Now for the real work - do manipulations on copies
-double.cpp:        x = -x;
-double.cpp:        y = -y;
-double.cpp:        round = y << (64 + expy - expx);
-double.cpp:        y >>= expx - expy;
-double.cpp:        round = x << (64 + expx - expy);
-double.cpp:        x >>= expy - expx;
-double.cpp:    // Do the arithmetic. The excess magnitude of 64-bit arithmetic means
-double.cpp:    // pre-alignment avoids any question of LONG_MIN negation problems.
-double.cpp:        x = -x;
-double.cpp:    return Normalize(signx, expx - 8, (ULongInt) x);
-double.cpp:IEEEdouble IEEEdouble::operator- () const
-double.cpp:    return IEEEdouble(-value.double_value);
-double.cpp:    // Now for the real work - do manipulations on copies
-double.cpp:    return Normalize(sign, exponent - 8, x);
-double.cpp:    // Now for the real work - do manipulations on copies
-double.cpp:    exponent = SplitInto(x) - op.SplitInto(y);
-double.cpp:        exponent--;
-double.cpp:            x -= y;
-double.cpp:    return Normalize(sign, exponent - 11, result);
-double.cpp:    // Now for the real work - do manipulations on copies
-double.cpp:    // This algorithm is from fdlibm.c - see above notice
-double.cpp:    exponent = SplitInto(x) - expy;
-double.cpp:    while (exponent--)
-double.cpp:        z = x - y;
-double.cpp:    z = x - y;
-double.cpp:        e = k + fe - IEEEfloat::FractSize();
-double.cpp:        bits = IEEEfloat::FractSize() - k + 1;
-double.cpp:        e = k + fe - IEEEfloat::FractSize() + 1;
-double.cpp:        bits = 32 - hi0bits(z);
-double.cpp:            data[0] = y | z << (32 - k);
-double.cpp:        e = k + de - IEEEdouble::FractSize();
-double.cpp:        bits = IEEEdouble::FractSize() - k + 1;
-double.cpp:        e = k + de - IEEEdouble::FractSize() + 1;
-double.cpp:        bits = 32 * wds - hi0bits(data[wds - 1]);
-double.cpp:            multadd(10, *s++ - U_0);
-double.cpp:        multadd(10, *s++ - U_0);
-double.cpp:BigInt BigInt::operator -(const BigInt &op) const
-double.cpp:    i = a -> compareTo(op);
-double.cpp:    c.resize(a -> k);
-double.cpp:    wa = a -> wds;
-double.cpp:    xa = a -> data;
-double.cpp:    wb = b -> wds;
-double.cpp:    xb = b -> data;
-double.cpp:        y = ULongInt(*xa++) - *xb++ - borrow;
-double.cpp:        y = ULongInt(*xa++) - borrow;
-double.cpp:    while (!*--xc)
-double.cpp:        wa--;
-double.cpp:    int k; // c -> k
-double.cpp:    if (a -> wds < b -> wds)
-double.cpp:    k = a -> k;
-double.cpp:    wa = a -> wds;
-double.cpp:    wb = b -> wds;
-double.cpp:    if (wc > a -> maxwds)
-double.cpp:    c.neg = a -> neg ^ b -> neg;
-double.cpp:    xa = a -> data;
-double.cpp:    xb = b -> data;
-double.cpp:    for (xc0 = c.data, xc = xc0 + wc; wc > 0 && !*--xc; --wc);
-double.cpp:        k1 = 32 - op;
-double.cpp:    result.wds = n1 - 1;
-double.cpp:            p5 = bigfives[i] = new BigInt(*bigfives[i-1] * *bigfives[i-1]);
-double.cpp:    if (i -= j)
-double.cpp:        if (*--xa != *--xb)
-double.cpp:            return *xa < *xb ? -1 : 1;
-double.cpp:    sxe = sx + --n;
-double.cpp:            y = ULongInt(*bx) - ys.LowWord() - borrow;
-double.cpp:            while (--bxe > bx && !*bxe)
-double.cpp:                --n;
-double.cpp:            y = ULongInt(*bx) - ys.LowWord() - borrow;
-double.cpp:            while (--bxe > bx && !*bxe)
-double.cpp:                --n;
-double.cpp:    y = *--xa;
-double.cpp:        return IEEEfloat(0x3f800000 | y >> (8 - k));
-double.cpp:    z = xa > data ? *--xa : 0;
-double.cpp:    if (k -= 8)
-double.cpp:        return IEEEfloat(0x3f800000 | y << k | z >> (32 - k));
-double.cpp:    y = *--xa;
-double.cpp:        hi = 0x3ff00000 | y >> (11 - k);
-double.cpp:        w = xa > data ? *--xa : 0;
-double.cpp:        lo = y << (32 - 11 + k) | w >> (11 - k);
-double.cpp:    z = xa > data ? *--xa : 0;
-double.cpp:    if (k -= 11)
-double.cpp:        hi = 0x3ff00000 | y << k | z >> (32 - k);
-double.cpp:        y = xa > data ? *--xa : 0;
-double.cpp:        lo = z << k | y >> (32 - k);
-declarations/double.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-declarations/double.h:    // compiler-supported IEEE operations.  If not, then this class
-declarations/double.h:        MAX_DIGITS = BIAS + FRACT_SIZE + 1 - MAX_DEC_EXP
-declarations/double.h:        NEG_ZERO = 0x80000000, // -0.0
-declarations/double.h:        NEG_INF = 0xFF800000, // -Inf
-declarations/double.h:        return ((value.word & EXP_BITS) >> FRACT_SIZE) - BIAS;
-declarations/double.h:    // fields, rather than generating a non-const every time.  However,
-declarations/double.h:    // Floating-point operations
-declarations/double.h:    inline IEEEfloat operator++() { return *this += 1; } // pre-increment
-declarations/double.h:    inline IEEEfloat operator++(int) // post-increment
-declarations/double.h:    IEEEfloat operator-() const;        // unary minus
-declarations/double.h:    inline IEEEfloat operator-(const IEEEfloat op) const // binary subtraction
-declarations/double.h:        return *this + (-op);
-declarations/double.h:    inline IEEEfloat& operator-=(const IEEEfloat op) // subtract and assign
-declarations/double.h:        return *this = *this - op;
-declarations/double.h:    inline IEEEfloat operator--() { return *this -= 1; } // pre-decrement
-declarations/double.h:    inline IEEEfloat operator--(int) // post-decrement
-declarations/double.h:        *this -= 1;
-declarations/double.h:    // Comparison operators.  Recall that NaN does not compare, and 0.0 == -0.0
-declarations/double.h:    bool operator<(const IEEEfloat) const; // less-than
-declarations/double.h:    bool operator>(const IEEEfloat) const; // greater-than
-declarations/double.h:    bool operator<=(const IEEEfloat) const; // less-than or equal
-declarations/double.h:    bool operator>=(const IEEEfloat) const; // greater-than or equal
-declarations/double.h:    //  * -0.0f and 0.0f are different, with positive 0 comparing as greater
-declarations/double.h:            : (IsZero() && op.IsZero()) ? op.Sign() - Sign()
-declarations/double.h:            : (*this < op) ? -1 : *this > op;
-declarations/double.h:    // compiler-supported IEEE operations.  If not, then this class
-declarations/double.h:        FRACT_SIZE_HI = FRACT_SIZE - 32, // mantissa bits in high word
-declarations/double.h:        MAX_DIGITS = BIAS + FRACT_SIZE + 1 - MAX_DEC_EXP
-declarations/double.h:        NEG_ZERO_HI = 0x80000000, // -0.0
-declarations/double.h:        NEG_INF_HI = 0xFFF00000, // -Inf
-declarations/double.h:        return ((HighWord() & EXP_BITS) >> (FRACT_SIZE_HI)) - BIAS;
-declarations/double.h:        return ((high & ABS_BITS) | ((low | -(i4) low) >> 31)) > EXP_BITS;
-declarations/double.h:    // fields, rather than generating a non-const every time, as in
-declarations/double.h:    // Floating-point operations
-declarations/double.h:    inline IEEEdouble operator++() { return *this += 1; } // pre-increment
-declarations/double.h:    inline IEEEdouble operator++(int) // post-increment
-declarations/double.h:    IEEEdouble operator-() const;         // unary minus
-declarations/double.h:    inline IEEEdouble operator-(const IEEEdouble op) const // binary subtract
-declarations/double.h:        return *this + (-op);
-declarations/double.h:    inline IEEEdouble& operator-=(const IEEEdouble op) // subtract and assign
-declarations/double.h:        return *this = *this - op;
-declarations/double.h:    inline IEEEdouble operator--() { return *this -= 1; } // pre-decrement
-declarations/double.h:    inline IEEEdouble operator--(int) // post-decrement
-declarations/double.h:        *this -= 1;
-declarations/double.h:    // Comparison operators.  Recall that NaN does not compare, and 0.0 == -0.0
-declarations/double.h:    bool operator<(const IEEEdouble) const; // less-than
-declarations/double.h:    bool operator>(const IEEEdouble) const; // greater-than
-declarations/double.h:    bool operator<=(const IEEEdouble) const; // less-than or equal
-declarations/double.h:    bool operator>=(const IEEEdouble) const; // greater-than or equal
-declarations/double.h:    //  * -0.0 and 0.0 are different, with positive 0 comparing as greater
-declarations/double.h:            : (IsZero() && op.IsZero()) ? op.Sign() - Sign()
-declarations/double.h:            : (*this < op) ? -1 : *this > op;
-declarations/double.h:    // return count of high-order 0's in x
-declarations/double.h:    // return count of low-order 0's in y, shift y so that
-declarations/double.h:    inline int hi0bits() const { assert(data); return hi0bits(data[wds - 1]); }
-declarations/double.h:    inline BigInt& operator++() { return *this += 1; } // pre-increment
-declarations/double.h:    BigInt operator-(const BigInt& op) const;
-declarations/double.h:    this -> k = k;
+declarations/platform/double.cpp:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $
+declarations/platform/double.cpp:        a  = -a; // even works for MIN_INT!
+declarations/platform/double.cpp:        l = -a;
+declarations/platform/double.cpp:        int exponent = FRACT_SIZE - 1, sticky = 0;
+declarations/platform/double.cpp:    if (d.Exponent() < -BIAS - 30)
+declarations/platform/double.cpp:            // A regular, normalized number - do work on the parts
+declarations/platform/double.cpp:            *this = Normalize(d.Sign(), d.Exponent() - 2, fraction);
+declarations/platform/double.cpp:            aadj1 = -1;
+declarations/platform/double.cpp:            // special case - mantissa is power of 2
+declarations/platform/double.cpp:            aadj1 = -aadj;
+declarations/platform/double.cpp:        aadj1 = dsign ? aadj : -aadj;
+declarations/platform/double.cpp:        value.word -= (FRACT_SIZE + 1) * MIN_FRACT;
+declarations/platform/double.cpp:        if (Exponent() >= BIAS - FRACT_SIZE)
+declarations/platform/double.cpp:            if (tmp.value.word == POS_INF - 1)
+declarations/platform/double.cpp:            value.word = POS_INF - 1;
+declarations/platform/double.cpp:        // correctly round *this + adj in some half-way cases.
+declarations/platform/double.cpp:        if (y <= FRACT_SIZE - BIAS || aadj > 1)
+declarations/platform/double.cpp:                aadj1 = -aadj1;
+declarations/platform/double.cpp:        aadj -= aadj.IntValue();
+declarations/platform/double.cpp:                    shift -= 4;
+declarations/platform/double.cpp:                    shift -= 4;
+declarations/platform/double.cpp:                    exponent = exponent * 10 + c - U_0;
+declarations/platform/double.cpp:                                *this = - *this;
+declarations/platform/double.cpp:                exponent = - exponent;
+declarations/platform/double.cpp:            y = 10 * y + c - U_0;
+declarations/platform/double.cpp:            if (c -= U_0)
+declarations/platform/double.cpp:                L = c - U_0;
+declarations/platform/double.cpp:                    L = 10 * L + c - U_0;
+declarations/platform/double.cpp:                if (s - s1 > 8 || L > 19999)
+declarations/platform/double.cpp:                    e = -e;
+declarations/platform/double.cpp:        k = nd - MAX_DIGITS;
+declarations/platform/double.cpp:        i = MAX_DIGITS - nd0;
+declarations/platform/double.cpp:            nf -= k;
+declarations/platform/double.cpp:            nf -= k;
+declarations/platform/double.cpp:        roundup = s0[MAX_DIGITS - 1 + j] != U_4;
+declarations/platform/double.cpp:    e1 = e -= nf;
+declarations/platform/double.cpp:    // decimal point, followed by nd-nd0 digits.  The number we're
+declarations/platform/double.cpp:                *this = -*this;
+declarations/platform/double.cpp:                    *this = -*this;
+declarations/platform/double.cpp:            i = 7 - nd;
+declarations/platform/double.cpp:                e -= i;
+declarations/platform/double.cpp:                    *this = -*this;
+declarations/platform/double.cpp:        else if (e >= -10 )
+declarations/platform/double.cpp:            *this /= tens[-e];
+declarations/platform/double.cpp:                *this = -*this;
+declarations/platform/double.cpp:    e1 += nd - k;
+declarations/platform/double.cpp:            value.word -= (FRACT_SIZE + 1) * MIN_FRACT;
+declarations/platform/double.cpp:            if (z > BIAS - FRACT_SIZE)
+declarations/platform/double.cpp:            if (z > BIAS - FRACT_SIZE - 1)
+declarations/platform/double.cpp:                value.word = POS_INF - 1;
+declarations/platform/double.cpp:        e1 = -e1;
+declarations/platform/double.cpp:    // Now the hard part -- adjusting *this to the correct value.
+declarations/platform/double.cpp:            bb2 = bb5 = -e;
+declarations/platform/double.cpp:            bd2 -= bbe;
+declarations/platform/double.cpp:        i = j + bbbits - 1; // logb(*this)
+declarations/platform/double.cpp:        if (i < 1 - BIAS) // denormal
+declarations/platform/double.cpp:            j = FRACT_SIZE + 2 - bbbits;
+declarations/platform/double.cpp:            bb2 -= i;
+declarations/platform/double.cpp:            bd2 -= i;
+declarations/platform/double.cpp:            bs2 -= i;
+declarations/platform/double.cpp:        BigInt delta = bb - bd;
+declarations/platform/double.cpp:        // Error is less than half an ulp -- check for
+declarations/platform/double.cpp:            if (dsign || FractBits() || Exponent() <= 1 - BIAS
+declarations/platform/double.cpp:                // boundary case -- decrement exponent
+declarations/platform/double.cpp:                value.word--;
+declarations/platform/double.cpp:        // exactly half-way between
+declarations/platform/double.cpp:                value.word += dsign ? 1 : -1;
+declarations/platform/double.cpp:        // more than 1/2 ulp off - try again
+declarations/platform/double.cpp:        // has an ICE caused by register over-allocation if it is inline.
+declarations/platform/double.cpp:        *this = -*this;
+declarations/platform/double.cpp:        result <<= (exponent - FRACT_SIZE);
+declarations/platform/double.cpp:        result >>= (FRACT_SIZE - exponent);
+declarations/platform/double.cpp:    return sign ? -result : result;
+declarations/platform/double.cpp:        result <<= (exponent - FRACT_SIZE);
+declarations/platform/double.cpp:        result >>= (FRACT_SIZE - exponent);
+declarations/platform/double.cpp:    return sign ? (LongInt) -result : result;
+declarations/platform/double.cpp:        if (round && (sticky || (fraction & 1)) && exponent > -BIAS)
+declarations/platform/double.cpp:            exponent--;
+declarations/platform/double.cpp:    if (exponent <= -BIAS)
+declarations/platform/double.cpp:        if (exponent < -BIAS - FRACT_SIZE)
+declarations/platform/double.cpp:        while (exponent <= -BIAS)
+declarations/platform/double.cpp:        exponent = -BIAS;
+declarations/platform/double.cpp:    if (exponent == -BIAS)
+declarations/platform/double.cpp:            exponent--;
+declarations/platform/double.cpp:    L = (i4) f.ExpBits() - FRACT_SIZE * MIN_FRACT;
+declarations/platform/double.cpp:        L = -L >> FRACT_SIZE;
+declarations/platform/double.cpp:    k = b.hi0bits() - a.hi0bits() + 32 * (a.wds - b.wds);
+declarations/platform/double.cpp:        fb.value.word -= k * MIN_FRACT;
+declarations/platform/double.cpp:    // Now for the real work - do manipulations on copies
+declarations/platform/double.cpp:        x = -x;
+declarations/platform/double.cpp:        y = -y;
+declarations/platform/double.cpp:        round = y << (32 + expy - expx);
+declarations/platform/double.cpp:        y >>= expx - expy;
+declarations/platform/double.cpp:        round = x << (32 + expx - expy);
+declarations/platform/double.cpp:        x >>= expy - expx;
+declarations/platform/double.cpp:    // Do the arithmetic. The excess magnitude of 32-bit arithmetic means
+declarations/platform/double.cpp:    // pre-alignment avoids any question of INT_MIN negation problems.
+declarations/platform/double.cpp:        x = -x;
+declarations/platform/double.cpp:    return Normalize(signx, expx - 6, (u4) x);
+declarations/platform/double.cpp:IEEEfloat IEEEfloat::operator- () const
+declarations/platform/double.cpp:    return IEEEfloat(-value.float_value);
+declarations/platform/double.cpp:    // Now for the real work - do manipulations on copies
+declarations/platform/double.cpp:    // will be 46-48 bits (unsigned); shift it back to 28 bits for Normalize,
+declarations/platform/double.cpp:    return Normalize(sign, exponent - 3, x);
+declarations/platform/double.cpp:    // Now for the real work - do manipulations on copies
+declarations/platform/double.cpp:    exponent = SplitInto(x) - op.SplitInto(y);
+declarations/platform/double.cpp:        exponent--;
+declarations/platform/double.cpp:            x -= y;
+declarations/platform/double.cpp:    return Normalize(sign, exponent - 8, result);
+declarations/platform/double.cpp:    // Now for the real work - do manipulations on copies
+declarations/platform/double.cpp:    // This algorithm is from fdlibm.c - see above notice
+declarations/platform/double.cpp:    exponent = SplitInto(x) - expy;
+declarations/platform/double.cpp:    while (exponent--)
+declarations/platform/double.cpp:        z = x - y;
+declarations/platform/double.cpp:    z = x - y;
+declarations/platform/double.cpp:    if (exponent == -IEEEfloat::Bias())
+declarations/platform/double.cpp:            *this = Normalize(sign, 1 - IEEEfloat::Bias(),
+declarations/platform/double.cpp:        a  = -a; // even works for MIN_INT!
+declarations/platform/double.cpp:        l  = -a; // even works for MIN_LONG!
+declarations/platform/double.cpp:                    shift -= 4;
+declarations/platform/double.cpp:                    shift -= 4;
+declarations/platform/double.cpp:                    exponent = exponent * 10 + c - U_0;
+declarations/platform/double.cpp:                                *this = - *this;
+declarations/platform/double.cpp:                exponent = - exponent;
+declarations/platform/double.cpp:            y = 10 * y + c - U_0;
+declarations/platform/double.cpp:            z = 10 * z + c - U_0;
+declarations/platform/double.cpp:            if (c -= U_0)
+declarations/platform/double.cpp:                L = c - U_0;
+declarations/platform/double.cpp:                    L = 10 * L + c - U_0;
+declarations/platform/double.cpp:                if (s - s1 > 8 || L > 19999)
+declarations/platform/double.cpp:                    e = -e;
+declarations/platform/double.cpp:        k = nd - MAX_DIGITS;
+declarations/platform/double.cpp:        i = MAX_DIGITS - nd0;
+declarations/platform/double.cpp:            nf -= k;
+declarations/platform/double.cpp:            nf -= k;
+declarations/platform/double.cpp:        roundup = s0[MAX_DIGITS - 1 + j] != U_4;
+declarations/platform/double.cpp:    e1 = e -= nf;
+declarations/platform/double.cpp:    // decimal point, followed by nd-nd0 digits.  The number we're
+declarations/platform/double.cpp:        *this = *this * tens[k - 9] + z;
+declarations/platform/double.cpp:                *this = -*this;
+declarations/platform/double.cpp:                    *this = -*this;
+declarations/platform/double.cpp:            i = 15 - nd;
+declarations/platform/double.cpp:                e -= i;
+declarations/platform/double.cpp:                    *this = -*this;
+declarations/platform/double.cpp:        else if (e >= -22 )
+declarations/platform/double.cpp:            *this /= tens[-e];
+declarations/platform/double.cpp:                *this = -*this;
+declarations/platform/double.cpp:    e1 += nd - k;
+declarations/platform/double.cpp:            setHighWord(HighWord() - (FRACT_SIZE + 1) * MIN_FRACT);
+declarations/platform/double.cpp:            if (z > BIAS - FRACT_SIZE)
+declarations/platform/double.cpp:            if (z > BIAS - FRACT_SIZE - 1)
+declarations/platform/double.cpp:                setHighAndLowWords(POS_INF_HI - 1, ZERO_LO - 1);
+declarations/platform/double.cpp:        e1 = -e1;
+declarations/platform/double.cpp:    // Now the hard part -- adjusting *this to the correct value.
+declarations/platform/double.cpp:            bb2 = bb5 = -e;
+declarations/platform/double.cpp:            bd2 -= bbe;
+declarations/platform/double.cpp:        i = j + bbbits - 1; // logb(*this)
+declarations/platform/double.cpp:        if (i < 1 - BIAS) // denormal
+declarations/platform/double.cpp:            j = FRACT_SIZE + 2 - bbbits;
+declarations/platform/double.cpp:            bb2 -= i;
+declarations/platform/double.cpp:            bd2 -= i;
+declarations/platform/double.cpp:            bs2 -= i;
+declarations/platform/double.cpp:        BigInt delta = bb - bd;
+declarations/platform/double.cpp:        // Error is less than half an ulp -- check for
+declarations/platform/double.cpp:                || Exponent() <= 1 - BIAS || delta.IsZero())
+declarations/platform/double.cpp:                // boundary case -- decrement exponent
+declarations/platform/double.cpp:                BaseLong::operator --();
+declarations/platform/double.cpp:        // exactly half-way between
+declarations/platform/double.cpp:                BaseLong::operator +=(dsign ? 1 : -1);
+declarations/platform/double.cpp:        // more than 1/2 ulp off - try again
+declarations/platform/double.cpp:                aadj1 = -1;
+declarations/platform/double.cpp:                // special case - mantissa is power of 2
+declarations/platform/double.cpp:                aadj1 = -aadj;
+declarations/platform/double.cpp:            //            aadj1 = dsign ? aadj : -aadj;
+declarations/platform/double.cpp:                aadj1 = -aadj;
+declarations/platform/double.cpp:            setHighWord(HighWord() - (FRACT_SIZE + 1) * MIN_FRACT);
+declarations/platform/double.cpp:            if (Exponent() >= BIAS - FRACT_SIZE)
+declarations/platform/double.cpp:                if (tmp.HighWord() == POS_INF_HI - 1 &&
+declarations/platform/double.cpp:                    tmp.LowWord() == ZERO_LO - 1)
+declarations/platform/double.cpp:                setHighAndLowWords(POS_INF_HI - 1, ZERO_LO - 1);
+declarations/platform/double.cpp:            // correctly round *this + adj in some half-way cases.
+declarations/platform/double.cpp:            if (y <= FRACT_SIZE - BIAS || aadj > 1)
+declarations/platform/double.cpp:                    aadj1 = -aadj1;
+declarations/platform/double.cpp:            aadj -= aadj.IntValue();
+declarations/platform/double.cpp:        *this = -*this;
+declarations/platform/double.cpp:    i4 result = (i4) (Fraction() >> (FRACT_SIZE - exponent)).LowWord();
+declarations/platform/double.cpp:    return sign ? -result : result;
+declarations/platform/double.cpp:        result <<= (exponent - FRACT_SIZE);
+declarations/platform/double.cpp:        result >>= (FRACT_SIZE - exponent);
+declarations/platform/double.cpp:    return sign ? (LongInt) -result : result;
+declarations/platform/double.cpp:            exponent > -(int) BIAS)
+declarations/platform/double.cpp:            exponent--;
+declarations/platform/double.cpp:    if (exponent <= -BIAS)
+declarations/platform/double.cpp:        if (exponent < -BIAS - FRACT_SIZE)
+declarations/platform/double.cpp:        while (exponent <= -BIAS)
+declarations/platform/double.cpp:        exponent = -BIAS;
+declarations/platform/double.cpp:    if (exponent == -(int) BIAS)
+declarations/platform/double.cpp:            exponent--;
+declarations/platform/double.cpp:    L = (i4) d.ExpBits() - FRACT_SIZE * MIN_FRACT;
+declarations/platform/double.cpp:        L = -L >> FRACT_SIZE_HI;
+declarations/platform/double.cpp:            L -= FRACT_SIZE_HI;
+declarations/platform/double.cpp:            d.setHighAndLowWords(0, L >= 31 ? 1 : 1 << (31 - L));
+declarations/platform/double.cpp:    k = b.hi0bits() - a.hi0bits() + 32 * (a.wds - b.wds);
+declarations/platform/double.cpp:        db.setHighWord(db.HighWord() - k * MIN_FRACT);
+declarations/platform/double.cpp:    // Now for the real work - do manipulations on copies
+declarations/platform/double.cpp:        x = -x;
+declarations/platform/double.cpp:        y = -y;
+declarations/platform/double.cpp:        round = y << (64 + expy - expx);
+declarations/platform/double.cpp:        y >>= expx - expy;
+declarations/platform/double.cpp:        round = x << (64 + expx - expy);
+declarations/platform/double.cpp:        x >>= expy - expx;
+declarations/platform/double.cpp:    // Do the arithmetic. The excess magnitude of 64-bit arithmetic means
+declarations/platform/double.cpp:    // pre-alignment avoids any question of LONG_MIN negation problems.
+declarations/platform/double.cpp:        x = -x;
+declarations/platform/double.cpp:    return Normalize(signx, expx - 8, (ULongInt) x);
+declarations/platform/double.cpp:IEEEdouble IEEEdouble::operator- () const
+declarations/platform/double.cpp:    return IEEEdouble(-value.double_value);
+declarations/platform/double.cpp:    // Now for the real work - do manipulations on copies
+declarations/platform/double.cpp:    return Normalize(sign, exponent - 8, x);
+declarations/platform/double.cpp:    // Now for the real work - do manipulations on copies
+declarations/platform/double.cpp:    exponent = SplitInto(x) - op.SplitInto(y);
+declarations/platform/double.cpp:        exponent--;
+declarations/platform/double.cpp:            x -= y;
+declarations/platform/double.cpp:    return Normalize(sign, exponent - 11, result);
+declarations/platform/double.cpp:    // Now for the real work - do manipulations on copies
+declarations/platform/double.cpp:    // This algorithm is from fdlibm.c - see above notice
+declarations/platform/double.cpp:    exponent = SplitInto(x) - expy;
+declarations/platform/double.cpp:    while (exponent--)
+declarations/platform/double.cpp:        z = x - y;
+declarations/platform/double.cpp:    z = x - y;
+declarations/platform/double.cpp:        e = k + fe - IEEEfloat::FractSize();
+declarations/platform/double.cpp:        bits = IEEEfloat::FractSize() - k + 1;
+declarations/platform/double.cpp:        e = k + fe - IEEEfloat::FractSize() + 1;
+declarations/platform/double.cpp:        bits = 32 - hi0bits(z);
+declarations/platform/double.cpp:            data[0] = y | z << (32 - k);
+declarations/platform/double.cpp:        e = k + de - IEEEdouble::FractSize();
+declarations/platform/double.cpp:        bits = IEEEdouble::FractSize() - k + 1;
+declarations/platform/double.cpp:        e = k + de - IEEEdouble::FractSize() + 1;
+declarations/platform/double.cpp:        bits = 32 * wds - hi0bits(data[wds - 1]);
+declarations/platform/double.cpp:            multadd(10, *s++ - U_0);
+declarations/platform/double.cpp:        multadd(10, *s++ - U_0);
+declarations/platform/double.cpp:BigInt BigInt::operator -(const BigInt &op) const
+declarations/platform/double.cpp:    i = a -> compareTo(op);
+declarations/platform/double.cpp:    c.resize(a -> k);
+declarations/platform/double.cpp:    wa = a -> wds;
+declarations/platform/double.cpp:    xa = a -> data;
+declarations/platform/double.cpp:    wb = b -> wds;
+declarations/platform/double.cpp:    xb = b -> data;
+declarations/platform/double.cpp:        y = ULongInt(*xa++) - *xb++ - borrow;
+declarations/platform/double.cpp:        y = ULongInt(*xa++) - borrow;
+declarations/platform/double.cpp:    while (!*--xc)
+declarations/platform/double.cpp:        wa--;
+declarations/platform/double.cpp:    int k; // c -> k
+declarations/platform/double.cpp:    if (a -> wds < b -> wds)
+declarations/platform/double.cpp:    k = a -> k;
+declarations/platform/double.cpp:    wa = a -> wds;
+declarations/platform/double.cpp:    wb = b -> wds;
+declarations/platform/double.cpp:    if (wc > a -> maxwds)
+declarations/platform/double.cpp:    c.neg = a -> neg ^ b -> neg;
+declarations/platform/double.cpp:    xa = a -> data;
+declarations/platform/double.cpp:    xb = b -> data;
+declarations/platform/double.cpp:    for (xc0 = c.data, xc = xc0 + wc; wc > 0 && !*--xc; --wc);
+declarations/platform/double.cpp:        k1 = 32 - op;
+declarations/platform/double.cpp:    result.wds = n1 - 1;
+declarations/platform/double.cpp:            p5 = bigfives[i] = new BigInt(*bigfives[i-1] * *bigfives[i-1]);
+declarations/platform/double.cpp:    if (i -= j)
+declarations/platform/double.cpp:        if (*--xa != *--xb)
+declarations/platform/double.cpp:            return *xa < *xb ? -1 : 1;
+declarations/platform/double.cpp:    sxe = sx + --n;
+declarations/platform/double.cpp:            y = ULongInt(*bx) - ys.LowWord() - borrow;
+declarations/platform/double.cpp:            while (--bxe > bx && !*bxe)
+declarations/platform/double.cpp:                --n;
+declarations/platform/double.cpp:            y = ULongInt(*bx) - ys.LowWord() - borrow;
+declarations/platform/double.cpp:            while (--bxe > bx && !*bxe)
+declarations/platform/double.cpp:                --n;
+declarations/platform/double.cpp:    y = *--xa;
+declarations/platform/double.cpp:        return IEEEfloat(0x3f800000 | y >> (8 - k));
+declarations/platform/double.cpp:    z = xa > data ? *--xa : 0;
+declarations/platform/double.cpp:    if (k -= 8)
+declarations/platform/double.cpp:        return IEEEfloat(0x3f800000 | y << k | z >> (32 - k));
+declarations/platform/double.cpp:    y = *--xa;
+declarations/platform/double.cpp:        hi = 0x3ff00000 | y >> (11 - k);
+declarations/platform/double.cpp:        w = xa > data ? *--xa : 0;
+declarations/platform/double.cpp:        lo = y << (32 - 11 + k) | w >> (11 - k);
+declarations/platform/double.cpp:    z = xa > data ? *--xa : 0;
+declarations/platform/double.cpp:    if (k -= 11)
+declarations/platform/double.cpp:        hi = 0x3ff00000 | y << k | z >> (32 - k);
+declarations/platform/double.cpp:        y = xa > data ? *--xa : 0;
+declarations/platform/double.cpp:        lo = z << k | y >> (32 - k);
+declarations/platform/double.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/platform/double.h:    // compiler-supported IEEE operations.  If not, then this class
+declarations/platform/double.h:        MAX_DIGITS = BIAS + FRACT_SIZE + 1 - MAX_DEC_EXP
+declarations/platform/double.h:        NEG_ZERO = 0x80000000, // -0.0
+declarations/platform/double.h:        NEG_INF = 0xFF800000, // -Inf
+declarations/platform/double.h:        return ((value.word & EXP_BITS) >> FRACT_SIZE) - BIAS;
+declarations/platform/double.h:    // fields, rather than generating a non-const every time.  However,
+declarations/platform/double.h:    // Floating-point operations
+declarations/platform/double.h:    inline IEEEfloat operator++() { return *this += 1; } // pre-increment
+declarations/platform/double.h:    inline IEEEfloat operator++(int) // post-increment
+declarations/platform/double.h:    IEEEfloat operator-() const;        // unary minus
+declarations/platform/double.h:    inline IEEEfloat operator-(const IEEEfloat op) const // binary subtraction
+declarations/platform/double.h:        return *this + (-op);
+declarations/platform/double.h:    inline IEEEfloat& operator-=(const IEEEfloat op) // subtract and assign
+declarations/platform/double.h:        return *this = *this - op;
+declarations/platform/double.h:    inline IEEEfloat operator--() { return *this -= 1; } // pre-decrement
+declarations/platform/double.h:    inline IEEEfloat operator--(int) // post-decrement
+declarations/platform/double.h:        *this -= 1;
+declarations/platform/double.h:    // Comparison operators.  Recall that NaN does not compare, and 0.0 == -0.0
+declarations/platform/double.h:    bool operator<(const IEEEfloat) const; // less-than
+declarations/platform/double.h:    bool operator>(const IEEEfloat) const; // greater-than
+declarations/platform/double.h:    bool operator<=(const IEEEfloat) const; // less-than or equal
+declarations/platform/double.h:    bool operator>=(const IEEEfloat) const; // greater-than or equal
+declarations/platform/double.h:    //  * -0.0f and 0.0f are different, with positive 0 comparing as greater
+declarations/platform/double.h:            : (IsZero() && op.IsZero()) ? op.Sign() - Sign()
+declarations/platform/double.h:            : (*this < op) ? -1 : *this > op;
+declarations/platform/double.h:    // compiler-supported IEEE operations.  If not, then this class
+declarations/platform/double.h:        FRACT_SIZE_HI = FRACT_SIZE - 32, // mantissa bits in high word
+declarations/platform/double.h:        MAX_DIGITS = BIAS + FRACT_SIZE + 1 - MAX_DEC_EXP
+declarations/platform/double.h:        NEG_ZERO_HI = 0x80000000, // -0.0
+declarations/platform/double.h:        NEG_INF_HI = 0xFFF00000, // -Inf
+declarations/platform/double.h:        return ((HighWord() & EXP_BITS) >> (FRACT_SIZE_HI)) - BIAS;
+declarations/platform/double.h:        return ((high & ABS_BITS) | ((low | -(i4) low) >> 31)) > EXP_BITS;
+declarations/platform/double.h:    // fields, rather than generating a non-const every time, as in
+declarations/platform/double.h:    // Floating-point operations
+declarations/platform/double.h:    inline IEEEdouble operator++() { return *this += 1; } // pre-increment
+declarations/platform/double.h:    inline IEEEdouble operator++(int) // post-increment
+declarations/platform/double.h:    IEEEdouble operator-() const;         // unary minus
+declarations/platform/double.h:    inline IEEEdouble operator-(const IEEEdouble op) const // binary subtract
+declarations/platform/double.h:        return *this + (-op);
+declarations/platform/double.h:    inline IEEEdouble& operator-=(const IEEEdouble op) // subtract and assign
+declarations/platform/double.h:        return *this = *this - op;
+declarations/platform/double.h:    inline IEEEdouble operator--() { return *this -= 1; } // pre-decrement
+declarations/platform/double.h:    inline IEEEdouble operator--(int) // post-decrement
+declarations/platform/double.h:        *this -= 1;
+declarations/platform/double.h:    // Comparison operators.  Recall that NaN does not compare, and 0.0 == -0.0
+declarations/platform/double.h:    bool operator<(const IEEEdouble) const; // less-than
+declarations/platform/double.h:    bool operator>(const IEEEdouble) const; // greater-than
+declarations/platform/double.h:    bool operator<=(const IEEEdouble) const; // less-than or equal
+declarations/platform/double.h:    bool operator>=(const IEEEdouble) const; // greater-than or equal
+declarations/platform/double.h:    //  * -0.0 and 0.0 are different, with positive 0 comparing as greater
+declarations/platform/double.h:            : (IsZero() && op.IsZero()) ? op.Sign() - Sign()
+declarations/platform/double.h:            : (*this < op) ? -1 : *this > op;
+declarations/platform/double.h:    // return count of high-order 0's in x
+declarations/platform/double.h:    // return count of low-order 0's in y, shift y so that
+declarations/platform/double.h:    inline int hi0bits() const { assert(data); return hi0bits(data[wds - 1]); }
+declarations/platform/double.h:    inline BigInt& operator++() { return *this += 1; } // pre-increment
+declarations/platform/double.h:    BigInt operator-(const BigInt& op) const;
+declarations/platform/double.h:    this -> k = k;
 Binary file double.o matches
 dump.cpp:                FindColumn(comments[com].location - 1) + 1);
 dump.cpp:                    FindColumn(comments[com].location - 1) + 1);
@@ -14038,21 +14038,21 @@ long.cpp:    // Correct compilers treat x >> 0 as x, and x >> 32+ as x<0 ? -1 : 
 long.cpp:    // But, since not all compilers follow these rules, we special-case on
 long.cpp:         return LongInt(hi >> n, (hi << (32 - n)) | (LowWord() >> n));
 long.cpp:    return LongInt(shift, hi >> (n - 32));
-declarations/long.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-declarations/long.h:    BaseLong operator-(const BaseLong) const; // binary subtraction
-declarations/long.h:    BaseLong operator-() const;     // unary minus
-declarations/long.h:    BaseLong& operator-=(const BaseLong); // subtract and assign
-declarations/long.h:    BaseLong operator--(int);      // postfix decrement
-declarations/long.h:    BaseLong operator--();     // prefix decrement
-declarations/long.h:    bool operator&&(const BaseLong) const; // logical AND (not short-circuit)
-declarations/long.h:    bool operator<(const LongInt) const; // less-than
-declarations/long.h:    bool operator>(const LongInt) const; // greater-than
-declarations/long.h:    bool operator<=(const LongInt) const; // less-than or equal
-declarations/long.h:    bool operator>=(const LongInt) const; // greater-than or equal
-declarations/long.h:    bool operator<(const ULongInt) const; // less-than
-declarations/long.h:    bool operator>(const ULongInt) const; // greater-than
-declarations/long.h:    bool operator<=(const ULongInt) const; // less-than or equal
-declarations/long.h:    bool operator>=(const ULongInt) const; // greater-than or equal
+declarations/platform/long.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/platform/long.h:    BaseLong operator-(const BaseLong) const; // binary subtraction
+declarations/platform/long.h:    BaseLong operator-() const;     // unary minus
+declarations/platform/long.h:    BaseLong& operator-=(const BaseLong); // subtract and assign
+declarations/platform/long.h:    BaseLong operator--(int);      // postfix decrement
+declarations/platform/long.h:    BaseLong operator--();     // prefix decrement
+declarations/platform/long.h:    bool operator&&(const BaseLong) const; // logical AND (not short-circuit)
+declarations/platform/long.h:    bool operator<(const LongInt) const; // less-than
+declarations/platform/long.h:    bool operator>(const LongInt) const; // greater-than
+declarations/platform/long.h:    bool operator<=(const LongInt) const; // less-than or equal
+declarations/platform/long.h:    bool operator>=(const LongInt) const; // greater-than or equal
+declarations/platform/long.h:    bool operator<(const ULongInt) const; // less-than
+declarations/platform/long.h:    bool operator>(const ULongInt) const; // greater-than
+declarations/platform/long.h:    bool operator<=(const ULongInt) const; // less-than or equal
+declarations/platform/long.h:    bool operator>=(const ULongInt) const; // greater-than or equal
 Binary file long.o matches
 lookup.cpp:    prime_index = -1;
 lookup.cpp:        int i = hash(element -> device, element -> inode);
@@ -14831,27 +14831,27 @@ platform.cpp:    "\nCopyright (C) IBM Corporation 1997-2003, 2004.\n"
 platform.cpp:    "- Licensed Materials - Program Property of IBM - All Rights Reserved.\n";
 platform.cpp:    U_MINUS, U_I, U_n, U_f, U_i, U_n, U_i, U_t, U_y, U_NU}; // "-Infinity"
 platform.cpp:    U_MINUS, U_0, U_DOT, U_0, U_NU}; // "-0.0"
-declarations/platform.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
-declarations/platform.h:// the code for non-ascii platforms. At some point we'll want to be able to
-declarations/platform.h:// like, pull a cvs tree with the tag v1-06.
-declarations/platform.h:// the value are 16-bits or U8S_ for 8 bits. The initial underscore is
-declarations/platform.h:// All string-related values are represented internally in ASCII/UNICODE
-declarations/platform.h:    U_MINUS = 45,             U_MI = U_MINUS,             // L'-'
-declarations/platform.h:    static const wchar_t US_MINUS[]; // L"-"
-declarations/platform.h:    static const wchar_t US_MINUS_EQUAL[]; // L"-="
-declarations/platform.h:    static const wchar_t US_MINUS_MINUS[]; // L"--"
-declarations/platform.h:    static const wchar_t US_MI[]; // L"-"
-declarations/platform.h:    static const char U8S_neg_Infinity[]; // "-Infinity"
-declarations/platform.h:    static const char U8S_neg_Zero[]; // "-0.0"
-declarations/platform.h:    IntToString(u4, int width); // Unsigned zero-padded hexadecimal.
-declarations/platform.h:    int Length() { return (&info[TAIL_INDEX]) - str; }
-declarations/platform.h:    int Length() { return (&winfo[TAIL_INDEX]) - wstr; }
-declarations/platform.h:    int Length() { return (&info[TAIL_INDEX]) - str; }
-declarations/platform.h:                for (int i = 3; i >= 0; i--)
-declarations/platform.h:                        str[i] = U_A - 10 + d;
-declarations/platform.h:    char fill(char c) { return os -> fill(c); }
-declarations/platform.h:        os -> flush();
-declarations/platform.h:        return os -> width(w);
+declarations/platform/platform.h:// $Id: Print,v 1.1.1.1 2005/07/17 23:21:03 shini Exp $ -*- c++ -*-
+declarations/platform/platform.h:// the code for non-ascii platforms. At some point we'll want to be able to
+declarations/platform/platform.h:// like, pull a cvs tree with the tag v1-06.
+declarations/platform/platform.h:// the value are 16-bits or U8S_ for 8 bits. The initial underscore is
+declarations/platform/platform.h:// All string-related values are represented internally in ASCII/UNICODE
+declarations/platform/platform.h:    U_MINUS = 45,             U_MI = U_MINUS,             // L'-'
+declarations/platform/platform.h:    static const wchar_t US_MINUS[]; // L"-"
+declarations/platform/platform.h:    static const wchar_t US_MINUS_EQUAL[]; // L"-="
+declarations/platform/platform.h:    static const wchar_t US_MINUS_MINUS[]; // L"--"
+declarations/platform/platform.h:    static const wchar_t US_MI[]; // L"-"
+declarations/platform/platform.h:    static const char U8S_neg_Infinity[]; // "-Infinity"
+declarations/platform/platform.h:    static const char U8S_neg_Zero[]; // "-0.0"
+declarations/platform/platform.h:    IntToString(u4, int width); // Unsigned zero-padded hexadecimal.
+declarations/platform/platform.h:    int Length() { return (&info[TAIL_INDEX]) - str; }
+declarations/platform/platform.h:    int Length() { return (&winfo[TAIL_INDEX]) - wstr; }
+declarations/platform/platform.h:    int Length() { return (&info[TAIL_INDEX]) - str; }
+declarations/platform/platform.h:                for (int i = 3; i >= 0; i--)
+declarations/platform/platform.h:                        str[i] = U_A - 10 + d;
+declarations/platform/platform.h:    char fill(char c) { return os -> fill(c); }
+declarations/platform/platform.h:        os -> flush();
+declarations/platform/platform.h:        return os -> width(w);
 Binary file platform.o matches
 scanner.cpp:    current_token_index = lex -> GetNextToken(); // Get 0th token.
 scanner.cpp:    current_token = &(lex -> token_stream[current_token_index]);

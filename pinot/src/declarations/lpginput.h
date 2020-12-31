@@ -9,7 +9,7 @@
 #ifndef lpginput_INCLUDED
 #define lpginput_INCLUDED
 
-#include "../declarations/platform.h"
+#include "./platform/platform.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

@@ -10,7 +10,7 @@
 #ifndef control_INCLUDED
 #define control_INCLUDED
 
-#include "platform.h"
+#include "./platform/platform.h"
 #include "./symbol/symbol.h"
 #include "tuple.h"
 #include "../set.h"

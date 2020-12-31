@@ -11,7 +11,7 @@
 #ifndef ast_INCLUDED
 #define ast_INCLUDED
 
-#include "./declarations/platform.h"
+#include "./declarations/platform/platform.h"
 #include "depend.h"
 
 #ifdef HAVE_JIKES_NAMESPACE

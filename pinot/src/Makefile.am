@@ -12,7 +12,7 @@ decl.cpp \
 definite.cpp \
 depend.cpp \
 diagnose.cpp \
-double.cpp \
+declarations/platform/double.cpp \
 dump.cpp \
 error.cpp \
 expr.cpp \
@@ -54,7 +54,7 @@ declarations/code.h \
 declarations/control.h \
 depend.h \
 diagnose.h \
-declarations/double.h \
+declarations/platform/double.h \
 declarations/jikes/error.h \
 javaact.h \
 javadcl.h \
@@ -62,13 +62,13 @@ javadef.h \
 javaprs.h \
 javasym.h \
 declarations/jikes/jikesapi.h \
-declarations/long.h \
+declarations/platform/long.h \
 declarations/symbol/lookup.h \
 declarations/lpginput.h \
 declarations/op.h \
 declarations/option.h \
 parser.h \
-declarations/platform.h \
+declarations/platform/platform.h \
 declarations/scanner.h \
 declarations/segment.h \
 semantic.h \
