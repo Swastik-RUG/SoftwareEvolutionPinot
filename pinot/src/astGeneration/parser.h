@@ -12,7 +12,7 @@
 
 #include "../declarations/platform/platform.h"
 #include "../declarations/lpginput.h"
-#include "storagepool.h"
+#include "./storage/storagepool.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

@@ -11,7 +11,7 @@
 #include "../astGeneration/ast.h"
 #include "../declarations/stream.h"
 
-#include "storagepool.h"
+#include "../astGeneration/storage/storagepool.h"
 
 
 #ifdef HAVE_JIKES_NAMESPACE

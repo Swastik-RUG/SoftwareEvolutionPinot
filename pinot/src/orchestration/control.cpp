@@ -19,7 +19,7 @@
 #include <dlfcn.h>
 #include <stdlib.h>
 
-#include "../storagepool.h"
+#include "../astGeneration/storage/storagepool.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

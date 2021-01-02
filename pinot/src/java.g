@@ -804,7 +804,7 @@ void Parser::InitRuleAction()
 #include "./astGeneration/ast.h"
 #include "./declarations/stream.h"
 
-#include "storagepool.h"
+#include "./astGeneration/storage/storagepool.h"
 
 #undef HEADERS
 #include "./astGeneration/javaact.h"

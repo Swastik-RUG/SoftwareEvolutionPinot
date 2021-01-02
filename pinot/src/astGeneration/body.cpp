@@ -13,7 +13,7 @@
 #include "../declarations/option.h"
 #include "../declarations/stream.h"
 
-#include "storagepool.h"
+#include "./storage/storagepool.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
