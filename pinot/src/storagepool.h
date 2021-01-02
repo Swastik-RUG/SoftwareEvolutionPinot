@@ -1,7 +1,7 @@
 #ifndef STORAGE_POOL_H
 #define STORAGE_POOL_H
 
-#include "ast.h"
+#include "./astGeneration/ast.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

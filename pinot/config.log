@@ -36,6 +36,8 @@ PATH: /sbin
 PATH: /bin
 PATH: /usr/games
 PATH: /usr/local/games
+PATH: /mnt/c/Program Files (x86)/Razer/ChromaBroadcast/bin
+PATH: /mnt/c/Program Files/Razer/ChromaBroadcast/bin
 PATH: /mnt/c/Program Files/Common Files/Oracle/Java/javapath
 PATH: /mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS/
 PATH: /mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS/
@@ -61,6 +63,13 @@ PATH: /mnt/c/Program Files/Docker/Docker/resources/bin
 PATH: /mnt/c/ProgramData/DockerDesktop/version-bin
 PATH: /mnt/d/Program Files/Git/cmd
 PATH: /mnt/c/ProgramData/chocolatey/bin
+PATH: /mnt/d/Program Files/python/Scripts/
+PATH: /mnt/d/Program Files/python/
+PATH: /mnt/c/Users/Swastik/AppData/Local/Programs/Python/Launcher/
+PATH: /mnt/c/Users/Swastik/AppData/Local/Microsoft/WindowsApps
+PATH: /mnt/c/Users/Swastik/AppData/Local/Programs/Microsoft VS Code/bin
+PATH: /mnt/d/Program Files/JetBrains/IntelliJ IDEA Community Edition 2020.3/bin
+PATH: /mnt/d/Program Files/CMake/bin
 PATH: /mnt/d/Program Files/python/Scripts/
 PATH: /mnt/d/Program Files/python/
 PATH: /mnt/c/Users/Swastik/AppData/Local/Programs/Python/Launcher/
@@ -1194,7 +1203,7 @@ configure:5110: $? = 0
 configure:5180: result: none required
 configure:5188: checking for library containing libiconv_open
 configure:5218: g++ -o conftest -g   conftest.cc  >&5
-/tmp/cczcHfmQ.o: In function `main':
+/tmp/cccLiYQv.o: In function `main':
 /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/conftest.cc:66: undefined reference to `libiconv_open'
 collect2: error: ld returned 1 exit status
 configure:5224: $? = 1
@@ -1557,9 +1566,9 @@ configure: failed program was:
 configure:6297: result: no
 configure:6323: checking for cygwin_win32_to_posix_path_list
 configure:6380: g++ -o conftest -g   conftest.cc  >&5
-/tmp/cceTIzDF.o: In function `main':
+/tmp/ccjUfuEd.o: In function `main':
 /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/conftest.cc:99: undefined reference to `cygwin_win32_to_posix_path_list'
-/tmp/cceTIzDF.o:/mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/conftest.cc:90: undefined reference to `cygwin_win32_to_posix_path_list'
+/tmp/ccjUfuEd.o:/mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/conftest.cc:90: undefined reference to `cygwin_win32_to_posix_path_list'
 collect2: error: ld returned 1 exit status
 configure:6386: $? = 1
 configure: failed program was:

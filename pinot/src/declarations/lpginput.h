@@ -24,8 +24,8 @@ inline Location Loc(TokenObject i) { return i; }
 } // Close namespace Jikes block
 #endif
 
-#include "../javasym.h" /* mapping of lexical symbols  */
-#include "../javadef.h" /* definition of parsing names */
-#include "../javaprs.h" /* parsing action functions    */
+#include "../orchestration/javasym.h" /* mapping of lexical symbols  */
+#include "../orchestration/javadef.h" /* definition of parsing names */
+#include "../astGeneration/javaprs.h" /* parsing action functions    */
 
 #endif // lpginput_INCLUDED

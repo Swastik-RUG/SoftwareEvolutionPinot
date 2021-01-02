@@ -13,7 +13,7 @@
 #include "./platform/platform.h"
 #include "./symbol/symbol.h"
 #include "tuple.h"
-#include "../set.h"
+#include "../declarations/set.h"
 #include "../utility/Flatten.h"
 #include "../patterns/ControlAnalysis.h"
 #include "../patterns/ChainAnalysis.h"

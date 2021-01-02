@@ -10,12 +10,12 @@
 //
 
 #include "./declarations/platform/platform.h"
-#include "parser.h"
-#include "ast.h"
+#include "./astGeneration/parser.h"
+#include "./astGeneration/ast.h"
 #include "./declarations/stream.h"
 
 #undef HEADERS
-#include "javaact.h"
+#include "./astGeneration/javaact.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

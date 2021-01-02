@@ -75,43 +75,43 @@ CONFIG_CLEAN_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(includedir)"
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 PROGRAMS = $(bin_PROGRAMS)
-am_jikes_OBJECTS = ast.$(OBJEXT) body.$(OBJEXT) bytecode.$(OBJEXT) \
-	case.$(OBJEXT) class.$(OBJEXT) code.$(OBJEXT) \
-	control.$(OBJEXT) decl.$(OBJEXT) definite.$(OBJEXT) \
-	depend.$(OBJEXT) diagnose.$(OBJEXT) declarations/platform/double.$(OBJEXT) \
-	dump.$(OBJEXT) error.$(OBJEXT) expr.$(OBJEXT) \
-	incrmnt.$(OBJEXT) init.$(OBJEXT) javaact.$(OBJEXT) \
-	jikes.$(OBJEXT) jikesapi.$(OBJEXT) long.$(OBJEXT) \
-	lookup.$(OBJEXT) lpginput.$(OBJEXT) modifier.$(OBJEXT) \
-	op.$(OBJEXT) option.$(OBJEXT) parser.$(OBJEXT) \
-	platform.$(OBJEXT) scanner.$(OBJEXT) segment.$(OBJEXT) \
-	set.$(OBJEXT) stream.$(OBJEXT) symbol.$(OBJEXT) \
-	system.$(OBJEXT) tab.$(OBJEXT) unparse.$(OBJEXT) \
-	unzip.$(OBJEXT) zip.$(OBJEXT)
+am_jikes_OBJECTS = astGeneration/ast.$(OBJEXT) astGeneration/body.$(OBJEXT) astGeneration/bytecode.$(OBJEXT) \
+	case.$(OBJEXT) orchestration/class.$(OBJEXT) code.$(OBJEXT) \
+	orchestration/control.$(OBJEXT) astGeneration/decl.$(OBJEXT) astGeneration/definite.$(OBJEXT) \
+	astGeneration/depend.$(OBJEXT) orchestration/diagnose.$(OBJEXT) declarations/platform/double.$(OBJEXT) \
+	orchestration/dump.$(OBJEXT) orchestration/error.$(OBJEXT) astGeneration/expr.$(OBJEXT) \
+	astGeneration/incrmnt.$(OBJEXT) astGeneration/init.$(OBJEXT) javaact.$(OBJEXT) \
+	declarations/jikes/jikes.$(OBJEXT) declarations/jikes/jikesapi.$(OBJEXT) declarations/platform/long.$(OBJEXT) \
+	astGeneration/lookup.$(OBJEXT) lpginput.$(OBJEXT) orchestration/modifier.$(OBJEXT) \
+	declarations/op.$(OBJEXT) orchestration/option.$(OBJEXT) orchestration/parser.$(OBJEXT) \
+	declarations/platform/platform.$(OBJEXT) orchestration/scanner.$(OBJEXT) declarations/segment.$(OBJEXT) \
+	declarations/set.$(OBJEXT) orchestration/stream.$(OBJEXT) astGeneration/symbol.$(OBJEXT) \
+	orchestration/system.$(OBJEXT) orchestration/tab.$(OBJEXT) astGeneration/unparse.$(OBJEXT) \
+	orchestration/unzip.$(OBJEXT) orchestration/zip.$(OBJEXT)
 jikes_OBJECTS = $(am_jikes_OBJECTS)
 jikes_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/ast.Po ./$(DEPDIR)/body.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/bytecode.Po ./$(DEPDIR)/case.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/class.Po ./$(DEPDIR)/code.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/control.Po ./$(DEPDIR)/decl.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/definite.Po ./$(DEPDIR)/depend.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/diagnose.Po ./$(DEPDIR)/declarations/platform/double.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/dump.Po ./$(DEPDIR)/error.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/expr.Po ./$(DEPDIR)/incrmnt.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/init.Po ./$(DEPDIR)/javaact.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/jikes.Po ./$(DEPDIR)/jikesapi.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/long.Po ./$(DEPDIR)/lookup.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/lpginput.Po ./$(DEPDIR)/modifier.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/op.Po ./$(DEPDIR)/option.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/parser.Po ./$(DEPDIR)/platform.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/scanner.Po ./$(DEPDIR)/segment.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/set.Po ./$(DEPDIR)/stream.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/symbol.Po ./$(DEPDIR)/system.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/tab.Po ./$(DEPDIR)/unparse.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/unzip.Po ./$(DEPDIR)/zip.Po
+@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/astGeneration/ast.Po ./$(DEPDIR)/astGeneration/body.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/astGeneration/bytecode.Po ./$(DEPDIR)/case.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/orchestration/class.Po ./$(DEPDIR)/code.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/orchestration/control.Po ./$(DEPDIR)/astGeneration/decl.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/astGeneration/definite.Po ./$(DEPDIR)/astGeneration/depend.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/orchestration/diagnose.Po ./$(DEPDIR)/declarations/platform/double.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/orchestration/dump.Po ./$(DEPDIR)/orchestration/error.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/astGeneration/expr.Po ./$(DEPDIR)/astGeneration/incrmnt.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/astGeneration/init.Po ./$(DEPDIR)/javaact.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/declarations/jikes/jikes.Po ./$(DEPDIR)/declarations/jikes/jikesapi.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/declarations/platform/long.Po ./$(DEPDIR)/astGeneration/lookup.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/lpginput.Po ./$(DEPDIR)/orchestration/modifier.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/declarations/op.Po ./$(DEPDIR)/orchestration/option.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/orchestration/parser.Po ./$(DEPDIR)/declarations/platform/platform.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/orchestration/scanner.Po ./$(DEPDIR)/declarations/segment.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/declarations/set.Po ./$(DEPDIR)/orchestration/stream.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/astGeneration/symbol.Po ./$(DEPDIR)/orchestration/system.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/orchestration/tab.Po ./$(DEPDIR)/astGeneration/unparse.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/orchestration/unzip.Po ./$(DEPDIR)/orchestration/zip.Po
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 CXXLD = $(CXX)
@@ -207,85 +207,85 @@ sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 jikes_SOURCES = \
-ast.cpp \
-body.cpp \
-bytecode.cpp \
+astGeneration/ast.cpp \
+astGeneration/body.cpp \
+astGeneration/astGeneration/bytecode.cpp \
 case.cpp \
-class.cpp \
+orchestration/class.cpp \
 code.cpp \
-control.cpp \
-decl.cpp \
-definite.cpp \
-depend.cpp \
-diagnose.cpp \
+orchestration/control.cpp \
+astGeneration/decl.cpp \
+astGeneration/definite.cpp \
+astGeneration/depend.cpp \
+orchestration/diagnose.cpp \
 declarations/platform/double.cpp \
-dump.cpp \
-error.cpp \
-expr.cpp \
-incrmnt.cpp \
-init.cpp \
+orchestration/dump.cpp \
+orchestration/error.cpp \
+astGeneration/expr.cpp \
+astGeneration/incrmnt.cpp \
+astGeneration/init.cpp \
 javaact.cpp \
-jikes.cpp \
-jikesapi.cpp \
-long.cpp \
-lookup.cpp \
+declarations/jikes/jikes.cpp \
+declarations/jikes/jikesapi.cpp \
+declarations/platform/long.cpp \
+astGeneration/lookup.cpp \
 lpginput.cpp \
-modifier.cpp \
-op.cpp \
-option.cpp \
-parser.cpp \
-platform.cpp \
-scanner.cpp \
-segment.cpp \
-set.cpp \
-stream.cpp \
-symbol.cpp \
-system.cpp \
-tab.cpp \
-unparse.cpp \
-unzip.cpp \
-zip.cpp
+orchestration/modifier.cpp \
+declarations/op.cpp \
+orchestration/option.cpp \
+orchestration/parser.cpp \
+declarations/platform/platform.cpp \
+orchestration/scanner.cpp \
+declarations/segment.cpp \
+declarations/set.cpp \
+orchestration/stream.cpp \
+astGeneration/symbol.cpp \
+orchestration/system.cpp \
+orchestration/tab.cpp \
+astGeneration/unparse.cpp \
+orchestration/unzip.cpp \
+orchestration/zip.cpp
 
 include_HEADERS = \
 declarations/jikes/jikesapi.h
 
 noinst_HEADERS = \
 declarations/access.h \
-ast.h \
-bytecode.h \
+astGeneration/ast.h \
+astGeneration/bytecode.h \
 declarations/case.h \
 class.h \
 declarations/code.h \
 declarations/control.h \
-depend.h \
-diagnose.h \
+astGeneration/depend.h \
+orchestration/diagnose.h \
 declarations/platform/double.h \
 declarations/jikes/error.h \
-javaact.h \
+astGeneration/javaact.h \
 javadcl.h \
-javadef.h \
-javaprs.h \
-javasym.h \
+orchestration/javadef.h \
+astGeneration/javaprs.h \
+orchestration/javasym.h \
 declarations/jikes/jikesapi.h \
 declarations/platform/long.h \
 declarations/symbol/lookup.h \
 declarations/lpginput.h \
 declarations/op.h \
 declarations/option.h \
-parser.h \
+astGeneration/parser.h \
 declarations/platform/platform.h \
 declarations/scanner.h \
 declarations/segment.h \
-semantic.h \
-set.h \
+astGeneration/semantic.h \
+declarations/set.h \
 declarations/spell.h \
 declarations/stream.h \
 declarations/symbol/symbol.h \
-tab.h \
+orchestration/tab.h \
 declarations/table.h \
 declarations/tuple.h \
-unzip.h \
-zip.h
+orchestration/unzip.h \
+orchestration/zip.h
 
 
 # Include the java.g and gencode.java files in the .tar ball
@@ -294,11 +294,11 @@ EXTRA_DIST = java.g gencode.java
 # Special rules to remake autogenerated files
 @MAINTAINER_MODE_TRUE@PARSER_FILES = \
 @MAINTAINER_MODE_TRUE@javaact.cpp \
-@MAINTAINER_MODE_TRUE@javaact.h \
+@MAINTAINER_MODE_TRUE@astGeneration/javaact.h \
 @MAINTAINER_MODE_TRUE@javadcl.h \
-@MAINTAINER_MODE_TRUE@javadef.h \
-@MAINTAINER_MODE_TRUE@javaprs.h \
-@MAINTAINER_MODE_TRUE@javasym.h
+@MAINTAINER_MODE_TRUE@orchestration/javadef.h \
+@MAINTAINER_MODE_TRUE@astGeneration/javaprs.h \
+@MAINTAINER_MODE_TRUE@orchestration/javasym.h
 
 @MAINTAINER_MODE_TRUE@BUILT_SOURCES = $(PARSER_FILES) code.cpp declarations/code.h
 
@@ -390,44 +390,44 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ast.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/body.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bytecode.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/ast.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/body.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/bytecode.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/case.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/class.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/class.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/code.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/control.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/decl.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/definite.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/depend.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/diagnose.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/control.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/decl.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/definite.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/depend.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/diagnose.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/platform/double.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dump.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/error.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/expr.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/incrmnt.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/init.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/dump.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/error.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/expr.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/incrmnt.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/init.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/javaact.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jikes.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jikesapi.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/long.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lookup.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/jikes/jikes.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/jikes/jikesapi.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/platform/long.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/lookup.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lpginput.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/modifier.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/op.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/option.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parser.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/platform.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/scanner.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/segment.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/set.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stream.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/symbol.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/system.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tab.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/unparse.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/unzip.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/zip.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/modifier.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/op.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/option.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/parser.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/platform/platform.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/scanner.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/segment.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/set.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/stream.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/symbol.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/system.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/tab.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/unparse.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/unzip.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/zip.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
