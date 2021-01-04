@@ -11,7 +11,7 @@
 
 #include "../declarations/platform/platform.h"
 #include "../declarations/tuple.h"
-#include "./astGeneration/ast.h"
+#include "ast.h"
 #include "../orchestration/class.h"
 #include "../declarations/op.h"
 #include "../declarations/segment.h"

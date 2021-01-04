@@ -8,7 +8,7 @@
 //
 #include "../declarations/platform/platform.h"
 #include "semantic.h"
-#include "./declarations/control.h"
+#include "../declarations/control.h"
 #include "depend.h"
 #include "../declarations/table.h"
 #include "../declarations/tuple.h"

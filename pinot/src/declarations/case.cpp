@@ -8,7 +8,7 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "./declarations/case.h"
+#include "../declarations/case.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

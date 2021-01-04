@@ -9,10 +9,10 @@
 #ifndef diagnose_INCLUDED
 #define diagnose_INCLUDED
 
-#include "./declarations/platform/platform.h"
-#include "./astGeneration/parser.h"
-#include "./declarations/jikes/jikesapi.h"
-#include "./declarations/tuple.h"
+#include "../declarations/platform/platform.h"
+#include "../astGeneration/parser.h"
+#include "../declarations/jikes/jikesapi.h"
+#include "../declarations/tuple.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

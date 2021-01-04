@@ -9,7 +9,10 @@ EXCLUDE_LIST=""
 mkdir "$AST_DIR"
 mkdir "cap_out"
 
-for entry in "$SRC_DIR"/*.$file_ext
+FILES=($(find $SRC_DIR -type f -name '*.$file_ext' 2>/dev/null))
+
+#for entry in "$SRC_DIR"/*.$file_ext
+for entry in `find $SRC_DIR -type f -name '*.cpp'`
 do
 	filename=$(echo "$entry" | rev | cut -d '/' -f 1| rev)
 	

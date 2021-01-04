@@ -11,7 +11,7 @@
 #define semantic_INCLUDED
 
 #include "../declarations/platform/platform.h"
-#include "./astGeneration/ast.h"
+#include "ast.h"
 #include "../declarations/jikes/error.h"
 #include "../declarations/symbol/symbol.h"
 #include "../declarations/tuple.h"
