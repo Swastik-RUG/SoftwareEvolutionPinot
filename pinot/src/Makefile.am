@@ -4,9 +4,9 @@ jikes_SOURCES = \
 astGeneration/ast.cpp \
 astGeneration/body.cpp \
 astGeneration/bytecode.cpp \
-case.cpp \
+declarations/case.cpp \
 orchestration/class.cpp \
-code.cpp \
+declarations/code.cpp \
 orchestration/control.cpp \
 astGeneration/decl.cpp \
 astGeneration/definite.cpp \
@@ -49,7 +49,7 @@ astGeneration/ast.h \
 ControlAnalysis.h \
 astGeneration/bytecode.h \
 declarations/case.h \
-class.h \
+orchestration/class.h \
 declarations/code.h \
 declarations/control.h \
 astGeneration/depend.h \
@@ -96,7 +96,7 @@ orchestration/javadef.h \
 astGeneration/javaprs.h \
 orchestration/javasym.h
 
-BUILT_SOURCES = $(PARSER_FILES) code.cpp declarations/code.h
+BUILT_SOURCES = $(PARSER_FILES) declarations/code.cpp declarations/code.h
 
 javaact.stamp: $(srcdir)/java.g
 	@rm -f javaact.tmp

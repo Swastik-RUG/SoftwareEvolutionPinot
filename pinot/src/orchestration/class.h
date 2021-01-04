@@ -9,11 +9,11 @@
 #ifndef class_INCLUDED
 #define class_INCLUDED
 
-#include "./declarations/platform/platform.h"
-#include "./declarations/access.h"
-#include "./declarations/tuple.h"
-#include "./declarations/platform/long.h"
-#include "./declarations/platform/double.h"
+#include "../declarations/platform/platform.h"
+#include "../declarations/access.h"
+#include "../declarations/tuple.h"
+#include "../declarations/platform/long.h"
+#include "../declarations/platform/double.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
@@ -913,7 +913,7 @@ class ExceptionsAttribute : public AttributeInfo
 {
     // u2 attribute_name_index; // inherited from AttributeInfo
     // u4 attribute_length; // inherited from AttributeInfo
-    // u2 number_of_exceptions; // computed as exception_index_table.Length() 
+    // u2 number_of_exceptions; // computed as exception_index_table.Length()
     // exception_index_table[number_of_exceptions]
     Tuple<u2> exception_index_table;
 
@@ -965,7 +965,7 @@ public:
                 constant_pool[exception_index_table[i]] ->
                     Describe(constant_pool);
             }
-            else Coutput << "(invalid)";                    
+            else Coutput << "(invalid)";
             Coutput << endl;
         }
     }
@@ -1369,7 +1369,7 @@ public:
                     << (unsigned) local_variable_table[i].start_pc
                     << ", length: "
                     << (unsigned) local_variable_table[i].length << "(pc: "
-                    << (unsigned) (local_variable_table[i].start_pc + 
+                    << (unsigned) (local_variable_table[i].start_pc +
                                    local_variable_table[i].length)
                     << "), name: " << index;
             if (constant_pool[index] -> Tag() == CPInfo::CONSTANT_Utf8)
@@ -2642,7 +2642,7 @@ public:
         return attr_constantvalue ? attr_constantvalue -> Value(constant_pool)
             : (const CPInfo*) NULL;
     }
-    
+
 
     inline void Put(OutputBuffer& out) const
     {
@@ -3216,4 +3216,3 @@ public:
 #endif
 
 #endif // class_INCLUDED
-

@@ -76,7 +76,7 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(includedir)"
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 PROGRAMS = $(bin_PROGRAMS)
 am_jikes_OBJECTS = astGeneration/ast.$(OBJEXT) astGeneration/body.$(OBJEXT) astGeneration/bytecode.$(OBJEXT) \
-	case.$(OBJEXT) orchestration/class.$(OBJEXT) code.$(OBJEXT) \
+	declarations/case.$(OBJEXT) orchestration/class.$(OBJEXT) declarations/code.$(OBJEXT) \
 	orchestration/control.$(OBJEXT) astGeneration/decl.$(OBJEXT) astGeneration/definite.$(OBJEXT) \
 	astGeneration/depend.$(OBJEXT) orchestration/diagnose.$(OBJEXT) declarations/platform/double.$(OBJEXT) \
 	orchestration/dump.$(OBJEXT) orchestration/error.$(OBJEXT) astGeneration/expr.$(OBJEXT) \
@@ -94,8 +94,8 @@ DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 DEP_FILES = ./$(DEPDIR)/astGeneration/ast.Po ./$(DEPDIR)/astGeneration/body.Po \
-	./$(DEPDIR)/astGeneration/bytecode.Po ./$(DEPDIR)/case.Po \
-	./$(DEPDIR)/orchestration/class.Po ./$(DEPDIR)/code.Po \
+	./$(DEPDIR)/astGeneration/bytecode.Po ./$(DEPDIR)/declarations/case.Po \
+	./$(DEPDIR)/orchestration/class.Po ./$(DEPDIR)/declarations/code.Po \
 	./$(DEPDIR)/orchestration/control.Po ./$(DEPDIR)/astGeneration/decl.Po \
 	./$(DEPDIR)/astGeneration/definite.Po ./$(DEPDIR)/astGeneration/depend.Po \
 	./$(DEPDIR)/orchestration/diagnose.Po ./$(DEPDIR)/declarations/platform/double.Po \
@@ -124,13 +124,13 @@ HEADERS = $(include_HEADERS) $(noinst_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run aclocal-1.8
+ACLOCAL = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run aclocal-1.8
 AMDEP_FALSE = #
 AMDEP_TRUE = 
-AMTAR = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run tar
-AUTOCONF = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run autoconf
-AUTOHEADER = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run autoheader
-AUTOMAKE = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run automake-1.8
+AMTAR = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run tar
+AUTOCONF = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run autoconf
+AUTOHEADER = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run autoheader
+AUTOMAKE = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run automake-1.8
 AWK = gawk
 CPPFLAGS = 
 CXX = g++
@@ -157,7 +157,7 @@ LTLIBOBJS =
 MAINT = #
 MAINTAINER_MODE_FALSE = 
 MAINTAINER_MODE_TRUE = #
-MAKEINFO = ${SHELL} /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/missing --run makeinfo
+MAKEINFO = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run makeinfo
 OBJEXT = o
 PACKAGE = jikes
 PACKAGE_BUGREPORT = 
@@ -193,14 +193,14 @@ host_os = linux-gnu
 host_vendor = unknown
 includedir = ${prefix}/include
 infodir = ${prefix}/info
-install_sh = /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/install-sh
+install_sh = /mnt/c/Code/pinottest/pinot/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localstatedir = ${prefix}/var
 mandir = ${prefix}/man
 mkdir_p = mkdir -p -- .
 oldincludedir = /usr/include
-prefix = /mnt/d/Academics/MergedSeAM/SoftwareEvolutionPinot/pinot/build
+prefix = /mnt/c/Code/pinottest/PREFIX
 program_transform_name = s,x,x,
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
@@ -212,7 +212,7 @@ astGeneration/body.cpp \
 astGeneration/astGeneration/bytecode.cpp \
 case.cpp \
 orchestration/class.cpp \
-code.cpp \
+declarations/code.cpp \
 orchestration/control.cpp \
 astGeneration/decl.cpp \
 astGeneration/definite.cpp \
@@ -254,7 +254,7 @@ declarations/access.h \
 astGeneration/ast.h \
 astGeneration/bytecode.h \
 declarations/case.h \
-class.h \
+orchestration/class.h \
 declarations/code.h \
 declarations/control.h \
 astGeneration/depend.h \
@@ -300,7 +300,7 @@ EXTRA_DIST = java.g gencode.java
 #astGeneration/javaprs.h \
 #orchestration/javasym.h
 
-#BUILT_SOURCES = $(PARSER_FILES) code.cpp declarations/code.h
+#BUILT_SOURCES = $(PARSER_FILES) declarations/code.cpp declarations/code.h
 
 # FIXME: hardcoded at the moment, makes bootstrap difficult...
 #JAVA = java
@@ -349,7 +349,7 @@ config.h: stamp-h1
 stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config.status
 	@rm -f stamp-h1
 	cd $(top_builddir) && $(SHELL) ./config.status src/config.h
-$(srcdir)/config.h.in: # $(am__configure_deps) 
+$(srcdir)/config.h.in: # $(am__configure_deps)
 	cd $(top_srcdir) && $(AUTOHEADER)
 	rm -f stamp-h1
 	touch $@
@@ -380,7 +380,7 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
-jikes$(EXEEXT): $(jikes_OBJECTS) $(jikes_DEPENDENCIES) 
+jikes$(EXEEXT): $(jikes_OBJECTS) $(jikes_DEPENDENCIES)
 	@rm -f jikes$(EXEEXT)
 	$(CXXLINK) $(jikes_LDFLAGS) $(jikes_OBJECTS) $(jikes_LDADD) $(LIBS)
 
@@ -395,7 +395,7 @@ include ./$(DEPDIR)/astGeneration/body.Po
 include ./$(DEPDIR)/astGeneration/bytecode.Po
 include ./$(DEPDIR)/case.Po
 include ./$(DEPDIR)/orchestration/class.Po
-include ./$(DEPDIR)/code.Po
+include ./$(DEPDIR)/declarations/code.Po
 include ./$(DEPDIR)/orchestration/control.Po
 include ./$(DEPDIR)/astGeneration/decl.Po
 include ./$(DEPDIR)/astGeneration/definite.Po
@@ -655,7 +655,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-includeHEADERS \
 #	(cd $(srcdir); $(JAVA) -classpath . gencode)
 #	@mv -f code.tmp $@
 
-#code.cpp declarations/code.h: code.stamp
+#declarations/code.cpp declarations/code.h: code.stamp
 #	@if test -f $@; then :; else \
 #	  rm -f code.stamp; \
 #	  $(MAKE) $(AM_MAKEFLAGS) code.stamp; \

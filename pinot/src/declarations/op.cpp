@@ -8,7 +8,7 @@
 //
 
 #include "op.h"
-#include "class.h"
+#include "../orchestration/class.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
@@ -834,4 +834,3 @@ int Operators::stack_effect[] =
 #ifdef HAVE_JIKES_NAMESPACE
 } // Close namespace Jikes block
 #endif
-

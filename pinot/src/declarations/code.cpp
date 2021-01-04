@@ -8,7 +8,7 @@
 // You must accept the terms of that agreement to use this software.
 //
 
-#include "./declarations/code.h"
+#include "code.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
@@ -2983,4 +2983,3 @@ u2 Code::blocks[2176] =
 #ifdef HAVE_JIKES_NAMESPACE
 } // Close namespace Jikes block
 #endif
-

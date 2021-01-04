@@ -12,7 +12,7 @@
 #include "../declarations/platform/platform.h"
 #include "../declarations/tuple.h"
 #include "./astGeneration/ast.h"
-#include "../class.h"
+#include "../orchestration/class.h"
 #include "../declarations/op.h"
 #include "../declarations/segment.h"
 #include "../declarations/control.h"
@@ -1037,4 +1037,3 @@ public:
 #endif
 
 #endif // bytecode_INCLUDED
-

@@ -9,7 +9,7 @@
 
 #include "bytecode.h"
 #include "ast.h"
-#include "class.h"
+#include "../orchestration/class.h"
 #include "../declarations/control.h"
 #include "semantic.h"
 #include "../declarations/stream.h"
@@ -3085,7 +3085,7 @@ void ByteCode::EmitForeachStatement(AstForeachStatement* foreach)
         PutOp(OP_SWAP);
         LoadArrayElement(expr_type -> ArraySubtype());
         EmitCast(component_type, expr_type -> ArraySubtype());
-        u2 var_pc = code_attribute -> CodeLength();        
+        u2 var_pc = code_attribute -> CodeLength();
         StoreLocal(var -> LocalVariableIndex(), component_type);
         abrupt = EmitStatement(foreach -> statement);
         if (control.option.g & JikesOption::VARS)
@@ -3166,7 +3166,7 @@ void ByteCode::EmitForeachStatement(AstForeachStatement* foreach)
             PutOp(OP_CHECKCAST);
             PutU2(RegisterClass(component_type));
         }
-        u2 var_pc = code_attribute -> CodeLength();        
+        u2 var_pc = code_attribute -> CodeLength();
         StoreLocal(var -> LocalVariableIndex(), component_type);
         abrupt = EmitStatement(foreach -> statement);
         if (control.option.g & JikesOption::VARS)
@@ -6651,7 +6651,7 @@ int ByteCode::LoadVariable(VariableCategory kind, AstExpression* expr,
         {
             //
             // Inline constants without referring to the field. However, we
-            // must still check for null. 
+            // must still check for null.
             //
             if (base)
                 EmitCheckForNull(base, false);
@@ -6936,4 +6936,3 @@ void ByteCode::ChangeStack(int i)
 #ifdef HAVE_JIKES_NAMESPACE
 } // Close namespace Jikes block
 #endif
-
