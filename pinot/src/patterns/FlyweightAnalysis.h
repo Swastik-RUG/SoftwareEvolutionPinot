@@ -4,6 +4,9 @@
 #include "../declarations/platform/platform.h"
 #include "../declarations/symbol/symbol.h"
 #include "../declarations/tuple.h"
+#include "../declarations/set.h"
+#include "../Utility/Flatten.h"
+#include "../Utility/ContainerType.h"
 #include <vector>
 
 #ifdef HAVE_JIKES_NAMESPACE

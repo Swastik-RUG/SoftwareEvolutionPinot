@@ -3,6 +3,7 @@
 
 #include "../declarations/platform/platform.h"
 #include "../declarations/symbol/symbol.h"
+#include "../declarations/set.h"
 #include "../declarations/tuple.h"
 #include <vector>
 

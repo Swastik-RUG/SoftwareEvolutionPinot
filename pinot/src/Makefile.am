@@ -38,7 +38,14 @@ orchestration/system.cpp \
 orchestration/tab.cpp \
 astGeneration/unparse.cpp \
 orchestration/unzip.cpp \
-orchestration/zip.cpp
+orchestration/zip.cpp \
+patterns/chainanalysis.cpp \
+patterns/controlanalysis.cpp \
+patterns/creationanalysis.cpp \
+patterns/factoryanalysis.cpp \
+patterns/flyweightanalysis.cpp \
+patterns/singletonanalysis.cpp
+
 
 include_HEADERS = \
 declarations/jikes/jikesapi.h

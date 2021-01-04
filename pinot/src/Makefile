@@ -87,7 +87,11 @@ am_jikes_OBJECTS = astGeneration/ast.$(OBJEXT) astGeneration/body.$(OBJEXT) astG
 	declarations/platform/platform.$(OBJEXT) orchestration/scanner.$(OBJEXT) declarations/segment.$(OBJEXT) \
 	declarations/set.$(OBJEXT) orchestration/stream.$(OBJEXT) astGeneration/symbol.$(OBJEXT) \
 	orchestration/system.$(OBJEXT) orchestration/tab.$(OBJEXT) astGeneration/unparse.$(OBJEXT) \
-	orchestration/unzip.$(OBJEXT) orchestration/zip.$(OBJEXT)
+	orchestration/unzip.$(OBJEXT) orchestration/zip.$(OBJEXT) \
+	patterns/chainanalysis.$(OBJEXT) patterns/controlanalysis.$(OBJEXT) \
+	patterns/creationanalysis.$(OBJEXT) patterns/factoryanalysis.$(OBJEXT) \
+	patterns/flyweightanalysis.$(OBJEXT) patterns/singletonanalysis.$(OBJEXT)
+
 jikes_OBJECTS = $(am_jikes_OBJECTS)
 jikes_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
@@ -111,7 +115,10 @@ DEP_FILES = ./$(DEPDIR)/astGeneration/ast.Po ./$(DEPDIR)/astGeneration/body.Po \
 	./$(DEPDIR)/declarations/set.Po ./$(DEPDIR)/orchestration/stream.Po \
 	./$(DEPDIR)/astGeneration/symbol.Po ./$(DEPDIR)/orchestration/system.Po \
 	./$(DEPDIR)/orchestration/tab.Po ./$(DEPDIR)/astGeneration/unparse.Po \
-	./$(DEPDIR)/orchestration/unzip.Po ./$(DEPDIR)/orchestration/zip.Po
+	./$(DEPDIR)/orchestration/unzip.Po ./$(DEPDIR)/orchestration/zip.Po \
+	./$(DEPDIR)/patterns/chainanalysis.Po ./$(DEPDIR)/patterns/controlanalysis.Po \
+	./$(DEPDIR)/patterns/creationanalysis.Po ./$(DEPDIR)/patterns/factoryanalysis.Po \
+	./$(DEPDIR)/patterns/flyweightanalysis.Po ./$(DEPDIR)/patterns/singletonanalysis.Po
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 CXXLD = $(CXX)
@@ -244,7 +251,13 @@ orchestration/system.cpp \
 orchestration/tab.cpp \
 astGeneration/unparse.cpp \
 orchestration/unzip.cpp \
-orchestration/zip.cpp
+orchestration/zip.cpp \
+patterns/chainanalysis.cpp \
+patterns/controlanalysis.cpp \
+patterns/creationanalysis.cpp \
+patterns/factoryanalysis.cpp \
+patterns/flyweightanalysis.cpp \
+patterns/singletionanalysis.cpp
 
 include_HEADERS = \
 declarations/jikes/jikesapi.h
@@ -386,7 +399,7 @@ jikes$(EXEEXT): $(jikes_OBJECTS) $(jikes_DEPENDENCIES)
 
 mostlyclean-compile:
 	# -rm -f *.$(OBJEXT)
-	# remove files from subdirectories as well. Added by Sytse Oegema(2020-01-04)
+	# remove executable files from subdirectories as well.
 	find . -name "*.$(OBJEXT)" -type f -delete
 
 distclean-compile:
@@ -430,6 +443,12 @@ include ./$(DEPDIR)/orchestration/tab.Po
 include ./$(DEPDIR)/astGeneration/unparse.Po
 include ./$(DEPDIR)/orchestration/unzip.Po
 include ./$(DEPDIR)/orchestration/zip.Po
+include ./$(DEPDIR)/patterns/chainanalysis.Po
+include ./$(DEPDIR)/patterns/controlanalysis.Po
+include ./$(DEPDIR)/patterns/creationanalysis.Po
+include ./$(DEPDIR)/patterns/factoryanalysis.Po
+include ./$(DEPDIR)/patterns/flyweightanalysis.Po
+include ./$(DEPDIR)/patterns/singletonanalysis.Po
 
 .cpp.o:
 	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \

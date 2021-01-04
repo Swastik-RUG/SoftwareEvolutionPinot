@@ -5,6 +5,8 @@
 #include "../declarations/symbol/symbol.h"
 #include "../declarations/tuple.h"
 #include "../declarations/set.h"
+#include "../declarations/set.h"
+#include "../Utility/Flatten.h"
 #include <vector>
 
 #ifdef HAVE_JIKES_NAMESPACE
@@ -36,7 +38,7 @@ class SingletonAnalysis
 		bool ReturnsSingleton();
 		bool ReturnsSingleton1();
 		void CleanUp() { visited.SetEmpty(); }
-		~SingletonAnalysis(){}	
+		~SingletonAnalysis(){}
 };
 
 #ifdef HAVE_JIKES_NAMESPACE

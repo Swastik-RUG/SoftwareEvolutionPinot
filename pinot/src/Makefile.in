@@ -87,7 +87,11 @@ am_jikes_OBJECTS = astGeneration/ast.$(OBJEXT) astGeneration/body.$(OBJEXT) astG
 	declarations/platform/platform.$(OBJEXT) orchestration/scanner.$(OBJEXT) declarations/segment.$(OBJEXT) \
 	declarations/set.$(OBJEXT) orchestration/stream.$(OBJEXT) astGeneration/symbol.$(OBJEXT) \
 	orchestration/system.$(OBJEXT) orchestration/tab.$(OBJEXT) astGeneration/unparse.$(OBJEXT) \
-	orchestration/unzip.$(OBJEXT) orchestration/zip.$(OBJEXT)
+	orchestration/unzip.$(OBJEXT) orchestration/zip.$(OBJEXT) \
+	patterns/chainanalysis.$(OBJEXT) patterns/controlanalysis.$(OBJEXT) \
+	patterns/creationanalysis.$(OBJEXT) patterns/factoryanalysis.$(OBJEXT) \
+	patterns/flyweightanalysis.$(OBJEXT) patterns/singletonanalysis.$(OBJEXT)
+
 jikes_OBJECTS = $(am_jikes_OBJECTS)
 jikes_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
@@ -111,7 +115,10 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/declarations/set.Po ./$(DEPDIR)/orchestration/stream.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/astGeneration/symbol.Po ./$(DEPDIR)/orchestration/system.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/orchestration/tab.Po ./$(DEPDIR)/astGeneration/unparse.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/orchestration/unzip.Po ./$(DEPDIR)/orchestration/zip.Po
+@AMDEP_TRUE@	./$(DEPDIR)/orchestration/unzip.Po ./$(DEPDIR)/orchestration/zip.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/patterns/chainanalysis.Po ./$(DEPDIR)/patterns/controlanalysis.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/patterns/creationanalysis.Po ./$(DEPDIR)/patterns/factoryanalysis.Po \
+@AMDEP_TRUE@	./$(DEPDIR)/patterns/flyweightanalysis.Po ./$(DEPDIR)/patterns/singletonanalysis.Po
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 CXXLD = $(CXX)
@@ -244,7 +251,13 @@ orchestration/system.cpp \
 orchestration/tab.cpp \
 astGeneration/unparse.cpp \
 orchestration/unzip.cpp \
-orchestration/zip.cpp
+orchestration/zip.cpp \
+patterns/chainanalysis.cpp \
+patterns/controlanalysis.cpp \
+patterns/creationanalysis.cpp \
+patterns/factoryanalysis.cpp \
+patterns/flyweightanalysis.cpp \
+patterns/singletonanalysis.cpp
 
 include_HEADERS = \
 declarations/jikes/jikesapi.h
@@ -385,7 +398,9 @@ jikes$(EXEEXT): $(jikes_OBJECTS) $(jikes_DEPENDENCIES)
 	$(CXXLINK) $(jikes_LDFLAGS) $(jikes_OBJECTS) $(jikes_LDADD) $(LIBS)
 
 mostlyclean-compile:
-	-rm -f *.$(OBJEXT)
+	# -rm -f *.$(OBJEXT)
+	# remove executable files from subdirectories as well.
+	find . -name "*.$(OBJEXT)" -type f -delete
 
 distclean-compile:
 	-rm -f *.tab.c
@@ -428,6 +443,12 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/unparse.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/unzip.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/zip.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/chainanalysis.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/controlanalysis.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/creationanalysis.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/factoryanalysis.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/flyweightanalysis.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/singletonanalysis.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
