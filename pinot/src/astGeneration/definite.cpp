@@ -10,6 +10,9 @@
 #include "semantic.h"
 #include "../declarations/control.h"
 #include "../declarations/option.h"
+#include "./core/AstSwitchStatement.h"
+#include "./core/AstWhileStatement.h"
+#include "./core/AstSwitchBlockStatement.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

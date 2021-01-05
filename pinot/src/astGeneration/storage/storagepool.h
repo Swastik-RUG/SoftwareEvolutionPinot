@@ -2,6 +2,9 @@
 #define STORAGE_POOL_H
 
 #include "../ast.h"
+#include "../core/AstSwitchStatement.h"
+#include "../core/AstWhileStatement.h"
+#include "../core/AstSwitchBlockStatement.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block

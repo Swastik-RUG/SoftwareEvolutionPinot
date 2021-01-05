@@ -44,8 +44,10 @@ patterns/controlanalysis.cpp \
 patterns/creationanalysis.cpp \
 patterns/factoryanalysis.cpp \
 patterns/flyweightanalysis.cpp \
-patterns/singletonanalysis.cpp
-
+patterns/singletonanalysis.cpp \
+astGeneration/core/variableSymbolArray.cpp \
+astGeneration/core/AstSwitchStatement.cpp \
+astGeneration/core/AstWhileStatement.cpp 
 
 include_HEADERS = \
 declarations/jikes/jikesapi.h
@@ -87,8 +89,10 @@ orchestration/tab.h \
 declarations/table.h \
 declarations/tuple.h \
 orchestration/unzip.h \
-orchestration/zip.h
-
+orchestration/zip.h \
+astGeneration/core/variableSymbolArray.h \
+astGeneration/core/AstSwitchStatement.h \
+astGeneration/core/AstWhileStatement.h 
 # Include the java.g and gencode.java files in the .tar ball
 
 EXTRA_DIST = java.g gencode.java

@@ -90,7 +90,9 @@ am_jikes_OBJECTS = astGeneration/ast.$(OBJEXT) astGeneration/body.$(OBJEXT) astG
 	orchestration/unzip.$(OBJEXT) orchestration/zip.$(OBJEXT) \
 	patterns/chainanalysis.$(OBJEXT) patterns/controlanalysis.$(OBJEXT) \
 	patterns/creationanalysis.$(OBJEXT) patterns/factoryanalysis.$(OBJEXT) \
-	patterns/flyweightanalysis.$(OBJEXT) patterns/singletonanalysis.$(OBJEXT)
+	patterns/flyweightanalysis.$(OBJEXT) patterns/singletonanalysis.$(OBJEXT) \
+	astGeneration/core/variableSymbolArray.$(OBJEXT) astGeneration/core/AstSwitchStatement.$(OBJEXT) \
+	astGeneration/core/AstWhileStatement.$(OBJEXT) 
 
 jikes_OBJECTS = $(am_jikes_OBJECTS)
 jikes_LDADD = $(LDADD)
@@ -118,7 +120,11 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/orchestration/unzip.Po ./$(DEPDIR)/orchestration/zip.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/patterns/chainanalysis.Po ./$(DEPDIR)/patterns/controlanalysis.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/patterns/creationanalysis.Po ./$(DEPDIR)/patterns/factoryanalysis.Po \
-@AMDEP_TRUE@	./$(DEPDIR)/patterns/flyweightanalysis.Po ./$(DEPDIR)/patterns/singletonanalysis.Po
+@AMDEP_TRUE@	./$(DEPDIR)/patterns/flyweightanalysis.Po ./$(DEPDIR)/patterns/singletonanalysis.Po \
+@AMDEP_TRUE@    ./$(DEPDIR)/astGeneration/core/variableSymbolArray.Po ./$(DEPDIR)/astGeneration/core/AstSwitchStatement.Po \
+@AMDEP_TRUE@    ./$(DEPDIR)/astGeneration/core/AstWhileStatement.Po 
+
+
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 CXXLD = $(CXX)
@@ -213,6 +219,7 @@ sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
+
 jikes_SOURCES = \
 astGeneration/ast.cpp \
 astGeneration/body.cpp \
@@ -257,8 +264,10 @@ patterns/controlanalysis.cpp \
 patterns/creationanalysis.cpp \
 patterns/factoryanalysis.cpp \
 patterns/flyweightanalysis.cpp \
-patterns/singletonanalysis.cpp
-
+patterns/singletonanalysis.cpp \
+astGeneration/core/variableSymbolArray.cpp \
+astGeneration/core/AstSwitchStatement.cpp \
+astGeneration/core/AstWhileStatement.cpp 
 include_HEADERS = \
 declarations/jikes/jikesapi.h
 
@@ -298,8 +307,10 @@ orchestration/tab.h \
 declarations/table.h \
 declarations/tuple.h \
 orchestration/unzip.h \
-orchestration/zip.h
-
+orchestration/zip.h \
+astGeneration/core/variableSymbolArray.h \
+astGeneration/core/AstSwitchStatement.h \
+astGeneration/core/AstWhileStatement.h 
 
 # Include the java.g and gencode.java files in the .tar ball
 EXTRA_DIST = java.g gencode.java
@@ -449,6 +460,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/factoryanalysis.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/flyweightanalysis.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/singletonanalysis.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/variableSymbolArray.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/AstSwitchStatement.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/AstWhileStatement.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \

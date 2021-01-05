@@ -9,6 +9,9 @@
 
 #include "ast.h"
 #include "../declarations/stream.h"
+#include "./core/AstSwitchStatement.h"
+#include "./core/AstWhileStatement.h"
+#include "./core/AstSwitchBlockStatement.h"
 
 #ifdef JIKES_DEBUG
 

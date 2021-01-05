@@ -13,7 +13,7 @@
 
 #include "../declarations/platform/platform.h"
 #include "depend.h"
-
+#include "./core/variableSymbolArray.h"
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
 #endif
@@ -30,84 +30,6 @@ class MethodSymbol;
 class TypeSymbol;
 class StoragePool;
 struct CaseElement;
-
-class VariableSymbolArray
-{
-    typedef VariableSymbol* T;
-
-    T** base;
-    size_t base_size;
-    unsigned top;
-    unsigned size;
-    StoragePool* pool;
-    unsigned short log_blksize;
-    unsigned short base_increment;
-
-    inline size_t Blksize() { return 1 << log_blksize; }
-
-    //
-    // Allocate another block of storage for the VariableSymbol array.
-    //
-    void AllocateMoreSpace();
-
-public:
-    //
-    // This function is used to reset the size of a VariableSymbol array
-    // without allocating or deallocting space. It may be invoked with an
-    // integer argument n which indicates the new size or with no argument
-    // which indicates that the size should be reset to 0.
-    //
-    void Reset(unsigned n = 0)
-    {
-        assert(n <= size);
-        top = n;
-    }
-
-    //
-    // Return length of the VariableSymbol array.
-    //
-    unsigned Length() { return top; }
-
-    //
-    // Return a reference to the ith element of the VariableSymbol array.
-    //
-    // Note that no check is made here to ensure that 0 <= i < top.
-    // Such a check might be useful for debugging and a range exception
-    // should be thrown if it yields true.
-    //
-    T& operator[](unsigned i) { return base[i >> log_blksize][i]; }
-
-    //
-    // Add an element to the VariableSymbol array and return the top index.
-    //
-    unsigned NextIndex()
-    {
-        unsigned i = top++;
-        if (i == size)
-            AllocateMoreSpace();
-        return i;
-    }
-
-    //
-    // Add an element to the VariableSymbol array and return a reference to
-    // that new element.
-    //
-    T& Next()
-    {
-        unsigned i = NextIndex();
-        return base[i >> log_blksize][i];
-    }
-
-    //
-    // Constructor of a VariableSymbol array.
-    //
-    VariableSymbolArray(StoragePool*, unsigned);
-
-    //
-    // Destructor of an VariableSymbol array.
-    //
-    ~VariableSymbolArray() { assert(false); }
-};
 
 
 //***************************************************************************
@@ -3178,102 +3100,102 @@ struct CaseElement
 };
 
 
-//
-// SwitchStatement --> <SWITCH, Label_opt, switch_token, Expression, {_token,
-// SwitchBlockStatements, SwitchLabels_opt, }_token>
-//
-class AstSwitchStatement : public AstStatement
-{
-    StoragePool* pool;
-    //
-    // The sorted list of case label values. Index 0 is reserved for the
-    // default case. Index 1 - size are for the case labels, and get sorted.
-    //
-    CaseElement** cases;
-    unsigned num_cases;
-#ifdef JIKES_DEBUG
-    unsigned max_cases; // bounds check only when debugging
-#endif // JIKES_DEBUG
+// //
+// // SwitchStatement --> <SWITCH, Label_opt, switch_token, Expression, {_token,
+// // SwitchBlockStatements, SwitchLabels_opt, }_token>
+// //
+// class AstSwitchStatement : public AstStatement
+// {
+//     StoragePool* pool;
+//     //
+//     // The sorted list of case label values. Index 0 is reserved for the
+//     // default case. Index 1 - size are for the case labels, and get sorted.
+//     //
+//     CaseElement** cases;
+//     unsigned num_cases;
+// #ifdef JIKES_DEBUG
+//     unsigned max_cases; // bounds check only when debugging
+// #endif // JIKES_DEBUG
 
-public:
-    TokenIndex switch_token;
-    wchar_t* switch_token_string;
-    AstExpression* expression;
-    AstBlock* switch_block;
+// public:
+//     TokenIndex switch_token;
+//     wchar_t* switch_token_string;
+//     AstExpression* expression;
+//     AstBlock* switch_block;
 
-    inline AstSwitchStatement(StoragePool* p)
-        : AstStatement(SWITCH)
-        , pool(p)
-    {}
-    ~AstSwitchStatement() { /*delete switch_token_string;*/ }
+//     inline AstSwitchStatement(StoragePool* p)
+//         : AstStatement(SWITCH)
+//         , pool(p)
+//     {}
+//     ~AstSwitchStatement() { /*delete switch_token_string;*/ }
 
-    inline CaseElement*& Case(unsigned i)
-    {
-        assert(i < num_cases);
-        return cases[i + 1];
-    }
-    inline CaseElement*& DefaultCase() { return cases[0]; }
-    inline unsigned NumCases() { return num_cases; }
-    void AllocateCases(unsigned estimate = 1);
-    inline void AddCase(CaseElement*);
+//     inline CaseElement*& Case(unsigned i)
+//     {
+//         assert(i < num_cases);
+//         return cases[i + 1];
+//     }
+//     inline CaseElement*& DefaultCase() { return cases[0]; }
+//     inline unsigned NumCases() { return num_cases; }
+//     void AllocateCases(unsigned estimate = 1);
+//     inline void AddCase(CaseElement*);
 
-    inline AstSwitchBlockStatement* Block(unsigned i)
-    {
-        return (AstSwitchBlockStatement*) switch_block -> Statement(i);
-    }
-    inline unsigned NumBlocks() { return switch_block -> NumStatements(); }
+//     inline AstSwitchBlockStatement* Block(unsigned i)
+//     {
+//         return (AstSwitchBlockStatement*) switch_block -> Statement(i);
+//     }
+//     inline unsigned NumBlocks() { return switch_block -> NumStatements(); }
 
-    void SortCases();
-    CaseElement* CaseForValue(i4 value);
+//     void SortCases();
+//     CaseElement* CaseForValue(i4 value);
 
-#ifdef JIKES_DEBUG
-    virtual void Print(LexStream&);
-    virtual void Print();
-    virtual void Unparse(Ostream&, LexStream*);
-#endif // JIKES_DEBUG
+// #ifdef JIKES_DEBUG
+//     virtual void Print(LexStream&);
+//     virtual void Print();
+//     virtual void Unparse(Ostream&, LexStream*);
+// #endif // JIKES_DEBUG
 
-    virtual Ast* Clone(StoragePool*);
-    virtual Ast* Clone(StoragePool*, LexStream&);
-    virtual void Lexify(LexStream&);
+//     virtual Ast* Clone(StoragePool*);
+//     virtual Ast* Clone(StoragePool*, LexStream&);
+//     virtual void Lexify(LexStream&);
 
-    virtual TokenIndex LeftToken() { return switch_token; }
-    virtual TokenIndex RightToken()
-    {
-        return switch_block -> right_brace_token;
-    }
-};
+//     virtual TokenIndex LeftToken() { return switch_token; }
+//     virtual TokenIndex RightToken()
+//     {
+//         return switch_block -> right_brace_token;
+//     }
+// };
 
 
-//
-// WhileStatement --> <WHILE, Label_opt, while_token, Expression, Statement>
-//
-class AstWhileStatement : public AstStatement
-{
-public:
-    TokenIndex while_token;
-    wchar_t* while_token_string;
-    AstExpression* expression;
-    AstBlock* statement;
+// //
+// // WhileStatement --> <WHILE, Label_opt, while_token, Expression, Statement>
+// //
+// class AstWhileStatement : public AstStatement
+// {
+// public:
+//     TokenIndex while_token;
+//     wchar_t* while_token_string;
+//     AstExpression* expression;
+//     AstBlock* statement;
 
-    inline AstWhileStatement()
-        : AstStatement(WHILE)
-    {}
-    ~AstWhileStatement() { /*delete while_token_string;*/ }
+//     inline AstWhileStatement()
+//         : AstStatement(WHILE)
+//     {}
+//     ~AstWhileStatement() { /*delete while_token_string;*/ }
 
-#ifdef JIKES_DEBUG
-    virtual void Print(LexStream&);
-    virtual void Print();
-    virtual void Unparse(Ostream&, LexStream*);
-#endif // JIKES_DEBUG
+// #ifdef JIKES_DEBUG
+//     virtual void Print(LexStream&);
+//     virtual void Print();
+//     virtual void Unparse(Ostream&, LexStream*);
+// #endif // JIKES_DEBUG
 
-    virtual Ast* Clone(StoragePool*);
-    virtual Ast* Clone(StoragePool*, LexStream&);
-    virtual void Lexify(LexStream&);
+//     virtual Ast* Clone(StoragePool*);
+//     virtual Ast* Clone(StoragePool*, LexStream&);
+//     virtual void Lexify(LexStream&);
 
-    virtual TokenIndex LeftToken() { return while_token; }
-    virtual TokenIndex RightToken() { return statement -> right_brace_token; }
-    virtual void PrintAssociation(AssocTable* , wchar_t*, wchar_t*, wchar_t*, LexStream&);
-};
+//     virtual TokenIndex LeftToken() { return while_token; }
+//     virtual TokenIndex RightToken() { return statement -> right_brace_token; }
+//     virtual void PrintAssociation(AssocTable* , wchar_t*, wchar_t*, wchar_t*, LexStream&);
+// };
 
 
 //
@@ -5180,15 +5102,15 @@ inline AstSwitchBlockStatement* Ast::SwitchBlockStatementCast()
         (kind == SWITCH_BLOCK ? this : NULL);
 }
 
-inline AstSwitchStatement* Ast::SwitchStatementCast()
-{
-    return DYNAMIC_CAST<AstSwitchStatement*> (kind == SWITCH ? this : NULL);
-}
+// inline AstSwitchStatement* Ast::SwitchStatementCast()
+// {
+//     return DYNAMIC_CAST<AstSwitchStatement*> (kind == SWITCH ? this : NULL);
+// }
 
-inline AstWhileStatement* Ast::WhileStatementCast()
-{
-    return DYNAMIC_CAST<AstWhileStatement*> (kind == WHILE ? this : NULL);
-}
+// inline AstWhileStatement* Ast::WhileStatementCast()
+// {
+//     return DYNAMIC_CAST<AstWhileStatement*> (kind == WHILE ? this : NULL);
+// }
 
 inline AstDoStatement* Ast::DoStatementCast()
 {
@@ -5846,14 +5768,14 @@ inline void AstSwitchBlockStatement::AddSwitchLabel(AstSwitchLabel* case_label)
 // #endif // JIKES_DEBUG
 // }
 
-inline void AstSwitchStatement::AddCase(CaseElement* case_element)
-{
-    assert(cases);
-    cases[++num_cases] = case_element;
-#ifdef JIKES_DEBUG
-    assert(num_cases < max_cases);
-#endif // JIKES_DEBUG
-}
+// inline void AstSwitchStatement::AddCase(CaseElement* case_element)
+// {
+//     assert(cases);
+//     cases[++num_cases] = case_element;
+// #ifdef JIKES_DEBUG
+//     assert(num_cases < max_cases);
+// #endif // JIKES_DEBUG
+// }
 
 inline void AstForStatement::AllocateForInitStatements(unsigned estimate)
 {
