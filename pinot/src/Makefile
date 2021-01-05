@@ -131,15 +131,15 @@ HEADERS = $(include_HEADERS) $(noinst_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run aclocal-1.8
+ACLOCAL = ${SHELL} /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/missing --run aclocal-1.8
 AMDEP_FALSE = #
-AMDEP_TRUE =
-AMTAR = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run tar
-AUTOCONF = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run autoconf
-AUTOHEADER = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run autoheader
-AUTOMAKE = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run automake-1.8
+AMDEP_TRUE = 
+AMTAR = ${SHELL} /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/missing --run tar
+AUTOCONF = ${SHELL} /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/missing --run autoconf
+AUTOHEADER = ${SHELL} /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/missing --run autoheader
+AUTOMAKE = ${SHELL} /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/missing --run automake-1.8
 AWK = gawk
-CPPFLAGS =
+CPPFLAGS = 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
@@ -147,33 +147,33 @@ CXXFLAGS = -g
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-ECHO_C =
+ECHO_C = 
 ECHO_N = -n
-ECHO_T =
+ECHO_T = 
 EGREP = grep -E
-EXEEXT =
+EXEEXT = 
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = ${SHELL} $(install_sh) -c -s
 JIKESPG = jikespg
-LDFLAGS =
-LIBOBJS =
-LIBS =
-LTLIBOBJS =
+LDFLAGS = 
+LIBOBJS = 
+LIBS = 
+LTLIBOBJS = 
 MAINT = #
-MAINTAINER_MODE_FALSE =
+MAINTAINER_MODE_FALSE = 
 MAINTAINER_MODE_TRUE = #
-MAKEINFO = ${SHELL} /mnt/c/Code/pinottest/pinot/missing --run makeinfo
+MAKEINFO = ${SHELL} /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/missing --run makeinfo
 OBJEXT = o
 PACKAGE = jikes
-PACKAGE_BUGREPORT =
+PACKAGE_BUGREPORT = 
 PACKAGE_NAME = jikes
 PACKAGE_STRING = jikes 1.22
 PACKAGE_TARNAME = jikes
 PACKAGE_VERSION = 1.22
 PATH_SEPARATOR = :
-SET_MAKE =
+SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
 TOUCH = /usr/bin/touch
@@ -181,43 +181,43 @@ VERSION = 1.22
 ac_ct_CXX = g++
 ac_ct_STRIP = strip
 am__fastdepCXX_FALSE = #
-am__fastdepCXX_TRUE =
+am__fastdepCXX_TRUE = 
 am__include = include
 am__leading_dot = .
-am__quote =
+am__quote = 
 bindir = ${exec_prefix}/bin
 build = x86_64-unknown-linux-gnu
-build_alias =
+build_alias = 
 build_cpu = x86_64
 build_os = linux-gnu
 build_vendor = unknown
 datadir = ${prefix}/share
 exec_prefix = ${prefix}
 host = x86_64-unknown-linux-gnu
-host_alias =
+host_alias = 
 host_cpu = x86_64
 host_os = linux-gnu
 host_vendor = unknown
 includedir = ${prefix}/include
 infodir = ${prefix}/info
-install_sh = /mnt/c/Code/pinottest/pinot/install-sh
+install_sh = /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localstatedir = ${prefix}/var
 mandir = ${prefix}/man
 mkdir_p = mkdir -p -- .
 oldincludedir = /usr/include
-prefix = /mnt/c/Code/pinottest/PREFIX
+prefix = /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/build
 program_transform_name = s,x,x,
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 sysconfdir = ${prefix}/etc
-target_alias =
+target_alias = 
 jikes_SOURCES = \
 astGeneration/ast.cpp \
 astGeneration/body.cpp \
 astGeneration/astGeneration/bytecode.cpp \
-case.cpp \
+declarations/case.cpp \
 orchestration/class.cpp \
 declarations/code.cpp \
 orchestration/control.cpp \
@@ -257,7 +257,7 @@ patterns/controlanalysis.cpp \
 patterns/creationanalysis.cpp \
 patterns/factoryanalysis.cpp \
 patterns/flyweightanalysis.cpp \
-patterns/singletionanalysis.cpp
+patterns/singletonanalysis.cpp
 
 include_HEADERS = \
 declarations/jikes/jikesapi.h
@@ -408,7 +408,7 @@ distclean-compile:
 include ./$(DEPDIR)/astGeneration/ast.Po
 include ./$(DEPDIR)/astGeneration/body.Po
 include ./$(DEPDIR)/astGeneration/bytecode.Po
-include ./$(DEPDIR)/case.Po
+include ./$(DEPDIR)/declarations/case.Po
 include ./$(DEPDIR)/orchestration/class.Po
 include ./$(DEPDIR)/declarations/code.Po
 include ./$(DEPDIR)/orchestration/control.Po

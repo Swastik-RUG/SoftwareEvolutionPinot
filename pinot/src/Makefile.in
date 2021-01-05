@@ -217,7 +217,7 @@ jikes_SOURCES = \
 astGeneration/ast.cpp \
 astGeneration/body.cpp \
 astGeneration/astGeneration/bytecode.cpp \
-case.cpp \
+declarations/case.cpp \
 orchestration/class.cpp \
 declarations/code.cpp \
 orchestration/control.cpp \
@@ -408,7 +408,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/ast.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/body.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/bytecode.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/case.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/case.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/class.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/declarations/code.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/orchestration/control.Po@am__quote@
