@@ -1,5 +1,6 @@
 #include "./FactoryAnalysis.h"
 #include "../astGeneration/ast.h"
+#include "../astGeneration/core/expression/AstClassCreationExpression.h"
 
 
 #ifdef HAVE_JIKES_NAMESPACE

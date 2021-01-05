@@ -39,7 +39,6 @@
 
 
 #include "../../config.h"
-
 /*
    undefine any symbols defined by the autotools
    build process that can conflict with our symbols

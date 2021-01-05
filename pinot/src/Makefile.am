@@ -45,9 +45,15 @@ patterns/creationanalysis.cpp \
 patterns/factoryanalysis.cpp \
 patterns/flyweightanalysis.cpp \
 patterns/singletonanalysis.cpp \
-astGeneration/core/variableSymbolArray.cpp \
-astGeneration/core/AstSwitchStatement.cpp \
-astGeneration/core/AstWhileStatement.cpp 
+astGeneration/core/statement/variableSymbolArray.cpp \
+astGeneration/core/statement/AstSwitchStatement.cpp \
+astGeneration/core/statement/AstWhileStatement.cpp \
+astGeneration/core/statement/AstDoStatement.cpp \
+astGeneration/core/statement/AstForeachStatement.cpp \
+astGeneration/core/statement/AstBreakStatement.cpp \
+astGeneration/core/literals/AstIntegerLiteral.cpp \
+astGeneration/core/literals/AstLongLiteral.cpp \
+astGeneration/core/expression/AstClassCreationExpression.cpp 
 
 include_HEADERS = \
 declarations/jikes/jikesapi.h
@@ -90,9 +96,19 @@ declarations/table.h \
 declarations/tuple.h \
 orchestration/unzip.h \
 orchestration/zip.h \
-astGeneration/core/variableSymbolArray.h \
-astGeneration/core/AstSwitchStatement.h \
-astGeneration/core/AstWhileStatement.h 
+astGeneration/core/statement/variableSymbolArray.h \
+astGeneration/core/statement/AstSwitchStatement.h \
+astGeneration/core/statement/AstWhileStatement.h \
+astGeneration/core/statement/AstDoStatement.h \
+astGeneration/core/statement/AstForStatement.h \
+astGeneration/core/statement/AstForeachStatement.h\
+astGeneration/core/statement/AstBreakStatement.h \
+astGeneration/core/literals/AstIntegerLiteral.h \
+astGeneration/core/literals/AstLongLiteral.h \
+astGeneration/core/expression/AstClassCreationExpression.h 
+
+
+
 # Include the java.g and gencode.java files in the .tar ball
 
 EXTRA_DIST = java.g gencode.java

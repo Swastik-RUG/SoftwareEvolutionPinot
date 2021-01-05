@@ -1,6 +1,8 @@
 #include "./ControlAnalysis.h"
 #include "../astGeneration/ast.h"
-#include "../astGeneration/core/AstWhileStatement.h"
+#include "../astGeneration/core/statement/AstWhileStatement.h"
+#include "../astGeneration/core/statement/AstForStatement.h"
+
 
 
 #ifdef HAVE_JIKES_NAMESPACE

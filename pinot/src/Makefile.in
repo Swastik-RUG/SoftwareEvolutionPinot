@@ -91,8 +91,11 @@ am_jikes_OBJECTS = astGeneration/ast.$(OBJEXT) astGeneration/body.$(OBJEXT) astG
 	patterns/chainanalysis.$(OBJEXT) patterns/controlanalysis.$(OBJEXT) \
 	patterns/creationanalysis.$(OBJEXT) patterns/factoryanalysis.$(OBJEXT) \
 	patterns/flyweightanalysis.$(OBJEXT) patterns/singletonanalysis.$(OBJEXT) \
-	astGeneration/core/variableSymbolArray.$(OBJEXT) astGeneration/core/AstSwitchStatement.$(OBJEXT) \
-	astGeneration/core/AstWhileStatement.$(OBJEXT) 
+	astGeneration/core/statement/variableSymbolArray.$(OBJEXT) astGeneration/core/statement/AstSwitchStatement.$(OBJEXT) \
+	astGeneration/core/statement/AstWhileStatement.$(OBJEXT) astGeneration/core/statement/AstDoStatement.$(OBJEXT) \
+	astGeneration/core/statement/AstForeachStatement.$(OBJEXT) astGeneration/core/statement/AstBreakStatement.$(OBJEXT) \
+	astGeneration/core/literals/AstIntegerLiteral.$(OBJEXT) astGeneration/core/literals/AstLongLiteral.$(OBJEXT) \
+	astGeneration/core/expression/AstClassCreationExpression.$(OBJEXT) 
 
 jikes_OBJECTS = $(am_jikes_OBJECTS)
 jikes_LDADD = $(LDADD)
@@ -121,9 +124,11 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/patterns/chainanalysis.Po ./$(DEPDIR)/patterns/controlanalysis.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/patterns/creationanalysis.Po ./$(DEPDIR)/patterns/factoryanalysis.Po \
 @AMDEP_TRUE@	./$(DEPDIR)/patterns/flyweightanalysis.Po ./$(DEPDIR)/patterns/singletonanalysis.Po \
-@AMDEP_TRUE@    ./$(DEPDIR)/astGeneration/core/variableSymbolArray.Po ./$(DEPDIR)/astGeneration/core/AstSwitchStatement.Po \
-@AMDEP_TRUE@    ./$(DEPDIR)/astGeneration/core/AstWhileStatement.Po 
-
+@AMDEP_TRUE@    ./$(DEPDIR)/astGeneration/core/statement/variableSymbolArray.Po ./$(DEPDIR)/astGeneration/core/statement/AstSwitchStatement.Po \
+@AMDEP_TRUE@    ./$(DEPDIR)/astGeneration/core/statement/AstWhileStatement.Po ./$(DEPDIR)/astGeneration/core/statement/AstDoStatement.Po \
+@AMDEP_TRUE@    ./$(DEPDIR)/astGeneration/core/statement/AstForeachStatement.Po ./$(DEPDIR)/astGeneration/core/statement/AstBreakStatement.Po \
+@AMDEP_TRUE@    ./$(DEPDIR)/astGeneration/core/literals/AstIntegerLiteral.Po ./$(DEPDIR)/astGeneration/core/literals/AstLongLiteral.Po \
+@AMDEP_TRUE@    ./$(DEPDIR)/astGeneration/core/expression/AstClassCreationExpression.Po 
 
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
@@ -265,9 +270,16 @@ patterns/creationanalysis.cpp \
 patterns/factoryanalysis.cpp \
 patterns/flyweightanalysis.cpp \
 patterns/singletonanalysis.cpp \
-astGeneration/core/variableSymbolArray.cpp \
-astGeneration/core/AstSwitchStatement.cpp \
-astGeneration/core/AstWhileStatement.cpp 
+astGeneration/core/statement/variableSymbolArray.cpp \
+astGeneration/core/statement/AstSwitchStatement.cpp \
+astGeneration/core/statement/AstWhileStatement.cpp \
+astGeneration/core/statement/AstDoStatement.cpp \
+astGeneration/core/statement/AstForeachStatement.cpp \
+astGeneration/core/statement/AstBreakStatement.cpp \
+astGeneration/core/literals/AstIntegerLiteral.cpp \
+astGeneration/core/literals/AstLongLiteral.cpp \
+astGeneration/core/expression/AstClassCreationExpression.cpp 
+
 include_HEADERS = \
 declarations/jikes/jikesapi.h
 
@@ -308,9 +320,16 @@ declarations/table.h \
 declarations/tuple.h \
 orchestration/unzip.h \
 orchestration/zip.h \
-astGeneration/core/variableSymbolArray.h \
-astGeneration/core/AstSwitchStatement.h \
-astGeneration/core/AstWhileStatement.h 
+astGeneration/core/statement/variableSymbolArray.h \
+astGeneration/core/statement/AstSwitchStatement.h \
+astGeneration/core/statement/AstWhileStatement.h \
+astGeneration/core/statement/AstDoStatement.h \
+astGeneration/core/statement/AstForStatement.h \
+astGeneration/core/statement/AstForeachStatement.h \
+astGeneration/core/statement/AstBreakStatement.h \
+astGeneration/core/literals/AstIntegerLiteral.h \
+astGeneration/core/literals/AstLongLiteral.h \
+astGeneration/core/expression/AstClassCreationExpression.h 
 
 # Include the java.g and gencode.java files in the .tar ball
 EXTRA_DIST = java.g gencode.java
@@ -460,9 +479,16 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/factoryanalysis.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/flyweightanalysis.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patterns/singletonanalysis.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/variableSymbolArray.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/AstSwitchStatement.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/AstWhileStatement.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/statement/variableSymbolArray.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/statement/AstSwitchStatement.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/statement/AstWhileStatement.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/statement/AstDoStatement.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/statement/AstForeachStatement.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/statement/AstBreakStatement.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/literals/AstIntegerLiteral.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/literals/AstLongLiteral.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/astGeneration/core/expression/AstClassCreationExpression.Po@am__quote@
+
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	if $(CXXCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
