@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SRC_DIR="/mnt/d/Academics/SoftwareEvolution/pinot/src"
-AST_DIR="/mnt/d/Academics/SoftwareEvolution/pinot/src/ast_dump"
-CPA_FILENAME="Pinotv_partitioned.cpa"
+SRC_DIR="/mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/src"
+AST_DIR="/mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/src/ast_dump"
+CPA_FILENAME="Pinot_refactored.cpa"
 file_ext="cpp"
 EXCLUDE_LIST=""
 

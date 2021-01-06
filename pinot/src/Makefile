@@ -88,9 +88,9 @@ am_jikes_OBJECTS = astGeneration/ast.$(OBJEXT) astGeneration/body.$(OBJEXT) astG
 	declarations/set.$(OBJEXT) orchestration/stream.$(OBJEXT) astGeneration/symbol.$(OBJEXT) \
 	orchestration/system.$(OBJEXT) orchestration/tab.$(OBJEXT) astGeneration/unparse.$(OBJEXT) \
 	orchestration/unzip.$(OBJEXT) orchestration/zip.$(OBJEXT) \
-	patterns/chainanalysis.$(OBJEXT) patterns/controlanalysis.$(OBJEXT) \
-	patterns/creationanalysis.$(OBJEXT) patterns/factoryanalysis.$(OBJEXT) \
-	patterns/flyweightanalysis.$(OBJEXT) patterns/singletonanalysis.$(OBJEXT) \
+	declarations/patterns/chainanalysis.$(OBJEXT) declarations/patterns/controlanalysis.$(OBJEXT) \
+	declarations/patterns/creationanalysis.$(OBJEXT) declarations/patterns/factoryanalysis.$(OBJEXT) \
+	declarations/patterns/flyweightanalysis.$(OBJEXT) declarations/patterns/singletonanalysis.$(OBJEXT) \
 	astGeneration/core/statement/variableSymbolArray.$(OBJEXT) astGeneration/core/statement/AstSwitchStatement.$(OBJEXT) \
 	astGeneration/core/statement/AstWhileStatement.$(OBJEXT) astGeneration/core/statement/AstDoStatement.$(OBJEXT) \
 	astGeneration/core/statement/AstForeachStatement.$(OBJEXT) astGeneration/core/statement/AstBreakStatement.$(OBJEXT) \
@@ -121,9 +121,9 @@ DEP_FILES = ./$(DEPDIR)/astGeneration/ast.Po ./$(DEPDIR)/astGeneration/body.Po \
 	./$(DEPDIR)/astGeneration/symbol.Po ./$(DEPDIR)/orchestration/system.Po \
 	./$(DEPDIR)/orchestration/tab.Po ./$(DEPDIR)/astGeneration/unparse.Po \
 	./$(DEPDIR)/orchestration/unzip.Po ./$(DEPDIR)/orchestration/zip.Po \
-	./$(DEPDIR)/patterns/chainanalysis.Po ./$(DEPDIR)/patterns/controlanalysis.Po \
-	./$(DEPDIR)/patterns/creationanalysis.Po ./$(DEPDIR)/patterns/factoryanalysis.Po \
-	./$(DEPDIR)/patterns/flyweightanalysis.Po ./$(DEPDIR)/patterns/singletonanalysis.Po \
+	./$(DEPDIR)/declarations/patterns/chainanalysis.Po ./$(DEPDIR)/declarations/patterns/controlanalysis.Po \
+	./$(DEPDIR)/declarations/patterns/creationanalysis.Po ./$(DEPDIR)/declarations/patterns/factoryanalysis.Po \
+	./$(DEPDIR)/declarations/patterns/flyweightanalysis.Po ./$(DEPDIR)/declarations/patterns/singletonanalysis.Po \
     ./$(DEPDIR)/astGeneration/core/statement/variableSymbolArray.Po ./$(DEPDIR)/astGeneration/core/statement/AstSwitchStatement.Po \
     ./$(DEPDIR)/astGeneration/core/statement/AstWhileStatement.Po ./$(DEPDIR)/astGeneration/core/statement/AstDoStatement.Po \
     ./$(DEPDIR)/astGeneration/core/statement/AstForeachStatement.Po ./$(DEPDIR)/astGeneration/core/statement/AstBreakStatement.Po \
@@ -264,12 +264,12 @@ orchestration/tab.cpp \
 astGeneration/unparse.cpp \
 orchestration/unzip.cpp \
 orchestration/zip.cpp \
-patterns/chainanalysis.cpp \
-patterns/controlanalysis.cpp \
-patterns/creationanalysis.cpp \
-patterns/factoryanalysis.cpp \
-patterns/flyweightanalysis.cpp \
-patterns/singletonanalysis.cpp \
+declarations/patterns/chainanalysis.cpp \
+declarations/patterns/controlanalysis.cpp \
+declarations/patterns/creationanalysis.cpp \
+declarations/patterns/factoryanalysis.cpp \
+declarations/patterns/flyweightanalysis.cpp \
+declarations/patterns/singletonanalysis.cpp \
 astGeneration/core/statement/variableSymbolArray.cpp \
 astGeneration/core/statement/AstSwitchStatement.cpp \
 astGeneration/core/statement/AstWhileStatement.cpp \
@@ -473,12 +473,12 @@ include ./$(DEPDIR)/orchestration/tab.Po
 include ./$(DEPDIR)/astGeneration/unparse.Po
 include ./$(DEPDIR)/orchestration/unzip.Po
 include ./$(DEPDIR)/orchestration/zip.Po
-include ./$(DEPDIR)/patterns/chainanalysis.Po
-include ./$(DEPDIR)/patterns/controlanalysis.Po
-include ./$(DEPDIR)/patterns/creationanalysis.Po
-include ./$(DEPDIR)/patterns/factoryanalysis.Po
-include ./$(DEPDIR)/patterns/flyweightanalysis.Po
-include ./$(DEPDIR)/patterns/singletonanalysis.Po
+include ./$(DEPDIR)/declarations/patterns/chainanalysis.Po
+include ./$(DEPDIR)/declarations/patterns/controlanalysis.Po
+include ./$(DEPDIR)/declarations/patterns/creationanalysis.Po
+include ./$(DEPDIR)/declarations/patterns/factoryanalysis.Po
+include ./$(DEPDIR)/declarations/patterns/flyweightanalysis.Po
+include ./$(DEPDIR)/declarations/patterns/singletonanalysis.Po
 include ./$(DEPDIR)/astGeneration/core/statement/variableSymbolArray.Po
 include ./$(DEPDIR)/astGeneration/core/statement/AstSwitchStatement.Po
 include ./$(DEPDIR)/astGeneration/core/statement/AstWhileStatement.Po
