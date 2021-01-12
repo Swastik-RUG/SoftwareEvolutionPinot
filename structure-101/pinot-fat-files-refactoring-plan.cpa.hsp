@@ -7,14 +7,14 @@
   <property name="templates" value="hide" />
   <property name="auto-tidy" value="true" />
   <property name="only-interface-dependencies" value="false" />
-  <property name="relative-to" value="D:\Academics\SoftwareEvolutionPinot" />
+  <property name="relative-to" value="D:\Academics\SeAM_Refactored\SoftwareEvolutionPinot" />
   <property name="action-set-mod" value="1" />
   <property name="granularity" value="detail" />
   <property name="name-map" value="true" />
   <property name="model" value="raw" />
   <property name="resolve-name-clashes" value="true" />
   <property name="dependency-filter" />
-  <path kind="cva" file="./Pinot.cpa" />
+  <path kind="cva" file="/structure-101/Pinot.cpa" />
   <restructuring>
     <set version="3" name="Action list 1" hiview="Codemap" active="true" todo="false" list="0">
       <action type="group-smart-move" active="true" last-applied="true" description="Move pinot/src to root">
