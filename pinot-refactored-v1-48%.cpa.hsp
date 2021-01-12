@@ -14,7 +14,7 @@
   <property name="model" value="raw" />
   <property name="resolve-name-clashes" value="true" />
   <property name="dependency-filter" />
-  <path kind="cva" file="./structure-101/Pinotv_partitioned.cpa" />
+  <path kind="cva" file="analysis/pinot-refactored/Pinotv_partitioned.cpa" />
   <excludes>
     <exclude expression="src/./*" active="true" />
     <exclude expression="src/./*" active="true" />
