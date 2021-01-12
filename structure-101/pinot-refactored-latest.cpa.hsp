@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local-project language="cpa" version="5.0.16419" xml-version="3">
+  <property name="header-pattern" value="h" />
+  <property name="case-sensitive" value="true" />
+  <property name="show-as-module" value="false" />
+  <property name="body-pattern" value="c" />
+  <property name="templates" value="hide" />
+  <property name="auto-tidy" value="true" />
+  <property name="only-interface-dependencies" value="false" />
+  <property name="relative-to" value="D:\Academics\SoftwareEvolutionPinot" />
+  <property name="action-set-mod" value="1" />
+  <property name="granularity" value="detail" />
+  <property name="name-map" value="true" />
+  <property name="model" value="raw" />
+  <property name="resolve-name-clashes" value="true" />
+  <property name="dependency-filter" />
+  <path kind="cva" file="../build-tools/cpa_out/Pinot_refactored.cpa" />
+  <restructuring>
+    <set version="3" name="Action list 1" hiview="Codemap" active="true" todo="false" list="0">
+      <action type="group-smart-move" active="true" last-applied="true" description="Move ../pinot/src to root">
+        <composite-set>
+          <action type="smart-move" active="true" last-applied="true" description="Move ../pinot/src to root">
+            <composite-set>
+              <action type="move" active="true" last-applied="true" description="Move ../pinot/src to root">
+                <params>
+                  <source-fqn fqn="../pinot/src" type="folder">
+                    <node name="mnt" type="folder" />
+                    <node name="d" type="folder" />
+                    <node name="Academics" type="folder" />
+                    <node name="SeAM_Refactored" type="folder" />
+                    <node name="SoftwareEvolutionPinot" type="folder" />
+                    <node name="pinot" type="folder" />
+                    <node name="src" type="folder" />
+                  </source-fqn>
+                  <to-fqn fqn="root" type="root" isroot="true" />
+                </params>
+              </action>
+            </composite-set>
+            <params>
+              <container-fqn fqn="root" type="root" isroot="true" />
+            </params>
+          </action>
+        </composite-set>
+      </action>
+      <hide>
+        <item-fqn fqn="mnt" type="folder">
+          <node name="mnt" type="folder" />
+        </item-fqn>
+      </hide>
+      <hide>
+        <item-fqn fqn="src/." type="folder">
+          <node name="src" type="folder" />
+          <node name="." type="folder" />
+        </item-fqn>
+      </hide>
+      <hide>
+        <item-fqn fqn="src/./declarations/." type="folder">
+          <node name="src" type="folder" />
+          <node name="." type="folder" />
+          <node name="declarations" type="folder" />
+          <node name="." type="folder" />
+        </item-fqn>
+      </hide>
+      <hide>
+        <item-fqn fqn="src/./astGeneration/." type="folder">
+          <node name="src" type="folder" />
+          <node name="." type="folder" />
+          <node name="astGeneration" type="folder" />
+          <node name="." type="folder" />
+        </item-fqn>
+      </hide>
+      <hide>
+        <item-fqn fqn="src/astGeneration/." type="folder">
+          <node name="src" type="folder" />
+          <node name="astGeneration" type="folder" />
+          <node name="." type="folder" />
+        </item-fqn>
+      </hide>
+      <hide>
+        <item-fqn fqn="src/declarations/." type="folder">
+          <node name="src" type="folder" />
+          <node name="declarations" type="folder" />
+          <node name="." type="folder" />
+        </item-fqn>
+      </hide>
+    </set>
+  </restructuring>
+  <grid-set sep="/" version="5.0.16419">
+    <grid name="Diagram 1" enforce="true" locked="false" strict="false">
+      <row>
+        <cell name="orchestration" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="255,204,153">
+          <grid>
+            <row>
+              <cell name="class.cpp" pattern="src/orchestration/class.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="diagnose.cpp" pattern="src/orchestration/diagnose.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="error.cpp" pattern="src/orchestration/error.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="stream.cpp" pattern="src/orchestration/stream.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="system.cpp" pattern="src/orchestration/system.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="zip.cpp" pattern="src/orchestration/zip.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="control.cpp" pattern="src/orchestration/control.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="diagnose.h" pattern="src/orchestration/diagnose.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="dump.cpp" pattern="src/orchestration/dump.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="modifier.cpp" pattern="src/orchestration/modifier.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="option.cpp" pattern="src/orchestration/option.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="parser.cpp" pattern="src/orchestration/parser.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="scanner.cpp" pattern="src/orchestration/scanner.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="tab.cpp" pattern="src/orchestration/tab.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="unzip.cpp" pattern="src/orchestration/unzip.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="zip.h" pattern="src/orchestration/zip.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="class.h" pattern="src/orchestration/class.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="javadef.h" pattern="src/orchestration/javadef.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="javasym.h" pattern="src/orchestration/javasym.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="tab.h" pattern="src/orchestration/tab.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="unzip.h" pattern="src/orchestration/unzip.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="astGeneration" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="body.cpp" pattern="src/astGeneration/body.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="bytecode.cpp" pattern="src/astGeneration/bytecode.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="core" pattern="src/astGeneration/core/*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="decl.cpp" pattern="src/astGeneration/decl.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="definite.cpp" pattern="src/astGeneration/definite.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="depend.cpp" pattern="src/astGeneration/depend.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="expr.cpp" pattern="src/astGeneration/expr.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="incrmnt.cpp" pattern="src/astGeneration/incrmnt.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="init.cpp" pattern="src/astGeneration/init.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="symbol.cpp" pattern="src/astGeneration/symbol.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="bytecode.h" pattern="src/astGeneration/bytecode.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="parser.h" pattern="src/astGeneration/parser.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="semantic.h" pattern="src/astGeneration/semantic.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="storage" pattern="src/astGeneration/storage/*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="ast.h" pattern="src/astGeneration/ast.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="ast.cpp" pattern="src/astGeneration/ast.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="depend.h" pattern="src/astGeneration/depend.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="javaact.h" pattern="src/astGeneration/javaact.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="javaprs.h" pattern="src/astGeneration/javaprs.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="lookup.cpp" pattern="src/astGeneration/lookup.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="unparse.cpp" pattern="src/astGeneration/unparse.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="declarations" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="204,255,255">
+          <grid>
+            <row>
+              <cell name="scanner.h" pattern="src/declarations/scanner.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="stream.h" pattern="src/declarations/stream.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="tuple.h" pattern="src/declarations/tuple.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="jikes" pattern="src/declarations/jikes/*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="control.h" pattern="src/declarations/control.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="patterns" pattern="src/declarations/patterns/*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="table.h" pattern="src/declarations/table.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="Utility" pattern="src/declarations/Utility/*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="set.cpp" pattern="src/declarations/set.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="spell.h" pattern="src/declarations/spell.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="symbol" pattern="src/declarations/symbol/*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="access.h" pattern="src/declarations/access.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="case.h" pattern="src/declarations/case.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="code.h" pattern="src/declarations/code.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="op.cpp" pattern="src/declarations/op.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="segment.cpp" pattern="src/declarations/segment.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="set.h" pattern="src/declarations/set.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="case.cpp" pattern="src/declarations/case.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="code.cpp" pattern="src/declarations/code.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="config.h" pattern="src/declarations/config.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="lpginput.h" pattern="src/declarations/lpginput.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="op.h" pattern="src/declarations/op.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="option.h" pattern="src/declarations/option.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="platform" pattern="src/declarations/platform/*" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="segment.h" pattern="src/declarations/segment.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="gof.cpp" pattern="src/gof.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="204,255,204" />
+      </row>
+      <row>
+        <cell name="javadcl.h" pattern="src/javadcl.h" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="204,255,204" />
+      </row>
+      <description>Multiple subsystem breakout</description>
+    </grid>
+    <grid name="Diagram 2" enforce="true" locked="false" strict="false">
+      <row>
+        <cell name="orchestration" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="255,204,153">
+          <grid>
+            <row>
+              <cell name="class.cpp" pattern="src/orchestration/class.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="diagnose.cpp" pattern="src/orchestration/diagnose.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="error.cpp" pattern="src/orchestration/error.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="stream.cpp" pattern="src/orchestration/stream.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="system.cpp" pattern="src/orchestration/system.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="zip.cpp" pattern="src/orchestration/zip.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="control.cpp" pattern="src/orchestration/control.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="diagnose.h" pattern="src/orchestration/diagnose.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="dump.cpp" pattern="src/orchestration/dump.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="modifier.cpp" pattern="src/orchestration/modifier.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="option.cpp" pattern="src/orchestration/option.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="parser.cpp" pattern="src/orchestration/parser.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="scanner.cpp" pattern="src/orchestration/scanner.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="tab.cpp" pattern="src/orchestration/tab.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="unzip.cpp" pattern="src/orchestration/unzip.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="zip.h" pattern="src/orchestration/zip.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="class.h" pattern="src/orchestration/class.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="javadef.h" pattern="src/orchestration/javadef.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="javasym.h" pattern="src/orchestration/javasym.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="tab.h" pattern="src/orchestration/tab.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="unzip.h" pattern="src/orchestration/unzip.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="astGeneration" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="204,255,204">
+          <grid>
+            <row>
+              <cell name="body.cpp" pattern="src/astGeneration/body.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="bytecode.cpp" pattern="src/astGeneration/bytecode.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="core" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="255,204,204">
+                <grid>
+                  <row>
+                    <cell name="expression" pattern="" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,255,255">
+                      <grid>
+                        <row>
+                          <cell name="AstClassCreationExpression.cpp" pattern="src/astGeneration/core/expression/AstClassCreationExpression.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                        <row>
+                          <cell name="AstArrayCreationExpression.h" pattern="src/astGeneration/core/expression/AstArrayCreationExpression.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstClassCreationExpression.h" pattern="src/astGeneration/core/expression/AstClassCreationExpression.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                      </grid>
+                    </cell>
+                    <cell name="literals" pattern="" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,255,255">
+                      <grid>
+                        <row>
+                          <cell name="AstIntegerLiteral.cpp" pattern="src/astGeneration/core/literals/AstIntegerLiteral.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstLongLiteral.cpp" pattern="src/astGeneration/core/literals/AstLongLiteral.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                        <row>
+                          <cell name="AstIntegerLiteral.h" pattern="src/astGeneration/core/literals/AstIntegerLiteral.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstLongLiteral.h" pattern="src/astGeneration/core/literals/AstLongLiteral.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                      </grid>
+                    </cell>
+                    <cell name="statement" pattern="" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,255,255">
+                      <grid>
+                        <row>
+                          <cell name="AstBreakStatement.cpp" pattern="src/astGeneration/core/statement/AstBreakStatement.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstDoStatement.cpp" pattern="src/astGeneration/core/statement/AstDoStatement.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstForeachStatement.cpp" pattern="src/astGeneration/core/statement/AstForeachStatement.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstSwitchStatement.cpp" pattern="src/astGeneration/core/statement/AstSwitchStatement.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstWhileStatement.cpp" pattern="src/astGeneration/core/statement/AstWhileStatement.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                        <row>
+                          <cell name="AstBreakStatement.h" pattern="src/astGeneration/core/statement/AstBreakStatement.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstDoStatement.h" pattern="src/astGeneration/core/statement/AstDoStatement.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstForeachStatement.h" pattern="src/astGeneration/core/statement/AstForeachStatement.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstForStatement.h" pattern="src/astGeneration/core/statement/AstForStatement.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstSwitchStatement.h" pattern="src/astGeneration/core/statement/AstSwitchStatement.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="AstWhileStatement.h" pattern="src/astGeneration/core/statement/AstWhileStatement.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                          <cell name="variableSymbolArray.cpp" pattern="src/astGeneration/core/statement/variableSymbolArray.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                        </row>
+                      </grid>
+                    </cell>
+                  </row>
+                </grid>
+              </cell>
+              <cell name="decl.cpp" pattern="src/astGeneration/decl.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="definite.cpp" pattern="src/astGeneration/definite.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="depend.cpp" pattern="src/astGeneration/depend.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="expr.cpp" pattern="src/astGeneration/expr.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="incrmnt.cpp" pattern="src/astGeneration/incrmnt.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="init.cpp" pattern="src/astGeneration/init.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="symbol.cpp" pattern="src/astGeneration/symbol.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="bytecode.h" pattern="src/astGeneration/bytecode.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="parser.h" pattern="src/astGeneration/parser.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="semantic.h" pattern="src/astGeneration/semantic.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="storage" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="255,204,204">
+                <grid>
+                  <row>
+                    <cell name="storagepool.h" pattern="src/astGeneration/storage/storagepool.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+            <row>
+              <cell name="ast.h" pattern="src/astGeneration/ast.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="ast.cpp" pattern="src/astGeneration/ast.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="depend.h" pattern="src/astGeneration/depend.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="javaact.h" pattern="src/astGeneration/javaact.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="javaprs.h" pattern="src/astGeneration/javaprs.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="lookup.cpp" pattern="src/astGeneration/lookup.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="unparse.cpp" pattern="src/astGeneration/unparse.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="declarations" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="204,255,255">
+          <grid>
+            <row>
+              <cell name="scanner.h" pattern="src/declarations/scanner.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="stream.h" pattern="src/declarations/stream.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="tuple.h" pattern="src/declarations/tuple.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="jikes" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="255,204,204">
+                <grid>
+                  <row>
+                    <cell name="jikes.cpp" pattern="src/declarations/jikes/jikes.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="jikesapi.cpp" pattern="src/declarations/jikes/jikesapi.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="error.h" pattern="src/declarations/jikes/error.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="jikesapi.h" pattern="src/declarations/jikes/jikesapi.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+            <row>
+              <cell name="control.h" pattern="src/declarations/control.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="patterns" pattern="" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,204,204">
+                <grid>
+                  <row>
+                    <cell name="chainanalysis.cpp" pattern="src/declarations/patterns/chainanalysis.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="controlanalysis.cpp" pattern="src/declarations/patterns/controlanalysis.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="creationanalysis.cpp" pattern="src/declarations/patterns/creationanalysis.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="factoryanalysis.cpp" pattern="src/declarations/patterns/factoryanalysis.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="flyweightanalysis.cpp" pattern="src/declarations/patterns/flyweightanalysis.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="singletonanalysis.cpp" pattern="src/declarations/patterns/singletonanalysis.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="ChainAnalysis.h" pattern="src/declarations/patterns/ChainAnalysis.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="ControlAnalysis.h" pattern="src/declarations/patterns/ControlAnalysis.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="CreationAnalysis.h" pattern="src/declarations/patterns/CreationAnalysis.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="FactoryAnalysis.h" pattern="src/declarations/patterns/FactoryAnalysis.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="FlyWeightAnalysis.h" pattern="src/declarations/patterns/FlyWeightAnalysis.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="SingletonAnalysis.h" pattern="src/declarations/patterns/SingletonAnalysis.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+            <row>
+              <cell name="table.h" pattern="src/declarations/table.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="Utility" pattern="" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,204,204">
+                <grid>
+                  <row>
+                    <cell name="Flatten.h" pattern="src/declarations/Utility/Flatten.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="Utility.h" pattern="src/declarations/Utility/Utility.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="Assoc.h" pattern="src/declarations/Utility/Assoc.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="ContainerType.h" pattern="src/declarations/Utility/ContainerType.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="Delegation.h" pattern="src/declarations/Utility/Delegation.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="Env.h" pattern="src/declarations/Utility/Env.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="GenTable.h" pattern="src/declarations/Utility/GenTable.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="MethodBodyTable.h" pattern="src/declarations/Utility/MethodBodyTable.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="Snapshot.h" pattern="src/declarations/Utility/Snapshot.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="State.h" pattern="src/declarations/Utility/State.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="Table.h" pattern="src/declarations/Utility/Table.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+            <row>
+              <cell name="set.cpp" pattern="src/declarations/set.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="spell.h" pattern="src/declarations/spell.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="symbol" pattern="" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,204,204">
+                <grid>
+                  <row>
+                    <cell name="symbol.h" pattern="src/declarations/symbol/symbol.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                </grid>
+              </cell>
+            </row>
+            <row>
+              <cell name="access.h" pattern="src/declarations/access.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="case.h" pattern="src/declarations/case.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="code.h" pattern="src/declarations/code.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="op.cpp" pattern="src/declarations/op.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="segment.cpp" pattern="src/declarations/segment.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="set.h" pattern="src/declarations/set.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="case.cpp" pattern="src/declarations/case.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="code.cpp" pattern="src/declarations/code.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="config.h" pattern="src/declarations/config.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="lpginput.h" pattern="src/declarations/lpginput.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="op.h" pattern="src/declarations/op.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="option.h" pattern="src/declarations/option.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="platform" pattern="" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,204,204">
+                <grid>
+                  <row>
+                    <cell name="platform.cpp" pattern="src/declarations/platform/platform.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="double.cpp" pattern="src/declarations/platform/double.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="long.cpp" pattern="src/declarations/platform/long.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                    <cell name="platform.h" pattern="src/declarations/platform/platform.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="double.h" pattern="src/declarations/platform/double.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                  <row>
+                    <cell name="long.h" pattern="src/declarations/platform/long.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+                  </row>
+                </grid>
+              </cell>
+              <cell name="segment.h" pattern="src/declarations/segment.h" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <description>Multiple subsystem breakout (depth=3)</description>
+    </grid>
+  </grid-set>
+</local-project>
