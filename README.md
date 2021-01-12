@@ -15,7 +15,7 @@ https://structure101.com/binaries/structure101-studio-cpa-win64-5.0.16419.exe
 https://structure101.com/binaries/structure101-studio-cpa-macos-5.0.16419.dmg  
 
 
-### Analysis tools
+## Analysis tools
 This project used multiple tools for the analysis of PINOT. All files related to
 the analysis of PINOT are located in the `analysis` directory. Inside the analysis
 directory the following subdirectories can be found:
@@ -51,7 +51,7 @@ Note: The Script file is currently in its early stages and will undergo refactor
 
 **A prebuilt CPA dump of the Pinot source code can be found in the "/SoftwareEvolutionPinot/tree/main/build-tools/cpa_out" folder.**
 
-## How to use the Structure101 projects
+### How to use the Structure101 projects
 The Structure101 projects require an absolute path towards the CPA files in the
 same folder. Use the following steps to open a project:
 
