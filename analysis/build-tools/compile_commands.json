@@ -1,0 +1,5 @@
+[
+{ "directory": "/mnt/d/Academics/SoftwareEvolution/pinot/src", "file": "ast.cpp", "output": "ast.o", "arguments": ["/usr/lib/llvm-10/bin/clang", "-xc++", "ast.cpp", "--driver-mode=g++", "-Wall", "-std=c++11", "-o", "ast.o", "-c", "--target=x86_64-pc-linux-gnu"]},
+{ "directory": "/mnt/d/Academics/SoftwareEvolution/pinot/src", "file": "case.cpp", "output": "case.o", "arguments": ["/usr/lib/llvm-10/bin/clang", "-xc++", "case.cpp", "--driver-mode=g++", "-Wall", "-std=c++11", "-o", "case.o", "-c", "--target=x86_64-pc-linux-gnu"]},
+{ "directory": "/mnt/d/Academics/SoftwareEvolution/pinot/src", "file": "class.cpp", "output": "class.o", "arguments": ["/usr/lib/llvm-10/bin/clang", "-xc++", "class.cpp", "--driver-mode=g++", "-Wall", "-std=c++11", "-o", "class.o", "-c", "--target=x86_64-pc-linux-gnu"]}
+]

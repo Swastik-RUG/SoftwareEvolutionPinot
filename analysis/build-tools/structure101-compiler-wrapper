@@ -1,0 +1,148 @@
+#!/bin/bash
+
+# *******************IMPORTANT************************
+
+# Change the line above to your location of bash
+# if not already set correctly
+#
+# ****************************************************
+#
+# ****************************************************
+#
+#     (c) 2020 Headway Software Technologies Ltd
+#
+# ****************************************************
+#
+# *********************************************************************************************
+#
+#  This script is intended to replace your "standard" C/C++ compiler
+#  It will call your "standard" compiler, before parsing the arguments passed to it.
+#  Arguments are then processed before being passed to Clang in order to generate ASTs
+#  for your codebase.
+#  An AST is produced for every compilation unit (or units), once produced, they are
+#  processed to remove all "system" includes identified in an excludes.txt file.
+#  Finally, all generated ASTs are used to create a .cpa file for consumption by Structure101.
+#  This last step should be added to the end of your Makefile/build. The command to generate
+#  the .cpa takes the form:
+#
+#  java -jar $S101_INSTALL_DIR/build-tools/structure101-parser-ast-cpa.jar $SRC_DIR my-proj.cpa
+# 
+#  $SRC_DIR should be set to the top level source directory where your .ast files were created
+#  from running this script in place of your "standard" compiler.
+#
+# *********************************************************************************************
+
+#  CUSTOM
+#  This script may require codebase specific customisation.
+#  Search for "CUSTOM" for areas that may need customization to accomodate your codebase.
+
+#  CUSTOM (1 of 5)
+EXCLUDES_FILE=./excludes.txt
+
+#  Get the name of the command being called
+_self="${0##*/}"
+
+#  Get the args being passed to the command
+COMPILER_ARGS=$@
+
+# Get the path to the script itself
+SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+
+#  CUSTOM (2 of 5)
+#  For each .o get an equivalent .ast filename
+#  Possibly requires customisation but unlikely to be common
+#
+AST_OUTPUTFILE=`echo $COMPILER_ARGS | sed "s/^.*-o //; s/\.o.*//"`.ast
+
+#  Remove -c and -o options from compiler args
+#  No need to compile to object code
+#
+COMPILER_ARGS=`echo $COMPILER_ARGS | sed "s/-c -o.*.o //"`
+
+#  CUSTOM (3 of 5)
+#  Remove any args here that are not recognised by clang
+#  Some commonly used args (such as '-fstack-reuse=none' & 
+#  '-fno-extended-identifiers' for example)
+#
+COMPILER_ARGS=`echo $COMPILER_ARGS | sed "s/-fstack-reuse=none//"`
+COMPILER_ARGS=`echo $COMPILER_ARGS | sed "s/-fno-extended-identifiers//"`
+
+#  CUSTOM (4 of 5)
+#  Replace any args here that are not recognised by clang
+#  but require a Clang equivalent for your codebase
+#
+#COMPILER_ARGS=`echo $COMPILER_ARGS | sed "s/-Wno-self-assign/-My-Clang-Arg-Equivalent/"`
+
+#  Add args for the ast dump
+#
+COMPILER_ARGS=" -S -g -Xclang -ast-dump -fno-color-diagnostics ${COMPILER_ARGS} "
+
+
+#  CUSTOM (5 of 5)
+#  In the event you invoke your "standard" compiler with a path to esnure you pick up a
+#  specific version of the compiler you can set it here:
+#_self=/usr/bin/g++
+#
+#  Invoke command as normal
+echo
+echo "# Structure101: calling users requested command"
+echo
+echo $_self $@
+echo
+$_self $@
+
+
+#  Check for error
+
+if [ "$?" = 1 ]; then
+     echo "# Structure101: Intercepted command Failed -- Aborting"
+     exit 1
+fi
+
+#  Do nothing for ar, ld, and ranlib
+if [ "$_self" = "ar" ] || [ "$_self" = "ld" ] || [ "$_self" = "ranlib" ]; then
+	echo 
+	echo "# Structure101: Doing nothing other than echoing command, as '$_self' not required for AST generation."
+	echo
+	echo  $_self $@
+	echo
+#  Do nothing if linker is being called via the compiler
+elif [[ "$COMPILER_ARGS" = *" -l "* ]]; then
+	echo 
+	echo "# Structure101: Doing nothing other than echoing command, as '$_self' is being used to link not compile."
+	echo
+	echo  $_self $@
+else
+#  Otherwise generate ast
+	echo
+	echo "# Strucure101: calling clang to generate AST"
+	echo
+
+	# Call clang with all compiler directives sent to user's chosen compiler
+	echo
+	echo clang $COMPILER_ARGS
+	echo
+	echo "# Structure101: strip system includes from ASTs referenced in $EXCLUDES_FILE"
+	echo
+	echo java -jar $SCRIPTPATH/structure101-parser-ast-cpa.jar -clean $AST_OUTPUTFILE $EXCLUDES_FILE
+	echo
+	# Open STDOUT as $AST_OUTPUTFILE for write
+	exec 1> $AST_OUTPUTFILE
+	clang $COMPILER_ARGS && java -jar $SCRIPTPATH/structure101-parser-ast-cpa.jar -clean $AST_OUTPUTFILE $EXCLUDES_FILE
+	exit
+
+	# Run the AST Cleaner to remove system includes as identified in $EXCLUDES_FILE
+	echo
+	echo java -jar $SCRIPTPATH/structure101-parser-ast-cpa.jar -clean $AST_OUTPUTFILE $EXCLUDES_FILE
+	echo
+
+	# Check for error
+
+	if [ "$?" = 1 ]; then
+	     echo "# Structure101: Failed to produce AST -- Aborting"
+	     exit 1
+	fi
+fi
+
+## The End ##

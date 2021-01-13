@@ -1,0 +1,1889 @@
+<!DOCTYPE html><html><head><title>Simple Invocation Tree [P]</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script src="jquery-3.3.1.min.js" type="text/javascript"></script><script src="d3.js" type="text/javascript"></script><script src="d3pie.min.js" type="text/javascript"></script><script src="plotly.min.js" type="text/javascript"></script><link href="reportCSS.css" type="text/css" rel="stylesheet" /><script src="reportJS.js" type="text/javascript"></script><script src="table_of_contents.js" type="text/javascript"></script></head><body bgcolor="#ffffff" TEXT="#000000"><nav id="main-nav" class="nav"><div id="upper-nav"><img id=und-icon src="understand-logo.png" alt="Understand"></div><div class="navbar" style="position:relative;z-index:1003"><button onclick="pageToTop()" id="pagedesc" title="Return to top of page"><span id="descText">pinot - Simple Invocation Tree</span></button></div><div id="lower-nav" class=navbar><div id="main-dropdown-html" class="dropdown" tabindex="0"><button id="dropdown-button" class="dropbtn">Contents <img id="dropdown-icon" src="ToCdropdown.png" style="height:12px"></button><div id="dropdown-buffer" class="dropdown-border" style="height:120px;width:300px;"></div><div id="nav-dropdown-content" class="dropdown-content"><a href="table_of_contents.html">Table of Contents</a><txt style="font-size: 12px; text-align: center">Enable javascript to use dropdown contents and other features.</txt></div></div><div class="rightspacer" id="rightspacer"><button id="buttonRight" onclick="scrollTableRight()"><img id="imgRight" src="ToCdropdown.png" /></button><button id="buttonLeft"  onclick="scrollTableLeft()" ><img id="imgLeft" src="ToCdropdown.png"  /></button></div><div class="navCenter">
+<a2>&</a2><a href="simpleinvtree_A.html">A</a><a href="simpleinvtree_B.html">B</a><a href="simpleinvtree_C.html">C</a><a href="simpleinvtree_D.html">D</a><a href="simpleinvtree_E.html">E</a><a href="simpleinvtree_F.html">F</a><a href="simpleinvtree_G.html">G</a><a href="simpleinvtree_H.html">H</a><a href="simpleinvtree_I.html">I</a><a href="simpleinvtree_J.html">J</a><a2>K</a2><a href="simpleinvtree_L.html">L</a><a href="simpleinvtree_M.html">M</a><a href="simpleinvtree_N.html">N</a><a href="simpleinvtree_O.html">O</a><a href="simpleinvtree_P.html">P</a><a2>Q</a2><a href="simpleinvtree_R.html">R</a><a href="simpleinvtree_S.html">S</a><a href="simpleinvtree_T.html">T</a><a href="simpleinvtree_U.html">U</a><a href="simpleinvtree_V.html">V</a><a href="simpleinvtree_W.html">W</a><a2>X</a2><a2>Y</a2><a href="simpleinvtree_Z.html">Z</a></div></div></nav>
+<script type="text/javascript">navbar();</script><script type="text/javascript">if (typeof ToC === 'undefined') {document.getElementById("dropdown-button").remove();document.getElementById("dropdown-buffer").remove();document.getElementById("nav-dropdown-content").remove();}</script>
+<div id="main-content"><pre>
+<a href="dictionary_P.html#13748">PackageSymbol::DeleteTypeSymbol</a>
+| <a href="dictionary_S.html#13917">SymbolTable::DeleteTypeSymbol</a>
+
+<a href="dictionary_P.html#8854">PackageSymbol::FindPackageSymbol</a>
+| <a href="dictionary_S.html#8850">SymbolTable::FindPackageSymbol</a>
+
+<a href="dictionary_P.html#4142">PackageSymbol::FindTypeSymbol</a>
+| <a href="dictionary_S.html#9379">SymbolTable::FindTypeSymbol</a>
+
+<a href="dictionary_P.html#8994">PackageSymbol::InsertOuterTypeSymbol</a>
+| <a href="dictionary_P.html#13752">PackageSymbol::Table</a>
+| <a href="dictionary_S.html#546">SymbolTable::InsertTypeSymbol</a>
+
+<a href="dictionary_P.html#8855">PackageSymbol::InsertPackageSymbol</a>
+| <a href="dictionary_P.html#13752">PackageSymbol::Table</a>
+| <a href="dictionary_S.html#3990">SymbolTable::InsertPackageSymbol</a>
+
+<a href="dictionary_P.html#3992">PackageSymbol::InsertSystemTypeSymbol</a>
+| <a href="dictionary_P.html#13752">PackageSymbol::Table</a>
+| <a href="dictionary_S.html#546">SymbolTable::InsertTypeSymbol</a>
+
+<a href="dictionary_P.html#9329">PackageSymbol::Name</a>
+| <a href="dictionary_N.html#64">NameSymbol::Name</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#10482">PackageSymbol::NameLength</a>
+| <a href="dictionary_N.html#557">NameSymbol::NameLength</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#4188">PackageSymbol::PackageName</a>
+| <a href="dictionary_P.html#10481">PackageSymbol::SetPackageName</a>
+
+<a href="dictionary_P.html#4184">PackageSymbol::PackageNameLength</a>
+| <a href="dictionary_P.html#10481">PackageSymbol::SetPackageName</a>
+
+<a href="dictionary_P.html#13745">PackageSymbol::PackageSymbol</a>
+| <a href="dictionary_T.html#494">Tuple::Tuple</a>
+
+<a href="dictionary_P.html#10481">PackageSymbol::SetPackageName</a>
+| <a href="dictionary_P.html#4184">PackageSymbol::PackageNameLength</a>
+| <a href="dictionary_P.html#10482">PackageSymbol::NameLength</a><i>  (Virtual)</i>
+| <a href="dictionary_W.html#559">wcscpy</a>
+| <a href="dictionary_P.html#4188">PackageSymbol::PackageName</a>
+| <a href="dictionary_W.html#560">wcscat</a>
+| <a href="dictionary_P.html#9329">PackageSymbol::Name</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#237">assert</a>
+| <a href="dictionary_W.html#881">wcslen</a>
+
+<a href="dictionary_P.html#13752">PackageSymbol::Table</a>
+| <a href="dictionary_S.html#8820">SymbolTable::SymbolTable</a>
+
+<a href="dictionary_P.html#10478">PackageSymbol::~PackageSymbol</a>
+| <a href="dictionary_T.html#522">Tuple::~Tuple</a>
+| <a href="dictionary_S.html#10453">Symbol::~Symbol</a>
+
+<a href="dictionary_P.html#2652">Pair::operator[]</a>
+| <a href="dictionary_P.html#2643">PairSegment::PairSegment</a>
+| <a href="dictionary_M.html#2192">memcpy</a>
+| <a href="dictionary_P.html#2644">PairSegment::~PairSegment</a>
+| <a href="dictionary_M.html#2656">memset</a>
+| <a href="dictionary_S.html#2691">SegmentPool::AllocatePairSegment</a>
+| <a href="dictionary_P.html#2645">PairSegment::Image</a>
+
+<a href="dictionary_P.html#2648">Pair::Pair</a>
+| <a href="dictionary_M.html#2656">memset</a>
+| <a href="dictionary_P.html#2643">PairSegment::PairSegment</a>
+
+<a href="dictionary_P.html#2651">Pair::~Pair</a>
+| <a href="dictionary_P.html#2644">PairSegment::~PairSegment</a>
+
+<a href="dictionary_P.html#2645">PairSegment::Image</a>
+| <a href="dictionary_M.html#2656">memset</a>
+
+<a href="dictionary_P.html#15360">ParameterAnnotationsAttribute::AddAnnotation</a>
+| <a href="dictionary_A.html#237">assert</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+| <a href="dictionary_T.html#505">Tuple::Next</a>
+| <a href="dictionary_A.html#12293">Annotation::Length</a>
+
+<a href="dictionary_P.html#15358">ParameterAnnotationsAttribute::NumAnnotations</a>
+| <a href="dictionary_A.html#237">assert</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+| <a href="dictionary_T.html#501">Tuple::Length</a>
+
+<a href="dictionary_P.html#12125">ParameterAnnotationsAttribute::ParameterAnnotationsAttribute</a>
+| <a href="dictionary_A.html#12128">AttributeInfo::AttributeInfo</a>
+| <a href="dictionary_T.html#494">Tuple::Tuple</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+
+<a href="dictionary_P.html#12326">ParameterAnnotationsAttribute::ParameterAnnotationsAttribute</a>
+| <a href="dictionary_A.html#12128">AttributeInfo::AttributeInfo</a>
+| <a href="dictionary_C.html#11941">ClassFile::GetU1</a>
+| <a href="dictionary_T.html#494">Tuple::Tuple</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+| <a href="dictionary_C.html#11976">ClassFile::GetU2</a>
+| <a href="dictionary_A.html#12287">Annotation::Annotation</a>
+| <a href="dictionary_T.html#505">Tuple::Next</a>
+| <a href="dictionary_A.html#12293">Annotation::Length</a>
+| <a href="dictionary_C.html#12012">ClassFile::MarkInvalid</a>
+
+<a href="dictionary_P.html#15365">ParameterAnnotationsAttribute::Print</a>
+| <a href="dictionary_A.html#237">assert</a>
+| <a href="dictionary_A.html#12163">AttributeInfo::PrintPrefix</a>
+| <a href="dictionary_A.html#12034">AttributeInfo::Tag</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+| <a href="dictionary_T.html#501">Tuple::Length</a>
+| <a href="dictionary_T.html#12170">Tuple::Print</a>
+
+<a href="dictionary_P.html#15363">ParameterAnnotationsAttribute::Put</a>
+| <a href="dictionary_A.html#15081">AttributeInfo::Put</a>
+| <a href="dictionary_O.html#14955">OutputBuffer::PutU1</a>
+| <a href="dictionary_O.html#12375">OutputBuffer::PutU2</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+| <a href="dictionary_T.html#501">Tuple::Length</a>
+| <a href="dictionary_T.html#12377">Tuple::Put</a>
+
+<a href="dictionary_P.html#15356">ParameterAnnotationsAttribute::~ParameterAnnotationsAttribute</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+| <a href="dictionary_T.html#501">Tuple::Length</a>
+| <a href="dictionary_T.html#522">Tuple::~Tuple</a><i>  (Virtual)</i>
+| <a href="dictionary_C.html#3209">ConvertibleArray::~ConvertibleArray</a><i>  (Virtual)</i>
+| <a href="dictionary_E.html#448">ErrorString::~ErrorString</a><i>  (Virtual)</i>
+| <a href="dictionary_C.html#14972">ConstantPool::~ConstantPool</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#15079">AttributeInfo::~AttributeInfo</a>
+
+<a href="dictionary_P.html#3575">ParseError::ParseError</a>
+| <a href="dictionary_T.html#494">Tuple::Tuple</a>
+
+<a href="dictionary_P.html#3613">ParseError::PrintMessage</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+| <a href="dictionary_T.html#3676">Tuple::Initialize</a>
+| <a href="dictionary_J.html#2490">JikesAPI::getInstance</a>
+| <a href="dictionary_J.html#2491">JikesAPI::reportError</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#3374">ParseError::PrintMessages</a>
+| <a href="dictionary_T.html#501">Tuple::Length</a>
+| <a href="dictionary_O.html#3660">Ostream::flush</a>
+| <a href="dictionary_L.html#2699">LexStream::FileName</a>
+| <a href="dictionary_L.html#3612">LexStream::RereadInput</a>
+| <a href="dictionary_S.html#2483">Stream::InputBuffer</a>
+| <a href="dictionary_L.html#3663">LexStream::FileNameLength</a>
+| <a href="dictionary_S.html#26">Semantic::ReportSemError</a>
+| <a href="dictionary_P.html#3584">ParseError::SortMessages</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+| <a href="dictionary_P.html#3613">ParseError::PrintMessage</a>
+| <a href="dictionary_L.html#2492">LexStream::DestroyInput</a>
+
+<a href="dictionary_P.html#3380">ParseError::Report</a>
+| <a href="dictionary_T.html#3514">Tuple::NextIndex</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+| <a href="dictionary_L.html#2249">Loc</a>
+| <a href="dictionary_L.html#3612">LexStream::RereadInput</a>
+| <a href="dictionary_P.html#3613">ParseError::PrintMessage</a>
+| <a href="dictionary_T.html#683">Tuple::Reset</a>
+
+<a href="dictionary_P.html#3584">ParseError::SortMessages</a>
+| <a href="dictionary_T.html#501">Tuple::Length</a>
+| <a href="dictionary_T.html#519">Tuple::operator[]</a>
+
+<a href="dictionary_P.html#3654">ParseErrorInfo::emacsErrorString</a>
+| <a href="dictionary_E.html#442">ErrorString::ErrorString</a>
+| <a href="dictionary_P.html#3637">ParseErrorInfo::getFileName</a><i>  (Virtual)</i>
+| <a href="dictionary_J.html#3658">JikesError::getSeverityString</a>
+| <a href="dictionary_P.html#3639">ParseErrorInfo::getErrorMessage</a><i>  (Virtual)</i>
+| <a href="dictionary_E.html#447">ErrorString::Array</a>
+| <a href="dictionary_E.html#448">ErrorString::~ErrorString</a>
+
+<a href="dictionary_P.html#3639">ParseErrorInfo::getErrorMessage</a>
+| <a href="dictionary_E.html#442">ErrorString::ErrorString</a>
+| <a href="dictionary_E.html#447">ErrorString::Array</a>
+| <a href="dictionary_E.html#448">ErrorString::~ErrorString</a>
+
+<a href="dictionary_P.html#3652">ParseErrorInfo::getErrorReport</a>
+| <a href="dictionary_P.html#3654">ParseErrorInfo::emacsErrorString</a>
+| <a href="dictionary_P.html#3655">ParseErrorInfo::regularErrorString</a>
+
+<a href="dictionary_P.html#3637">ParseErrorInfo::getFileName</a>
+| <a href="dictionary_A.html#237">assert</a>
+| <a href="dictionary_L.html#2699">LexStream::FileName</a>
+
+<a href="dictionary_P.html#3614">ParseErrorInfo::Initialize</a>
+| <a href="dictionary_L.html#3617">LexStream::Line</a>
+| <a href="dictionary_L.html#3619">LexStream::Column</a>
+| <a href="dictionary_L.html#3622">LexStream::RightColumn</a>
+
+<a href="dictionary_P.html#3655">ParseErrorInfo::regularErrorString</a>
+| <a href="dictionary_E.html#442">ErrorString::ErrorString</a>
+| <a href="dictionary_L.html#3657">LexStream::OutputSource</a>
+| <a href="dictionary_J.html#3658">JikesError::getSeverityString</a>
+| <a href="dictionary_P.html#3639">ParseErrorInfo::getErrorMessage</a><i>  (Virtual)</i>
+| <a href="dictionary_E.html#447">ErrorString::Array</a>
+| <a href="dictionary_E.html#448">ErrorString::~ErrorString</a>
+
+<a href="dictionary_P.html#4798">Parser::Act10</a>
+| <a href="dictionary_S.html#6782">StoragePool::NewNullLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4799">Parser::Act11</a>
+| <a href="dictionary_S.html#6774">StoragePool::NewTrueLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4800">Parser::Act12</a>
+| <a href="dictionary_S.html#6776">StoragePool::NewFalseLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4820">Parser::Act125</a>
+| <a href="dictionary_S.html#6722">StoragePool::NewVariableDeclarator</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4821">Parser::Act126</a>
+| <a href="dictionary_S.html#6722">StoragePool::NewVariableDeclarator</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4822">Parser::Act127</a>
+| <a href="dictionary_S.html#6721">StoragePool::NewVariableDeclaratorId</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4823">Parser::Act155</a>
+| <a href="dictionary_S.html#6726">StoragePool::NewMethodBody</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_A.html#1822">Ast::IsExplicitConstructorInvocation</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4801">Parser::Act16</a>
+| <a href="dictionary_S.html#6689">StoragePool::NewPrimitiveType</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4824">Parser::Act163</a>
+| <a href="dictionary_S.html#6732">StoragePool::NewThisCall</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4825">Parser::Act164</a>
+| <a href="dictionary_S.html#6732">StoragePool::NewThisCall</a>
+| <a href="dictionary_P.html#4732">Parser::MakeExplicitTypeArguments</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4826">Parser::Act165</a>
+| <a href="dictionary_S.html#6733">StoragePool::NewSuperCall</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4827">Parser::Act166</a>
+| <a href="dictionary_S.html#6733">StoragePool::NewSuperCall</a>
+| <a href="dictionary_P.html#4732">Parser::MakeExplicitTypeArguments</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4828">Parser::Act176</a>
+| <a href="dictionary_S.html#6736">StoragePool::NewEnumConstant</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4829">Parser::Act177</a>
+| <a href="dictionary_S.html#6729">StoragePool::NewArguments</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5920">AstArguments::AllocateArguments</a>
+| <a href="dictionary_A.html#5921">AstArguments::AddArgument</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4802">Parser::Act19</a>
+| <a href="dictionary_S.html#6689">StoragePool::NewPrimitiveType</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4830">Parser::Act195</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_M.html#15910">MarkStatic</a>
+
+<a href="dictionary_P.html#4803">Parser::Act20</a>
+| <a href="dictionary_S.html#6689">StoragePool::NewPrimitiveType</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4804">Parser::Act21</a>
+| <a href="dictionary_S.html#6689">StoragePool::NewPrimitiveType</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4831">Parser::Act215</a>
+| <a href="dictionary_S.html#6686">StoragePool::NewBlock</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4805">Parser::Act22</a>
+| <a href="dictionary_S.html#6689">StoragePool::NewPrimitiveType</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4832">Parser::Act222</a>
+| <a href="dictionary_S.html#6742">StoragePool::NewLocalClassStatement</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4833">Parser::Act223</a>
+| <a href="dictionary_S.html#6742">StoragePool::NewLocalClassStatement</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4834">Parser::Act225</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4806">Parser::Act23</a>
+| <a href="dictionary_S.html#6689">StoragePool::NewPrimitiveType</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4807">Parser::Act24</a>
+| <a href="dictionary_S.html#6689">StoragePool::NewPrimitiveType</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4808">Parser::Act25</a>
+| <a href="dictionary_S.html#6689">StoragePool::NewPrimitiveType</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4835">Parser::Act253</a>
+| <a href="dictionary_S.html#6747">StoragePool::NewEmptyStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4836">Parser::Act256</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4809">Parser::Act26</a>
+| <a href="dictionary_S.html#6689">StoragePool::NewPrimitiveType</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4837">Parser::Act267</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4838">Parser::Act268</a>
+| <a href="dictionary_S.html#6752">StoragePool::NewSwitchStatement</a>
+| <a href="dictionary_S.html#6686">StoragePool::NewBlock</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+| <a href="dictionary_P.html#4734">Parser::MakeSwitchBlockStatement</a>
+| <a href="dictionary_A.html#5393">AstBlock::SetTag</a>
+
+<a href="dictionary_P.html#4839">Parser::Act269</a>
+| <a href="dictionary_S.html#6752">StoragePool::NewSwitchStatement</a>
+| <a href="dictionary_S.html#6686">StoragePool::NewBlock</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_P.html#4734">Parser::MakeSwitchBlockStatement</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5393">AstBlock::SetTag</a>
+
+<a href="dictionary_P.html#4840">Parser::Act272</a>
+| <a href="dictionary_P.html#4734">Parser::MakeSwitchBlockStatement</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4841">Parser::Act281</a>
+| <a href="dictionary_S.html#6754">StoragePool::NewDoStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#4733">Parser::MakeBlock</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_S.html#6812">StoragePool::GenBlock</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+
+<a href="dictionary_P.html#4842">Parser::Act297</a>
+| <a href="dictionary_S.html#6757">StoragePool::NewBreakStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4843">Parser::Act298</a>
+| <a href="dictionary_S.html#6758">StoragePool::NewContinueStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4844">Parser::Act299</a>
+| <a href="dictionary_S.html#6759">StoragePool::NewReturnStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4792">Parser::Act3</a>
+| <a href="dictionary_S.html#6766">StoragePool::NewIntegerLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4845">Parser::Act300</a>
+| <a href="dictionary_S.html#6760">StoragePool::NewThrowStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4846">Parser::Act301</a>
+| <a href="dictionary_S.html#6761">StoragePool::NewSynchronizedStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5393">AstBlock::SetTag</a>
+
+<a href="dictionary_P.html#4847">Parser::Act308</a>
+| <a href="dictionary_S.html#6763">StoragePool::NewCatchClause</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4848">Parser::Act309</a>
+| <a href="dictionary_S.html#6764">StoragePool::NewFinallyClause</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5393">AstBlock::SetTag</a>
+
+<a href="dictionary_P.html#4810">Parser::Act31</a>
+| <a href="dictionary_S.html#6703">StoragePool::NewTypeName</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4849">Parser::Act314</a>
+| <a href="dictionary_S.html#6786">StoragePool::NewThisExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4850">Parser::Act319</a>
+| <a href="dictionary_S.html#6786">StoragePool::NewThisExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_S.html#6703">StoragePool::NewTypeName</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4811">Parser::Act32</a>
+| <a href="dictionary_S.html#6703">StoragePool::NewTypeName</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+
+<a href="dictionary_P.html#4851">Parser::Act326</a>
+| <a href="dictionary_S.html#6791">StoragePool::NewClassCreationExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5528">AstTypeName::IdentifierToken</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#4852">Parser::Act327</a>
+| <a href="dictionary_S.html#6791">StoragePool::NewClassCreationExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#4732">Parser::MakeExplicitTypeArguments</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5528">AstTypeName::IdentifierToken</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#4853">Parser::Act340</a>
+| <a href="dictionary_S.html#6792">StoragePool::NewDimExpr</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4854">Parser::Act341</a>
+| <a href="dictionary_S.html#6692">StoragePool::NewBrackets</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4855">Parser::Act342</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4856">Parser::Act345</a>
+| <a href="dictionary_S.html#6788">StoragePool::NewSuperExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4857">Parser::Act346</a>
+| <a href="dictionary_S.html#6788">StoragePool::NewSuperExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_S.html#6703">StoragePool::NewTypeName</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4858">Parser::Act349</a>
+| <a href="dictionary_S.html#6795">StoragePool::NewMethodInvocation</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4812">Parser::Act35</a>
+| <a href="dictionary_S.html#6703">StoragePool::NewTypeName</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+| <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+
+<a href="dictionary_P.html#4813">Parser::Act36</a>
+| <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+
+<a href="dictionary_P.html#4859">Parser::Act366</a>
+| <a href="dictionary_S.html#6798">StoragePool::NewPostUnaryExpression</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4860">Parser::Act367</a>
+| <a href="dictionary_S.html#6798">StoragePool::NewPostUnaryExpression</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4814">Parser::Act37</a>
+| <a href="dictionary_P.html#4729">Parser::MakeSimpleName</a>
+
+<a href="dictionary_P.html#4815">Parser::Act38</a>
+| <a href="dictionary_S.html#6687">StoragePool::NewName</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4861">Parser::Act391</a>
+| <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4735">Parser::MakeCastExpression</a>
+| <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+
+<a href="dictionary_P.html#4862">Parser::Act392</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+| <a href="dictionary_P.html#4735">Parser::MakeCastExpression</a>
+| <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+
+<a href="dictionary_P.html#4793">Parser::Act4</a>
+| <a href="dictionary_S.html#6768">StoragePool::NewLongLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4816">Parser::Act41</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4745">Parser::MakeCompilationUnit</a>
+
+<a href="dictionary_P.html#4863">Parser::Act482</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_S.html#6807">StoragePool::NewAssignmentExpression</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4794">Parser::Act5</a>
+| <a href="dictionary_S.html#6770">StoragePool::NewFloatLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4864">Parser::Act504</a>
+| <a href="dictionary_L.html#2216">LexStream::Reset</a>
+| <a href="dictionary_L.html#2220">LexStream::NumTokens</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4865">Parser::Act505</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_L.html#2216">LexStream::Reset</a>
+| <a href="dictionary_L.html#15995">LexStream::MatchingBrace</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4795">Parser::Act6</a>
+| <a href="dictionary_S.html#6772">StoragePool::NewDoubleLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4817">Parser::Act64</a>
+| <a href="dictionary_S.html#6713">StoragePool::NewEmptyDeclaration</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4796">Parser::Act8</a>
+| <a href="dictionary_S.html#6780">StoragePool::NewCharacterLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4818">Parser::Act89</a>
+| <a href="dictionary_S.html#6705">StoragePool::NewMemberValuePair</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4797">Parser::Act9</a>
+| <a href="dictionary_S.html#6778">StoragePool::NewStringLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4819">Parser::Act98</a>
+| <a href="dictionary_S.html#6705">StoragePool::NewMemberValuePair</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#2202">Parser::AllocateListNode</a>
+| <a href="dictionary_P.html#4749">Parser::MakeAnnotation</a>
+
+<a href="dictionary_P.html#4741">Parser::AddList2</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#2202">Parser::AllocateListNode</a>
+
+<a href="dictionary_P.html#4742">Parser::AddList3</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#2202">Parser::AllocateListNode</a>
+
+<a href="dictionary_P.html#2202">Parser::AllocateListNode</a>
+| <a href="dictionary_S.html#2208">StoragePool::NewListNode</a>
+
+<a href="dictionary_P.html#4736">Parser::BadAction</a>
+| <a href="dictionary_A.html#237">assert</a>
+
+<a href="dictionary_P.html#2267">Parser::Body</a>
+| <a href="dictionary_A.html#755">AstClassBody::NumConstructors</a>
+| <a href="dictionary_A.html#765">AstClassBody::Constructor</a>
+| <a href="dictionary_P.html#2275">Parser::ParseSegment</a>
+| <a href="dictionary_A.html#781">AstClassBody::NumMethods</a>
+| <a href="dictionary_A.html#783">AstClassBody::Method</a>
+| <a href="dictionary_A.html#789">AstClassBody::NumNestedClasses</a>
+| <a href="dictionary_P.html#2267">Parser::Body</a>
+| <a href="dictionary_A.html#792">AstClassBody::NestedClass</a>
+| <a href="dictionary_A.html#793">AstClassBody::NumNestedInterfaces</a>
+| <a href="dictionary_A.html#796">AstClassBody::NestedInterface</a>
+
+<a href="dictionary_P.html#2261">Parser::BodyParse</a>
+| <a href="dictionary_A.html#237">assert</a>
+| <a href="dictionary_A.html#2264">Ast::UnparsedClassBodyCast</a>
+| <a href="dictionary_S.html#2219">StoragePool::StoragePool</a>
+| <a href="dictionary_L.html#2220">LexStream::NumTokens</a>
+| <a href="dictionary_P.html#2267">Parser::Body</a>
+| <a href="dictionary_S.html#2231">StoragePool::~StoragePool</a>
+| <a href="dictionary_A.html#2268">AstClassBody::MarkParsed</a>
+
+<a href="dictionary_P.html#2301">Parser::ErrorRepair</a>
+| <a href="dictionary_L.html#2313">LexStream::Previous</a>
+| <a href="dictionary_L.html#2316">LexStream::Next</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_P.html#2320">Parser::ErrorSurgery</a>
+| <a href="dictionary_L.html#2216">LexStream::Reset</a>
+
+<a href="dictionary_P.html#2320">Parser::ErrorSurgery</a>
+| <a href="dictionary_L.html#2249">Loc</a>
+| <a href="dictionary_P.html#2333">Parser::ParseCheck</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+
+<a href="dictionary_P.html#2227">Parser::HeaderParse</a>
+| <a href="dictionary_L.html#2216">LexStream::Reset</a>
+| <a href="dictionary_S.html#2219">StoragePool::StoragePool</a>
+| <a href="dictionary_L.html#2220">LexStream::NumTokens</a>
+| <a href="dictionary_P.html#2227">Parser::HeaderParse</a>
+| <a href="dictionary_A.html#2229">Ast::CompilationUnitCast</a>
+| <a href="dictionary_A.html#739">Ast::BadCompilationUnitCast</a>
+| <a href="dictionary_A.html#2238">AstCompilationUnit::NumTypeDeclarations</a>
+| <a href="dictionary_A.html#2239">AstCompilationUnit::MarkEmpty</a>
+| <a href="dictionary_S.html#2231">StoragePool::~StoragePool</a>
+
+<a href="dictionary_P.html#2240">Parser::HeaderParse</a>
+| <a href="dictionary_L.html#2243">LexStream::Gettoken</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_P.html#2184">Parser::ReallocateStacks</a>
+| <a href="dictionary_L.html#2249">Loc</a>
+| <a href="dictionary_J.html#2251">javaprs_table::t_action</a>
+| <a href="dictionary_J.html#2257">javaprs_table::nt_action</a>
+| <a href="dictionary_P.html#2259">Parser::RepairParse</a>
+| <a href="dictionary_A.html#2229">Ast::CompilationUnitCast</a>
+| <a href="dictionary_A.html#2260">AstCompilationUnit::MarkBad</a>
+
+<a href="dictionary_P.html#2284">Parser::Initializer</a>
+| <a href="dictionary_A.html#2288">AstClassBody::NumStaticInitializers</a>
+| <a href="dictionary_A.html#2290">AstClassBody::StaticInitializer</a>
+| <a href="dictionary_P.html#2275">Parser::ParseSegment</a>
+| <a href="dictionary_A.html#2292">AstClassBody::NumInstanceInitializers</a>
+| <a href="dictionary_A.html#2294">AstClassBody::InstanceInitializer</a>
+| <a href="dictionary_A.html#789">AstClassBody::NumNestedClasses</a>
+| <a href="dictionary_P.html#2284">Parser::Initializer</a>
+| <a href="dictionary_A.html#792">AstClassBody::NestedClass</a>
+| <a href="dictionary_A.html#793">AstClassBody::NumNestedInterfaces</a>
+| <a href="dictionary_A.html#796">AstClassBody::NestedInterface</a>
+
+<a href="dictionary_P.html#2280">Parser::InitializerParse</a>
+| <a href="dictionary_S.html#2219">StoragePool::StoragePool</a>
+| <a href="dictionary_L.html#2220">LexStream::NumTokens</a>
+| <a href="dictionary_P.html#2284">Parser::Initializer</a>
+| <a href="dictionary_S.html#2231">StoragePool::~StoragePool</a>
+
+<a href="dictionary_P.html#4749">Parser::MakeAnnotation</a>
+| <a href="dictionary_S.html#6706">StoragePool::NewAnnotation</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5548">AstAnnotation::AllocateMemberValuePairs</a>
+| <a href="dictionary_A.html#5549">AstAnnotation::AddMemberValuePair</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4764">Parser::MakeAnnotationTypeDeclaration</a>
+| <a href="dictionary_S.html#6739">StoragePool::NewAnnotationDeclaration</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4765">Parser::MakeAnnotationTypeMemberDeclaration</a>
+| <a href="dictionary_S.html#6727">StoragePool::NewMethodDeclaration</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_S.html#6725">StoragePool::NewMethodDeclarator</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4783">Parser::MakeArrayAccess</a>
+| <a href="dictionary_S.html#6797">StoragePool::NewArrayAccess</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4780">Parser::MakeArrayCreationInitialized</a>
+| <a href="dictionary_S.html#6793">StoragePool::NewArrayCreationExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4779">Parser::MakeArrayCreationUninitialized</a>
+| <a href="dictionary_S.html#6793">StoragePool::NewArrayCreationExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#6499">AstArrayCreationExpression::AllocateDimExprs</a>
+| <a href="dictionary_A.html#6500">AstArrayCreationExpression::AddDimExpr</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4750">Parser::MakeArrayInitializer</a>
+| <a href="dictionary_S.html#6720">StoragePool::NewArrayInitializer</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5784">AstArrayInitializer::AllocateVariableInitializers</a>
+| <a href="dictionary_A.html#5785">AstArrayInitializer::AddVariableInitializer</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5184">Ast::NameCast</a>
+| <a href="dictionary_S.html#6703">StoragePool::NewTypeName</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_S.html#6695">StoragePool::NewArrayType</a>
+
+<a href="dictionary_P.html#4744">Parser::MakeArrayType</a>
+| <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4774">Parser::MakeAssertStatement</a>
+| <a href="dictionary_S.html#6762">StoragePool::NewAssertStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4786">Parser::MakeBinaryExpression</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_S.html#6803">StoragePool::NewBinaryExpression</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4733">Parser::MakeBlock</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5183">Ast::BlockCast</a>
+| <a href="dictionary_S.html#6812">StoragePool::GenBlock</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#33">Ast::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5314">AstListNode::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5407">AstBlock::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5441">AstName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5453">AstPrimitiveType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5468">AstBrackets::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5480">AstArrayType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5495">AstWildcard::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5514">AstTypeArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5527">AstTypeName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5540">AstMemberValuePair::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5556">AstAnnotation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5567">AstModifierKeyword::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5584">AstModifiers::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5594">AstPackageDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5607">AstImportDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5632">AstCompilationUnit::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5643">AstEmptyDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5721">AstClassBody::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5739">AstTypeParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5756">AstTypeParameters::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5772">AstClassDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5792">AstArrayInitializer::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5802">AstVariableDeclaratorId::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5812">AstVariableDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5832">AstFieldDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#511">AstFormalParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5861">AstMethodDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5894">AstMethodDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5910">AstInitializerDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5932">AstArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#616">AstThisCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#642">AstSuperCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5967">AstConstructorDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5990">AstEnumDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6003">AstEnumConstant::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6019">AstInterfaceDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6030">AstAnnotationDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6045">AstLocalVariableStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6059">AstLocalClassStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6069">AstIfStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6089">AstEmptyStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6098">AstExpressionStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6121">AstSwitchLabel::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6155">AstSwitchStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6165">AstWhileStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6177">AstDoStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6197">AstForStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6208">AstForeachStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6220">AstBreakStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6232">AstContinueStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6242">AstReturnStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6260">AstThrowStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6270">AstSynchronizedStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6284">AstAssertStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6294">AstCatchClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6304">AstFinallyClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6320">AstTryStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6331">AstIntegerLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6342">AstLongLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6353">AstFloatLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6364">AstDoubleLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6375">AstTrueLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6386">AstFalseLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6397">AstStringLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6408">AstCharacterLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6419">AstNullLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6431">AstClassLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6443">AstThisExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6455">AstSuperExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6466">AstParenthesizedExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6478">AstClassCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6491">AstDimExpr::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6508">AstArrayCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6519">AstFieldAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6538">AstMethodInvocation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6549">AstArrayAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6567">AstPostUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6581">AstPreUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6593">AstCastExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6609">AstBinaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6620">AstInstanceofExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6631">AstConditionalExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6663">AstAssignmentExpression::RightToken</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#4735">Parser::MakeCastExpression</a>
+| <a href="dictionary_S.html#6802">StoragePool::NewCastExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4785">Parser::MakeCastExpression</a>
+| <a href="dictionary_P.html#4735">Parser::MakeCastExpression</a>
+| <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+
+<a href="dictionary_P.html#4752">Parser::MakeClassBody</a>
+| <a href="dictionary_S.html#6715">StoragePool::NewClassBody</a>
+| <a href="dictionary_A.html#5666">AstClassBody::MarkUnparsed</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5668">AstClassBody::AllocateClassBodyDeclarations</a>
+| <a href="dictionary_A.html#5201">Ast::FieldDeclarationCast</a>
+| <a href="dictionary_A.html#5206">Ast::InitializerDeclarationCast</a>
+| <a href="dictionary_A.html#5823">AstFieldDeclaration::MarkStatic</a>
+| <a href="dictionary_A.html#5179">Ast::StaticFieldCast</a>
+| <a href="dictionary_A.html#5205">Ast::MethodDeclarationCast</a>
+| <a href="dictionary_A.html#5208">Ast::ConstructorDeclarationCast</a>
+| <a href="dictionary_A.html#5903">AstInitializerDeclaration::MarkStatic</a>
+| <a href="dictionary_A.html#4883">Ast::ClassDeclarationCast</a>
+| <a href="dictionary_A.html#4885">Ast::EnumDeclarationCast</a>
+| <a href="dictionary_A.html#4887">Ast::InterfaceDeclarationCast</a>
+| <a href="dictionary_A.html#4889">Ast::AnnotationDeclarationCast</a>
+| <a href="dictionary_A.html#5673">AstClassBody::AllocateInstanceVariables</a>
+| <a href="dictionary_A.html#5678">AstClassBody::AllocateClassVariables</a>
+| <a href="dictionary_A.html#5681">AstClassBody::AllocateMethods</a>
+| <a href="dictionary_A.html#5684">AstClassBody::AllocateConstructors</a>
+| <a href="dictionary_A.html#5687">AstClassBody::AllocateStaticInitializers</a>
+| <a href="dictionary_A.html#5690">AstClassBody::AllocateInstanceInitializers</a>
+| <a href="dictionary_A.html#5693">AstClassBody::AllocateNestedClasses</a>
+| <a href="dictionary_A.html#5698">AstClassBody::AllocateNestedEnums</a>
+| <a href="dictionary_A.html#5701">AstClassBody::AllocateNestedInterfaces</a>
+| <a href="dictionary_A.html#5706">AstClassBody::AllocateNestedAnnotations</a>
+| <a href="dictionary_A.html#5711">AstClassBody::AllocateEmptyDeclarations</a>
+| <a href="dictionary_A.html#5669">AstClassBody::AddClassBodyDeclaration</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4751">Parser::MakeClassDeclaration</a>
+| <a href="dictionary_S.html#6719">StoragePool::NewClassDeclaration</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#4731">Parser::MakeTypeParameters</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5765">AstClassDeclaration::AllocateInterfaces</a>
+| <a href="dictionary_A.html#5766">AstClassDeclaration::AddInterface</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4777">Parser::MakeClassLiteral</a>
+| <a href="dictionary_S.html#6784">StoragePool::NewClassLiteral</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+
+<a href="dictionary_P.html#4745">Parser::MakeCompilationUnit</a>
+| <a href="dictionary_S.html#6712">StoragePool::NewCompilationUnit</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5621">AstCompilationUnit::AllocateImportDeclarations</a>
+| <a href="dictionary_A.html#5622">AstCompilationUnit::AddImportDeclaration</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+| <a href="dictionary_A.html#5624">AstCompilationUnit::AllocateTypeDeclarations</a>
+| <a href="dictionary_A.html#5625">AstCompilationUnit::AddTypeDeclaration</a>
+
+<a href="dictionary_P.html#4788">Parser::MakeConditionalExpression</a>
+| <a href="dictionary_S.html#6806">StoragePool::NewConditionalExpression</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4759">Parser::MakeConstructorDeclaration</a>
+| <a href="dictionary_S.html#6734">StoragePool::NewConstructorDeclaration</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_P.html#4731">Parser::MakeTypeParameters</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5960">AstConstructorDeclaration::AllocateThrows</a>
+| <a href="dictionary_A.html#5961">AstConstructorDeclaration::AddThrow</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4762">Parser::MakeEnumBody</a>
+| <a href="dictionary_S.html#6735">StoragePool::NewEnumDeclaration</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5983">AstEnumDeclaration::AllocateEnumConstants</a>
+| <a href="dictionary_A.html#5984">AstEnumDeclaration::AddEnumConstant</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+| <a href="dictionary_S.html#6715">StoragePool::NewClassBody</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4761">Parser::MakeEnumDeclaration</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_A.html#5980">AstEnumDeclaration::AllocateInterfaces</a>
+| <a href="dictionary_A.html#5981">AstEnumDeclaration::AddInterface</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4732">Parser::MakeExplicitTypeArguments</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_S.html#6700">StoragePool::NewTypeArguments</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5506">AstTypeArguments::AllocateTypeArguments</a>
+| <a href="dictionary_A.html#5507">AstTypeArguments::AddTypeArgument</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4768">Parser::MakeExpressionStatement</a>
+| <a href="dictionary_S.html#6749">StoragePool::NewExpressionStatement</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4781">Parser::MakeFieldAccess</a>
+| <a href="dictionary_S.html#6794">StoragePool::NewFieldAccess</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4754">Parser::MakeFieldDeclaration</a>
+| <a href="dictionary_S.html#6723">StoragePool::NewFieldDeclaration</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5825">AstFieldDeclaration::AllocateVariableDeclarators</a>
+| <a href="dictionary_A.html#5826">AstFieldDeclaration::AddVariableDeclarator</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4773">Parser::MakeForeachStatement</a>
+| <a href="dictionary_S.html#6756">StoragePool::NewForeachStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4733">Parser::MakeBlock</a>
+| <a href="dictionary_S.html#6686">StoragePool::NewBlock</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_A.html#33">Ast::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5314">AstListNode::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5407">AstBlock::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5441">AstName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5453">AstPrimitiveType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5468">AstBrackets::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5480">AstArrayType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5495">AstWildcard::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5514">AstTypeArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5527">AstTypeName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5540">AstMemberValuePair::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5556">AstAnnotation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5567">AstModifierKeyword::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5584">AstModifiers::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5594">AstPackageDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5607">AstImportDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5632">AstCompilationUnit::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5643">AstEmptyDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5721">AstClassBody::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5739">AstTypeParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5756">AstTypeParameters::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5772">AstClassDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5792">AstArrayInitializer::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5802">AstVariableDeclaratorId::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5812">AstVariableDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5832">AstFieldDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#511">AstFormalParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5861">AstMethodDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5894">AstMethodDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5910">AstInitializerDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5932">AstArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#616">AstThisCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#642">AstSuperCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5967">AstConstructorDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5990">AstEnumDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6003">AstEnumConstant::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6019">AstInterfaceDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6030">AstAnnotationDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6045">AstLocalVariableStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6059">AstLocalClassStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6069">AstIfStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6089">AstEmptyStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6098">AstExpressionStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6121">AstSwitchLabel::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6155">AstSwitchStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6165">AstWhileStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6177">AstDoStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6197">AstForStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6208">AstForeachStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6220">AstBreakStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6232">AstContinueStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6242">AstReturnStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6260">AstThrowStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6270">AstSynchronizedStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6284">AstAssertStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6294">AstCatchClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6304">AstFinallyClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6320">AstTryStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6331">AstIntegerLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6342">AstLongLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6353">AstFloatLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6364">AstDoubleLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6375">AstTrueLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6386">AstFalseLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6397">AstStringLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6408">AstCharacterLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6419">AstNullLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6431">AstClassLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6443">AstThisExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6455">AstSuperExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6466">AstParenthesizedExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6478">AstClassCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6491">AstDimExpr::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6508">AstArrayCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6519">AstFieldAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6538">AstMethodInvocation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6549">AstArrayAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6567">AstPostUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6581">AstPreUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6593">AstCastExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6609">AstBinaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6620">AstInstanceofExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6631">AstConditionalExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6663">AstAssignmentExpression::RightToken</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#4757">Parser::MakeFormalParameter</a>
+| <a href="dictionary_S.html#6724">StoragePool::NewFormalParameter</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_S.html#6722">StoragePool::NewVariableDeclarator</a>
+
+<a href="dictionary_P.html#4772">Parser::MakeForStatement</a>
+| <a href="dictionary_S.html#6755">StoragePool::NewForStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#6186">AstForStatement::AllocateForInitStatements</a>
+| <a href="dictionary_A.html#6187">AstForStatement::AddForInitStatement</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+| <a href="dictionary_A.html#6189">AstForStatement::AllocateForUpdateStatements</a>
+| <a href="dictionary_A.html#6190">AstForStatement::AddForUpdateStatement</a>
+| <a href="dictionary_P.html#4733">Parser::MakeBlock</a>
+| <a href="dictionary_S.html#6686">StoragePool::NewBlock</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_A.html#33">Ast::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5314">AstListNode::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5407">AstBlock::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5441">AstName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5453">AstPrimitiveType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5468">AstBrackets::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5480">AstArrayType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5495">AstWildcard::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5514">AstTypeArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5527">AstTypeName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5540">AstMemberValuePair::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5556">AstAnnotation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5567">AstModifierKeyword::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5584">AstModifiers::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5594">AstPackageDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5607">AstImportDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5632">AstCompilationUnit::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5643">AstEmptyDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5721">AstClassBody::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5739">AstTypeParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5756">AstTypeParameters::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5772">AstClassDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5792">AstArrayInitializer::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5802">AstVariableDeclaratorId::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5812">AstVariableDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5832">AstFieldDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#511">AstFormalParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5861">AstMethodDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5894">AstMethodDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5910">AstInitializerDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5932">AstArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#616">AstThisCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#642">AstSuperCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5967">AstConstructorDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5990">AstEnumDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6003">AstEnumConstant::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6019">AstInterfaceDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6030">AstAnnotationDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6045">AstLocalVariableStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6059">AstLocalClassStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6069">AstIfStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6089">AstEmptyStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6098">AstExpressionStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6121">AstSwitchLabel::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6155">AstSwitchStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6165">AstWhileStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6177">AstDoStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6197">AstForStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6208">AstForeachStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6220">AstBreakStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6232">AstContinueStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6242">AstReturnStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6260">AstThrowStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6270">AstSynchronizedStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6284">AstAssertStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6294">AstCatchClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6304">AstFinallyClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6320">AstTryStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6331">AstIntegerLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6342">AstLongLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6353">AstFloatLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6364">AstDoubleLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6375">AstTrueLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6386">AstFalseLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6397">AstStringLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6408">AstCharacterLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6419">AstNullLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6431">AstClassLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6443">AstThisExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6455">AstSuperExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6466">AstParenthesizedExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6478">AstClassCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6491">AstDimExpr::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6508">AstArrayCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6519">AstFieldAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6538">AstMethodInvocation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6549">AstArrayAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6567">AstPostUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6581">AstPreUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6593">AstCastExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6609">AstBinaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6620">AstInstanceofExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6631">AstConditionalExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6663">AstAssignmentExpression::RightToken</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#4769">Parser::MakeIfThenElseStatement</a>
+| <a href="dictionary_S.html#6746">StoragePool::NewIfStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4733">Parser::MakeBlock</a>
+
+<a href="dictionary_P.html#4747">Parser::MakeImportDeclaration</a>
+| <a href="dictionary_S.html#6711">StoragePool::NewImportDeclaration</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4758">Parser::MakeInitializerDeclaration</a>
+| <a href="dictionary_S.html#6728">StoragePool::NewInitializerDeclaration</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4787">Parser::MakeInstanceofExpression</a>
+| <a href="dictionary_S.html#6805">StoragePool::NewInstanceofExpression</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4763">Parser::MakeInterfaceDeclaration</a>
+| <a href="dictionary_S.html#6738">StoragePool::NewInterfaceDeclaration</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#4731">Parser::MakeTypeParameters</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#6012">AstInterfaceDeclaration::AllocateInterfaces</a>
+| <a href="dictionary_A.html#6013">AstInterfaceDeclaration::AddInterface</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4767">Parser::MakeLabeledStatement</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5183">Ast::BlockCast</a>
+| <a href="dictionary_S.html#6812">StoragePool::GenBlock</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#33">Ast::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5314">AstListNode::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5407">AstBlock::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5441">AstName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5453">AstPrimitiveType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5468">AstBrackets::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5480">AstArrayType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5495">AstWildcard::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5514">AstTypeArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5527">AstTypeName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5540">AstMemberValuePair::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5556">AstAnnotation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5567">AstModifierKeyword::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5584">AstModifiers::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5594">AstPackageDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5607">AstImportDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5632">AstCompilationUnit::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5643">AstEmptyDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5721">AstClassBody::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5739">AstTypeParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5756">AstTypeParameters::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5772">AstClassDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5792">AstArrayInitializer::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5802">AstVariableDeclaratorId::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5812">AstVariableDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5832">AstFieldDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#511">AstFormalParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5861">AstMethodDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5894">AstMethodDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5910">AstInitializerDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5932">AstArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#616">AstThisCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#642">AstSuperCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5967">AstConstructorDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5990">AstEnumDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6003">AstEnumConstant::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6019">AstInterfaceDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6030">AstAnnotationDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6045">AstLocalVariableStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6059">AstLocalClassStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6069">AstIfStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6089">AstEmptyStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6098">AstExpressionStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6121">AstSwitchLabel::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6155">AstSwitchStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6165">AstWhileStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6177">AstDoStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6197">AstForStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6208">AstForeachStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6220">AstBreakStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6232">AstContinueStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6242">AstReturnStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6260">AstThrowStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6270">AstSynchronizedStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6284">AstAssertStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6294">AstCatchClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6304">AstFinallyClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6320">AstTryStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6331">AstIntegerLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6342">AstLongLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6353">AstFloatLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6364">AstDoubleLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6375">AstTrueLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6386">AstFalseLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6397">AstStringLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6408">AstCharacterLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6419">AstNullLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6431">AstClassLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6443">AstThisExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6455">AstSuperExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6466">AstParenthesizedExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6478">AstClassCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6491">AstDimExpr::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6508">AstArrayCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6519">AstFieldAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6538">AstMethodInvocation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6549">AstArrayAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6567">AstPostUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6581">AstPreUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6593">AstCastExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6609">AstBinaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6620">AstInstanceofExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6631">AstConditionalExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6663">AstAssignmentExpression::RightToken</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#4766">Parser::MakeLocalVariable</a>
+| <a href="dictionary_S.html#6741">StoragePool::NewLocalVariableStatement</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#6037">AstLocalVariableStatement::AllocateVariableDeclarators</a>
+| <a href="dictionary_A.html#6038">AstLocalVariableStatement::AddVariableDeclarator</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4753">Parser::MakeMethodDeclaration</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4756">Parser::MakeMethodDeclarator</a>
+| <a href="dictionary_S.html#6725">StoragePool::NewMethodDeclarator</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5852">AstMethodDeclarator::AllocateFormalParameters</a>
+| <a href="dictionary_A.html#5853">AstMethodDeclarator::AddFormalParameter</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4755">Parser::MakeMethodHeader</a>
+| <a href="dictionary_S.html#6727">StoragePool::NewMethodDeclaration</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_P.html#4731">Parser::MakeTypeParameters</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5886">AstMethodDeclaration::AllocateThrows</a>
+| <a href="dictionary_A.html#5887">AstMethodDeclaration::AddThrow</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4782">Parser::MakeMethodInvocation</a>
+| <a href="dictionary_S.html#6795">StoragePool::NewMethodInvocation</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4732">Parser::MakeExplicitTypeArguments</a>
+
+<a href="dictionary_P.html#4748">Parser::MakeModifier</a>
+| <a href="dictionary_S.html#6707">StoragePool::NewModifierKeyword</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_S.html#6709">StoragePool::NewModifiers</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5575">AstModifiers::AllocateModifiers</a>
+| <a href="dictionary_A.html#2785">Ast::ModifierKeywordCast</a>
+| <a href="dictionary_A.html#5576">AstModifiers::AddModifier</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4746">Parser::MakePackageDeclaration</a>
+| <a href="dictionary_S.html#6710">StoragePool::NewPackageDeclaration</a>
+| <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4776">Parser::MakeParenthesizedExpression</a>
+| <a href="dictionary_S.html#6790">StoragePool::NewParenthesizedExpression</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4784">Parser::MakePreUnaryExpression</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_S.html#6800">StoragePool::NewPreUnaryExpression</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4778">Parser::MakeQualifiedNew</a>
+| <a href="dictionary_S.html#6791">StoragePool::NewClassCreationExpression</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#4732">Parser::MakeExplicitTypeArguments</a>
+| <a href="dictionary_S.html#6703">StoragePool::NewTypeName</a>
+| <a href="dictionary_P.html#4729">Parser::MakeSimpleName</a>
+
+<a href="dictionary_P.html#4760">Parser::MakeQualifiedSuper</a>
+| <a href="dictionary_S.html#6733">StoragePool::NewSuperCall</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4732">Parser::MakeExplicitTypeArguments</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4729">Parser::MakeSimpleName</a>
+| <a href="dictionary_S.html#6687">StoragePool::NewName</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4734">Parser::MakeSwitchBlockStatement</a>
+| <a href="dictionary_S.html#6751">StoragePool::NewSwitchBlockStatement</a>
+| <a href="dictionary_A.html#237">assert</a>
+| <a href="dictionary_A.html#6127">AstSwitchBlockStatement::AllocateSwitchLabels</a>
+| <a href="dictionary_A.html#6128">AstSwitchBlockStatement::AddSwitchLabel</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_S.html#6870">StoragePool::GenEmptyStatement</a>
+| <a href="dictionary_A.html#5314">AstListNode::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#17">AstBlock::Statement</a>
+| <a href="dictionary_A.html#12">AstBlock::NumStatements</a>
+| <a href="dictionary_A.html#33">Ast::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5314">AstListNode::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5407">AstBlock::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5441">AstName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5453">AstPrimitiveType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5468">AstBrackets::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5480">AstArrayType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5495">AstWildcard::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5514">AstTypeArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5527">AstTypeName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5540">AstMemberValuePair::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5556">AstAnnotation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5567">AstModifierKeyword::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5584">AstModifiers::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5594">AstPackageDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5607">AstImportDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5632">AstCompilationUnit::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5643">AstEmptyDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5721">AstClassBody::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5739">AstTypeParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5756">AstTypeParameters::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5772">AstClassDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5792">AstArrayInitializer::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5802">AstVariableDeclaratorId::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5812">AstVariableDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5832">AstFieldDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#511">AstFormalParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5861">AstMethodDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5894">AstMethodDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5910">AstInitializerDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5932">AstArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#616">AstThisCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#642">AstSuperCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5967">AstConstructorDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5990">AstEnumDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6003">AstEnumConstant::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6019">AstInterfaceDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6030">AstAnnotationDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6045">AstLocalVariableStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6059">AstLocalClassStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6069">AstIfStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6089">AstEmptyStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6098">AstExpressionStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6121">AstSwitchLabel::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6155">AstSwitchStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6165">AstWhileStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6177">AstDoStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6197">AstForStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6208">AstForeachStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6220">AstBreakStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6232">AstContinueStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6242">AstReturnStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6260">AstThrowStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6270">AstSynchronizedStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6284">AstAssertStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6294">AstCatchClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6304">AstFinallyClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6320">AstTryStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6331">AstIntegerLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6342">AstLongLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6353">AstFloatLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6364">AstDoubleLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6375">AstTrueLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6386">AstFalseLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6397">AstStringLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6408">AstCharacterLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6419">AstNullLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6431">AstClassLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6443">AstThisExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6455">AstSuperExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6466">AstParenthesizedExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6478">AstClassCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6491">AstDimExpr::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6508">AstArrayCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6519">AstFieldAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6538">AstMethodInvocation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6549">AstArrayAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6567">AstPostUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6581">AstPreUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6593">AstCastExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6609">AstBinaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6620">AstInstanceofExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6631">AstConditionalExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6663">AstAssignmentExpression::RightToken</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#4770">Parser::MakeSwitchLabel</a>
+| <a href="dictionary_S.html#6750">StoragePool::NewSwitchLabel</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4775">Parser::MakeTryStatement</a>
+| <a href="dictionary_S.html#6765">StoragePool::NewTryStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#6312">AstTryStatement::AllocateCatchClauses</a>
+| <a href="dictionary_A.html#6313">AstTryStatement::AddCatchClause</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+| <a href="dictionary_A.html#5393">AstBlock::SetTag</a>
+| <a href="dictionary_A.html#420">AstTryStatement::NumCatchClauses</a>
+| <a href="dictionary_A.html#423">AstTryStatement::CatchClause</a>
+
+<a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_A.html#5184">Ast::NameCast</a>
+| <a href="dictionary_S.html#6703">StoragePool::NewTypeName</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_S.html#6700">StoragePool::NewTypeArguments</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_A.html#5506">AstTypeArguments::AllocateTypeArguments</a>
+| <a href="dictionary_A.html#5507">AstTypeArguments::AddTypeArgument</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4743">Parser::MakeTypeArguments</a>
+| <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4791">Parser::MakeTypeBound</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4741">Parser::AddList2</a>
+| <a href="dictionary_P.html#4740">Parser::StartList</a>
+
+<a href="dictionary_P.html#4790">Parser::MakeTypeParameter</a>
+| <a href="dictionary_S.html#6716">StoragePool::NewTypeParameter</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5731">AstTypeParameter::AllocateBounds</a>
+| <a href="dictionary_A.html#5732">AstTypeParameter::AddBound</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+
+<a href="dictionary_P.html#4731">Parser::MakeTypeParameters</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_S.html#6718">StoragePool::NewTypeParameters</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_A.html#5748">AstTypeParameters::AllocateTypeParameters</a>
+| <a href="dictionary_A.html#5749">AstTypeParameters::AddTypeParameter</a>
+| <a href="dictionary_P.html#2209">Parser::FreeCircularList</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+
+<a href="dictionary_P.html#4771">Parser::MakeWhileStatement</a>
+| <a href="dictionary_S.html#6753">StoragePool::NewWhileStatement</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+| <a href="dictionary_P.html#4733">Parser::MakeBlock</a>
+| <a href="dictionary_S.html#6812">StoragePool::GenBlock</a>
+| <a href="dictionary_A.html#5396">AstBlock::AllocateStatements</a>
+| <a href="dictionary_A.html#703">AstBlock::AddStatement</a>
+| <a href="dictionary_A.html#33">Ast::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5314">AstListNode::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5407">AstBlock::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5441">AstName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5453">AstPrimitiveType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5468">AstBrackets::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5480">AstArrayType::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5495">AstWildcard::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5514">AstTypeArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5527">AstTypeName::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5540">AstMemberValuePair::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5556">AstAnnotation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5567">AstModifierKeyword::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5584">AstModifiers::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5594">AstPackageDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5607">AstImportDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5632">AstCompilationUnit::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5643">AstEmptyDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5721">AstClassBody::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5739">AstTypeParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5756">AstTypeParameters::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5772">AstClassDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5792">AstArrayInitializer::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5802">AstVariableDeclaratorId::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5812">AstVariableDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5832">AstFieldDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#511">AstFormalParameter::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5861">AstMethodDeclarator::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5894">AstMethodDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5910">AstInitializerDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5932">AstArguments::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#616">AstThisCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#642">AstSuperCall::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5967">AstConstructorDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5990">AstEnumDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6003">AstEnumConstant::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6019">AstInterfaceDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6030">AstAnnotationDeclaration::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6045">AstLocalVariableStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6059">AstLocalClassStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6069">AstIfStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6089">AstEmptyStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6098">AstExpressionStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6121">AstSwitchLabel::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6155">AstSwitchStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6165">AstWhileStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6177">AstDoStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6197">AstForStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6208">AstForeachStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6220">AstBreakStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6232">AstContinueStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6242">AstReturnStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6260">AstThrowStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6270">AstSynchronizedStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6284">AstAssertStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6294">AstCatchClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6304">AstFinallyClause::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6320">AstTryStatement::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6331">AstIntegerLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6342">AstLongLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6353">AstFloatLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6364">AstDoubleLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6375">AstTrueLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6386">AstFalseLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6397">AstStringLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6408">AstCharacterLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6419">AstNullLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6431">AstClassLiteral::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6443">AstThisExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6455">AstSuperExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6466">AstParenthesizedExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6478">AstClassCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6491">AstDimExpr::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6508">AstArrayCreationExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6519">AstFieldAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6538">AstMethodInvocation::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6549">AstArrayAccess::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6567">AstPostUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6581">AstPreUnaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6593">AstCastExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6609">AstBinaryExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6620">AstInstanceofExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6631">AstConditionalExpression::RightToken</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6663">AstAssignmentExpression::RightToken</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#4789">Parser::MakeWildcard</a>
+| <a href="dictionary_S.html#6698">StoragePool::NewWildcard</a>
+| <a href="dictionary_P.html#12649">Parser::Token</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4738">Parser::NullAction</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#2212">Parser::PackageHeaderParse</a>
+| <a href="dictionary_L.html#2216">LexStream::Reset</a>
+| <a href="dictionary_L.html#2217">LexStream::PackageToken</a>
+| <a href="dictionary_S.html#2219">StoragePool::StoragePool</a>
+| <a href="dictionary_L.html#2220">LexStream::NumTokens</a>
+| <a href="dictionary_P.html#2227">Parser::HeaderParse</a>
+| <a href="dictionary_A.html#2229">Ast::CompilationUnitCast</a>
+| <a href="dictionary_A.html#739">Ast::BadCompilationUnitCast</a>
+| <a href="dictionary_S.html#2231">StoragePool::~StoragePool</a>
+
+<a href="dictionary_P.html#2333">Parser::ParseCheck</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_L.html#2216">LexStream::Reset</a>
+| <a href="dictionary_L.html#2316">LexStream::Next</a>
+| <a href="dictionary_J.html#2257">javaprs_table::nt_action</a>
+| <a href="dictionary_J.html#2251">javaprs_table::t_action</a>
+| <a href="dictionary_P.html#2349">Parser::Min</a>
+
+<a href="dictionary_P.html#4726">Parser::Parser</a>
+| <a href="dictionary_P.html#12648">Parser::InitRuleAction</a>
+
+<a href="dictionary_P.html#2275">Parser::ParseSegment</a>
+| <a href="dictionary_L.html#2216">LexStream::Reset</a>
+| <a href="dictionary_P.html#2184">Parser::ReallocateStacks</a>
+| <a href="dictionary_L.html#2249">Loc</a>
+| <a href="dictionary_J.html#2251">javaprs_table::t_action</a>
+| <a href="dictionary_L.html#2243">LexStream::Gettoken</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_J.html#2257">javaprs_table::nt_action</a>
+| <a href="dictionary_P.html#2259">Parser::RepairParse</a>
+| <a href="dictionary_D.html#312">DYNAMIC_CAST</a>
+
+<a href="dictionary_P.html#2184">Parser::ReallocateStacks</a>
+| <a href="dictionary_A.html#237">assert</a>
+| <a href="dictionary_M.html#2192">memcpy</a>
+| <a href="dictionary_A.html#2198">Ast::Ast</a>
+| <a href="dictionary_A.html#2199">Ast::~Ast</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5299">AstListNode::~AstListNode</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5317">AstDeclared::~AstDeclared</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5330">AstDeclaredType::~AstDeclaredType</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5349">AstStatement::~AstStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5355">AstMemberValue::~AstMemberValue</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5358">AstExpression::~AstExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5377">AstType::~AstType</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#1362">AstBlock::~AstBlock</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5434">AstName::~AstName</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5446">AstPrimitiveType::~AstPrimitiveType</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5461">AstBrackets::~AstBrackets</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5472">AstArrayType::~AstArrayType</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5488">AstWildcard::~AstWildcard</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5504">AstTypeArguments::~AstTypeArguments</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5517">AstTypeName::~AstTypeName</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5533">AstMemberValuePair::~AstMemberValuePair</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5546">AstAnnotation::~AstAnnotation</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5560">AstModifierKeyword::~AstModifierKeyword</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5573">AstModifiers::~AstModifiers</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5588">AstPackageDeclaration::~AstPackageDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5600">AstImportDeclaration::~AstImportDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5618">AstCompilationUnit::~AstCompilationUnit</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5636">AstEmptyDeclaration::~AstEmptyDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5665">AstClassBody::~AstClassBody</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5729">AstTypeParameter::~AstTypeParameter</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5746">AstTypeParameters::~AstTypeParameters</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5763">AstClassDeclaration::~AstClassDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5782">AstArrayInitializer::~AstArrayInitializer</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5795">AstVariableDeclaratorId::~AstVariableDeclaratorId</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5805">AstVariableDeclarator::~AstVariableDeclarator</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5822">AstFieldDeclaration::~AstFieldDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5836">AstFormalParameter::~AstFormalParameter</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5850">AstMethodDeclarator::~AstMethodDeclarator</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5865">AstMethodBody::~AstMethodBody</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5882">AstMethodDeclaration::~AstMethodDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5902">AstInitializerDeclaration::~AstInitializerDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5918">AstArguments::~AstArguments</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5935">AstThisCall::~AstThisCall</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5944">AstSuperCall::~AstSuperCall</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5957">AstConstructorDeclaration::~AstConstructorDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5978">AstEnumDeclaration::~AstEnumDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#5997">AstEnumConstant::~AstEnumConstant</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6010">AstInterfaceDeclaration::~AstInterfaceDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6024">AstAnnotationDeclaration::~AstAnnotationDeclaration</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6035">AstLocalVariableStatement::~AstLocalVariableStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6052">AstLocalClassStatement::~AstLocalClassStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6062">AstIfStatement::~AstIfStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6082">AstEmptyStatement::~AstEmptyStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6091">AstExpressionStatement::~AstExpressionStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6114">AstSwitchLabel::~AstSwitchLabel</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6125">AstSwitchBlockStatement::~AstSwitchBlockStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6144">AstSwitchStatement::~AstSwitchStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6158">AstWhileStatement::~AstWhileStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6170">AstDoStatement::~AstDoStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6184">AstForStatement::~AstForStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6201">AstForeachStatement::~AstForeachStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6213">AstBreakStatement::~AstBreakStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6225">AstContinueStatement::~AstContinueStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6235">AstReturnStatement::~AstReturnStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6253">AstThrowStatement::~AstThrowStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6263">AstSynchronizedStatement::~AstSynchronizedStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6277">AstAssertStatement::~AstAssertStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6287">AstCatchClause::~AstCatchClause</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6297">AstFinallyClause::~AstFinallyClause</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6310">AstTryStatement::~AstTryStatement</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6324">AstIntegerLiteral::~AstIntegerLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6335">AstLongLiteral::~AstLongLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6346">AstFloatLiteral::~AstFloatLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6357">AstDoubleLiteral::~AstDoubleLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6368">AstTrueLiteral::~AstTrueLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6379">AstFalseLiteral::~AstFalseLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6390">AstStringLiteral::~AstStringLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6401">AstCharacterLiteral::~AstCharacterLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6412">AstNullLiteral::~AstNullLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6424">AstClassLiteral::~AstClassLiteral</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6436">AstThisExpression::~AstThisExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6448">AstSuperExpression::~AstSuperExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6459">AstParenthesizedExpression::~AstParenthesizedExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6470">AstClassCreationExpression::~AstClassCreationExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6484">AstDimExpr::~AstDimExpr</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6497">AstArrayCreationExpression::~AstArrayCreationExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6512">AstFieldAccess::~AstFieldAccess</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6524">AstMethodInvocation::~AstMethodInvocation</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6542">AstArrayAccess::~AstArrayAccess</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6559">AstPostUnaryExpression::~AstPostUnaryExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6573">AstPreUnaryExpression::~AstPreUnaryExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6586">AstCastExpression::~AstCastExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6601">AstBinaryExpression::~AstBinaryExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6613">AstInstanceofExpression::~AstInstanceofExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6624">AstConditionalExpression::~AstConditionalExpression</a><i>  (Virtual)</i>
+| <a href="dictionary_A.html#6655">AstAssignmentExpression::~AstAssignmentExpression</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#2259">Parser::RepairParse</a>
+| <a href="dictionary_L.html#2249">Loc</a>
+| <a href="dictionary_P.html#2301">Parser::ErrorRepair</a>
+| <a href="dictionary_L.html#2243">LexStream::Gettoken</a>
+| <a href="dictionary_L.html#2247">LexStream::Kind</a>
+| <a href="dictionary_P.html#2184">Parser::ReallocateStacks</a>
+| <a href="dictionary_J.html#2251">javaprs_table::t_action</a>
+| <a href="dictionary_J.html#2257">javaprs_table::nt_action</a>
+
+<a href="dictionary_P.html#4739">Parser::SetSym1ToSym2</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#4740">Parser::StartList</a>
+| <a href="dictionary_P.html#2202">Parser::AllocateListNode</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#12653">Parser::TokenAction</a>
+| <a href="dictionary_P.html#12651">Parser::Sym</a>
+
+<a href="dictionary_P.html#12431">PathSymbol::Name</a>
+| <a href="dictionary_N.html#64">NameSymbol::Name</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#13725">PathSymbol::NameLength</a>
+| <a href="dictionary_N.html#557">NameSymbol::NameLength</a><i>  (Virtual)</i>
+
+<a href="dictionary_P.html#10534">PathSymbol::~PathSymbol</a>
+| <a href="dictionary_S.html#10453">Symbol::~Symbol</a>
+
+<a href="dictionary_P.html#7247">PrintSingletonXMI</a>
+| <a href="dictionary_A.html#237">assert</a>
+| <a href="dictionary_I.html#7731">is_open</a>
+| <a href="dictionary_T.html#7304">TypeSymbol::Utf8Name</a>
+| <a href="dictionary_A.html#710">AccessFlags::ACC_ABSTRACT</a>
+| <a href="dictionary_V.html#7305">VariableSymbol::Utf8Name</a>
+| <a href="dictionary_M.html#7306">MethodSymbol::Utf8Name</a>
+| <a href="dictionary_A.html#4277">AccessFlags::ACC_SYNCHRONIZED</a>
+| <a href="dictionary_C.html#7742">close</a>
+
+<a href="dictionary_P.html#17799">printVector</a>
+| <a href="dictionary_V.html#7218">vector::size</a>
+
+<a href="dictionary_P.html#17800">printVector</a>
+| <a href="dictionary_V.html#7218">vector::size</a>
+</pre>
+<p>
+<div class="footer"><b>Generated:</b> maandag 7 december 2020 08:28:56</div><center><p><div class="scitools-tag">Scientific Toolworks, Inc.<br></div><div class="scitools-link"><A target="_blank" href="mailto:support@scitools.com">support@scitools.com</A><br><A href="http://www.scitools.com">www.scitools.com</A></div></center></div></body></html>

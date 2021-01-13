@@ -1,0 +1,1 @@
+The Structure 101 project in the folder depends on the Pinot.cpa file in the folder ../1_pinot_original

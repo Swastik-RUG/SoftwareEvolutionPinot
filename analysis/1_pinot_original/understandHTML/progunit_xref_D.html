@@ -1,0 +1,1521 @@
+<!DOCTYPE html><html><head><title>Program Unit Cross Reference [D]</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script src="jquery-3.3.1.min.js" type="text/javascript"></script><script src="d3.js" type="text/javascript"></script><script src="d3pie.min.js" type="text/javascript"></script><script src="plotly.min.js" type="text/javascript"></script><link href="reportCSS.css" type="text/css" rel="stylesheet" /><script src="reportJS.js" type="text/javascript"></script><script src="table_of_contents.js" type="text/javascript"></script></head><body bgcolor="#ffffff" TEXT="#000000"><nav id="main-nav" class="nav"><div id="upper-nav"><img id=und-icon src="understand-logo.png" alt="Understand"></div><div class="navbar" style="position:relative;z-index:1003"><button onclick="pageToTop()" id="pagedesc" title="Return to top of page"><span id="descText">pinot - Program Unit Cross Reference</span></button></div><div id="lower-nav" class=navbar><div id="main-dropdown-html" class="dropdown" tabindex="0"><button id="dropdown-button" class="dropbtn">Contents <img id="dropdown-icon" src="ToCdropdown.png" style="height:12px"></button><div id="dropdown-buffer" class="dropdown-border" style="height:120px;width:300px;"></div><div id="nav-dropdown-content" class="dropdown-content"><a href="table_of_contents.html">Table of Contents</a><txt style="font-size: 12px; text-align: center">Enable javascript to use dropdown contents and other features.</txt></div></div><div class="rightspacer" id="rightspacer"><button id="buttonRight" onclick="scrollTableRight()"><img id="imgRight" src="ToCdropdown.png" /></button><button id="buttonLeft"  onclick="scrollTableLeft()" ><img id="imgLeft" src="ToCdropdown.png"  /></button></div><div class="navCenter">
+<a2>&</a2><a href="progunit_xref_A.html">A</a><a href="progunit_xref_B.html">B</a><a href="progunit_xref_C.html">C</a><a href="progunit_xref_D.html">D</a><a href="progunit_xref_E.html">E</a><a href="progunit_xref_F.html">F</a><a href="progunit_xref_G.html">G</a><a href="progunit_xref_H.html">H</a><a href="progunit_xref_I.html">I</a><a href="progunit_xref_J.html">J</a><a2>K</a2><a href="progunit_xref_L.html">L</a><a href="progunit_xref_M.html">M</a><a href="progunit_xref_N.html">N</a><a href="progunit_xref_O.html">O</a><a href="progunit_xref_P.html">P</a><a2>Q</a2><a href="progunit_xref_R.html">R</a><a href="progunit_xref_S.html">S</a><a href="progunit_xref_T.html">T</a><a href="progunit_xref_U.html">U</a><a href="progunit_xref_V.html">V</a><a href="progunit_xref_W.html">W</a><a2>X</a2><a2>Y</a2><a href="progunit_xref_Z.html">Z</a></div></div></nav>
+<script type="text/javascript">navbar();</script><script type="text/javascript">if (typeof ToC === 'undefined') {document.getElementById("dropdown-button").remove();document.getElementById("dropdown-buffer").remove();document.getElementById("nav-dropdown-content").remove();}</script>
+<div id="main-content"><pre>
+<a href="dictionary_D.html#17453">DefaultFileReader::DefaultFileReader</a><a name="17453"> </a>   (Public Function)
+    Declare   [jikesapi.cpp, 37]      <a href="dictionary_D.html#17452">DefaultFileReader</a>
+    Call   [jikesapi.cpp, 257]        <a href="dictionary_J.html#12434">JikesAPI::read</a>
+    Define   [jikesapi.cpp, 318]      <a href="dictionary_D.html#17452">DefaultFileReader</a>
+
+<a href="dictionary_D.html#17455">DefaultFileReader::getBuffer</a><a name="17455"> </a>   (Public Virtual Function)
+  Declared as: const char *
+    Define   [jikesapi.cpp, 40]       <a href="dictionary_D.html#17452">DefaultFileReader</a>
+    Virtual Call   [class.cpp, 1707]   <a href="dictionary_S.html#1734">Semantic::ReadClassFile</a>
+    Virtual Call   [stream.cpp, 754]   <a href="dictionary_L.html#2481">LexStream::ReadInput</a>
+    Virtual Call   [stream.cpp, 791]   <a href="dictionary_L.html#3612">LexStream::RereadInput</a>
+    Virtual Call   [jikesapi.cpp, 262]   <a href="dictionary_J.html#12434">JikesAPI::read</a>
+
+<a href="dictionary_D.html#17456">DefaultFileReader::getBufferSize</a><a name="17456"> </a>   (Public Virtual Function)
+  Declared as: size_t
+    Define   [jikesapi.cpp, 41]       <a href="dictionary_D.html#17452">DefaultFileReader</a>
+    Virtual Call   [class.cpp, 1702]   <a href="dictionary_S.html#1734">Semantic::ReadClassFile</a>
+    Virtual Call   [stream.cpp, 754]   <a href="dictionary_L.html#2481">LexStream::ReadInput</a>
+    Virtual Call   [stream.cpp, 791]   <a href="dictionary_L.html#3612">LexStream::RereadInput</a>
+
+<a href="dictionary_D.html#17454">DefaultFileReader::~DefaultFileReader</a><a name="17454"> </a>   (Public Virtual Function)
+    Declare   [jikesapi.cpp, 38]      <a href="dictionary_D.html#17452">DefaultFileReader</a>
+    Define   [jikesapi.cpp, 347]      <a href="dictionary_D.html#17452">DefaultFileReader</a>
+    Virtual Call   [class.cpp, 1708]   <a href="dictionary_S.html#1734">Semantic::ReadClassFile</a>
+    Virtual Call   [stream.cpp, 755]   <a href="dictionary_L.html#2481">LexStream::ReadInput</a>
+    Virtual Call   [stream.cpp, 792]   <a href="dictionary_L.html#3612">LexStream::RereadInput</a>
+    Virtual Call   [jikesapi.cpp, 264]   <a href="dictionary_J.html#12434">JikesAPI::read</a>
+
+<a href="dictionary_D.html#17460">DefaultFileWriter::DefaultFileWriter</a><a name="17460"> </a>   (Public Function)
+    Declare   [jikesapi.cpp, 61]      <a href="dictionary_D.html#17459">DefaultFileWriter</a>
+    Call   [jikesapi.cpp, 275]        <a href="dictionary_J.html#15797">JikesAPI::write</a>
+    Define   [jikesapi.cpp, 356]      <a href="dictionary_D.html#17459">DefaultFileWriter</a>
+
+<a href="dictionary_D.html#17464">DefaultFileWriter::doWrite</a><a name="17464"> </a>   (Private Virtual Function)
+  Declared as: size_t
+    Declare   [jikesapi.cpp, 68]      <a href="dictionary_D.html#17459">DefaultFileWriter</a>
+    Define   [jikesapi.cpp, 380]      <a href="dictionary_D.html#17459">DefaultFileWriter</a>
+    Virtual Call   [jikesapi.cpp, 295]   <a href="dictionary_J.html#15801">JikesAPI::FileWriter::write</a>
+
+<a href="dictionary_D.html#17462">DefaultFileWriter::isValid</a><a name="17462"> </a>   (Public Virtual Function)
+  Declared as: int
+    Declare   [jikesapi.cpp, 64]      <a href="dictionary_D.html#17459">DefaultFileWriter</a>
+    Define   [jikesapi.cpp, 375]      <a href="dictionary_D.html#17459">DefaultFileWriter</a>
+    Virtual Call   [jikesapi.cpp, 277]   <a href="dictionary_J.html#15797">JikesAPI::write</a>
+
+<a href="dictionary_D.html#17461">DefaultFileWriter::~DefaultFileWriter</a><a name="17461"> </a>   (Public Virtual Function)
+    Declare   [jikesapi.cpp, 62]      <a href="dictionary_D.html#17459">DefaultFileWriter</a>
+    Define   [jikesapi.cpp, 369]      <a href="dictionary_D.html#17459">DefaultFileWriter</a>
+    Virtual Call   [tuple.h, 541]     <a href="dictionary_O.html#12378">OutputBuffer::WriteToFile</a>
+    Virtual Call   [jikesapi.cpp, 279]   <a href="dictionary_J.html#15797">JikesAPI::write</a>
+
+<a href="dictionary_D.html#13708">DefiniteAssignmentSet::AddElement</a><a name="13708"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 1016]            <a href="dictionary_D.html#1583">DefiniteAssignmentSet</a>
+
+<a href="dictionary_D.html#13710">DefiniteAssignmentSet::AssignElement</a><a name="13710"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 1026]            <a href="dictionary_D.html#1583">DefiniteAssignmentSet</a>
+
+<a href="dictionary_D.html#9074">DefiniteAssignmentSet::DASet</a><a name="9074"> </a>   (Public Const Function)
+  Declared as: BitSet
+    Define   [set.h, 1004]            <a href="dictionary_D.html#1583">DefiniteAssignmentSet</a>
+    Call   [set.h, 1014]              <a href="dictionary_D.html#13707">DefiniteAssignmentSet::Merge</a>
+    Call   [definite.cpp, 41]         <a href="dictionary_D.html#9071">DefinitePair::DefinitePair</a>
+    Call   [definite.cpp, 47]         <a href="dictionary_D.html#9077">DefinitePair::operator=</a>
+
+<a href="dictionary_D.html#9085">DefiniteAssignmentSet::DefiniteAssignmentSet</a><a name="9085"> </a>   (Public Function)
+    Define   [set.h, 988]             <a href="dictionary_D.html#1583">DefiniteAssignmentSet</a>
+    Call   [definite.cpp, 89]         <a href="dictionary_S.html#1610">Semantic::DefiniteBooleanExpression</a>
+    Call   [definite.cpp, 91]         <a href="dictionary_S.html#1610">Semantic::DefiniteBooleanExpression</a>
+    Call   [definite.cpp, 374]        <a href="dictionary_S.html#1624">Semantic::DefiniteAND_AND</a>
+    Call   [definite.cpp, 416]        <a href="dictionary_S.html#1625">Semantic::DefiniteOR_OR</a>
+    Call   [definite.cpp, 485]        <a href="dictionary_S.html#1602">Semantic::DefiniteConditionalExpression</a>
+
+<a href="dictionary_D.html#13702">DefiniteAssignmentSet::DefiniteAssignmentSet</a><a name="13702"> </a>   (Public Function)
+    Define   [set.h, 993]             <a href="dictionary_D.html#1583">DefiniteAssignmentSet</a>
+
+<a href="dictionary_D.html#13705">DefiniteAssignmentSet::DefiniteAssignmentSet</a><a name="13705"> </a>   (Public Function)
+    Define   [set.h, 999]             <a href="dictionary_D.html#1583">DefiniteAssignmentSet</a>
+
+<a href="dictionary_D.html#9076">DefiniteAssignmentSet::DUSet</a><a name="9076"> </a>   (Public Const Function)
+  Declared as: BitSet
+    Define   [set.h, 1008]            <a href="dictionary_D.html#1583">DefiniteAssignmentSet</a>
+    Call   [set.h, 1014]              <a href="dictionary_D.html#13707">DefiniteAssignmentSet::Merge</a>
+    Call   [definite.cpp, 42]         <a href="dictionary_D.html#9071">DefinitePair::DefinitePair</a>
+    Call   [definite.cpp, 48]         <a href="dictionary_D.html#9077">DefinitePair::operator=</a>
+
+<a href="dictionary_D.html#13707">DefiniteAssignmentSet::Merge</a><a name="13707"> </a>   (Public Const Function)
+  Declared as: DefinitePair
+    Define   [set.h, 1012]            <a href="dictionary_D.html#1583">DefiniteAssignmentSet</a>
+
+<a href="dictionary_D.html#1336">DefiniteBlockStack::Block</a><a name="1336"> </a>   (Public Function)
+  Declared as: AstBlock *
+    Define   [semantic.h, 224]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+
+<a href="dictionary_D.html#1339">DefiniteBlockStack::BreakPair</a><a name="1339"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [semantic.h, 231]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 1246]       <a href="dictionary_S.html#1570">Semantic::DefiniteBreakStatement</a>
+
+<a href="dictionary_D.html#1341">DefiniteBlockStack::ContinuePair</a><a name="1341"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [semantic.h, 235]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 826]        <a href="dictionary_S.html#1559">Semantic::DefiniteBlock</a>
+    Call   [definite.cpp, 1271]       <a href="dictionary_S.html#1571">Semantic::DefiniteContinueStatement</a>
+
+<a href="dictionary_D.html#1346">DefiniteBlockStack::DefiniteBlockStack</a><a name="1346"> </a>   (Public Function)
+    Define   [semantic.h, 256]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 1513]       <a href="dictionary_S.html#788">Semantic::DefiniteMethodBody</a>
+    Call   [definite.cpp, 1589]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+    Call   [definite.cpp, 1670]       <a href="dictionary_S.html#1631">Semantic::DefiniteBlockInitializer</a>
+
+<a href="dictionary_D.html#1334">DefiniteBlockStack::Pop</a><a name="1334"> </a>   (Public Function)
+  Declared as: void
+    Define   [semantic.h, 216]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 837]        <a href="dictionary_S.html#1559">Semantic::DefiniteBlock</a>
+    Call   [definite.cpp, 1231]       <a href="dictionary_S.html#1568">Semantic::DefiniteSwitchStatement</a>
+    Call   [definite.cpp, 1558]       <a href="dictionary_S.html#788">Semantic::DefiniteMethodBody</a>
+    Call   [definite.cpp, 1646]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+    Call   [definite.cpp, 1692]       <a href="dictionary_S.html#1631">Semantic::DefiniteBlockInitializer</a>
+
+<a href="dictionary_D.html#1332">DefiniteBlockStack::Push</a><a name="1332"> </a>   (Public Function)
+  Declared as: void
+    Define   [semantic.h, 208]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 796]        <a href="dictionary_S.html#1559">Semantic::DefiniteBlock</a>
+    Call   [definite.cpp, 1191]       <a href="dictionary_S.html#1568">Semantic::DefiniteSwitchStatement</a>
+    Call   [definite.cpp, 1518]       <a href="dictionary_S.html#788">Semantic::DefiniteMethodBody</a>
+    Call   [definite.cpp, 1594]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+    Call   [definite.cpp, 1675]       <a href="dictionary_S.html#1631">Semantic::DefiniteBlockInitializer</a>
+
+<a href="dictionary_D.html#1345">DefiniteBlockStack::ReturnPair</a><a name="1345"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [semantic.h, 251]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 1295]       <a href="dictionary_S.html#1572">Semantic::DefiniteReturnStatement</a>
+    Call   [definite.cpp, 1645]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+
+<a href="dictionary_D.html#1335">DefiniteBlockStack::Size</a><a name="1335"> </a>   (Public Function)
+  Declared as: int
+    Define   [semantic.h, 223]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 826]        <a href="dictionary_S.html#1559">Semantic::DefiniteBlock</a>
+
+<a href="dictionary_D.html#1338">DefiniteBlockStack::TopBlock</a><a name="1338"> </a>   (Public Function)
+  Declared as: AstBlock *
+    Define   [semantic.h, 225]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 761]        <a href="dictionary_S.html#1629">Semantic::DefiniteVariableInitializer</a>
+    Call   [definite.cpp, 881]        <a href="dictionary_S.html#1561">Semantic::DefiniteLocalVariableStatement</a>
+    Call   [definite.cpp, 1122]       <a href="dictionary_S.html#1567">Semantic::DefiniteForeachStatement</a>
+
+<a href="dictionary_D.html#1343">DefiniteBlockStack::TopBreakPair</a><a name="1343"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [semantic.h, 240]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 835]        <a href="dictionary_S.html#1559">Semantic::DefiniteBlock</a>
+    Call   [definite.cpp, 1014]       <a href="dictionary_S.html#1565">Semantic::DefiniteWhileStatement</a>
+    Call   [definite.cpp, 1082]       <a href="dictionary_S.html#1566">Semantic::DefiniteForStatement</a>
+    Call   [definite.cpp, 1153]       <a href="dictionary_S.html#1567">Semantic::DefiniteForeachStatement</a>
+    Call   [definite.cpp, 1179]       <a href="dictionary_S.html#1569">Semantic::DefiniteDoStatement</a>
+    Call   [definite.cpp, 1215]       <a href="dictionary_S.html#1568">Semantic::DefiniteSwitchStatement</a>
+
+<a href="dictionary_D.html#1344">DefiniteBlockStack::TopContinuePair</a><a name="1344"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [semantic.h, 245]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 1012]       <a href="dictionary_S.html#1565">Semantic::DefiniteWhileStatement</a>
+    Call   [definite.cpp, 1067]       <a href="dictionary_S.html#1566">Semantic::DefiniteForStatement</a>
+    Call   [definite.cpp, 1145]       <a href="dictionary_S.html#1567">Semantic::DefiniteForeachStatement</a>
+    Call   [definite.cpp, 1168]       <a href="dictionary_S.html#1569">Semantic::DefiniteDoStatement</a>
+
+<a href="dictionary_D.html#1349">DefiniteBlockStack::~DefiniteBlockStack</a><a name="1349"> </a>   (Public Function)
+    Define   [semantic.h, 272]        <a href="dictionary_D.html#1331">DefiniteBlockStack</a>
+    Call   [definite.cpp, 1560]       <a href="dictionary_S.html#788">Semantic::DefiniteMethodBody</a>
+    Call   [definite.cpp, 1648]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+    Call   [definite.cpp, 1694]       <a href="dictionary_S.html#1631">Semantic::DefiniteBlockInitializer</a>
+
+<a href="dictionary_D.html#1327">DefiniteFinalAssignmentStack::Pop</a><a name="1327"> </a>   (Public Function)
+  Declared as: void
+    Define   [semantic.h, 184]        <a href="dictionary_D.html#1325">DefiniteFinalAssignmentStack</a>
+    Call   [definite.cpp, 987]        <a href="dictionary_S.html#1558">Semantic::DefiniteLoopBody</a>
+
+<a href="dictionary_D.html#1326">DefiniteFinalAssignmentStack::Push</a><a name="1326"> </a>   (Public Function)
+  Declared as: void
+    Define   [semantic.h, 183]        <a href="dictionary_D.html#1325">DefiniteFinalAssignmentStack</a>
+    Call   [definite.cpp, 995]        <a href="dictionary_S.html#1565">Semantic::DefiniteWhileStatement</a>
+    Call   [definite.cpp, 1041]       <a href="dictionary_S.html#1566">Semantic::DefiniteForStatement</a>
+    Call   [definite.cpp, 1132]       <a href="dictionary_S.html#1567">Semantic::DefiniteForeachStatement</a>
+    Call   [definite.cpp, 1161]       <a href="dictionary_S.html#1569">Semantic::DefiniteDoStatement</a>
+
+<a href="dictionary_D.html#1328">DefiniteFinalAssignmentStack::Size</a><a name="1328"> </a>   (Public Function)
+  Declared as: unsigned
+    Define   [semantic.h, 189]        <a href="dictionary_D.html#1325">DefiniteFinalAssignmentStack</a>
+    Call   [definite.cpp, 652]        <a href="dictionary_S.html#1603">Semantic::DefiniteAssignmentExpression</a>
+
+<a href="dictionary_D.html#1329">DefiniteFinalAssignmentStack::Top</a><a name="1329"> </a>   (Public Function)
+  Declared as: Tuple &amp;
+    Define   [semantic.h, 190]        <a href="dictionary_D.html#1325">DefiniteFinalAssignmentStack</a>
+    Call   [definite.cpp, 654]        <a href="dictionary_S.html#1603">Semantic::DefiniteAssignmentExpression</a>
+    Call   [definite.cpp, 973]        <a href="dictionary_S.html#1558">Semantic::DefiniteLoopBody</a>
+    Call   [definite.cpp, 975]        <a href="dictionary_S.html#1558">Semantic::DefiniteLoopBody</a>
+
+<a href="dictionary_D.html#9283">DefinitePair::AddElement</a><a name="9283"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 900]             <a href="dictionary_D.html#751">DefinitePair</a>
+    Call   [set.h, 1018]              <a href="dictionary_D.html#13708">DefiniteAssignmentSet::AddElement</a>
+    Call   [set.h, 1019]              <a href="dictionary_D.html#13708">DefiniteAssignmentSet::AddElement</a>
+    Call   [definite.cpp, 1369]       <a href="dictionary_S.html#1574">Semantic::DefiniteTryStatement</a>
+    Call   [definite.cpp, 1603]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+
+<a href="dictionary_D.html#769">DefinitePair::AssignAll</a><a name="769"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 863]             <a href="dictionary_D.html#751">DefinitePair</a>
+    Call   [body.cpp, 2586]           <a href="dictionary_S.html#601">Semantic::ProcessExecutableBodies</a>
+    Call   [body.cpp, 2616]           <a href="dictionary_S.html#601">Semantic::ProcessExecutableBodies</a>
+
+<a href="dictionary_D.html#9171">DefinitePair::AssignElement</a><a name="9171"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 915]             <a href="dictionary_D.html#751">DefinitePair</a>
+    Call   [set.h, 1028]              <a href="dictionary_D.html#13710">DefiniteAssignmentSet::AssignElement</a>
+    Call   [set.h, 1029]              <a href="dictionary_D.html#13710">DefiniteAssignmentSet::AssignElement</a>
+    Call   [definite.cpp, 661]        <a href="dictionary_S.html#1603">Semantic::DefiniteAssignmentExpression</a>
+    Call   [definite.cpp, 888]        <a href="dictionary_S.html#1561">Semantic::DefiniteLocalVariableStatement</a>
+    Call   [definite.cpp, 1125]       <a href="dictionary_S.html#1567">Semantic::DefiniteForeachStatement</a>
+    Call   [definite.cpp, 1527]       <a href="dictionary_S.html#788">Semantic::DefiniteMethodBody</a>
+    Call   [definite.cpp, 1712]       <a href="dictionary_S.html#1632">Semantic::DefiniteFieldInitializer</a>
+    Call   [decl.cpp, 4021]           <a href="dictionary_S.html#1536">Semantic::InitializeVariable</a>
+    Call   [decl.cpp, 4223]           <a href="dictionary_S.html#1538">Semantic::ProcessStaticInitializers</a>
+    Call   [decl.cpp, 4311]           <a href="dictionary_S.html#1539">Semantic::ProcessInstanceInitializers</a>
+
+<a href="dictionary_D.html#762">DefinitePair::DefinitePair</a><a name="762"> </a>   (Public Function)
+    Define   [set.h, 820]             <a href="dictionary_D.html#751">DefinitePair</a>
+    Call   [set.h, 943]               <a href="dictionary_D.html#13689">DefinitePair::operator+</a>
+    Call   [set.h, 957]               <a href="dictionary_D.html#13693">DefinitePair::operator*</a>
+    Call   [set.h, 971]               <a href="dictionary_D.html#13697">DefinitePair::operator-</a>
+    Call   [set.h, 989]               <a href="dictionary_D.html#9085">DefiniteAssignmentSet::DefiniteAssignmentSet</a>
+    Call   [set.h, 990]               <a href="dictionary_D.html#9085">DefiniteAssignmentSet::DefiniteAssignmentSet</a>
+    Call   [set.h, 995]               <a href="dictionary_D.html#13702">DefiniteAssignmentSet::DefiniteAssignmentSet</a>
+    Call   [set.h, 996]               <a href="dictionary_D.html#13702">DefiniteAssignmentSet::DefiniteAssignmentSet</a>
+    Call   [set.h, 1000]              <a href="dictionary_D.html#13705">DefiniteAssignmentSet::DefiniteAssignmentSet</a>
+    Call   [set.h, 1001]              <a href="dictionary_D.html#13705">DefiniteAssignmentSet::DefiniteAssignmentSet</a>
+    Call   [set.h, 1014]              <a href="dictionary_D.html#13707">DefiniteAssignmentSet::Merge</a>
+    Call   [body.cpp, 2558]           <a href="dictionary_S.html#601">Semantic::ProcessExecutableBodies</a>
+    Call   [semantic.h, 259]          <a href="dictionary_D.html#1346">DefiniteBlockStack::DefiniteBlockStack</a>
+    Call   [semantic.h, 262]          <a href="dictionary_D.html#1346">DefiniteBlockStack::DefiniteBlockStack</a>
+    Call   [semantic.h, 263]          <a href="dictionary_D.html#1346">DefiniteBlockStack::DefiniteBlockStack</a>
+    Call   [definite.cpp, 313]        <a href="dictionary_S.html#1617">Semantic::DefiniteNOT</a>
+    Call   [definite.cpp, 352]        <a href="dictionary_S.html#1624">Semantic::DefiniteAND_AND</a>
+    Call   [definite.cpp, 394]        <a href="dictionary_S.html#1625">Semantic::DefiniteOR_OR</a>
+    Call   [definite.cpp, 468]        <a href="dictionary_S.html#1602">Semantic::DefiniteConditionalExpression</a>
+    Call   [definite.cpp, 473]        <a href="dictionary_S.html#1602">Semantic::DefiniteConditionalExpression</a>
+    Call   [definite.cpp, 930]        <a href="dictionary_S.html#1564">Semantic::DefiniteIfStatement</a>
+    Call   [definite.cpp, 949]        <a href="dictionary_S.html#1564">Semantic::DefiniteIfStatement</a>
+    Call   [definite.cpp, 1001]       <a href="dictionary_S.html#1565">Semantic::DefiniteWhileStatement</a>
+    Call   [definite.cpp, 1045]       <a href="dictionary_S.html#1566">Semantic::DefiniteForStatement</a>
+    Call   [definite.cpp, 1131]       <a href="dictionary_S.html#1567">Semantic::DefiniteForeachStatement</a>
+    Call   [definite.cpp, 1167]       <a href="dictionary_S.html#1569">Semantic::DefiniteDoStatement</a>
+    Call   [definite.cpp, 1172]       <a href="dictionary_S.html#1569">Semantic::DefiniteDoStatement</a>
+    Call   [definite.cpp, 1196]       <a href="dictionary_S.html#1568">Semantic::DefiniteSwitchStatement</a>
+    Call   [definite.cpp, 1335]       <a href="dictionary_S.html#1574">Semantic::DefiniteTryStatement</a>
+    Call   [definite.cpp, 1437]       <a href="dictionary_S.html#1575">Semantic::DefiniteAssertStatement</a>
+    Call   [definite.cpp, 1739]       <a href="dictionary_S.html#1633">Semantic::DefiniteSetup</a>
+    Call   [definite.cpp, 1741]       <a href="dictionary_S.html#1633">Semantic::DefiniteSetup</a>
+
+<a href="dictionary_D.html#9071">DefinitePair::DefinitePair</a><a name="9071"> </a>   (Public Function)
+    Define   [definite.cpp, 40]       <a href="dictionary_D.html#751">DefinitePair</a>
+    Declare   [set.h, 848]            <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13665">DefinitePair::DefinitePair</a><a name="13665"> </a>   (Public Function)
+    Define   [set.h, 828]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13667">DefinitePair::DefinitePair</a><a name="13667"> </a>   (Public Function)
+    Define   [set.h, 833]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13670">DefinitePair::DefinitePair</a><a name="13670"> </a>   (Public Function)
+    Define   [set.h, 838]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13687">DefinitePair::operator!=</a><a name="13687"> </a>   (Public Const Function)
+  Declared as: bool
+    Define   [set.h, 933]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13693">DefinitePair::operator*</a><a name="13693"> </a>   (Public Const Function)
+  Declared as: DefinitePair
+    Define   [set.h, 955]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13695">DefinitePair::operator*=</a><a name="13695"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [set.h, 959]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13689">DefinitePair::operator+</a><a name="13689"> </a>   (Public Const Function)
+  Declared as: DefinitePair
+    Define   [set.h, 941]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13691">DefinitePair::operator+=</a><a name="13691"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [set.h, 945]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13697">DefinitePair::operator-</a><a name="13697"> </a>   (Public Const Function)
+  Declared as: DefinitePair
+    Define   [set.h, 969]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13699">DefinitePair::operator-=</a><a name="13699"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [set.h, 973]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#9077">DefinitePair::operator=</a><a name="9077"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [definite.cpp, 45]       <a href="dictionary_D.html#751">DefinitePair</a>
+    Declare   [set.h, 893]            <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13678">DefinitePair::operator=</a><a name="13678"> </a>   (Public Function)
+  Declared as: DefinitePair &amp;
+    Define   [set.h, 883]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13685">DefinitePair::operator==</a><a name="13685"> </a>   (Public Const Function)
+  Declared as: bool
+    Define   [set.h, 929]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#9204">DefinitePair::ReclaimElement</a><a name="9204"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 920]             <a href="dictionary_D.html#751">DefinitePair</a>
+    Call   [definite.cpp, 824]        <a href="dictionary_S.html#1559">Semantic::DefiniteBlock</a>
+    Call   [definite.cpp, 826]        <a href="dictionary_S.html#1559">Semantic::DefiniteBlock</a>
+    Call   [definite.cpp, 892]        <a href="dictionary_S.html#1561">Semantic::DefiniteLocalVariableStatement</a>
+    Call   [definite.cpp, 1228]       <a href="dictionary_S.html#1568">Semantic::DefiniteSwitchStatement</a>
+    Call   [definite.cpp, 1385]       <a href="dictionary_S.html#1574">Semantic::DefiniteTryStatement</a>
+    Call   [decl.cpp, 4315]           <a href="dictionary_S.html#1539">Semantic::ProcessInstanceInitializers</a>
+
+<a href="dictionary_D.html#13681">DefinitePair::RemoveElement</a><a name="13681"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 905]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#1361">DefinitePair::Resize</a><a name="1361"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 872]             <a href="dictionary_D.html#751">DefinitePair</a>
+    Call   [semantic.h, 267]          <a href="dictionary_D.html#1346">DefiniteBlockStack::DefiniteBlockStack</a>
+    Call   [semantic.h, 268]          <a href="dictionary_D.html#1346">DefiniteBlockStack::DefiniteBlockStack</a>
+    Call   [definite.cpp, 1511]       <a href="dictionary_S.html#788">Semantic::DefiniteMethodBody</a>
+    Call   [definite.cpp, 1514]       <a href="dictionary_S.html#788">Semantic::DefiniteMethodBody</a>
+    Call   [definite.cpp, 1563]       <a href="dictionary_S.html#788">Semantic::DefiniteMethodBody</a>
+    Call   [definite.cpp, 1564]       <a href="dictionary_S.html#788">Semantic::DefiniteMethodBody</a>
+    Call   [definite.cpp, 1586]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+    Call   [definite.cpp, 1590]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+    Call   [definite.cpp, 1651]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+    Call   [definite.cpp, 1652]       <a href="dictionary_S.html#770">Semantic::DefiniteConstructorBody</a>
+    Call   [definite.cpp, 1669]       <a href="dictionary_S.html#1631">Semantic::DefiniteBlockInitializer</a>
+    Call   [definite.cpp, 1671]       <a href="dictionary_S.html#1631">Semantic::DefiniteBlockInitializer</a>
+    Call   [definite.cpp, 1697]       <a href="dictionary_S.html#1631">Semantic::DefiniteBlockInitializer</a>
+    Call   [definite.cpp, 1698]       <a href="dictionary_S.html#1631">Semantic::DefiniteBlockInitializer</a>
+
+<a href="dictionary_D.html#13675">DefinitePair::Resize</a><a name="13675"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 877]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#13673">DefinitePair::SetEmpty</a><a name="13673"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 853]             <a href="dictionary_D.html#751">DefinitePair</a>
+
+<a href="dictionary_D.html#1356">DefinitePair::SetUniverse</a><a name="1356"> </a>   (Public Function)
+  Declared as: void
+    Define   [set.h, 858]             <a href="dictionary_D.html#751">DefinitePair</a>
+    Call   [semantic.h, 210]          <a href="dictionary_D.html#1332">DefiniteBlockStack::Push</a>
+    Call   [semantic.h, 211]          <a href="dictionary_D.html#1332">DefiniteBlockStack::Push</a>
+
+<a href="dictionary_D.html#9234">DefinitePair::Size</a><a name="9234"> </a>   (Public Const Function)
+  Declared as: unsigned
+    Define   [set.h, 895]             <a href="dictionary_D.html#751">DefinitePair</a>
+    Call   [definite.cpp, 1001]       <a href="dictionary_S.html#1565">Semantic::DefiniteWhileStatement</a>
+    Call   [definite.cpp, 1045]       <a href="dictionary_S.html#1566">Semantic::DefiniteForStatement</a>
+    Call   [definite.cpp, 1172]       <a href="dictionary_S.html#1569">Semantic::DefiniteDoStatement</a>
+
+<a href="dictionary_D.html#7482">DelegatesSuccessors</a><a name="7482"> </a>   (Function)
+  Declared as: bool
+    Define   [control.cpp, 943]       control.cpp
+    Call   [control.cpp, 982]         <a href="dictionary_F.html#7487">FindStrategy</a>
+
+<a href="dictionary_D.html#8247">DelegationEntry::DelegationEntry</a><a name="8247"> </a>   (Public Function)
+    Define   [control.h, 410]         <a href="dictionary_D.html#7359">DelegationEntry</a>
+    Call   [control.cpp, 4734]        <a href="dictionary_D.html#8107">DelegationTable::InsertDelegation</a>
+
+<a href="dictionary_D.html#17309">DelegationEntry::~DelegationEntry</a><a name="17309"> </a>   (Public Function)
+    Declare   [control.h, 414]        <a href="dictionary_D.html#7359">DelegationEntry</a>
+
+<a href="dictionary_D.html#8260">DelegationTable::ConcretizeDelegations</a><a name="8260"> </a>   (Public Function)
+  Declared as: void
+    Define   [control.cpp, 4837]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 6428]        <a href="dictionary_C.html#8599">Control::Control</a>
+    Declare   [control.h, 439]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#8228">DelegationTable::Delegates</a><a name="8228"> </a>   (Public Function)
+  Declared as: MethodSymbol *
+    Define   [control.cpp, 4695]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Declare   [control.h, 432]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#7398">DelegationTable::DelegatesSuccessors</a><a name="7398"> </a>   (Public Function)
+  Declared as: bool
+    Define   [control.cpp, 4628]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 570]         <a href="dictionary_F.html#7382">FindBridge</a>
+    Declare   [control.h, 435]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#8733">DelegationTable::DelegationTable</a><a name="8733"> </a>   (Public Function)
+    Define   [control.h, 427]         <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 6192]        <a href="dictionary_C.html#8599">Control::Control</a>
+
+<a href="dictionary_D.html#8264">DelegationTable::DumpTable</a><a name="8264"> </a>   (Public Function)
+  Declared as: void
+    Define   [control.cpp, 4856]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Declare   [control.h, 438]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#7360">DelegationTable::Entry</a><a name="7360"> </a>   (Public Function)
+  Declared as: DelegationEntry *
+    Define   [control.h, 431]         <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 495]         <a href="dictionary_F.html#7347">FindChainOfResponsibility</a>
+    Call   [control.cpp, 558]         <a href="dictionary_F.html#7382">FindBridge</a>
+    Call   [control.cpp, 969]         <a href="dictionary_F.html#7487">FindStrategy</a>
+    Call   [control.cpp, 1221]        <a href="dictionary_F.html#7525">FindComposite</a>
+    Call   [control.cpp, 1480]        <a href="dictionary_F.html#7586">FindObserver</a>
+    Call   [control.cpp, 1660]        <a href="dictionary_F.html#7621">FindTemplateMethod</a>
+    Call   [control.cpp, 2121]        <a href="dictionary_F.html#7721">FindThreadSafeInterface</a>
+    Call   [symbol.cpp, 370]          <a href="dictionary_T.html#10384">TypeSymbol::IsOnetoMany</a>
+
+<a href="dictionary_D.html#8107">DelegationTable::InsertDelegation</a><a name="8107"> </a>   (Public Function)
+  Declared as: void
+    Define   [control.cpp, 4721]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 3868]        <a href="dictionary_E.html#8098">EmitDelegation</a>
+    Declare   [control.h, 429]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#7565">DelegationTable::IsBidirectional</a><a name="7565"> </a>   (Public Function)
+  Declared as: int
+    Define   [control.cpp, 4561]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 1299]        <a href="dictionary_F.html#7553">FindMediator</a>
+    Call   [control.cpp, 1301]        <a href="dictionary_F.html#7553">FindMediator</a>
+    Declare   [control.h, 437]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#8223">DelegationTable::ResolveType</a><a name="8223"> </a>   (Public Function)
+  Declared as: TypeSymbol *
+    Define   [control.cpp, 4654]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 4637]        <a href="dictionary_D.html#7398">DelegationTable::DelegatesSuccessors</a>
+    Call   [control.cpp, 4662]        <a href="dictionary_D.html#8223">DelegationTable::ResolveType</a>
+    Call   [control.cpp, 4675]        <a href="dictionary_D.html#8223">DelegationTable::ResolveType</a>
+    Call   [control.cpp, 4687]        <a href="dictionary_D.html#8223">DelegationTable::ResolveType</a>
+    Call   [control.cpp, 4689]        <a href="dictionary_D.html#8223">DelegationTable::ResolveType</a>
+    Call   [control.cpp, 4812]        <a href="dictionary_D.html#8248">DelegationTable::ShowDelegations</a>
+    Declare   [control.h, 434]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#8248">DelegationTable::ShowDelegations</a><a name="8248"> </a>   (Public Function)
+  Declared as: void
+    Define   [control.cpp, 4737]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Declare   [control.h, 436]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#7357">DelegationTable::size</a><a name="7357"> </a>   (Public Function)
+  Declared as: int
+    Define   [control.h, 433]         <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 493]         <a href="dictionary_F.html#7347">FindChainOfResponsibility</a>
+    Call   [control.cpp, 556]         <a href="dictionary_F.html#7382">FindBridge</a>
+    Call   [control.cpp, 967]         <a href="dictionary_F.html#7487">FindStrategy</a>
+    Call   [control.cpp, 1219]        <a href="dictionary_F.html#7525">FindComposite</a>
+    Call   [control.cpp, 1478]        <a href="dictionary_F.html#7586">FindObserver</a>
+    Call   [control.cpp, 1658]        <a href="dictionary_F.html#7621">FindTemplateMethod</a>
+    Call   [control.cpp, 2119]        <a href="dictionary_F.html#7721">FindThreadSafeInterface</a>
+    Call   [control.cpp, 6569]        <a href="dictionary_C.html#8599">Control::Control</a>
+    Call   [symbol.cpp, 368]          <a href="dictionary_T.html#10384">TypeSymbol::IsOnetoMany</a>
+
+<a href="dictionary_D.html#8198">DelegationTable::TraceCall</a><a name="8198"> </a>   (Public Function)
+  Declared as: bool
+    Define   [control.cpp, 4582]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 4554]        <a href="dictionary_W.html#8193">WriteAccessTable::IsWrittenBy</a>
+    Call   [control.cpp, 4591]        <a href="dictionary_D.html#8198">DelegationTable::TraceCall</a>
+    Declare   [control.h, 430]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#8211">DelegationTable::UniqueDirectedCalls</a><a name="8211"> </a>   (Public Function)
+  Declared as: int
+    Define   [control.cpp, 4598]      <a href="dictionary_D.html#7351">DelegationTable</a>
+    Call   [control.cpp, 6571]        <a href="dictionary_C.html#8599">Control::Control</a>
+    Declare   [control.h, 428]        <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#17311">DelegationTable::~DelegationTable</a><a name="17311"> </a>   (Public Function)
+    Define   [control.h, 440]         <a href="dictionary_D.html#7351">DelegationTable</a>
+
+<a href="dictionary_D.html#12117">DeprecatedAttribute::DeprecatedAttribute</a><a name="12117"> </a>   (Public Function)
+    Define   [class.h, 1407]          <a href="dictionary_D.html#12039">DeprecatedAttribute</a>
+    Call   [class.cpp, 593]           <a href="dictionary_A.html#12032">AttributeInfo::AllocateAttributeInfo</a>
+    Call   [bytecode.h, 832]          <a href="dictionary_B.html#11200">ByteCode::CreateDeprecatedAttribute</a>
+
+<a href="dictionary_D.html#12211">DeprecatedAttribute::DeprecatedAttribute</a><a name="12211"> </a>   (Public Function)
+    Define   [class.cpp, 858]         <a href="dictionary_D.html#12039">DeprecatedAttribute</a>
+    Declare   [class.h, 1410]         <a href="dictionary_D.html#12039">DeprecatedAttribute</a>
+
+<a href="dictionary_D.html#15196">DeprecatedAttribute::Print</a><a name="15196"> </a>   (Public Virtual Const Function)
+  Declared as: void
+    Define   [class.h, 1414]          <a href="dictionary_D.html#12039">DeprecatedAttribute</a>
+
+<a href="dictionary_D.html#15195">DeprecatedAttribute::~DeprecatedAttribute</a><a name="15195"> </a>   (Public Virtual Function)
+    Define   [class.h, 1411]          <a href="dictionary_D.html#12039">DeprecatedAttribute</a>
+
+<a href="dictionary_D.html#3395">DiagnoseParser::CheckPrimaryDistance</a><a name="3395"> </a>   (Private Function)
+  Declared as: PrimaryRepairInfo
+    Define   [diagnose.cpp, 605]      <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 416]        <a href="dictionary_D.html#3378">DiagnoseParser::PrimaryPhase</a>
+    Call   [diagnose.cpp, 425]        <a href="dictionary_D.html#3378">DiagnoseParser::PrimaryPhase</a>
+    Call   [diagnose.cpp, 438]        <a href="dictionary_D.html#3378">DiagnoseParser::PrimaryPhase</a>
+    Declare   [diagnose.h, 152]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3356">DiagnoseParser::DiagnoseParse</a><a name="3356"> </a>   (Private Function)
+  Declared as: void
+    Define   [diagnose.cpp, 73]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Declare   [diagnose.h, 145]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.h, 113]          <a href="dictionary_D.html#13364">DiagnoseParser::DiagnoseParser</a>
+
+<a href="dictionary_D.html#13364">DiagnoseParser::DiagnoseParser</a><a name="13364"> </a>   (Public Function)
+    Define   [diagnose.h, 103]        <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [error.cpp, 39]            <a href="dictionary_S.html#1449">Semantic::PrintMessages</a>
+
+<a href="dictionary_D.html#3369">DiagnoseParser::ErrorRecovery</a><a name="3369"> </a>   (Private Function)
+  Declared as: RepairCandidate
+    Define   [diagnose.cpp, 314]      <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 262]        <a href="dictionary_D.html#3356">DiagnoseParser::DiagnoseParse</a>
+    Declare   [diagnose.h, 149]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3453">DiagnoseParser::GetNtermIndex</a><a name="3453"> </a>   (Private Function)
+  Declared as: int
+    Define   [diagnose.cpp, 1106]     <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 858]        <a href="dictionary_D.html#3402">DiagnoseParser::PrimaryDiagnosis</a>
+    Call   [diagnose.cpp, 871]        <a href="dictionary_D.html#3402">DiagnoseParser::PrimaryDiagnosis</a>
+    Call   [diagnose.cpp, 916]        <a href="dictionary_D.html#3402">DiagnoseParser::PrimaryDiagnosis</a>
+    Call   [diagnose.cpp, 1858]       <a href="dictionary_D.html#3549">DiagnoseParser::SecondaryDiagnosis</a>
+    Call   [diagnose.cpp, 1869]       <a href="dictionary_D.html#3549">DiagnoseParser::SecondaryDiagnosis</a>
+    Declare   [diagnose.h, 158]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3454">DiagnoseParser::GetTermIndex</a><a name="3454"> </a>   (Private Function)
+  Declared as: int
+    Define   [diagnose.cpp, 991]      <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 861]        <a href="dictionary_D.html#3402">DiagnoseParser::PrimaryDiagnosis</a>
+    Call   [diagnose.cpp, 883]        <a href="dictionary_D.html#3402">DiagnoseParser::PrimaryDiagnosis</a>
+    Declare   [diagnose.h, 156]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3403">DiagnoseParser::MergeCandidate</a><a name="3403"> </a>   (Private Function)
+  Declared as: int
+    Define   [diagnose.cpp, 527]      <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 631]        <a href="dictionary_D.html#3395">DiagnoseParser::CheckPrimaryDistance</a>
+    Declare   [diagnose.h, 151]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3542">DiagnoseParser::MisplacementRecovery</a><a name="3542"> </a>   (Private Function)
+  Declared as: SecondaryRepairInfo
+    Define   [diagnose.cpp, 1703]     <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 1504]       <a href="dictionary_D.html#3379">DiagnoseParser::SecondaryPhase</a>
+    Call   [diagnose.cpp, 1543]       <a href="dictionary_D.html#3379">DiagnoseParser::SecondaryPhase</a>
+    Declare   [diagnose.h, 161]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3445">DiagnoseParser::Misspell</a><a name="3445"> </a>   (Private Function)
+  Declared as: int
+    Define   [diagnose.cpp, 1160]     <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 778]        <a href="dictionary_D.html#3395">DiagnoseParser::CheckPrimaryDistance</a>
+    Declare   [diagnose.h, 159]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3402">DiagnoseParser::PrimaryDiagnosis</a><a name="3402"> </a>   (Private Function)
+  Declared as: RepairCandidate
+    Define   [diagnose.cpp, 841]      <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 516]        <a href="dictionary_D.html#3378">DiagnoseParser::PrimaryPhase</a>
+    Declare   [diagnose.h, 155]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3378">DiagnoseParser::PrimaryPhase</a><a name="3378"> </a>   (Private Function)
+  Declared as: RepairCandidate
+    Define   [diagnose.cpp, 381]      <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 325]        <a href="dictionary_D.html#3369">DiagnoseParser::ErrorRecovery</a>
+    Declare   [diagnose.h, 150]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3341">DiagnoseParser::ReallocateStacks</a><a name="3341"> </a>   (Private Function)
+  Declared as: void
+    Define   [diagnose.cpp, 22]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 87]         <a href="dictionary_D.html#3356">DiagnoseParser::DiagnoseParse</a>
+    Call   [diagnose.cpp, 141]        <a href="dictionary_D.html#3356">DiagnoseParser::DiagnoseParse</a>
+    Call   [diagnose.cpp, 186]        <a href="dictionary_D.html#3356">DiagnoseParser::DiagnoseParse</a>
+    Call   [diagnose.cpp, 225]        <a href="dictionary_D.html#3356">DiagnoseParser::DiagnoseParse</a>
+    Declare   [diagnose.h, 147]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#17673">DiagnoseParser::RepairParse</a><a name="17673"> </a>   (Private Function)
+  Declared as: void
+    Declare   [diagnose.h, 173]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3439">DiagnoseParser::ScopeTrial</a><a name="3439"> </a>   (Private Function)
+  Declared as: PrimaryRepairInfo
+    Define   [diagnose.cpp, 1182]     <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 623]        <a href="dictionary_D.html#3395">DiagnoseParser::CheckPrimaryDistance</a>
+    Call   [diagnose.cpp, 1423]       <a href="dictionary_D.html#3396">DiagnoseParser::SecondaryCheck</a>
+    Call   [diagnose.cpp, 1609]       <a href="dictionary_D.html#3379">DiagnoseParser::SecondaryPhase</a>
+    Call   [diagnose.cpp, 1642]       <a href="dictionary_D.html#3379">DiagnoseParser::SecondaryPhase</a>
+    Declare   [diagnose.h, 175]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3495">DiagnoseParser::ScopeTrialCheck</a><a name="3495"> </a>   (Private Function)
+  Declared as: void
+    Define   [diagnose.cpp, 1215]     <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 1189]       <a href="dictionary_D.html#3439">DiagnoseParser::ScopeTrial</a>
+    Call   [diagnose.cpp, 1355]       <a href="dictionary_D.html#3495">DiagnoseParser::ScopeTrialCheck</a>
+    Declare   [diagnose.h, 177]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3396">DiagnoseParser::SecondaryCheck</a><a name="3396"> </a>   (Private Function)
+  Declared as: bool
+    Define   [diagnose.cpp, 1402]     <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 452]        <a href="dictionary_D.html#3378">DiagnoseParser::PrimaryPhase</a>
+    Call   [diagnose.cpp, 455]        <a href="dictionary_D.html#3378">DiagnoseParser::PrimaryPhase</a>
+    Declare   [diagnose.h, 179]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3549">DiagnoseParser::SecondaryDiagnosis</a><a name="3549"> </a>   (Private Function)
+  Declared as: void
+    Define   [diagnose.cpp, 1824]     <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 1663]       <a href="dictionary_D.html#3379">DiagnoseParser::SecondaryPhase</a>
+    Declare   [diagnose.h, 171]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3379">DiagnoseParser::SecondaryPhase</a><a name="3379"> </a>   (Private Function)
+  Declared as: RepairCandidate
+    Define   [diagnose.cpp, 1450]     <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 329]        <a href="dictionary_D.html#3369">DiagnoseParser::ErrorRecovery</a>
+    Call   [diagnose.cpp, 351]        <a href="dictionary_D.html#3369">DiagnoseParser::ErrorRecovery</a>
+    Declare   [diagnose.h, 160]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#3543">DiagnoseParser::SecondaryRecovery</a><a name="3543"> </a>   (Private Function)
+  Declared as: SecondaryRepairInfo
+    Define   [diagnose.cpp, 1739]     <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [diagnose.cpp, 1511]       <a href="dictionary_D.html#3379">DiagnoseParser::SecondaryPhase</a>
+    Call   [diagnose.cpp, 1547]       <a href="dictionary_D.html#3379">DiagnoseParser::SecondaryPhase</a>
+    Declare   [diagnose.h, 166]       <a href="dictionary_D.html#3340">DiagnoseParser</a>
+
+<a href="dictionary_D.html#13365">DiagnoseParser::~DiagnoseParser</a><a name="13365"> </a>   (Public Function)
+    Define   [diagnose.h, 116]        <a href="dictionary_D.html#3340">DiagnoseParser</a>
+    Call   [error.cpp, 41]            <a href="dictionary_S.html#1449">Semantic::PrintMessages</a>
+
+<a href="dictionary_D.html#12736">DirectoryEntry::DirectoryEntry</a><a name="12736"> </a>   (Public Function)
+    Define   [lookup.h, 107]          <a href="dictionary_D.html#4202">DirectoryEntry</a>
+    Call   [lookup.cpp, 223]          <a href="dictionary_D.html#10560">DirectoryTable::DirectoryTable</a>
+    Call   [lookup.cpp, 256]          <a href="dictionary_D.html#12751">DirectoryTable::Rehash</a>
+    Call   [lookup.cpp, 283]          <a href="dictionary_D.html#10569">DirectoryTable::InsertEntry</a>
+
+<a href="dictionary_D.html#16022">DirectoryEntry::Image</a><a name="16022"> </a>   (Public Virtual Function)
+  Declared as: DirectoryEntry *
+    Define   [lookup.h, 145]          <a href="dictionary_D.html#4202">DirectoryEntry</a>
+
+<a href="dictionary_D.html#12760">DirectoryEntry::Initialize</a><a name="12760"> </a>   (Public Function)
+  Declared as: void
+    Define   [lookup.h, 123]          <a href="dictionary_D.html#4202">DirectoryEntry</a>
+    Call   [lookup.h, 135]            <a href="dictionary_D.html#16018">DirectoryEntry::Initialize</a>
+    Call   [lookup.cpp, 285]          <a href="dictionary_D.html#10569">DirectoryTable::InsertEntry</a>
+
+<a href="dictionary_D.html#16018">DirectoryEntry::Initialize</a><a name="16018"> </a>   (Public Function)
+  Declared as: void
+    Define   [lookup.h, 133]          <a href="dictionary_D.html#4202">DirectoryEntry</a>
+
+<a href="dictionary_D.html#12750">DirectoryEntry::IsDummy</a><a name="12750"> </a>   (Public Function)
+  Declared as: bool
+    Define   [lookup.h, 140]          <a href="dictionary_D.html#4202">DirectoryEntry</a>
+    Call   [lookup.cpp, 244]          <a href="dictionary_D.html#12740">DirectoryTable::FindEntry</a>
+
+<a href="dictionary_D.html#4209">DirectoryEntry::Mtime</a><a name="4209"> </a>   (Public Function)
+  Declared as: time_t
+    Define   [lookup.cpp, 362]        <a href="dictionary_D.html#4202">DirectoryEntry</a>
+    Call   [system.cpp, 1539]         <a href="dictionary_C.html#4193">Control::GetJavaFile</a>
+    Call   [system.cpp, 1606]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+    Call   [system.cpp, 1606]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+    Call   [system.cpp, 1609]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+    Call   [system.cpp, 1616]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+    Call   [system.cpp, 1709]         <a href="dictionary_C.html#4215">Control::GetFileFirst</a>
+    Call   [system.cpp, 1709]         <a href="dictionary_C.html#4215">Control::GetFileFirst</a>
+    Call   [system.cpp, 1712]         <a href="dictionary_C.html#4215">Control::GetFileFirst</a>
+    Call   [system.cpp, 1719]         <a href="dictionary_C.html#4215">Control::GetFileFirst</a>
+    Call   [control.cpp, 7299]        <a href="dictionary_C.html#8896">Control::FindOrInsertJavaInputFile</a>
+    Call   [incrmnt.cpp, 139]         <a href="dictionary_C.html#15572">Control::FindMoreRecentInputFiles</a>
+    Call   [incrmnt.cpp, 142]         <a href="dictionary_C.html#15572">Control::FindMoreRecentInputFiles</a>
+    Declare   [lookup.h, 138]         <a href="dictionary_D.html#4202">DirectoryEntry</a>
+
+<a href="dictionary_D.html#12739">DirectoryEntry::~DirectoryEntry</a><a name="12739"> </a>   (Public Virtual Function)
+    Define   [lookup.h, 117]          <a href="dictionary_D.html#4202">DirectoryEntry</a>
+    Virtual Call   [lookup.cpp, 231]   <a href="dictionary_D.html#10547">DirectoryTable::~DirectoryTable</a>
+    Virtual Call   [lookup.cpp, 255]   <a href="dictionary_D.html#12751">DirectoryTable::Rehash</a>
+
+<a href="dictionary_D.html#3937">DirectorySymbol::DirectoryName</a><a name="3937"> </a>   (Public Function)
+  Declared as: char *
+    Define   [symbol.h, 140]          <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [system.cpp, 227]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [system.cpp, 228]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [symbol.cpp, 1016]         <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Call   [symbol.cpp, 1026]         <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Call   [symbol.cpp, 1032]         <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Call   [symbol.cpp, 1080]         <a href="dictionary_D.html#3941">DirectorySymbol::ReadDirectory</a>
+    Call   [symbol.cpp, 1104]         <a href="dictionary_D.html#3941">DirectorySymbol::ReadDirectory</a>
+    Call   [symbol.cpp, 1196]         <a href="dictionary_F.html#10572">FileSymbol::SetFileName</a>
+    Call   [symbol.cpp, 1211]         <a href="dictionary_F.html#10572">FileSymbol::SetFileName</a>
+    Call   [symbol.cpp, 1311]         <a href="dictionary_T.html#10600">TypeSymbol::SetClassName</a>
+    Call   [lookup.cpp, 366]          <a href="dictionary_D.html#4209">DirectoryEntry::Mtime</a>
+    Call   [depend.cpp, 338]          <a href="dictionary_T.html#15521">TypeDependenceChecker::OutputMake</a>
+
+<a href="dictionary_D.html#3934">DirectorySymbol::DirectoryNameLength</a><a name="3934"> </a>   (Public Function)
+  Declared as: unsigned
+    Define   [symbol.h, 146]          <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [system.cpp, 222]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [system.cpp, 228]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [symbol.cpp, 1025]         <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Call   [symbol.cpp, 1102]         <a href="dictionary_D.html#3941">DirectorySymbol::ReadDirectory</a>
+    Call   [symbol.cpp, 1197]         <a href="dictionary_F.html#10572">FileSymbol::SetFileName</a>
+    Call   [symbol.cpp, 1310]         <a href="dictionary_T.html#10600">TypeSymbol::SetClassName</a>
+    Call   [lookup.cpp, 367]          <a href="dictionary_D.html#4209">DirectoryEntry::Mtime</a>
+    Call   [lookup.cpp, 371]          <a href="dictionary_D.html#4209">DirectoryEntry::Mtime</a>
+
+<a href="dictionary_D.html#3858">DirectorySymbol::DirectorySymbol</a><a name="3858"> </a>   (Public Function)
+    Define   [symbol.cpp, 969]        <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [zip.cpp, 545]             <a href="dictionary_Z.html#3854">Zip::ReadDirectory</a>
+    Call   [system.cpp, 390]          <a href="dictionary_C.html#3995">Control::ProcessPath</a>
+    Call   [control.cpp, 6973]        <a href="dictionary_C.html#4029">Control::ProcessSubdirectories</a>
+    Declare   [symbol.h, 91]          <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [symbol.h, 1927]           <a href="dictionary_S.html#13912">SymbolTable::InsertDirectorySymbol</a>
+
+<a href="dictionary_D.html#3795">DirectorySymbol::FindDirectorySymbol</a><a name="3795"> </a>   (Public Function)
+  Declared as: DirectorySymbol *
+    Declare   [symbol.h, 154]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Define   [symbol.h, 1959]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [zip.cpp, 204]             <a href="dictionary_Z.html#3784">Zip::ProcessSubdirectoryEntries</a>
+    Call   [system.cpp, 216]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [system.cpp, 258]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [control.cpp, 6936]        <a href="dictionary_C.html#8856">Control::FindSubdirectory</a>
+    Call   [control.cpp, 7016]        <a href="dictionary_C.html#4029">Control::ProcessSubdirectories</a>
+    Call   [control.cpp, 7030]        <a href="dictionary_C.html#4029">Control::ProcessSubdirectories</a>
+
+<a href="dictionary_D.html#4205">DirectorySymbol::FindEntry</a><a name="4205"> </a>   (Public Function)
+  Declared as: DirectoryEntry *
+    Define   [symbol.h, 109]          <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [system.cpp, 1523]         <a href="dictionary_C.html#4193">Control::GetJavaFile</a>
+    Call   [system.cpp, 1590]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+    Call   [system.cpp, 1594]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+    Call   [system.cpp, 1694]         <a href="dictionary_C.html#4215">Control::GetFileFirst</a>
+    Call   [system.cpp, 1697]         <a href="dictionary_C.html#4215">Control::GetFileFirst</a>
+    Call   [control.cpp, 7286]        <a href="dictionary_C.html#8896">Control::FindOrInsertJavaInputFile</a>
+    Call   [incrmnt.cpp, 100]         <a href="dictionary_C.html#15567">Control::FindInputFile</a>
+
+<a href="dictionary_D.html#3825">DirectorySymbol::FindFileSymbol</a><a name="3825"> </a>   (Public Function)
+  Declared as: FileSymbol *
+    Declare   [symbol.h, 157]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Define   [symbol.h, 1995]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [zip.cpp, 299]             <a href="dictionary_Z.html#3803">Zip::ProcessDirectoryEntry</a>
+    Call   [system.cpp, 1531]         <a href="dictionary_C.html#4193">Control::GetJavaFile</a>
+    Call   [system.cpp, 1583]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+    Call   [system.cpp, 1686]         <a href="dictionary_C.html#4215">Control::GetFileFirst</a>
+    Call   [control.cpp, 7289]        <a href="dictionary_C.html#8896">Control::FindOrInsertJavaInputFile</a>
+    Call   [control.cpp, 7356]        <a href="dictionary_C.html#8903">Control::FindOrInsertJavaInputFile</a>
+
+<a href="dictionary_D.html#8881">DirectorySymbol::Identity</a><a name="8881"> </a>   (Public Virtual Const Function)
+  Declared as: const NameSymbol *
+    Define   [symbol.h, 96]           <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Virtual Call   [control.cpp, 7012]   <a href="dictionary_C.html#4029">Control::ProcessSubdirectories</a>
+    Virtual Call   [control.cpp, 7013]   <a href="dictionary_C.html#4029">Control::ProcessSubdirectories</a>
+    Virtual Call   [lookup.h, 872]    <a href="dictionary_S.html#16035">Symbol::HashCode</a>
+    Virtual Call   [symbol.cpp, 700]   <a href="dictionary_S.html#10449">SymbolTable::Rehash</a>
+    Virtual Call   [set.h, 28]        <a href="dictionary_S.html#13508">ShadowSymbol::Identity</a>
+    Virtual Call   [set.h, 190]       <a href="dictionary_S.html#13534">SymbolSet::NameCount</a>
+    Virtual Call   [set.h, 207]       <a href="dictionary_S.html#4058">SymbolSet::IsElement</a>
+    Virtual Call   [set.h, 232]       <a href="dictionary_S.html#460">SymbolSet::AddElement</a>
+    Virtual Call   [set.h, 307]       <a href="dictionary_S.html#7381">SymbolSet::Print</a>
+    Virtual Call   [set.h, 372]       <a href="dictionary_N.html#8998">NameSymbolMap::AddElement</a>
+    Virtual Call   [set.h, 375]       <a href="dictionary_N.html#8998">NameSymbolMap::AddElement</a>
+    Virtual Call   [set.h, 479]       <a href="dictionary_S.html#10731">SymbolMap::Image</a>
+    Virtual Call   [symbol.h, 1799]   <a href="dictionary_S.html#13910">SymbolTable::Hash</a>
+    Virtual Call   [symbol.h, 1915]   <a href="dictionary_S.html#4027">SymbolTable::FindPathSymbol</a>
+    Virtual Call   [symbol.h, 1952]   <a href="dictionary_S.html#13913">SymbolTable::FindDirectorySymbol</a>
+    Virtual Call   [symbol.h, 1988]   <a href="dictionary_S.html#13915">SymbolTable::FindFileSymbol</a>
+    Virtual Call   [symbol.h, 2025]   <a href="dictionary_S.html#8850">SymbolTable::FindPackageSymbol</a>
+    Virtual Call   [symbol.h, 2140]   <a href="dictionary_S.html#9379">SymbolTable::FindTypeSymbol</a>
+    Virtual Call   [symbol.h, 2171]   <a href="dictionary_S.html#13919">SymbolTable::InsertMethodSymbol</a>
+    Virtual Call   [symbol.h, 2207]   <a href="dictionary_S.html#13920">SymbolTable::FindMethodSymbol</a>
+    Virtual Call   [symbol.h, 2276]   <a href="dictionary_S.html#13922">SymbolTable::FindVariableSymbol</a>
+    Virtual Call   [symbol.h, 2313]   <a href="dictionary_S.html#13923">SymbolTable::FindLabelSymbol</a>
+    Virtual Call   [set.cpp, 142]     <a href="dictionary_S.html#518">SymbolSet::RemoveElement</a>
+    Virtual Call   [set.cpp, 205]     <a href="dictionary_S.html#13608">SymbolMap::Rehash</a>
+    Virtual Call   [set.cpp, 217]     <a href="dictionary_S.html#10737">SymbolMap::Map</a>
+
+<a href="dictionary_D.html#3796">DirectorySymbol::InsertDirectorySymbol</a><a name="3796"> </a>   (Public Function)
+  Declared as: DirectorySymbol *
+    Declare   [symbol.h, 153]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Define   [symbol.h, 1935]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [zip.cpp, 206]             <a href="dictionary_Z.html#3784">Zip::ProcessSubdirectoryEntries</a>
+    Call   [system.cpp, 234]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [system.cpp, 274]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [control.cpp, 7019]        <a href="dictionary_C.html#4029">Control::ProcessSubdirectories</a>
+    Call   [control.cpp, 7033]        <a href="dictionary_C.html#4029">Control::ProcessSubdirectories</a>
+
+<a href="dictionary_D.html#3826">DirectorySymbol::InsertFileSymbol</a><a name="3826"> </a>   (Public Function)
+  Declared as: FileSymbol *
+    Declare   [symbol.h, 156]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Define   [symbol.h, 1976]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [zip.cpp, 302]             <a href="dictionary_Z.html#3803">Zip::ProcessDirectoryEntry</a>
+    Call   [system.cpp, 1535]         <a href="dictionary_C.html#4193">Control::GetJavaFile</a>
+    Call   [system.cpp, 1601]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+    Call   [system.cpp, 1704]         <a href="dictionary_C.html#4215">Control::GetFileFirst</a>
+    Call   [control.cpp, 7294]        <a href="dictionary_C.html#8896">Control::FindOrInsertJavaInputFile</a>
+
+<a href="dictionary_D.html#3940">DirectorySymbol::IsSourceDirectory</a><a name="3940"> </a>   (Public Function)
+  Declared as: bool
+    Define   [symbol.h, 107]          <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [system.cpp, 235]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [system.cpp, 275]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [system.cpp, 1593]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+
+<a href="dictionary_D.html#3932">DirectorySymbol::IsZip</a><a name="3932"> </a>   (Public Function)
+  Declared as: bool
+    Define   [symbol.h, 137]          <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [system.cpp, 217]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [symbol.cpp, 1072]         <a href="dictionary_D.html#3941">DirectorySymbol::ReadDirectory</a>
+
+<a href="dictionary_D.html#10555">DirectorySymbol::Name</a><a name="10555"> </a>   (Public Virtual Const Function)
+  Declared as: const wchar_t *
+    Define   [symbol.h, 94]           <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Virtual Call   [symbol.cpp, 1015]   <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Virtual Call   [stream.cpp, 498]   <a href="dictionary_L.html#359">LexStream::NameString</a>
+
+<a href="dictionary_D.html#10556">DirectorySymbol::NameLength</a><a name="10556"> </a>   (Public Virtual Const Function)
+  Declared as: unsigned
+    Define   [symbol.h, 95]           <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Virtual Call   [symbol.cpp, 1015]   <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Virtual Call   [stream.cpp, 490]   <a href="dictionary_L.html#3622">LexStream::RightColumn</a>
+    Virtual Call   [stream.cpp, 505]   <a href="dictionary_L.html#13153">LexStream::NameStringLength</a>
+
+<a href="dictionary_D.html#4207">DirectorySymbol::PathSym</a><a name="4207"> </a>   (Public Function)
+  Declared as: PathSymbol *
+    Define   [symbol.h, 131]          <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [symbol.h, 134]            <a href="dictionary_D.html#4207">DirectorySymbol::PathSym</a>
+    Call   [symbol.h, 137]            <a href="dictionary_D.html#3932">DirectorySymbol::IsZip</a>
+    Call   [symbol.h, 269]            <a href="dictionary_F.html#10574">FileSymbol::PathSym</a>
+    Call   [system.cpp, 1529]         <a href="dictionary_C.html#4193">Control::GetJavaFile</a>
+    Call   [system.cpp, 1586]         <a href="dictionary_C.html#4216">Control::GetFileBoth</a>
+    Call   [system.cpp, 1690]         <a href="dictionary_C.html#4215">Control::GetFileFirst</a>
+
+<a href="dictionary_D.html#3941">DirectorySymbol::ReadDirectory</a><a name="3941"> </a>   (Public Function)
+  Declared as: void
+    Define   [symbol.cpp, 1070]       <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [system.cpp, 241]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [system.cpp, 280]          <a href="dictionary_C.html#3923">Control::FindPathsToDirectory</a>
+    Call   [system.cpp, 399]          <a href="dictionary_C.html#3995">Control::ProcessPath</a>
+    Call   [control.cpp, 6976]        <a href="dictionary_C.html#4029">Control::ProcessSubdirectories</a>
+    Call   [control.cpp, 7056]        <a href="dictionary_C.html#4029">Control::ProcessSubdirectories</a>
+    Call   [symbol.cpp, 1066]         <a href="dictionary_D.html#10559">DirectorySymbol::ResetDirectory</a>
+    Declare   [symbol.h, 161]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+
+<a href="dictionary_D.html#10559">DirectorySymbol::ResetDirectory</a><a name="10559"> </a>   (Public Function)
+  Declared as: void
+    Define   [symbol.cpp, 1043]       <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Declare   [symbol.h, 159]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [incrmnt.cpp, 152]         <a href="dictionary_C.html#15576">Control::RereadDirectory</a>
+
+<a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a><a name="10548"> </a>   (Public Function)
+  Declared as: void
+    Define   [symbol.cpp, 992]        <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Declare   [symbol.h, 139]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [symbol.h, 143]            <a href="dictionary_D.html#3937">DirectorySymbol::DirectoryName</a>
+    Call   [symbol.h, 149]            <a href="dictionary_D.html#3934">DirectorySymbol::DirectoryNameLength</a>
+
+<a href="dictionary_D.html#13730">DirectorySymbol::Table</a><a name="13730"> </a>   (Private Function)
+  Declared as: SymbolTable *
+    Declare   [symbol.h, 168]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [symbol.h, 1939]           <a href="dictionary_D.html#3796">DirectorySymbol::InsertDirectorySymbol</a>
+    Call   [symbol.h, 1978]           <a href="dictionary_D.html#3826">DirectorySymbol::InsertFileSymbol</a>
+    Define   [symbol.h, 2333]         <a href="dictionary_D.html#1403">DirectorySymbol</a>
+
+<a href="dictionary_D.html#10553">DirectorySymbol::Utf8Name</a><a name="10553"> </a>   (Public Const Function)
+  Declared as: const char *
+    Define   [symbol.h, 97]           <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [symbol.cpp, 1002]         <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Call   [symbol.cpp, 1021]         <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Call   [symbol.cpp, 1035]         <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+
+<a href="dictionary_D.html#10551">DirectorySymbol::Utf8NameLength</a><a name="10551"> </a>   (Public Const Function)
+  Declared as: unsigned
+    Define   [symbol.h, 102]          <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Call   [symbol.cpp, 999]          <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Call   [symbol.cpp, 1019]         <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+    Call   [symbol.cpp, 1027]         <a href="dictionary_D.html#10548">DirectorySymbol::SetDirectoryName</a>
+
+<a href="dictionary_D.html#3857">DirectorySymbol::~DirectorySymbol</a><a name="3857"> </a>   (Public Virtual Function)
+    Define   [symbol.cpp, 985]        <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Virtual Call   [zip.cpp, 533]     <a href="dictionary_Z.html#3855">Zip::~Zip</a>
+    Declare   [symbol.h, 92]          <a href="dictionary_D.html#1403">DirectorySymbol</a>
+    Virtual Call   [symbol.cpp, 662]   <a href="dictionary_S.html#10449">SymbolTable::Rehash</a>
+    Virtual Call   [symbol.cpp, 745]   <a href="dictionary_S.html#8837">SymbolTable::~SymbolTable</a>
+    Virtual Call   [symbol.cpp, 747]   <a href="dictionary_S.html#8837">SymbolTable::~SymbolTable</a>
+
+<a href="dictionary_D.html#10560">DirectoryTable::DirectoryTable</a><a name="10560"> </a>   (Public Function)
+    Define   [lookup.cpp, 218]        <a href="dictionary_D.html#10546">DirectoryTable</a>
+    Call   [symbol.cpp, 1076]         <a href="dictionary_D.html#3941">DirectorySymbol::ReadDirectory</a>
+    Declare   [lookup.h, 228]         <a href="dictionary_D.html#10546">DirectoryTable</a>
+
+<a href="dictionary_D.html#12740">DirectoryTable::FindEntry</a><a name="12740"> </a>   (Public Function)
+  Declared as: DirectoryEntry *
+    Define   [lookup.cpp, 235]        <a href="dictionary_D.html#10546">DirectoryTable</a>
+    Call   [symbol.h, 111]            <a href="dictionary_D.html#4205">DirectorySymbol::FindEntry</a>
+    Declare   [lookup.h, 231]         <a href="dictionary_D.html#10546">DirectoryTable</a>
+
+<a href="dictionary_D.html#12744">DirectoryTable::Hash</a><a name="12744"> </a>   (Private Static Function)
+  Declared as: unsigned
+    Define   [lookup.h, 255]          <a href="dictionary_D.html#10546">DirectoryTable</a>
+    Call   [lookup.cpp, 237]          <a href="dictionary_D.html#12740">DirectoryTable::FindEntry</a>
+    Call   [lookup.cpp, 262]          <a href="dictionary_D.html#12751">DirectoryTable::Rehash</a>
+    Call   [lookup.cpp, 272]          <a href="dictionary_D.html#10569">DirectoryTable::InsertEntry</a>
+
+<a href="dictionary_D.html#10569">DirectoryTable::InsertEntry</a><a name="10569"> </a>   (Public Function)
+  Declared as: DirectoryEntry *
+    Define   [lookup.cpp, 269]        <a href="dictionary_D.html#10546">DirectoryTable</a>
+    Call   [symbol.cpp, 1108]         <a href="dictionary_D.html#3941">DirectorySymbol::ReadDirectory</a>
+    Declare   [lookup.h, 232]         <a href="dictionary_D.html#10546">DirectoryTable</a>
+
+<a href="dictionary_D.html#12751">DirectoryTable::Rehash</a><a name="12751"> </a>   (Private Function)
+  Declared as: void
+    Define   [lookup.cpp, 251]        <a href="dictionary_D.html#10546">DirectoryTable</a>
+    Call   [lookup.cpp, 297]          <a href="dictionary_D.html#10569">DirectoryTable::InsertEntry</a>
+    Declare   [lookup.h, 260]         <a href="dictionary_D.html#10546">DirectoryTable</a>
+
+<a href="dictionary_D.html#10547">DirectoryTable::~DirectoryTable</a><a name="10547"> </a>   (Public Function)
+    Define   [lookup.cpp, 227]        <a href="dictionary_D.html#10546">DirectoryTable</a>
+    Call   [symbol.cpp, 988]          <a href="dictionary_D.html#3857">DirectorySymbol::~DirectorySymbol</a>
+    Call   [symbol.cpp, 1064]         <a href="dictionary_D.html#10559">DirectorySymbol::ResetDirectory</a>
+    Declare   [lookup.h, 229]         <a href="dictionary_D.html#10546">DirectoryTable</a>
+
+<a href="dictionary_D.html#8775">dlerror</a><a name="8775"> </a>   (Function)
+  Declared as: char *
+
+<a href="dictionary_D.html#8774">dlopen</a><a name="8774"> </a>   (Function)
+  Declared as: __BEGIN_DECLS void *
+
+<a href="dictionary_D.html#8777">dlsym</a><a name="8777"> </a>   (Function)
+  Declared as: void *
+
+<a href="dictionary_D.html#8719">DoubleLiteralTable::DoubleLiteralTable</a><a name="8719"> </a>   (Public Function)
+    Define   [lookup.cpp, 1116]       <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+    Call   [control.cpp, 6172]        <a href="dictionary_C.html#8599">Control::Control</a>
+    Declare   [lookup.h, 784]         <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+
+<a href="dictionary_D.html#12488">DoubleLiteralTable::FindOrInsert</a><a name="12488"> </a>   (Public Function)
+  Declared as: DoubleLiteralValue *
+    Define   [lookup.cpp, 1179]       <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+    Call   [class.cpp, 1948]          <a href="dictionary_S.html#1733">Semantic::ProcessClassFile</a>
+    Call   [lookup.cpp, 1149]         <a href="dictionary_D.html#12974">DoubleLiteralTable::FindOrInsertDouble</a>
+    Declare   [lookup.h, 789]         <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+    Call   [expr.cpp, 4377]           <a href="dictionary_S.html#1658">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 4835]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4842]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4849]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 5298]           <a href="dictionary_S.html#1663">Semantic::ProcessPLUS</a>
+    Call   [expr.cpp, 6343]           <a href="dictionary_S.html#1680">Semantic::ProcessSTAR</a>
+    Call   [expr.cpp, 6402]           <a href="dictionary_S.html#1681">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 6477]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6566]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+
+<a href="dictionary_D.html#16094">DoubleLiteralTable::FindOrInsert</a><a name="16094"> </a>   (Public Function)
+  Declared as: void
+    Define   [lookup.h, 795]          <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+
+<a href="dictionary_D.html#16096">DoubleLiteralTable::FindOrInsert</a><a name="16096"> </a>   (Public Function)
+  Declared as: void
+    Define   [lookup.h, 796]          <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+
+<a href="dictionary_D.html#16098">DoubleLiteralTable::FindOrInsert</a><a name="16098"> </a>   (Public Function)
+  Declared as: void
+    Define   [lookup.h, 797]          <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+
+<a href="dictionary_D.html#12974">DoubleLiteralTable::FindOrInsertDouble</a><a name="12974"> </a>   (Public Function)
+  Declared as: LiteralValue *
+    Define   [lookup.cpp, 1135]       <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+    Declare   [lookup.h, 787]         <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+    Call   [expr.cpp, 2744]           <a href="dictionary_S.html#1699">Semantic::ProcessDoubleLiteral</a>
+
+<a href="dictionary_D.html#12983">DoubleLiteralTable::Hash</a><a name="12983"> </a>   (Private Static Function)
+  Declared as: unsigned
+    Define   [lookup.h, 816]          <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+    Call   [lookup.cpp, 1172]         <a href="dictionary_D.html#12979">DoubleLiteralTable::Rehash</a>
+    Call   [lookup.cpp, 1181]         <a href="dictionary_D.html#12488">DoubleLiteralTable::FindOrInsert</a>
+
+<a href="dictionary_D.html#12979">DoubleLiteralTable::Rehash</a><a name="12979"> </a>   (Private Function)
+  Declared as: void
+    Define   [lookup.cpp, 1156]       <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+    Call   [lookup.cpp, 1204]         <a href="dictionary_D.html#12488">DoubleLiteralTable::FindOrInsert</a>
+    Declare   [lookup.h, 821]         <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+
+<a href="dictionary_D.html#8838">DoubleLiteralTable::~DoubleLiteralTable</a><a name="8838"> </a>   (Public Function)
+    Define   [lookup.cpp, 1127]       <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+    Call   [control.cpp, 6867]        <a href="dictionary_C.html#8828">Control::~Control</a>
+    Declare   [lookup.h, 785]         <a href="dictionary_D.html#8718">DoubleLiteralTable</a>
+
+<a href="dictionary_D.html#12987">DoubleLiteralValue::Initialize</a><a name="12987"> </a>   (Public Function)
+  Declared as: void
+    Define   [lookup.h, 391]          <a href="dictionary_D.html#11273">DoubleLiteralValue</a>
+    Call   [lookup.cpp, 1191]         <a href="dictionary_D.html#12488">DoubleLiteralTable::FindOrInsert</a>
+
+<a href="dictionary_D.html#12973">DoubleLiteralValue::~DoubleLiteralValue</a><a name="12973"> </a>   (Public Virtual Function)
+    Define   [lookup.h, 389]          <a href="dictionary_D.html#11273">DoubleLiteralValue</a>
+    Virtual Call   [lookup.cpp, 1131]   <a href="dictionary_D.html#8838">DoubleLiteralTable::~DoubleLiteralTable</a>
+    Virtual Call   [lookup.cpp, 1160]   <a href="dictionary_D.html#12979">DoubleLiteralTable::Rehash</a>
+
+<a href="dictionary_D.html#1005">DoubleToString::DoubleToString</a><a name="1005"> </a>   (Public Function)
+    Define   [platform.cpp, 775]      <a href="dictionary_D.html#1004">DoubleToString</a>
+    Declare   [platform.h, 770]       <a href="dictionary_D.html#1004">DoubleToString</a>
+    Call   [class.h, 638]             <a href="dictionary_C.html#15058">CPDoubleInfo::Print</a>
+    Call   [class.h, 643]             <a href="dictionary_C.html#15060">CPDoubleInfo::Describe</a>
+    Call   [expr.cpp, 4779]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+
+<a href="dictionary_D.html#1044">DoubleToString::Format</a><a name="1044"> </a>   (Private Function)
+  Declared as: void
+    Define   [platform.cpp, 1051]     <a href="dictionary_D.html#1004">DoubleToString</a>
+    Call   [platform.cpp, 882]        <a href="dictionary_D.html#1005">DoubleToString::DoubleToString</a>
+    Call   [platform.cpp, 1048]       <a href="dictionary_D.html#1005">DoubleToString::DoubleToString</a>
+    Declare   [platform.h, 776]       <a href="dictionary_D.html#1004">DoubleToString</a>
+
+<a href="dictionary_D.html#12588">DoubleToString::Length</a><a name="12588"> </a>   (Public Const Function)
+  Declared as: int
+    Define   [platform.h, 773]        <a href="dictionary_D.html#1004">DoubleToString</a>
+    Call   [expr.cpp, 4782]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+
+<a href="dictionary_D.html#12587">DoubleToString::String</a><a name="12587"> </a>   (Public Const Function)
+  Declared as: const char *
+    Define   [platform.h, 772]        <a href="dictionary_D.html#1004">DoubleToString</a>
+    Call   [class.h, 638]             <a href="dictionary_C.html#15058">CPDoubleInfo::Print</a>
+    Call   [class.h, 643]             <a href="dictionary_C.html#15060">CPDoubleInfo::Describe</a>
+    Call   [expr.cpp, 4781]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+
+<a href="dictionary_D.html#7135">Dump</a><a name="7135"> </a>   (Function)
+  Declared as: const char *
+    Define   [dump.cpp, 229]          dump.cpp
+
+<a href="dictionary_D.html#312">DYNAMIC_CAST</a><a name="312"> </a>   (Function Template)
+  Declared as: TO
+    Define   [platform.h, 248]        platform.h
+    Call   [body.cpp, 872]            <a href="dictionary_S.html#273">Semantic::ProcessSwitchStatement</a>
+    Call   [body.cpp, 877]            <a href="dictionary_S.html#273">Semantic::ProcessSwitchStatement</a>
+    Call   [parser.cpp, 422]          <a href="dictionary_P.html#2275">Parser::ParseSegment</a>
+    Call   [ast.h, 6118]              <a href="dictionary_A.html#5175">Ast::StatementCast</a>
+    Call   [ast.h, 6123]              <a href="dictionary_A.html#5176">Ast::MemberValueCast</a>
+    Call   [ast.h, 6130]              <a href="dictionary_A.html#5177">Ast::ExpressionCast</a>
+    Call   [ast.h, 6136]              <a href="dictionary_A.html#5178">Ast::PrimitiveTypeCast</a>
+    Call   [ast.h, 6142]              <a href="dictionary_A.html#5179">Ast::StaticFieldCast</a>
+    Call   [ast.h, 6149]              <a href="dictionary_A.html#5180">Ast::StaticInitializerCast</a>
+    Call   [ast.h, 6156]              <a href="dictionary_A.html#2264">Ast::UnparsedClassBodyCast</a>
+    Call   [ast.h, 6163]              <a href="dictionary_A.html#739">Ast::BadCompilationUnitCast</a>
+    Call   [ast.h, 6170]              <a href="dictionary_A.html#5181">Ast::EmptyCompilationUnitCast</a>
+    Call   [ast.h, 6182]              <a href="dictionary_A.html#5182">Ast::ListNodeCast</a>
+    Call   [ast.h, 6187]              <a href="dictionary_A.html#5183">Ast::BlockCast</a>
+    Call   [ast.h, 6194]              <a href="dictionary_A.html#5184">Ast::NameCast</a>
+    Call   [ast.h, 6199]              <a href="dictionary_A.html#5185">Ast::BracketsCast</a>
+    Call   [ast.h, 6204]              <a href="dictionary_A.html#5186">Ast::ArrayTypeCast</a>
+    Call   [ast.h, 6209]              <a href="dictionary_A.html#5187">Ast::WildcardCast</a>
+    Call   [ast.h, 6214]              <a href="dictionary_A.html#5188">Ast::TypeArgumentsCast</a>
+    Call   [ast.h, 6220]              <a href="dictionary_A.html#5189">Ast::TypeNameCast</a>
+    Call   [ast.h, 6225]              <a href="dictionary_A.html#5190">Ast::MemberValuePairCast</a>
+    Call   [ast.h, 6231]              <a href="dictionary_A.html#4876">Ast::AnnotationCast</a>
+    Call   [ast.h, 6236]              <a href="dictionary_A.html#2785">Ast::ModifierKeywordCast</a>
+    Call   [ast.h, 6242]              <a href="dictionary_A.html#5191">Ast::ModifiersCast</a>
+    Call   [ast.h, 6247]              <a href="dictionary_A.html#5192">Ast::PackageDeclarationCast</a>
+    Call   [ast.h, 6253]              <a href="dictionary_A.html#5193">Ast::ImportDeclarationCast</a>
+    Call   [ast.h, 6258]              <a href="dictionary_A.html#2229">Ast::CompilationUnitCast</a>
+    Call   [ast.h, 6264]              <a href="dictionary_A.html#5194">Ast::EmptyDeclarationCast</a>
+    Call   [ast.h, 6270]              <a href="dictionary_A.html#5195">Ast::ClassBodyCast</a>
+    Call   [ast.h, 6275]              <a href="dictionary_A.html#5196">Ast::TypeParameterCast</a>
+    Call   [ast.h, 6280]              <a href="dictionary_A.html#5197">Ast::TypeParametersCast</a>
+    Call   [ast.h, 6285]              <a href="dictionary_A.html#4883">Ast::ClassDeclarationCast</a>
+    Call   [ast.h, 6290]              <a href="dictionary_A.html#5198">Ast::ArrayInitializerCast</a>
+    Call   [ast.h, 6296]              <a href="dictionary_A.html#5199">Ast::VariableDeclaratorIdCast</a>
+    Call   [ast.h, 6302]              <a href="dictionary_A.html#5200">Ast::VariableDeclaratorCast</a>
+    Call   [ast.h, 6308]              <a href="dictionary_A.html#5201">Ast::FieldDeclarationCast</a>
+    Call   [ast.h, 6313]              <a href="dictionary_A.html#5202">Ast::FormalParameterCast</a>
+    Call   [ast.h, 6318]              <a href="dictionary_A.html#5203">Ast::MethodDeclaratorCast</a>
+    Call   [ast.h, 6324]              <a href="dictionary_A.html#5204">Ast::MethodBodyCast</a>
+    Call   [ast.h, 6329]              <a href="dictionary_A.html#5205">Ast::MethodDeclarationCast</a>
+    Call   [ast.h, 6334]              <a href="dictionary_A.html#5206">Ast::InitializerDeclarationCast</a>
+    Call   [ast.h, 6340]              <a href="dictionary_A.html#5207">Ast::ArgumentsCast</a>
+    Call   [ast.h, 6345]              <a href="dictionary_A.html#729">Ast::ThisCallCast</a>
+    Call   [ast.h, 6350]              <a href="dictionary_A.html#727">Ast::SuperCallCast</a>
+    Call   [ast.h, 6355]              <a href="dictionary_A.html#5208">Ast::ConstructorDeclarationCast</a>
+    Call   [ast.h, 6361]              <a href="dictionary_A.html#4885">Ast::EnumDeclarationCast</a>
+    Call   [ast.h, 6366]              <a href="dictionary_A.html#5209">Ast::EnumConstantCast</a>
+    Call   [ast.h, 6371]              <a href="dictionary_A.html#4887">Ast::InterfaceDeclarationCast</a>
+    Call   [ast.h, 6377]              <a href="dictionary_A.html#4889">Ast::AnnotationDeclarationCast</a>
+    Call   [ast.h, 6383]              <a href="dictionary_A.html#5210">Ast::LocalVariableStatementCast</a>
+    Call   [ast.h, 6389]              <a href="dictionary_A.html#5211">Ast::LocalClassStatementCast</a>
+    Call   [ast.h, 6395]              <a href="dictionary_A.html#5212">Ast::IfStatementCast</a>
+    Call   [ast.h, 6400]              <a href="dictionary_A.html#5213">Ast::EmptyStatementCast</a>
+    Call   [ast.h, 6406]              <a href="dictionary_A.html#5214">Ast::ExpressionStatementCast</a>
+    Call   [ast.h, 6412]              <a href="dictionary_A.html#5215">Ast::SwitchLabelCast</a>
+    Call   [ast.h, 6417]              <a href="dictionary_A.html#5216">Ast::SwitchBlockStatementCast</a>
+    Call   [ast.h, 6423]              <a href="dictionary_A.html#5217">Ast::SwitchStatementCast</a>
+    Call   [ast.h, 6428]              <a href="dictionary_A.html#380">Ast::WhileStatementCast</a>
+    Call   [ast.h, 6433]              <a href="dictionary_A.html#376">Ast::DoStatementCast</a>
+    Call   [ast.h, 6438]              <a href="dictionary_A.html#378">Ast::ForStatementCast</a>
+    Call   [ast.h, 6443]              <a href="dictionary_A.html#382">Ast::ForeachStatementCast</a>
+    Call   [ast.h, 6448]              <a href="dictionary_A.html#5218">Ast::BreakStatementCast</a>
+    Call   [ast.h, 6453]              <a href="dictionary_A.html#5219">Ast::ContinueStatementCast</a>
+    Call   [ast.h, 6459]              <a href="dictionary_A.html#5220">Ast::ReturnStatementCast</a>
+    Call   [ast.h, 6464]              <a href="dictionary_A.html#5221">Ast::ThrowStatementCast</a>
+    Call   [ast.h, 6469]              <a href="dictionary_A.html#5222">Ast::SynchronizedStatementCast</a>
+    Call   [ast.h, 6475]              <a href="dictionary_A.html#5223">Ast::AssertStatementCast</a>
+    Call   [ast.h, 6480]              <a href="dictionary_A.html#5224">Ast::CatchClauseCast</a>
+    Call   [ast.h, 6485]              <a href="dictionary_A.html#5225">Ast::FinallyClauseCast</a>
+    Call   [ast.h, 6490]              <a href="dictionary_A.html#5226">Ast::TryStatementCast</a>
+    Call   [ast.h, 6495]              <a href="dictionary_A.html#5227">Ast::IntegerLiteralCast</a>
+    Call   [ast.h, 6501]              <a href="dictionary_A.html#5228">Ast::LongLiteralCast</a>
+    Call   [ast.h, 6506]              <a href="dictionary_A.html#5229">Ast::FloatLiteralCast</a>
+    Call   [ast.h, 6512]              <a href="dictionary_A.html#5230">Ast::DoubleLiteralCast</a>
+    Call   [ast.h, 6518]              <a href="dictionary_A.html#5231">Ast::TrueLiteralCast</a>
+    Call   [ast.h, 6523]              <a href="dictionary_A.html#5232">Ast::FalseLiteralCast</a>
+    Call   [ast.h, 6529]              <a href="dictionary_A.html#5233">Ast::StringLiteralCast</a>
+    Call   [ast.h, 6535]              <a href="dictionary_A.html#5234">Ast::CharacterLiteralCast</a>
+    Call   [ast.h, 6541]              <a href="dictionary_A.html#5235">Ast::NullLiteralCast</a>
+    Call   [ast.h, 6546]              <a href="dictionary_A.html#5236">Ast::ClassLiteralCast</a>
+    Call   [ast.h, 6552]              <a href="dictionary_A.html#5237">Ast::ThisExpressionCast</a>
+    Call   [ast.h, 6558]              <a href="dictionary_A.html#5238">Ast::SuperExpressionCast</a>
+    Call   [ast.h, 6564]              <a href="dictionary_A.html#5239">Ast::ParenthesizedExpressionCast</a>
+    Call   [ast.h, 6570]              <a href="dictionary_A.html#5240">Ast::ClassCreationExpressionCast</a>
+    Call   [ast.h, 6576]              <a href="dictionary_A.html#5241">Ast::DimExprCast</a>
+    Call   [ast.h, 6581]              <a href="dictionary_A.html#5242">Ast::ArrayCreationExpressionCast</a>
+    Call   [ast.h, 6587]              <a href="dictionary_A.html#5243">Ast::FieldAccessCast</a>
+    Call   [ast.h, 6592]              <a href="dictionary_A.html#5244">Ast::MethodInvocationCast</a>
+    Call   [ast.h, 6597]              <a href="dictionary_A.html#5245">Ast::ArrayAccessCast</a>
+    Call   [ast.h, 6602]              <a href="dictionary_A.html#5246">Ast::PostUnaryExpressionCast</a>
+    Call   [ast.h, 6608]              <a href="dictionary_A.html#5247">Ast::PreUnaryExpressionCast</a>
+    Call   [ast.h, 6614]              <a href="dictionary_A.html#5248">Ast::CastExpressionCast</a>
+    Call   [ast.h, 6619]              <a href="dictionary_A.html#5249">Ast::BinaryExpressionCast</a>
+    Call   [ast.h, 6624]              <a href="dictionary_A.html#5250">Ast::InstanceofExpressionCast</a>
+    Call   [ast.h, 6630]              <a href="dictionary_A.html#5251">Ast::ConditionalExpressionCast</a>
+    Call   [ast.h, 6636]              <a href="dictionary_A.html#185">Ast::AssignmentExpressionCast</a>
+    Call   [symbol.cpp, 2961]         <a href="dictionary_T.html#10863">TypeSymbol::GetWriteAccessFromReadAccess</a>
+    Call   [symbol.cpp, 2963]         <a href="dictionary_T.html#10863">TypeSymbol::GetWriteAccessFromReadAccess</a>
+    Call   [symbol.cpp, 2966]         <a href="dictionary_T.html#10863">TypeSymbol::GetWriteAccessFromReadAccess</a>
+    Call   [symbol.cpp, 2968]         <a href="dictionary_T.html#10863">TypeSymbol::GetWriteAccessFromReadAccess</a>
+    Call   [bytecode.cpp, 396]        <a href="dictionary_B.html#11104">ByteCode::DeclareField</a>
+    Call   [bytecode.cpp, 399]        <a href="dictionary_B.html#11104">ByteCode::DeclareField</a>
+    Call   [bytecode.cpp, 402]        <a href="dictionary_B.html#11104">ByteCode::DeclareField</a>
+    Call   [bytecode.cpp, 405]        <a href="dictionary_B.html#11104">ByteCode::DeclareField</a>
+    Call   [bytecode.cpp, 407]        <a href="dictionary_B.html#11104">ByteCode::DeclareField</a>
+    Call   [bytecode.cpp, 704]        <a href="dictionary_B.html#11257">ByteCode::InitializeArray</a>
+    Call   [bytecode.cpp, 710]        <a href="dictionary_B.html#11257">ByteCode::InitializeArray</a>
+    Call   [bytecode.cpp, 1336]       <a href="dictionary_B.html#11309">ByteCode::EmitSwitchStatement</a>
+    Call   [bytecode.cpp, 1550]       <a href="dictionary_B.html#11309">ByteCode::EmitSwitchStatement</a>
+    Call   [bytecode.cpp, 3700]       <a href="dictionary_B.html#11284">ByteCode::EmitArrayCreationExpression</a>
+    Call   [bytecode.cpp, 3838]       <a href="dictionary_B.html#11368">ByteCode::EmitAssignmentExpression</a>
+    Call   [bytecode.cpp, 4300]       <a href="dictionary_B.html#11547">ByteCode::EmitBinaryExpression</a>
+    Call   [bytecode.cpp, 4308]       <a href="dictionary_B.html#11547">ByteCode::EmitBinaryExpression</a>
+    Call   [bytecode.cpp, 4344]       <a href="dictionary_B.html#11547">ByteCode::EmitBinaryExpression</a>
+    Call   [bytecode.cpp, 4352]       <a href="dictionary_B.html#11547">ByteCode::EmitBinaryExpression</a>
+    Call   [bytecode.cpp, 4448]       <a href="dictionary_B.html#11547">ByteCode::EmitBinaryExpression</a>
+    Call   [bytecode.cpp, 4457]       <a href="dictionary_B.html#11547">ByteCode::EmitBinaryExpression</a>
+    Call   [bytecode.cpp, 4985]       <a href="dictionary_B.html#11549">ByteCode::EmitConditionalExpression</a>
+    Call   [bytecode.cpp, 4987]       <a href="dictionary_B.html#11549">ByteCode::EmitConditionalExpression</a>
+    Call   [bytecode.cpp, 5990]       <a href="dictionary_B.html#11643">ByteCode::ConcatenateString</a>
+    Call   [bytecode.cpp, 6040]       <a href="dictionary_B.html#11632">ByteCode::AppendString</a>
+    Call   [bytecode.cpp, 6424]       <a href="dictionary_B.html#11281">ByteCode::LoadLiteral</a>
+    Call   [bytecode.cpp, 6430]       <a href="dictionary_B.html#11281">ByteCode::LoadLiteral</a>
+    Call   [bytecode.cpp, 6435]       <a href="dictionary_B.html#11281">ByteCode::LoadLiteral</a>
+    Call   [bytecode.cpp, 6453]       <a href="dictionary_B.html#11281">ByteCode::LoadLiteral</a>
+    Call   [bytecode.cpp, 6479]       <a href="dictionary_B.html#11281">ByteCode::LoadLiteral</a>
+    Call   [lookup.cpp, 23]           <a href="dictionary_S.html#8983">Symbol::PackageCast</a>
+    Call   [lookup.cpp, 28]           <a href="dictionary_S.html#12676">Symbol::PackageCast</a>
+    Call   [lookup.cpp, 33]           <a href="dictionary_S.html#7190">Symbol::TypeCast</a>
+    Call   [lookup.cpp, 38]           <a href="dictionary_S.html#12677">Symbol::TypeCast</a>
+    Call   [lookup.cpp, 43]           <a href="dictionary_S.html#7210">Symbol::MethodCast</a>
+    Call   [lookup.cpp, 48]           <a href="dictionary_S.html#12678">Symbol::MethodCast</a>
+    Call   [lookup.cpp, 53]           <a href="dictionary_S.html#10465">Symbol::BlockCast</a>
+    Call   [lookup.cpp, 58]           <a href="dictionary_S.html#12679">Symbol::BlockCast</a>
+    Call   [lookup.cpp, 63]           <a href="dictionary_S.html#7208">Symbol::VariableCast</a>
+    Call   [lookup.cpp, 68]           <a href="dictionary_S.html#12680">Symbol::VariableCast</a>
+    Call   [lookup.cpp, 74]           <a href="dictionary_S.html#12681">Symbol::LabelCast</a>
+    Call   [lookup.cpp, 79]           <a href="dictionary_S.html#12683">Symbol::LabelCast</a>
+    Call   [lookup.cpp, 84]           <a href="dictionary_S.html#12684">Symbol::LiteralCast</a>
+    Call   [lookup.cpp, 89]           <a href="dictionary_S.html#12687">Symbol::LiteralCast</a>
+    Call   [lookup.cpp, 94]           <a href="dictionary_S.html#12688">Symbol::NameCast</a>
+    Call   [lookup.cpp, 99]           <a href="dictionary_S.html#12690">Symbol::NameCast</a>
+    Call   [lookup.cpp, 104]          <a href="dictionary_S.html#10550">Symbol::PathCast</a>
+    Call   [lookup.cpp, 109]          <a href="dictionary_S.html#12691">Symbol::PathCast</a>
+    Call   [lookup.cpp, 114]          <a href="dictionary_S.html#8884">Symbol::DirectoryCast</a>
+    Call   [lookup.cpp, 119]          <a href="dictionary_S.html#12692">Symbol::DirectoryCast</a>
+    Call   [lookup.cpp, 125]          <a href="dictionary_S.html#12693">Symbol::FileCast</a>
+    Call   [lookup.cpp, 130]          <a href="dictionary_S.html#12695">Symbol::FileCast</a>
+    Call   [lookup.cpp, 1475]         <a href="dictionary_U.html#13034">Utf8LiteralTable::EndsInKnownString</a>
+    Call   [symbol.h, 454]            <a href="dictionary_M.html#11706">MethodSymbol::AccessesStaticMember</a>
+    Call   [ast.cpp, 1514]            <a href="dictionary_A.html#5775">AstClassDeclaration::PrintGeneralization</a>
+    Call   [ast.cpp, 1603]            <a href="dictionary_A.html#5833">AstFieldDeclaration::PrintAssociation</a>
+    Call   [ast.cpp, 1605]            <a href="dictionary_A.html#5833">AstFieldDeclaration::PrintAssociation</a>
+    Call   [ast.cpp, 1607]            <a href="dictionary_A.html#5833">AstFieldDeclaration::PrintAssociation</a>
+    Call   [ast.cpp, 1612]            <a href="dictionary_A.html#5833">AstFieldDeclaration::PrintAssociation</a>
+    Call   [ast.cpp, 1614]            <a href="dictionary_A.html#5833">AstFieldDeclaration::PrintAssociation</a>
+    Call   [javaact.cpp, 295]         <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+    Call   [javaact.cpp, 296]         <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+    Call   [javaact.cpp, 297]         <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+    Call   [javaact.cpp, 306]         <a href="dictionary_P.html#4727">Parser::MakeTypeArguments</a>
+    Call   [javaact.cpp, 319]         <a href="dictionary_P.html#4810">Parser::Act31</a>
+    Call   [javaact.cpp, 329]         <a href="dictionary_P.html#4811">Parser::Act32</a>
+    Call   [javaact.cpp, 347]         <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+    Call   [javaact.cpp, 348]         <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+    Call   [javaact.cpp, 350]         <a href="dictionary_P.html#4728">Parser::MakeArrayType</a>
+    Call   [javaact.cpp, 366]         <a href="dictionary_P.html#4812">Parser::Act35</a>
+    Call   [javaact.cpp, 405]         <a href="dictionary_P.html#4815">Parser::Act38</a>
+    Call   [javaact.cpp, 417]         <a href="dictionary_P.html#4745">Parser::MakeCompilationUnit</a>
+    Call   [javaact.cpp, 420]         <a href="dictionary_P.html#4745">Parser::MakeCompilationUnit</a>
+    Call   [javaact.cpp, 426]         <a href="dictionary_P.html#4745">Parser::MakeCompilationUnit</a>
+    Call   [javaact.cpp, 433]         <a href="dictionary_P.html#4745">Parser::MakeCompilationUnit</a>
+    Call   [javaact.cpp, 439]         <a href="dictionary_P.html#4745">Parser::MakeCompilationUnit</a>
+    Call   [javaact.cpp, 492]         <a href="dictionary_P.html#4741">Parser::AddList2</a>
+    Call   [javaact.cpp, 507]         <a href="dictionary_P.html#4742">Parser::AddList3</a>
+    Call   [javaact.cpp, 566]         <a href="dictionary_P.html#4746">Parser::MakePackageDeclaration</a>
+    Call   [javaact.cpp, 579]         <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+    Call   [javaact.cpp, 592]         <a href="dictionary_P.html#4730">Parser::MakeModifiers</a>
+    Call   [javaact.cpp, 638]         <a href="dictionary_P.html#4747">Parser::MakeImportDeclaration</a>
+    Call   [javaact.cpp, 821]         <a href="dictionary_P.html#4749">Parser::MakeAnnotation</a>
+    Call   [javaact.cpp, 824]         <a href="dictionary_P.html#4749">Parser::MakeAnnotation</a>
+    Call   [javaact.cpp, 830]         <a href="dictionary_P.html#4749">Parser::MakeAnnotation</a>
+    Call   [javaact.cpp, 872]         <a href="dictionary_P.html#4818">Parser::Act89</a>
+    Call   [javaact.cpp, 904]         <a href="dictionary_P.html#4750">Parser::MakeArrayInitializer</a>
+    Call   [javaact.cpp, 910]         <a href="dictionary_P.html#4750">Parser::MakeArrayInitializer</a>
+    Call   [javaact.cpp, 950]         <a href="dictionary_P.html#4819">Parser::Act98</a>
+    Call   [javaact.cpp, 969]         <a href="dictionary_P.html#4751">Parser::MakeClassDeclaration</a>
+    Call   [javaact.cpp, 972]         <a href="dictionary_P.html#4751">Parser::MakeClassDeclaration</a>
+    Call   [javaact.cpp, 978]         <a href="dictionary_P.html#4751">Parser::MakeClassDeclaration</a>
+    Call   [javaact.cpp, 982]         <a href="dictionary_P.html#4751">Parser::MakeClassDeclaration</a>
+    Call   [javaact.cpp, 996]         <a href="dictionary_P.html#4731">Parser::MakeTypeParameters</a>
+    Call   [javaact.cpp, 1002]        <a href="dictionary_P.html#4731">Parser::MakeTypeParameters</a>
+    Call   [javaact.cpp, 1089]        <a href="dictionary_P.html#4752">Parser::MakeClassBody</a>
+    Call   [javaact.cpp, 1096]        <a href="dictionary_P.html#4752">Parser::MakeClassBody</a>
+    Call   [javaact.cpp, 1156]        <a href="dictionary_P.html#4752">Parser::MakeClassBody</a>
+    Call   [javaact.cpp, 1241]        <a href="dictionary_P.html#4754">Parser::MakeFieldDeclaration</a>
+    Call   [javaact.cpp, 1242]        <a href="dictionary_P.html#4754">Parser::MakeFieldDeclaration</a>
+    Call   [javaact.cpp, 1248]        <a href="dictionary_P.html#4754">Parser::MakeFieldDeclaration</a>
+    Call   [javaact.cpp, 1282]        <a href="dictionary_P.html#4820">Parser::Act125</a>
+    Call   [javaact.cpp, 1294]        <a href="dictionary_P.html#4821">Parser::Act126</a>
+    Call   [javaact.cpp, 1307]        <a href="dictionary_P.html#4822">Parser::Act127</a>
+    Call   [javaact.cpp, 1329]        <a href="dictionary_P.html#4753">Parser::MakeMethodDeclaration</a>
+    Call   [javaact.cpp, 1331]        <a href="dictionary_P.html#4753">Parser::MakeMethodDeclaration</a>
+    Call   [javaact.cpp, 1350]        <a href="dictionary_P.html#4755">Parser::MakeMethodHeader</a>
+    Call   [javaact.cpp, 1351]        <a href="dictionary_P.html#4755">Parser::MakeMethodHeader</a>
+    Call   [javaact.cpp, 1354]        <a href="dictionary_P.html#4755">Parser::MakeMethodHeader</a>
+    Call   [javaact.cpp, 1360]        <a href="dictionary_P.html#4755">Parser::MakeMethodHeader</a>
+    Call   [javaact.cpp, 1420]        <a href="dictionary_P.html#4756">Parser::MakeMethodDeclarator</a>
+    Call   [javaact.cpp, 1426]        <a href="dictionary_P.html#4756">Parser::MakeMethodDeclarator</a>
+    Call   [javaact.cpp, 1432]        <a href="dictionary_P.html#4756">Parser::MakeMethodDeclarator</a>
+    Call   [javaact.cpp, 1482]        <a href="dictionary_P.html#4757">Parser::MakeFormalParameter</a>
+    Call   [javaact.cpp, 1484]        <a href="dictionary_P.html#4757">Parser::MakeFormalParameter</a>
+    Call   [javaact.cpp, 1490]        <a href="dictionary_P.html#4757">Parser::MakeFormalParameter</a>
+    Call   [javaact.cpp, 1549]        <a href="dictionary_P.html#4823">Parser::Act155</a>
+    Call   [javaact.cpp, 1555]        <a href="dictionary_P.html#4823">Parser::Act155</a>
+    Call   [javaact.cpp, 1557]        <a href="dictionary_P.html#4823">Parser::Act155</a>
+    Call   [javaact.cpp, 1561]        <a href="dictionary_P.html#4823">Parser::Act155</a>
+    Call   [javaact.cpp, 1577]        <a href="dictionary_P.html#4758">Parser::MakeInitializerDeclaration</a>
+    Call   [javaact.cpp, 1596]        <a href="dictionary_P.html#4759">Parser::MakeConstructorDeclaration</a>
+    Call   [javaact.cpp, 1599]        <a href="dictionary_P.html#4759">Parser::MakeConstructorDeclaration</a>
+    Call   [javaact.cpp, 1605]        <a href="dictionary_P.html#4759">Parser::MakeConstructorDeclaration</a>
+    Call   [javaact.cpp, 1609]        <a href="dictionary_P.html#4759">Parser::MakeConstructorDeclaration</a>
+    Call   [javaact.cpp, 1645]        <a href="dictionary_P.html#4824">Parser::Act163</a>
+    Call   [javaact.cpp, 1659]        <a href="dictionary_P.html#4825">Parser::Act164</a>
+    Call   [javaact.cpp, 1676]        <a href="dictionary_P.html#4732">Parser::MakeExplicitTypeArguments</a>
+    Call   [javaact.cpp, 1682]        <a href="dictionary_P.html#4732">Parser::MakeExplicitTypeArguments</a>
+    Call   [javaact.cpp, 1696]        <a href="dictionary_P.html#4826">Parser::Act165</a>
+    Call   [javaact.cpp, 1710]        <a href="dictionary_P.html#4827">Parser::Act166</a>
+    Call   [javaact.cpp, 1722]        <a href="dictionary_P.html#4760">Parser::MakeQualifiedSuper</a>
+    Call   [javaact.cpp, 1725]        <a href="dictionary_P.html#4760">Parser::MakeQualifiedSuper</a>
+    Call   [javaact.cpp, 1752]        <a href="dictionary_P.html#4761">Parser::MakeEnumDeclaration</a>
+    Call   [javaact.cpp, 1758]        <a href="dictionary_P.html#4761">Parser::MakeEnumDeclaration</a>
+    Call   [javaact.cpp, 1764]        <a href="dictionary_P.html#4761">Parser::MakeEnumDeclaration</a>
+    Call   [javaact.cpp, 1791]        <a href="dictionary_P.html#4762">Parser::MakeEnumBody</a>
+    Call   [javaact.cpp, 1797]        <a href="dictionary_P.html#4762">Parser::MakeEnumBody</a>
+    Call   [javaact.cpp, 1804]        <a href="dictionary_P.html#4762">Parser::MakeEnumBody</a>
+    Call   [javaact.cpp, 1843]        <a href="dictionary_P.html#4828">Parser::Act176</a>
+    Call   [javaact.cpp, 1844]        <a href="dictionary_P.html#4828">Parser::Act176</a>
+    Call   [javaact.cpp, 1857]        <a href="dictionary_P.html#4829">Parser::Act177</a>
+    Call   [javaact.cpp, 1863]        <a href="dictionary_P.html#4829">Parser::Act177</a>
+    Call   [javaact.cpp, 1912]        <a href="dictionary_P.html#4763">Parser::MakeInterfaceDeclaration</a>
+    Call   [javaact.cpp, 1918]        <a href="dictionary_P.html#4763">Parser::MakeInterfaceDeclaration</a>
+    Call   [javaact.cpp, 1922]        <a href="dictionary_P.html#4763">Parser::MakeInterfaceDeclaration</a>
+    Call   [javaact.cpp, 2000]        <a href="dictionary_P.html#4830">Parser::Act195</a>
+    Call   [javaact.cpp, 2019]        <a href="dictionary_P.html#4764">Parser::MakeAnnotationTypeDeclaration</a>
+    Call   [javaact.cpp, 2069]        <a href="dictionary_P.html#4765">Parser::MakeAnnotationTypeMemberDeclaration</a>
+    Call   [javaact.cpp, 2075]        <a href="dictionary_P.html#4765">Parser::MakeAnnotationTypeMemberDeclaration</a>
+    Call   [javaact.cpp, 2150]        <a href="dictionary_P.html#4831">Parser::Act215</a>
+    Call   [javaact.cpp, 2156]        <a href="dictionary_P.html#4831">Parser::Act215</a>
+    Call   [javaact.cpp, 2207]        <a href="dictionary_P.html#4832">Parser::Act222</a>
+    Call   [javaact.cpp, 2217]        <a href="dictionary_P.html#4833">Parser::Act223</a>
+    Call   [javaact.cpp, 2232]        <a href="dictionary_P.html#4834">Parser::Act225</a>
+    Call   [javaact.cpp, 2246]        <a href="dictionary_P.html#4766">Parser::MakeLocalVariable</a>
+    Call   [javaact.cpp, 2248]        <a href="dictionary_P.html#4766">Parser::MakeLocalVariable</a>
+    Call   [javaact.cpp, 2249]        <a href="dictionary_P.html#4766">Parser::MakeLocalVariable</a>
+    Call   [javaact.cpp, 2255]        <a href="dictionary_P.html#4766">Parser::MakeLocalVariable</a>
+    Call   [javaact.cpp, 2446]        <a href="dictionary_P.html#4767">Parser::MakeLabeledStatement</a>
+    Call   [javaact.cpp, 2466]        <a href="dictionary_P.html#4836">Parser::Act256</a>
+    Call   [javaact.cpp, 2477]        <a href="dictionary_P.html#4768">Parser::MakeExpressionStatement</a>
+    Call   [javaact.cpp, 2529]        <a href="dictionary_P.html#4769">Parser::MakeIfThenElseStatement</a>
+    Call   [javaact.cpp, 2547]        <a href="dictionary_P.html#4733">Parser::MakeBlock</a>
+    Call   [javaact.cpp, 2571]        <a href="dictionary_P.html#4837">Parser::Act267</a>
+    Call   [javaact.cpp, 2573]        <a href="dictionary_P.html#4837">Parser::Act267</a>
+    Call   [javaact.cpp, 2586]        <a href="dictionary_P.html#4838">Parser::Act268</a>
+    Call   [javaact.cpp, 2592]        <a href="dictionary_P.html#4838">Parser::Act268</a>
+    Call   [javaact.cpp, 2597]        <a href="dictionary_P.html#4838">Parser::Act268</a>
+    Call   [javaact.cpp, 2619]        <a href="dictionary_P.html#4734">Parser::MakeSwitchBlockStatement</a>
+    Call   [javaact.cpp, 2630]        <a href="dictionary_P.html#4734">Parser::MakeSwitchBlockStatement</a>
+    Call   [javaact.cpp, 2657]        <a href="dictionary_P.html#4839">Parser::Act269</a>
+    Call   [javaact.cpp, 2684]        <a href="dictionary_P.html#4840">Parser::Act272</a>
+    Call   [javaact.cpp, 2685]        <a href="dictionary_P.html#4840">Parser::Act272</a>
+    Call   [javaact.cpp, 2720]        <a href="dictionary_P.html#4770">Parser::MakeSwitchLabel</a>
+    Call   [javaact.cpp, 2742]        <a href="dictionary_P.html#4771">Parser::MakeWhileStatement</a>
+    Call   [javaact.cpp, 2775]        <a href="dictionary_P.html#4841">Parser::Act281</a>
+    Call   [javaact.cpp, 2802]        <a href="dictionary_P.html#4772">Parser::MakeForStatement</a>
+    Call   [javaact.cpp, 2808]        <a href="dictionary_P.html#4772">Parser::MakeForStatement</a>
+    Call   [javaact.cpp, 2813]        <a href="dictionary_P.html#4772">Parser::MakeForStatement</a>
+    Call   [javaact.cpp, 2816]        <a href="dictionary_P.html#4772">Parser::MakeForStatement</a>
+    Call   [javaact.cpp, 2822]        <a href="dictionary_P.html#4772">Parser::MakeForStatement</a>
+    Call   [javaact.cpp, 2913]        <a href="dictionary_P.html#4773">Parser::MakeForeachStatement</a>
+    Call   [javaact.cpp, 2914]        <a href="dictionary_P.html#4773">Parser::MakeForeachStatement</a>
+    Call   [javaact.cpp, 2945]        <a href="dictionary_P.html#4774">Parser::MakeAssertStatement</a>
+    Call   [javaact.cpp, 2946]        <a href="dictionary_P.html#4774">Parser::MakeAssertStatement</a>
+    Call   [javaact.cpp, 2993]        <a href="dictionary_P.html#4844">Parser::Act299</a>
+    Call   [javaact.cpp, 3006]        <a href="dictionary_P.html#4845">Parser::Act300</a>
+    Call   [javaact.cpp, 3019]        <a href="dictionary_P.html#4846">Parser::Act301</a>
+    Call   [javaact.cpp, 3020]        <a href="dictionary_P.html#4846">Parser::Act301</a>
+    Call   [javaact.cpp, 3034]        <a href="dictionary_P.html#4775">Parser::MakeTryStatement</a>
+    Call   [javaact.cpp, 3037]        <a href="dictionary_P.html#4775">Parser::MakeTryStatement</a>
+    Call   [javaact.cpp, 3043]        <a href="dictionary_P.html#4775">Parser::MakeTryStatement</a>
+    Call   [javaact.cpp, 3054]        <a href="dictionary_P.html#4775">Parser::MakeTryStatement</a>
+    Call   [javaact.cpp, 3097]        <a href="dictionary_P.html#4847">Parser::Act308</a>
+    Call   [javaact.cpp, 3098]        <a href="dictionary_P.html#4847">Parser::Act308</a>
+    Call   [javaact.cpp, 3111]        <a href="dictionary_P.html#4848">Parser::Act309</a>
+    Call   [javaact.cpp, 3158]        <a href="dictionary_P.html#4776">Parser::MakeParenthesizedExpression</a>
+    Call   [javaact.cpp, 3188]        <a href="dictionary_P.html#4850">Parser::Act319</a>
+    Call   [javaact.cpp, 3243]        <a href="dictionary_P.html#4851">Parser::Act326</a>
+    Call   [javaact.cpp, 3244]        <a href="dictionary_P.html#4851">Parser::Act326</a>
+    Call   [javaact.cpp, 3245]        <a href="dictionary_P.html#4851">Parser::Act326</a>
+    Call   [javaact.cpp, 3261]        <a href="dictionary_P.html#4852">Parser::Act327</a>
+    Call   [javaact.cpp, 3262]        <a href="dictionary_P.html#4852">Parser::Act327</a>
+    Call   [javaact.cpp, 3263]        <a href="dictionary_P.html#4852">Parser::Act327</a>
+    Call   [javaact.cpp, 3277]        <a href="dictionary_P.html#4778">Parser::MakeQualifiedNew</a>
+    Call   [javaact.cpp, 3282]        <a href="dictionary_P.html#4778">Parser::MakeQualifiedNew</a>
+    Call   [javaact.cpp, 3283]        <a href="dictionary_P.html#4778">Parser::MakeQualifiedNew</a>
+    Call   [javaact.cpp, 3327]        <a href="dictionary_P.html#4779">Parser::MakeArrayCreationUninitialized</a>
+    Call   [javaact.cpp, 3328]        <a href="dictionary_P.html#4779">Parser::MakeArrayCreationUninitialized</a>
+    Call   [javaact.cpp, 3334]        <a href="dictionary_P.html#4779">Parser::MakeArrayCreationUninitialized</a>
+    Call   [javaact.cpp, 3337]        <a href="dictionary_P.html#4779">Parser::MakeArrayCreationUninitialized</a>
+    Call   [javaact.cpp, 3356]        <a href="dictionary_P.html#4780">Parser::MakeArrayCreationInitialized</a>
+    Call   [javaact.cpp, 3386]        <a href="dictionary_P.html#4853">Parser::Act340</a>
+    Call   [javaact.cpp, 3406]        <a href="dictionary_P.html#4855">Parser::Act342</a>
+    Call   [javaact.cpp, 3439]        <a href="dictionary_P.html#4857">Parser::Act346</a>
+    Call   [javaact.cpp, 3450]        <a href="dictionary_P.html#4781">Parser::MakeFieldAccess</a>
+    Call   [javaact.cpp, 3468]        <a href="dictionary_P.html#4858">Parser::Act349</a>
+    Call   [javaact.cpp, 3479]        <a href="dictionary_P.html#4782">Parser::MakeMethodInvocation</a>
+    Call   [javaact.cpp, 3481]        <a href="dictionary_P.html#4782">Parser::MakeMethodInvocation</a>
+    Call   [javaact.cpp, 3522]        <a href="dictionary_P.html#4783">Parser::MakeArrayAccess</a>
+    Call   [javaact.cpp, 3524]        <a href="dictionary_P.html#4783">Parser::MakeArrayAccess</a>
+    Call   [javaact.cpp, 3591]        <a href="dictionary_P.html#4859">Parser::Act366</a>
+    Call   [javaact.cpp, 3604]        <a href="dictionary_P.html#4860">Parser::Act367</a>
+    Call   [javaact.cpp, 3640]        <a href="dictionary_P.html#4784">Parser::MakePreUnaryExpression</a>
+    Call   [javaact.cpp, 3762]        <a href="dictionary_P.html#4735">Parser::MakeCastExpression</a>
+    Call   [javaact.cpp, 3794]        <a href="dictionary_P.html#4862">Parser::Act392</a>
+    Call   [javaact.cpp, 3842]        <a href="dictionary_P.html#4786">Parser::MakeBinaryExpression</a>
+    Call   [javaact.cpp, 3844]        <a href="dictionary_P.html#4786">Parser::MakeBinaryExpression</a>
+    Call   [javaact.cpp, 4053]        <a href="dictionary_P.html#4787">Parser::MakeInstanceofExpression</a>
+    Call   [javaact.cpp, 4055]        <a href="dictionary_P.html#4787">Parser::MakeInstanceofExpression</a>
+    Call   [javaact.cpp, 4336]        <a href="dictionary_P.html#4788">Parser::MakeConditionalExpression</a>
+    Call   [javaact.cpp, 4338]        <a href="dictionary_P.html#4788">Parser::MakeConditionalExpression</a>
+    Call   [javaact.cpp, 4340]        <a href="dictionary_P.html#4788">Parser::MakeConditionalExpression</a>
+    Call   [javaact.cpp, 4414]        <a href="dictionary_P.html#4863">Parser::Act482</a>
+    Call   [javaact.cpp, 4415]        <a href="dictionary_P.html#4863">Parser::Act482</a>
+    Call   [javaact.cpp, 4614]        <a href="dictionary_P.html#4789">Parser::MakeWildcard</a>
+    Call   [javaact.cpp, 4619]        <a href="dictionary_P.html#4789">Parser::MakeWildcard</a>
+    Call   [javaact.cpp, 4871]        <a href="dictionary_P.html#4790">Parser::MakeTypeParameter</a>
+    Call   [javaact.cpp, 4876]        <a href="dictionary_P.html#4790">Parser::MakeTypeParameter</a>
+    Call   [expr.cpp, 125]            <a href="dictionary_S.html#1490">Semantic::IsIntValueRepresentableInType</a>
+    Call   [expr.cpp, 139]            <a href="dictionary_S.html#212">Semantic::IsConstantTrue</a>
+    Call   [expr.cpp, 146]            <a href="dictionary_S.html#211">Semantic::IsConstantFalse</a>
+    Call   [expr.cpp, 4243]           <a href="dictionary_S.html#1715">Semantic::ProcessArrayCreationExpression</a>
+    Call   [expr.cpp, 4374]           <a href="dictionary_S.html#1658">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 4381]           <a href="dictionary_S.html#1658">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 4388]           <a href="dictionary_S.html#1658">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 4396]           <a href="dictionary_S.html#1658">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 4427]           <a href="dictionary_S.html#1659">Semantic::ProcessTWIDDLE</a>
+    Call   [expr.cpp, 4433]           <a href="dictionary_S.html#1659">Semantic::ProcessTWIDDLE</a>
+    Call   [expr.cpp, 4778]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4787]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4796]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4805]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4821]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4833]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4840]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4847]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4857]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4864]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4871]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4881]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4888]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4895]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4905]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4912]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4919]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4930]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4937]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4944]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4951]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4961]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4968]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4975]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4982]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4992]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 4999]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 5006]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 5014]           <a href="dictionary_S.html#1545">Semantic::CastValue</a>
+    Call   [expr.cpp, 5293]           <a href="dictionary_S.html#1663">Semantic::ProcessPLUS</a>
+    Call   [expr.cpp, 5295]           <a href="dictionary_S.html#1663">Semantic::ProcessPLUS</a>
+    Call   [expr.cpp, 5304]           <a href="dictionary_S.html#1663">Semantic::ProcessPLUS</a>
+    Call   [expr.cpp, 5306]           <a href="dictionary_S.html#1663">Semantic::ProcessPLUS</a>
+    Call   [expr.cpp, 5314]           <a href="dictionary_S.html#1663">Semantic::ProcessPLUS</a>
+    Call   [expr.cpp, 5316]           <a href="dictionary_S.html#1663">Semantic::ProcessPLUS</a>
+    Call   [expr.cpp, 5327]           <a href="dictionary_S.html#1663">Semantic::ProcessPLUS</a>
+    Call   [expr.cpp, 5329]           <a href="dictionary_S.html#1663">Semantic::ProcessPLUS</a>
+    Call   [expr.cpp, 5400]           <a href="dictionary_S.html#1665">Semantic::ProcessShiftCount</a>
+    Call   [expr.cpp, 5432]           <a href="dictionary_S.html#1666">Semantic::ProcessLEFT_SHIFT</a>
+    Call   [expr.cpp, 5434]           <a href="dictionary_S.html#1666">Semantic::ProcessLEFT_SHIFT</a>
+    Call   [expr.cpp, 5443]           <a href="dictionary_S.html#1666">Semantic::ProcessLEFT_SHIFT</a>
+    Call   [expr.cpp, 5445]           <a href="dictionary_S.html#1666">Semantic::ProcessLEFT_SHIFT</a>
+    Call   [expr.cpp, 5465]           <a href="dictionary_S.html#1667">Semantic::ProcessRIGHT_SHIFT</a>
+    Call   [expr.cpp, 5467]           <a href="dictionary_S.html#1667">Semantic::ProcessRIGHT_SHIFT</a>
+    Call   [expr.cpp, 5476]           <a href="dictionary_S.html#1667">Semantic::ProcessRIGHT_SHIFT</a>
+    Call   [expr.cpp, 5478]           <a href="dictionary_S.html#1667">Semantic::ProcessRIGHT_SHIFT</a>
+    Call   [expr.cpp, 5498]           <a href="dictionary_S.html#1668">Semantic::ProcessUNSIGNED_RIGHT_SHIFT</a>
+    Call   [expr.cpp, 5500]           <a href="dictionary_S.html#1668">Semantic::ProcessUNSIGNED_RIGHT_SHIFT</a>
+    Call   [expr.cpp, 5508]           <a href="dictionary_S.html#1668">Semantic::ProcessUNSIGNED_RIGHT_SHIFT</a>
+    Call   [expr.cpp, 5510]           <a href="dictionary_S.html#1668">Semantic::ProcessUNSIGNED_RIGHT_SHIFT</a>
+    Call   [expr.cpp, 5538]           <a href="dictionary_S.html#1669">Semantic::ProcessLESS</a>
+    Call   [expr.cpp, 5540]           <a href="dictionary_S.html#1669">Semantic::ProcessLESS</a>
+    Call   [expr.cpp, 5549]           <a href="dictionary_S.html#1669">Semantic::ProcessLESS</a>
+    Call   [expr.cpp, 5551]           <a href="dictionary_S.html#1669">Semantic::ProcessLESS</a>
+    Call   [expr.cpp, 5560]           <a href="dictionary_S.html#1669">Semantic::ProcessLESS</a>
+    Call   [expr.cpp, 5562]           <a href="dictionary_S.html#1669">Semantic::ProcessLESS</a>
+    Call   [expr.cpp, 5571]           <a href="dictionary_S.html#1669">Semantic::ProcessLESS</a>
+    Call   [expr.cpp, 5573]           <a href="dictionary_S.html#1669">Semantic::ProcessLESS</a>
+    Call   [expr.cpp, 5602]           <a href="dictionary_S.html#1670">Semantic::ProcessGREATER</a>
+    Call   [expr.cpp, 5604]           <a href="dictionary_S.html#1670">Semantic::ProcessGREATER</a>
+    Call   [expr.cpp, 5613]           <a href="dictionary_S.html#1670">Semantic::ProcessGREATER</a>
+    Call   [expr.cpp, 5615]           <a href="dictionary_S.html#1670">Semantic::ProcessGREATER</a>
+    Call   [expr.cpp, 5624]           <a href="dictionary_S.html#1670">Semantic::ProcessGREATER</a>
+    Call   [expr.cpp, 5626]           <a href="dictionary_S.html#1670">Semantic::ProcessGREATER</a>
+    Call   [expr.cpp, 5635]           <a href="dictionary_S.html#1670">Semantic::ProcessGREATER</a>
+    Call   [expr.cpp, 5637]           <a href="dictionary_S.html#1670">Semantic::ProcessGREATER</a>
+    Call   [expr.cpp, 5666]           <a href="dictionary_S.html#1671">Semantic::ProcessLESS_EQUAL</a>
+    Call   [expr.cpp, 5668]           <a href="dictionary_S.html#1671">Semantic::ProcessLESS_EQUAL</a>
+    Call   [expr.cpp, 5677]           <a href="dictionary_S.html#1671">Semantic::ProcessLESS_EQUAL</a>
+    Call   [expr.cpp, 5679]           <a href="dictionary_S.html#1671">Semantic::ProcessLESS_EQUAL</a>
+    Call   [expr.cpp, 5688]           <a href="dictionary_S.html#1671">Semantic::ProcessLESS_EQUAL</a>
+    Call   [expr.cpp, 5690]           <a href="dictionary_S.html#1671">Semantic::ProcessLESS_EQUAL</a>
+    Call   [expr.cpp, 5699]           <a href="dictionary_S.html#1671">Semantic::ProcessLESS_EQUAL</a>
+    Call   [expr.cpp, 5701]           <a href="dictionary_S.html#1671">Semantic::ProcessLESS_EQUAL</a>
+    Call   [expr.cpp, 5730]           <a href="dictionary_S.html#1672">Semantic::ProcessGREATER_EQUAL</a>
+    Call   [expr.cpp, 5732]           <a href="dictionary_S.html#1672">Semantic::ProcessGREATER_EQUAL</a>
+    Call   [expr.cpp, 5741]           <a href="dictionary_S.html#1672">Semantic::ProcessGREATER_EQUAL</a>
+    Call   [expr.cpp, 5743]           <a href="dictionary_S.html#1672">Semantic::ProcessGREATER_EQUAL</a>
+    Call   [expr.cpp, 5752]           <a href="dictionary_S.html#1672">Semantic::ProcessGREATER_EQUAL</a>
+    Call   [expr.cpp, 5754]           <a href="dictionary_S.html#1672">Semantic::ProcessGREATER_EQUAL</a>
+    Call   [expr.cpp, 5763]           <a href="dictionary_S.html#1672">Semantic::ProcessGREATER_EQUAL</a>
+    Call   [expr.cpp, 5765]           <a href="dictionary_S.html#1672">Semantic::ProcessGREATER_EQUAL</a>
+    Call   [expr.cpp, 5845]           <a href="dictionary_S.html#1673">Semantic::ProcessAND</a>
+    Call   [expr.cpp, 5847]           <a href="dictionary_S.html#1673">Semantic::ProcessAND</a>
+    Call   [expr.cpp, 5855]           <a href="dictionary_S.html#1673">Semantic::ProcessAND</a>
+    Call   [expr.cpp, 5857]           <a href="dictionary_S.html#1673">Semantic::ProcessAND</a>
+    Call   [expr.cpp, 5937]           <a href="dictionary_S.html#1674">Semantic::ProcessXOR</a>
+    Call   [expr.cpp, 5939]           <a href="dictionary_S.html#1674">Semantic::ProcessXOR</a>
+    Call   [expr.cpp, 5947]           <a href="dictionary_S.html#1674">Semantic::ProcessXOR</a>
+    Call   [expr.cpp, 5949]           <a href="dictionary_S.html#1674">Semantic::ProcessXOR</a>
+    Call   [expr.cpp, 6029]           <a href="dictionary_S.html#1675">Semantic::ProcessIOR</a>
+    Call   [expr.cpp, 6031]           <a href="dictionary_S.html#1675">Semantic::ProcessIOR</a>
+    Call   [expr.cpp, 6039]           <a href="dictionary_S.html#1675">Semantic::ProcessIOR</a>
+    Call   [expr.cpp, 6041]           <a href="dictionary_S.html#1675">Semantic::ProcessIOR</a>
+    Call   [expr.cpp, 6207]           <a href="dictionary_S.html#1678">Semantic::ProcessEQUAL_EQUAL</a>
+    Call   [expr.cpp, 6209]           <a href="dictionary_S.html#1678">Semantic::ProcessEQUAL_EQUAL</a>
+    Call   [expr.cpp, 6217]           <a href="dictionary_S.html#1678">Semantic::ProcessEQUAL_EQUAL</a>
+    Call   [expr.cpp, 6219]           <a href="dictionary_S.html#1678">Semantic::ProcessEQUAL_EQUAL</a>
+    Call   [expr.cpp, 6300]           <a href="dictionary_S.html#1679">Semantic::ProcessNOT_EQUAL</a>
+    Call   [expr.cpp, 6302]           <a href="dictionary_S.html#1679">Semantic::ProcessNOT_EQUAL</a>
+    Call   [expr.cpp, 6311]           <a href="dictionary_S.html#1679">Semantic::ProcessNOT_EQUAL</a>
+    Call   [expr.cpp, 6313]           <a href="dictionary_S.html#1679">Semantic::ProcessNOT_EQUAL</a>
+    Call   [expr.cpp, 6337]           <a href="dictionary_S.html#1680">Semantic::ProcessSTAR</a>
+    Call   [expr.cpp, 6339]           <a href="dictionary_S.html#1680">Semantic::ProcessSTAR</a>
+    Call   [expr.cpp, 6348]           <a href="dictionary_S.html#1680">Semantic::ProcessSTAR</a>
+    Call   [expr.cpp, 6350]           <a href="dictionary_S.html#1680">Semantic::ProcessSTAR</a>
+    Call   [expr.cpp, 6359]           <a href="dictionary_S.html#1680">Semantic::ProcessSTAR</a>
+    Call   [expr.cpp, 6361]           <a href="dictionary_S.html#1680">Semantic::ProcessSTAR</a>
+    Call   [expr.cpp, 6371]           <a href="dictionary_S.html#1680">Semantic::ProcessSTAR</a>
+    Call   [expr.cpp, 6373]           <a href="dictionary_S.html#1680">Semantic::ProcessSTAR</a>
+    Call   [expr.cpp, 6396]           <a href="dictionary_S.html#1681">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 6398]           <a href="dictionary_S.html#1681">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 6407]           <a href="dictionary_S.html#1681">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 6409]           <a href="dictionary_S.html#1681">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 6418]           <a href="dictionary_S.html#1681">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 6420]           <a href="dictionary_S.html#1681">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 6429]           <a href="dictionary_S.html#1681">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 6431]           <a href="dictionary_S.html#1681">Semantic::ProcessMINUS</a>
+    Call   [expr.cpp, 6457]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6459]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6471]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6473]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6482]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6484]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6493]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6495]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6505]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6507]           <a href="dictionary_S.html#1682">Semantic::ProcessSLASH</a>
+    Call   [expr.cpp, 6546]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 6548]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 6560]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 6562]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 6571]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 6573]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 6582]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 6584]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 6593]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 6595]           <a href="dictionary_S.html#1683">Semantic::ProcessMOD</a>
+    Call   [expr.cpp, 7021]           <a href="dictionary_S.html#1722">Semantic::ProcessAssignmentExpression</a>
+    Call   [expr.cpp, 7024]           <a href="dictionary_S.html#1722">Semantic::ProcessAssignmentExpression</a>
+    Call   [bytecode.h, 330]          <a href="dictionary_B.html#11267">ByteCode::IsZero</a>
+    Call   [bytecode.h, 335]          <a href="dictionary_B.html#11267">ByteCode::IsZero</a>
+    Call   [bytecode.h, 340]          <a href="dictionary_B.html#11267">ByteCode::IsZero</a>
+    Call   [bytecode.h, 346]          <a href="dictionary_B.html#11267">ByteCode::IsZero</a>
+    Call   [bytecode.h, 365]          <a href="dictionary_B.html#11295">ByteCode::IsOne</a>
+    Call   [bytecode.h, 370]          <a href="dictionary_B.html#11295">ByteCode::IsOne</a>
+    Call   [bytecode.h, 375]          <a href="dictionary_B.html#11295">ByteCode::IsOne</a>
+    Call   [bytecode.h, 381]          <a href="dictionary_B.html#11295">ByteCode::IsOne</a>
+</pre>
+<p>
+<div class="footer"><b>Generated:</b> maandag 7 december 2020 08:28:47</div><center><p><div class="scitools-tag">Scientific Toolworks, Inc.<br></div><div class="scitools-link"><A target="_blank" href="mailto:support@scitools.com">support@scitools.com</A><br><A href="http://www.scitools.com">www.scitools.com</A></div></center></div></body></html>
