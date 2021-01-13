@@ -9,9 +9,16 @@
 
 #include "ast.h"
 #include "../declarations/stream.h"
-#include "./core/AstSwitchStatement.h"
-#include "./core/AstWhileStatement.h"
-#include "./core/AstSwitchBlockStatement.h"
+#include "./core/statement/AstSwitchStatement.h"
+#include "./core/statement/AstWhileStatement.h"
+#include "./core/statement/AstDoStatement.h"
+#include "./core/statement/AstForStatement.h"
+#include "./core/statement/AstForeachStatement.h"
+#include "./core/statement/AstBreakStatement.h"
+#include "./core/literals/AstIntegerLiteral.h"
+#include "./core/literals/AstLongLiteral.h"
+#include "./core/expression/AstClassCreationExpression.h"
+#include "./core/expression/AstArrayCreationExpression.h"
 
 #ifdef JIKES_DEBUG
 

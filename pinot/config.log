@@ -77,6 +77,7 @@ PATH: /mnt/c/Users/Swastik/AppData/Local/Microsoft/WindowsApps
 PATH: /mnt/c/Users/Swastik/AppData/Local/Programs/Microsoft VS Code/bin
 PATH: /mnt/d/Program Files/JetBrains/IntelliJ IDEA Community Edition 2020.3/bin
 PATH: /mnt/d/Program Files/CMake/bin
+PATH: /mnt/d/Program Files/SciTools2/bin/pc-win64
 PATH: /snap/bin
 
 
@@ -1203,7 +1204,7 @@ configure:5110: $? = 0
 configure:5180: result: none required
 configure:5188: checking for library containing libiconv_open
 configure:5218: g++ -o conftest -g   conftest.cc  >&5
-/tmp/ccwwuFKC.o: In function `main':
+/tmp/ccy64JvE.o: In function `main':
 /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/conftest.cc:66: undefined reference to `libiconv_open'
 collect2: error: ld returned 1 exit status
 configure:5224: $? = 1
@@ -1566,9 +1567,9 @@ configure: failed program was:
 configure:6297: result: no
 configure:6323: checking for cygwin_win32_to_posix_path_list
 configure:6380: g++ -o conftest -g   conftest.cc  >&5
-/tmp/cc5Q1ajh.o: In function `main':
+/tmp/ccTYqvOL.o: In function `main':
 /mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/conftest.cc:99: undefined reference to `cygwin_win32_to_posix_path_list'
-/tmp/cc5Q1ajh.o:/mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/conftest.cc:90: undefined reference to `cygwin_win32_to_posix_path_list'
+/tmp/ccTYqvOL.o:/mnt/d/Academics/SeAM_Refactored/SoftwareEvolutionPinot/pinot/conftest.cc:90: undefined reference to `cygwin_win32_to_posix_path_list'
 collect2: error: ld returned 1 exit status
 configure:6386: $? = 1
 configure: failed program was:

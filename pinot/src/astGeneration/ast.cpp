@@ -14,6 +14,7 @@
 #endif // JIKES_DEBUG
 
 #include "./storage/storagepool.h"
+#include "./core/expression/AstArrayCreationExpression.h"
 
 #ifdef HAVE_JIKES_NAMESPACE
 namespace Jikes { // Open namespace Jikes block
@@ -915,22 +916,22 @@ Ast* AstSwitchBlockStatement::Clone(StoragePool* ast_pool)
 //     return clone;
 // }
 
-Ast* AstDoStatement::Clone(StoragePool* ast_pool)
-{
-    AstDoStatement* clone = ast_pool -> GenDoStatement();
-    clone -> do_token = do_token;
+// Ast* AstDoStatement::Clone(StoragePool* ast_pool)
+// {
+//     AstDoStatement* clone = ast_pool -> GenDoStatement();
+//     clone -> do_token = do_token;
 
-    clone -> do_token_string = do_token_string;
+//     clone -> do_token_string = do_token_string;
 
-    clone -> statement = (AstBlock*) statement -> Clone(ast_pool);
-    clone -> while_token = while_token;
+//     clone -> statement = (AstBlock*) statement -> Clone(ast_pool);
+//     clone -> while_token = while_token;
 
-    clone -> while_token_string = while_token_string;
+//     clone -> while_token_string = while_token_string;
 
-    clone -> expression = (AstExpression*) expression -> Clone(ast_pool);
-    clone -> semicolon_token = semicolon_token;
-    return clone;
-}
+//     clone -> expression = (AstExpression*) expression -> Clone(ast_pool);
+//     clone -> semicolon_token = semicolon_token;
+//     return clone;
+// }
 
 Ast* AstForStatement::Clone(StoragePool* ast_pool)
 {
@@ -956,33 +957,33 @@ Ast* AstForStatement::Clone(StoragePool* ast_pool)
     return clone;
 }
 
-Ast* AstForeachStatement::Clone(StoragePool* ast_pool)
-{
-    AstForeachStatement* clone = ast_pool -> GenForeachStatement();
-    clone -> for_token = for_token;
+// Ast* AstForeachStatement::Clone(StoragePool* ast_pool)
+// {
+//     AstForeachStatement* clone = ast_pool -> GenForeachStatement();
+//     clone -> for_token = for_token;
 
-    clone -> for_token_string = for_token_string;
+//     clone -> for_token_string = for_token_string;
 
-    clone -> formal_parameter =
-        (AstFormalParameter*) formal_parameter -> Clone(ast_pool);
-    clone -> expression = (AstExpression*) expression -> Clone(ast_pool);
-    clone -> statement = (AstBlock*) statement -> Clone(ast_pool);
-    return clone;
-}
+//     clone -> formal_parameter =
+//         (AstFormalParameter*) formal_parameter -> Clone(ast_pool);
+//     clone -> expression = (AstExpression*) expression -> Clone(ast_pool);
+//     clone -> statement = (AstBlock*) statement -> Clone(ast_pool);
+//     return clone;
+// }
 
-Ast* AstBreakStatement::Clone(StoragePool* ast_pool)
-{
-    AstBreakStatement* clone = ast_pool -> GenBreakStatement();
-    clone -> break_token = break_token;
-    clone -> identifier_token_opt = identifier_token_opt;
+// Ast* AstBreakStatement::Clone(StoragePool* ast_pool)
+// {
+//     AstBreakStatement* clone = ast_pool -> GenBreakStatement();
+//     clone -> break_token = break_token;
+//     clone -> identifier_token_opt = identifier_token_opt;
 
-    clone -> break_token_string = break_token_string;
-    clone -> identifier_token_opt_string = identifier_token_opt_string;
+//     clone -> break_token_string = break_token_string;
+//     clone -> identifier_token_opt_string = identifier_token_opt_string;
 
-    clone -> semicolon_token = semicolon_token;
-    clone -> nesting_level = nesting_level;
-    return clone;
-}
+//     clone -> semicolon_token = semicolon_token;
+//     clone -> nesting_level = nesting_level;
+//     return clone;
+// }
 
 Ast* AstContinueStatement::Clone(StoragePool* ast_pool)
 {
@@ -1091,25 +1092,25 @@ Ast* AstTryStatement::Clone(StoragePool* ast_pool)
     return clone;
 }
 
-Ast* AstIntegerLiteral::Clone(StoragePool* ast_pool)
-{
-    AstIntegerLiteral *clone = ast_pool -> GenIntegerLiteral(integer_literal_token);
+// Ast* AstIntegerLiteral::Clone(StoragePool* ast_pool)
+// {
+//     AstIntegerLiteral *clone = ast_pool -> GenIntegerLiteral(integer_literal_token);
 
-    clone->integer_literal_token_string = integer_literal_token_string;
-    clone->symbol = symbol;
+//     clone->integer_literal_token_string = integer_literal_token_string;
+//     clone->symbol = symbol;
 
-    return clone;
-}
+//     return clone;
+// }
 
-Ast* AstLongLiteral::Clone(StoragePool* ast_pool)
-{
-    AstLongLiteral *clone = ast_pool -> GenLongLiteral(long_literal_token);
+// Ast* AstLongLiteral::Clone(StoragePool* ast_pool)
+// {
+//     AstLongLiteral *clone = ast_pool -> GenLongLiteral(long_literal_token);
 
-    clone->long_literal_token_string = long_literal_token_string;
-    clone->symbol = symbol;
+//     clone->long_literal_token_string = long_literal_token_string;
+//     clone->symbol = symbol;
 
-    return clone;
-}
+//     return clone;
+// }
 
 Ast* AstFloatLiteral::Clone(StoragePool* ast_pool)
 {
@@ -1240,30 +1241,30 @@ Ast* AstParenthesizedExpression::Clone(StoragePool* ast_pool)
     return clone;
 }
 
-Ast* AstClassCreationExpression::Clone(StoragePool* ast_pool)
-{
-    AstClassCreationExpression* clone =
-        ast_pool -> GenClassCreationExpression();
-    if (base_opt)
-        clone -> base_opt = (AstExpression*) base_opt -> Clone(ast_pool);
-    clone -> new_token = new_token;
+// Ast* AstClassCreationExpression::Clone(StoragePool* ast_pool)
+// {
+//     AstClassCreationExpression* clone =
+//         ast_pool -> GenClassCreationExpression();
+//     if (base_opt)
+//         clone -> base_opt = (AstExpression*) base_opt -> Clone(ast_pool);
+//     clone -> new_token = new_token;
 
-    clone -> new_token_string = new_token_string;
-    clone->symbol = symbol;
+//     clone -> new_token_string = new_token_string;
+//     clone->symbol = symbol;
 
-    if (type_arguments_opt)
-        clone -> type_arguments_opt =
-            (AstTypeArguments*) type_arguments_opt -> Clone(ast_pool);
-    clone -> class_type = (AstTypeName*) class_type -> Clone(ast_pool);
-    clone -> arguments = (AstArguments*) arguments -> Clone(ast_pool);
-    if (class_body_opt)
-        clone -> class_body_opt =
-            (AstClassBody*) class_body_opt -> Clone(ast_pool);
-    if (resolution_opt)
-        clone -> resolution_opt =
-            (AstClassCreationExpression*) resolution_opt -> Clone(ast_pool);
-    return clone;
-}
+//     if (type_arguments_opt)
+//         clone -> type_arguments_opt =
+//             (AstTypeArguments*) type_arguments_opt -> Clone(ast_pool);
+//     clone -> class_type = (AstTypeName*) class_type -> Clone(ast_pool);
+//     clone -> arguments = (AstArguments*) arguments -> Clone(ast_pool);
+//     if (class_body_opt)
+//         clone -> class_body_opt =
+//             (AstClassBody*) class_body_opt -> Clone(ast_pool);
+//     if (resolution_opt)
+//         clone -> resolution_opt =
+//             (AstClassCreationExpression*) resolution_opt -> Clone(ast_pool);
+//     return clone;
+// }
 
 Ast* AstDimExpr::Clone(StoragePool* ast_pool)
 {
@@ -1706,12 +1707,12 @@ void AstConditionalExpression::PrintAssociation(AssocTable* assoc_table, wchar_t
 	false_expression -> PrintAssociation(assoc_table, package_name, class_name, method_name, lex_stream);
 }
 
-void AstClassCreationExpression::PrintAssociation(AssocTable* assoc_table, wchar_t* package_name, wchar_t* class_name, wchar_t* method_name, LexStream& lex_stream)
-{
-	wchar_t* type_name = const_cast<wchar_t*>(lex_stream.NameString(class_type -> name -> identifier_token));
-	if (!isPrimitiveType(type_name))
-		assoc_table -> addAssociation( Assoc::OC, Assoc::PRIVATE, NULL, type_name, package_name, class_name, method_name);
-}
+// void AstClassCreationExpression::PrintAssociation(AssocTable* assoc_table, wchar_t* package_name, wchar_t* class_name, wchar_t* method_name, LexStream& lex_stream)
+// {
+// 	wchar_t* type_name = const_cast<wchar_t*>(lex_stream.NameString(class_type -> name -> identifier_token));
+// 	if (!isPrimitiveType(type_name))
+// 		assoc_table -> addAssociation( Assoc::OC, Assoc::PRIVATE, NULL, type_name, package_name, class_name, method_name);
+// }
 
 void AstMethodInvocation::PrintAssociation(AssocTable* assoc_table, wchar_t* package_name, wchar_t* class_name, wchar_t* method_name, LexStream& lex_stream)
 {
@@ -3069,27 +3070,27 @@ Ast* AstSwitchBlockStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream
 //     return clone;
 // }
 
-Ast* AstDoStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
-{
-    AstDoStatement* clone = ast_pool -> GenDoStatement();
-    clone -> do_token = do_token;
-    clone -> statement = (AstBlock*) statement -> Clone(ast_pool, lex_stream);
-    clone -> while_token = while_token;
-    clone -> expression = (AstExpression*) expression -> Clone(ast_pool, lex_stream);
-    clone -> semicolon_token = semicolon_token;
+// Ast* AstDoStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
+// {
+//     AstDoStatement* clone = ast_pool -> GenDoStatement();
+//     clone -> do_token = do_token;
+//     clone -> statement = (AstBlock*) statement -> Clone(ast_pool, lex_stream);
+//     clone -> while_token = while_token;
+//     clone -> expression = (AstExpression*) expression -> Clone(ast_pool, lex_stream);
+//     clone -> semicolon_token = semicolon_token;
 
 
-    clone -> do_token_string = new wchar_t[wcslen(lex_stream.NameString(do_token)) + 1];
-    clone -> while_token_string = new wchar_t[wcslen(lex_stream.NameString(while_token)) + 1];
-    wcscpy(clone -> do_token_string, lex_stream.NameString(do_token));
-    wcscpy(clone -> while_token_string, lex_stream.NameString(while_token));
+//     clone -> do_token_string = new wchar_t[wcslen(lex_stream.NameString(do_token)) + 1];
+//     clone -> while_token_string = new wchar_t[wcslen(lex_stream.NameString(while_token)) + 1];
+//     wcscpy(clone -> do_token_string, lex_stream.NameString(do_token));
+//     wcscpy(clone -> while_token_string, lex_stream.NameString(while_token));
 
 
-    clone -> do_token_string = const_cast<wchar_t*>(lex_stream.NameString(do_token));
-    clone -> while_token_string = const_cast<wchar_t*>(lex_stream.NameString(while_token));
+//     clone -> do_token_string = const_cast<wchar_t*>(lex_stream.NameString(do_token));
+//     clone -> while_token_string = const_cast<wchar_t*>(lex_stream.NameString(while_token));
 
-    return clone;
-}
+//     return clone;
+// }
 
 Ast* AstForStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
 {
@@ -3121,43 +3122,43 @@ Ast* AstForStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
     return clone;
 }
 
-Ast* AstForeachStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
-{
-    AstForeachStatement* clone = ast_pool -> GenForeachStatement();
-    clone -> for_token = for_token;
-    clone -> formal_parameter =
-        (AstFormalParameter*) formal_parameter -> Clone(ast_pool, lex_stream);
-    clone -> expression = (AstExpression*) expression -> Clone(ast_pool, lex_stream);
-    clone -> statement = (AstBlock*) statement -> Clone(ast_pool, lex_stream);
+// Ast* AstForeachStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
+// {
+//     AstForeachStatement* clone = ast_pool -> GenForeachStatement();
+//     clone -> for_token = for_token;
+//     clone -> formal_parameter =
+//         (AstFormalParameter*) formal_parameter -> Clone(ast_pool, lex_stream);
+//     clone -> expression = (AstExpression*) expression -> Clone(ast_pool, lex_stream);
+//     clone -> statement = (AstBlock*) statement -> Clone(ast_pool, lex_stream);
 
 
-    clone -> for_token_string = new wchar_t[wcslen(lex_stream.NameString(for_token)) + 1];
-    wcscpy(clone -> for_token_string, lex_stream.NameString(for_token));
+//     clone -> for_token_string = new wchar_t[wcslen(lex_stream.NameString(for_token)) + 1];
+//     wcscpy(clone -> for_token_string, lex_stream.NameString(for_token));
 
 
-    clone -> for_token_string = const_cast<wchar_t*>(lex_stream.NameString(for_token));
+//     clone -> for_token_string = const_cast<wchar_t*>(lex_stream.NameString(for_token));
 
-    return clone;
-}
+//     return clone;
+// }
 
-Ast* AstBreakStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
-{
-    AstBreakStatement* clone = ast_pool -> GenBreakStatement();
-    clone -> break_token = break_token;
-    clone -> identifier_token_opt = identifier_token_opt;
-    clone -> semicolon_token = semicolon_token;
-    clone -> nesting_level = nesting_level;
+// Ast* AstBreakStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
+// {
+//     AstBreakStatement* clone = ast_pool -> GenBreakStatement();
+//     clone -> break_token = break_token;
+//     clone -> identifier_token_opt = identifier_token_opt;
+//     clone -> semicolon_token = semicolon_token;
+//     clone -> nesting_level = nesting_level;
 
-    clone -> break_token_string = new wchar_t[wcslen(lex_stream.NameString(break_token)) + 1];
-    clone -> identifier_token_opt_string = new wchar_t[wcslen(lex_stream.NameString(identifier_token_opt)) + 1];
-    wcscpy(clone -> break_token_string, lex_stream.NameString(break_token));
-    wcscpy(clone -> identifier_token_opt_string, lex_stream.NameString(identifier_token_opt));
+//     clone -> break_token_string = new wchar_t[wcslen(lex_stream.NameString(break_token)) + 1];
+//     clone -> identifier_token_opt_string = new wchar_t[wcslen(lex_stream.NameString(identifier_token_opt)) + 1];
+//     wcscpy(clone -> break_token_string, lex_stream.NameString(break_token));
+//     wcscpy(clone -> identifier_token_opt_string, lex_stream.NameString(identifier_token_opt));
 
-    clone -> break_token_string = const_cast<wchar_t*>(lex_stream.NameString(break_token));
-    clone -> identifier_token_opt_string = const_cast<wchar_t*>(lex_stream.NameString(identifier_token_opt));
+//     clone -> break_token_string = const_cast<wchar_t*>(lex_stream.NameString(break_token));
+//     clone -> identifier_token_opt_string = const_cast<wchar_t*>(lex_stream.NameString(identifier_token_opt));
 
-    return clone;
-}
+//     return clone;
+// }
 
 Ast* AstContinueStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
 {
@@ -3299,31 +3300,31 @@ Ast* AstTryStatement::Clone(StoragePool* ast_pool, LexStream& lex_stream)
     return clone;
 }
 
-Ast* AstIntegerLiteral::Clone(StoragePool* ast_pool, LexStream& lex_stream)
-{
-    AstIntegerLiteral* clone = ast_pool -> GenIntegerLiteral(integer_literal_token);
+// Ast* AstIntegerLiteral::Clone(StoragePool* ast_pool, LexStream& lex_stream)
+// {
+//     AstIntegerLiteral* clone = ast_pool -> GenIntegerLiteral(integer_literal_token);
 
 
-    clone -> integer_literal_token_string = new wchar_t[wcslen(lex_stream.NameString(integer_literal_token)) + 1];
-    wcscpy(clone -> integer_literal_token_string, lex_stream.NameString(integer_literal_token));
+//     clone -> integer_literal_token_string = new wchar_t[wcslen(lex_stream.NameString(integer_literal_token)) + 1];
+//     wcscpy(clone -> integer_literal_token_string, lex_stream.NameString(integer_literal_token));
 
-    clone -> integer_literal_token_string = const_cast<wchar_t*>(lex_stream.NameString(integer_literal_token));
+//     clone -> integer_literal_token_string = const_cast<wchar_t*>(lex_stream.NameString(integer_literal_token));
 
-    return clone;
-}
+//     return clone;
+// }
 
-Ast* AstLongLiteral::Clone(StoragePool* ast_pool, LexStream& lex_stream)
-{
-    AstLongLiteral* clone = ast_pool -> GenLongLiteral(long_literal_token);
+// Ast* AstLongLiteral::Clone(StoragePool* ast_pool, LexStream& lex_stream)
+// {
+//     AstLongLiteral* clone = ast_pool -> GenLongLiteral(long_literal_token);
 
 
-    clone -> long_literal_token_string = new wchar_t[wcslen(lex_stream.NameString(long_literal_token)) + 1];
-    wcscpy(clone -> long_literal_token_string, lex_stream.NameString(long_literal_token));
+//     clone -> long_literal_token_string = new wchar_t[wcslen(lex_stream.NameString(long_literal_token)) + 1];
+//     wcscpy(clone -> long_literal_token_string, lex_stream.NameString(long_literal_token));
 
-    clone -> long_literal_token_string = const_cast<wchar_t*>(lex_stream.NameString(long_literal_token));
+//     clone -> long_literal_token_string = const_cast<wchar_t*>(lex_stream.NameString(long_literal_token));
 
-    return clone;
-}
+//     return clone;
+// }
 
 Ast* AstFloatLiteral::Clone(StoragePool* ast_pool, LexStream& lex_stream)
 {
@@ -3489,37 +3490,37 @@ Ast* AstParenthesizedExpression::Clone(StoragePool* ast_pool, LexStream& lex_str
     return clone;
 }
 
-Ast* AstClassCreationExpression::Clone(StoragePool* ast_pool, LexStream& lex_stream)
-{
-    AstClassCreationExpression* clone =
-        ast_pool -> GenClassCreationExpression();
+// Ast* AstClassCreationExpression::Clone(StoragePool* ast_pool, LexStream& lex_stream)
+// {
+//     AstClassCreationExpression* clone =
+//         ast_pool -> GenClassCreationExpression();
 
-    clone -> base_opt = (base_opt)
-		? (AstExpression*) base_opt -> Clone(ast_pool, lex_stream)
-		: NULL;
-    clone -> new_token = new_token;
+//     clone -> base_opt = (base_opt)
+// 		? (AstExpression*) base_opt -> Clone(ast_pool, lex_stream)
+// 		: NULL;
+//     clone -> new_token = new_token;
 
-    clone -> type_arguments_opt = (type_arguments_opt)
-		? (AstTypeArguments*) type_arguments_opt -> Clone(ast_pool, lex_stream)
-		: NULL;
-    clone -> class_type = (AstTypeName*) class_type -> Clone(ast_pool, lex_stream);
-    clone -> arguments = (AstArguments*) arguments -> Clone(ast_pool, lex_stream);
+//     clone -> type_arguments_opt = (type_arguments_opt)
+// 		? (AstTypeArguments*) type_arguments_opt -> Clone(ast_pool, lex_stream)
+// 		: NULL;
+//     clone -> class_type = (AstTypeName*) class_type -> Clone(ast_pool, lex_stream);
+//     clone -> arguments = (AstArguments*) arguments -> Clone(ast_pool, lex_stream);
 
-    clone -> class_body_opt = (class_body_opt)
-		? (AstClassBody*) class_body_opt -> Clone(ast_pool, lex_stream)
-		: NULL;
+//     clone -> class_body_opt = (class_body_opt)
+// 		? (AstClassBody*) class_body_opt -> Clone(ast_pool, lex_stream)
+// 		: NULL;
 
-    clone -> resolution_opt = (resolution_opt)
-		? (AstClassCreationExpression*) resolution_opt -> Clone(ast_pool, lex_stream)
-		: NULL;
+//     clone -> resolution_opt = (resolution_opt)
+// 		? (AstClassCreationExpression*) resolution_opt -> Clone(ast_pool, lex_stream)
+// 		: NULL;
 
-    clone -> new_token_string = new wchar_t[wcslen(lex_stream.NameString(new_token)) + 1];
-    wcscpy(clone -> new_token_string, lex_stream.NameString(new_token));
+//     clone -> new_token_string = new wchar_t[wcslen(lex_stream.NameString(new_token)) + 1];
+//     wcscpy(clone -> new_token_string, lex_stream.NameString(new_token));
 
-    clone -> new_token_string = const_cast<wchar_t*>(lex_stream.NameString(new_token));
+//     clone -> new_token_string = const_cast<wchar_t*>(lex_stream.NameString(new_token));
 
-    return clone;
-}
+//     return clone;
+// }
 
 Ast* AstDimExpr::Clone(StoragePool* ast_pool, LexStream& lex_stream)
 {
@@ -4144,14 +4145,14 @@ void AstSwitchBlockStatement::Lexify(LexStream& lex_stream)
 // 	while_token_string = const_cast<wchar_t*>(lex_stream.NameString(while_token));
 // }
 
-void AstDoStatement::Lexify(LexStream& lex_stream)
-{
-	statement -> Lexify(lex_stream);
-	expression -> Lexify(lex_stream);
+// void AstDoStatement::Lexify(LexStream& lex_stream)
+// {
+// 	statement -> Lexify(lex_stream);
+// 	expression -> Lexify(lex_stream);
 
-	do_token_string = const_cast<wchar_t*>(lex_stream.NameString(do_token));
-	while_token_string = const_cast<wchar_t*>(lex_stream.NameString(while_token));
-}
+// 	do_token_string = const_cast<wchar_t*>(lex_stream.NameString(do_token));
+// 	while_token_string = const_cast<wchar_t*>(lex_stream.NameString(while_token));
+// }
 
 void AstForStatement::Lexify(LexStream& lex_stream)
 {
@@ -4170,20 +4171,20 @@ void AstForStatement::Lexify(LexStream& lex_stream)
 	for_token_string = const_cast<wchar_t*>(lex_stream.NameString(for_token));
 }
 
-void AstForeachStatement::Lexify(LexStream& lex_stream)
-{
-	formal_parameter -> Lexify(lex_stream);
-	expression -> Lexify(lex_stream);
-	statement -> Lexify(lex_stream);
+// void AstForeachStatement::Lexify(LexStream& lex_stream)
+// {
+// 	formal_parameter -> Lexify(lex_stream);
+// 	expression -> Lexify(lex_stream);
+// 	statement -> Lexify(lex_stream);
 
-	for_token_string = const_cast<wchar_t*>(lex_stream.NameString(for_token));
-}
+// 	for_token_string = const_cast<wchar_t*>(lex_stream.NameString(for_token));
+// }
 
-void AstBreakStatement::Lexify(LexStream& lex_stream)
-{
-	break_token_string = const_cast<wchar_t*>(lex_stream.NameString(break_token));
-    	identifier_token_opt_string = const_cast<wchar_t*>(lex_stream.NameString(identifier_token_opt));
-}
+// void AstBreakStatement::Lexify(LexStream& lex_stream)
+// {
+// 	break_token_string = const_cast<wchar_t*>(lex_stream.NameString(break_token));
+//     	identifier_token_opt_string = const_cast<wchar_t*>(lex_stream.NameString(identifier_token_opt));
+// }
 
 void AstContinueStatement::Lexify(LexStream& lex_stream)
 {
@@ -4251,15 +4252,15 @@ void AstTryStatement::Lexify(LexStream& lex_stream)
 	try_token_string = const_cast<wchar_t*>(lex_stream.NameString(try_token));
 }
 
-void AstIntegerLiteral::Lexify(LexStream& lex_stream)
-{
-	integer_literal_token_string = const_cast<wchar_t*>(lex_stream.NameString(integer_literal_token));
-}
+// void AstIntegerLiteral::Lexify(LexStream& lex_stream)
+// {
+// 	integer_literal_token_string = const_cast<wchar_t*>(lex_stream.NameString(integer_literal_token));
+// }
 
-void AstLongLiteral::Lexify(LexStream& lex_stream)
-{
-	long_literal_token_string = const_cast<wchar_t*>(lex_stream.NameString(long_literal_token));
-}
+// void AstLongLiteral::Lexify(LexStream& lex_stream)
+// {
+// 	long_literal_token_string = const_cast<wchar_t*>(lex_stream.NameString(long_literal_token));
+// }
 
 void AstFloatLiteral::Lexify(LexStream& lex_stream)
 {
@@ -4335,24 +4336,24 @@ void AstParenthesizedExpression::Lexify(LexStream& lex_stream)
 	right_parenthesis_token_string = const_cast<wchar_t*>(lex_stream.NameString(right_parenthesis_token));
 }
 
-void AstClassCreationExpression::Lexify(LexStream& lex_stream)
-{
-	if (base_opt)
-		base_opt -> Lexify(lex_stream);
+// void AstClassCreationExpression::Lexify(LexStream& lex_stream)
+// {
+// 	if (base_opt)
+// 		base_opt -> Lexify(lex_stream);
 
-	if (type_arguments_opt)
-		type_arguments_opt -> Lexify(lex_stream);
+// 	if (type_arguments_opt)
+// 		type_arguments_opt -> Lexify(lex_stream);
 
-	class_type -> Lexify(lex_stream);
-	arguments -> Lexify(lex_stream);
+// 	class_type -> Lexify(lex_stream);
+// 	arguments -> Lexify(lex_stream);
 
-	if (class_body_opt)
-		class_body_opt -> Lexify(lex_stream);
+// 	if (class_body_opt)
+// 		class_body_opt -> Lexify(lex_stream);
 
-	if (resolution_opt)
-		resolution_opt -> Lexify(lex_stream);
-	new_token_string = const_cast<wchar_t*>(lex_stream.NameString(new_token));
-}
+// 	if (resolution_opt)
+// 		resolution_opt -> Lexify(lex_stream);
+// 	new_token_string = const_cast<wchar_t*>(lex_stream.NameString(new_token));
+// }
 
 void AstDimExpr::Lexify(LexStream& lex_stream)
 {
@@ -5082,17 +5083,17 @@ void AstSwitchBlockStatement::Print()
 //     statement -> Print();
 // }
 
-void AstDoStatement::Print()
-{
-    Coutput << '#' << id << " (DoStatement):  "
-            << do_token_string
-            << " { #" << statement -> id << " } "
-            << while_token_string
-            << " ( #" << expression -> id << " ) #" << endl;
+// void AstDoStatement::Print()
+// {
+//     Coutput << '#' << id << " (DoStatement):  "
+//             << do_token_string
+//             << " { #" << statement -> id << " } "
+//             << while_token_string
+//             << " ( #" << expression -> id << " ) #" << endl;
 
-    statement -> Print();
-    expression -> Print();
-}
+//     statement -> Print();
+//     expression -> Print();
+// }
 
 void AstForStatement::Print()
 {
@@ -5116,25 +5117,25 @@ void AstForStatement::Print()
     statement -> Print();
 }
 
-void AstForeachStatement::Print()
-{
-    Coutput << '#' << id << " (ForeachStatement):  ("
-            << for_token_string << "( #"
-            << formal_parameter -> id << ": #" << expression -> id
-            << ") #" << statement -> id << endl;
-    formal_parameter -> Print();
-    expression -> Print();
-    statement -> Print();
-}
+// void AstForeachStatement::Print()
+// {
+//     Coutput << '#' << id << " (ForeachStatement):  ("
+//             << for_token_string << "( #"
+//             << formal_parameter -> id << ": #" << expression -> id
+//             << ") #" << statement -> id << endl;
+//     formal_parameter -> Print();
+//     expression -> Print();
+//     statement -> Print();
+// }
 
-void AstBreakStatement::Print()
-{
-    Coutput << '#' << id << " (BreakStatement):  "
-            << break_token_string << ' '
-            << (identifier_token_opt
-                ? identifier_token_opt_string : L"")
-            << " at nesting_level " << nesting_level << endl;
-}
+// void AstBreakStatement::Print()
+// {
+//     Coutput << '#' << id << " (BreakStatement):  "
+//             << break_token_string << ' '
+//             << (identifier_token_opt
+//                 ? identifier_token_opt_string : L"")
+//             << " at nesting_level " << nesting_level << endl;
+// }
 
 void AstContinueStatement::Print()
 {
@@ -5225,19 +5226,19 @@ void AstTryStatement::Print()
         finally_clause_opt -> Print();
 }
 
-void AstIntegerLiteral::Print()
-{
-    Coutput << '#' << id << " (IntegerLiteral):  "
-            << integer_literal_token_string
-            << endl;
-}
+// void AstIntegerLiteral::Print()
+// {
+//     Coutput << '#' << id << " (IntegerLiteral):  "
+//             << integer_literal_token_string
+//             << endl;
+// }
 
-void AstLongLiteral::Print()
-{
-    Coutput << '#' << id << " (LongLiteral):  "
-            << long_literal_token_string
-            << endl;
-}
+// void AstLongLiteral::Print()
+// {
+//     Coutput << '#' << id << " (LongLiteral):  "
+//             << long_literal_token_string
+//             << endl;
+// }
 
 void AstFloatLiteral::Print()
 {
@@ -5325,23 +5326,23 @@ void AstParenthesizedExpression::Print()
     expression -> Print();
 }
 
-void AstClassCreationExpression::Print()
-{
-    Coutput << '#' << id << " (ClassCreationExpression):  #"
-            << (base_opt ? base_opt -> id : 0) << ' '
-            << new_token_string << " #"
-            << (type_arguments_opt ? type_arguments_opt -> id : 0) << " #"
-            << class_type -> id << " #" << arguments -> id << " #"
-            << (class_body_opt ? class_body_opt -> id : 0) << endl;
-    if (base_opt)
-        base_opt -> Print();
-    if (type_arguments_opt)
-        type_arguments_opt -> Print();
-    class_type -> Print();
-    arguments -> Print();
-    if (class_body_opt)
-        class_body_opt -> Print();
-}
+// void AstClassCreationExpression::Print()
+// {
+//     Coutput << '#' << id << " (ClassCreationExpression):  #"
+//             << (base_opt ? base_opt -> id : 0) << ' '
+//             << new_token_string << " #"
+//             << (type_arguments_opt ? type_arguments_opt -> id : 0) << " #"
+//             << class_type -> id << " #" << arguments -> id << " #"
+//             << (class_body_opt ? class_body_opt -> id : 0) << endl;
+//     if (base_opt)
+//         base_opt -> Print();
+//     if (type_arguments_opt)
+//         type_arguments_opt -> Print();
+//     class_type -> Print();
+//     arguments -> Print();
+//     if (class_body_opt)
+//         class_body_opt -> Print();
+// }
 
 void AstDimExpr::Print()
 {
@@ -6142,17 +6143,17 @@ void AstSwitchBlockStatement::Print(LexStream& lex_stream)
 //     statement -> Print(lex_stream);
 // }
 
-void AstDoStatement::Print(LexStream& lex_stream)
-{
-    Coutput << '#' << id << " (DoStatement):  "
-            << lex_stream.NameString(do_token)
-            << " { #" << statement -> id << " } "
-            << lex_stream.NameString(while_token)
-            << " ( #" << expression -> id << " ) #" << endl;
+// void AstDoStatement::Print(LexStream& lex_stream)
+// {
+//     Coutput << '#' << id << " (DoStatement):  "
+//             << lex_stream.NameString(do_token)
+//             << " { #" << statement -> id << " } "
+//             << lex_stream.NameString(while_token)
+//             << " ( #" << expression -> id << " ) #" << endl;
 
-    statement -> Print(lex_stream);
-    expression -> Print(lex_stream);
-}
+//     statement -> Print(lex_stream);
+//     expression -> Print(lex_stream);
+// }
 
 void AstForStatement::Print(LexStream& lex_stream)
 {
@@ -6176,25 +6177,25 @@ void AstForStatement::Print(LexStream& lex_stream)
     statement -> Print(lex_stream);
 }
 
-void AstForeachStatement::Print(LexStream& lex_stream)
-{
-    Coutput << '#' << id << " (ForeachStatement):  ("
-            << lex_stream.NameString(for_token) << "( #"
-            << formal_parameter -> id << ": #" << expression -> id
-            << ") #" << statement -> id << endl;
-    formal_parameter -> Print(lex_stream);
-    expression -> Print(lex_stream);
-    statement -> Print(lex_stream);
-}
+// void AstForeachStatement::Print(LexStream& lex_stream)
+// {
+//     Coutput << '#' << id << " (ForeachStatement):  ("
+//             << lex_stream.NameString(for_token) << "( #"
+//             << formal_parameter -> id << ": #" << expression -> id
+//             << ") #" << statement -> id << endl;
+//     formal_parameter -> Print(lex_stream);
+//     expression -> Print(lex_stream);
+//     statement -> Print(lex_stream);
+// }
 
-void AstBreakStatement::Print(LexStream& lex_stream)
-{
-    Coutput << '#' << id << " (BreakStatement):  "
-            << lex_stream.NameString(break_token) << ' '
-            << (identifier_token_opt
-                ? lex_stream.NameString(identifier_token_opt) : L"")
-            << " at nesting_level " << nesting_level << endl;
-}
+// void AstBreakStatement::Print(LexStream& lex_stream)
+// {
+//     Coutput << '#' << id << " (BreakStatement):  "
+//             << lex_stream.NameString(break_token) << ' '
+//             << (identifier_token_opt
+//                 ? lex_stream.NameString(identifier_token_opt) : L"")
+//             << " at nesting_level " << nesting_level << endl;
+// }
 
 void AstContinueStatement::Print(LexStream& lex_stream)
 {
@@ -6285,19 +6286,19 @@ void AstTryStatement::Print(LexStream& lex_stream)
         finally_clause_opt -> Print(lex_stream);
 }
 
-void AstIntegerLiteral::Print(LexStream& lex_stream)
-{
-    Coutput << '#' << id << " (IntegerLiteral):  "
-            << lex_stream.NameString(integer_literal_token)
-            << endl;
-}
+// void AstIntegerLiteral::Print(LexStream& lex_stream)
+// {
+//     Coutput << '#' << id << " (IntegerLiteral):  "
+//             << lex_stream.NameString(integer_literal_token)
+//             << endl;
+// }
 
-void AstLongLiteral::Print(LexStream& lex_stream)
-{
-    Coutput << '#' << id << " (LongLiteral):  "
-            << lex_stream.NameString(long_literal_token)
-            << endl;
-}
+// void AstLongLiteral::Print(LexStream& lex_stream)
+// {
+//     Coutput << '#' << id << " (LongLiteral):  "
+//             << lex_stream.NameString(long_literal_token)
+//             << endl;
+// }
 
 void AstFloatLiteral::Print(LexStream& lex_stream)
 {
@@ -6385,23 +6386,23 @@ void AstParenthesizedExpression::Print(LexStream& lex_stream)
     expression -> Print(lex_stream);
 }
 
-void AstClassCreationExpression::Print(LexStream& lex_stream)
-{
-    Coutput << '#' << id << " (ClassCreationExpression):  #"
-            << (base_opt ? base_opt -> id : 0) << ' '
-            << lex_stream.NameString(new_token) << " #"
-            << (type_arguments_opt ? type_arguments_opt -> id : 0) << " #"
-            << class_type -> id << " #" << arguments -> id << " #"
-            << (class_body_opt ? class_body_opt -> id : 0) << endl;
-    if (base_opt)
-        base_opt -> Print(lex_stream);
-    if (type_arguments_opt)
-        type_arguments_opt -> Print(lex_stream);
-    class_type -> Print(lex_stream);
-    arguments -> Print(lex_stream);
-    if (class_body_opt)
-        class_body_opt -> Print(lex_stream);
-}
+// void AstClassCreationExpression::Print(LexStream& lex_stream)
+// {
+//     Coutput << '#' << id << " (ClassCreationExpression):  #"
+//             << (base_opt ? base_opt -> id : 0) << ' '
+//             << lex_stream.NameString(new_token) << " #"
+//             << (type_arguments_opt ? type_arguments_opt -> id : 0) << " #"
+//             << class_type -> id << " #" << arguments -> id << " #"
+//             << (class_body_opt ? class_body_opt -> id : 0) << endl;
+//     if (base_opt)
+//         base_opt -> Print(lex_stream);
+//     if (type_arguments_opt)
+//         type_arguments_opt -> Print(lex_stream);
+//     class_type -> Print(lex_stream);
+//     arguments -> Print(lex_stream);
+//     if (class_body_opt)
+//         class_body_opt -> Print(lex_stream);
+// }
 
 void AstDimExpr::Print(LexStream& lex_stream)
 {

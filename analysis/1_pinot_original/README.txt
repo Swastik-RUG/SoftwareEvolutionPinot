@@ -1,0 +1,1 @@
+The directory understandHTML contains a HTML report with metrics of PINOT generated using SciTools Understand.

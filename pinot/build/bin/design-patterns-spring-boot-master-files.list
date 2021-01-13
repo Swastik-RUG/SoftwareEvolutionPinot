@@ -1,0 +1,15 @@
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/Application.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/aspect/AroundGetContactsAspect.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/controller/BankController.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/model/Bank.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/model/BankInformation.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/BankService.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/factory/ScraperFactoryService.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/observer/BankInformationPublisherService.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/observer/BankInformationReceived.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/observer/PrinterService.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/observer/SaverService.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/strategy/BankScraperStrategy.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/strategy/HttpFetchService.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/strategy/SebScraper.java
+./design-patterns-spring-boot-master/src/main/java/com/ruubel/service/strategy/SwedbankScraper.java
