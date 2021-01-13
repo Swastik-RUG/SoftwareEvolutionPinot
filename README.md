@@ -1,12 +1,9 @@
 # Software Evolution of PINOT
-<<<<<<< HEAD
-=======
 This project contains a refactored version of PINOT. It also contains an 
 analysis of original and the refactored architecture of PINOT. This analysis
 is described in detail in the report that is in the docs folder. The original
 analysis files can be found in the analysis folder.
 
->>>>>>> new_main
 
 ## The project is an extension to the Pinot project.  
 https://www.cs.ucdavis.edu/~shini/research/pinot/  
