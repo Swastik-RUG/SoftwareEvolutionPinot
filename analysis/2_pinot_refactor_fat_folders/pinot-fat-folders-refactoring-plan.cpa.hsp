@@ -7,14 +7,14 @@
   <property name="templates" value="hide" />
   <property name="auto-tidy" value="true" />
   <property name="only-interface-dependencies" value="false" />
-  <property name="relative-to" value="D:\Academics\SeAM_Refactored\SoftwareEvolutionPinot" />
+  <property name="relative-to" value="const(THIS_FILE)" />
   <property name="action-set-mod" value="1" />
   <property name="granularity" value="detail" />
   <property name="name-map" value="true" />
   <property name="model" value="raw" />
   <property name="resolve-name-clashes" value="true" />
   <property name="dependency-filter" />
-  <path kind="cva" file="C:/Code/SoftwareEvolutionPinot/analysis/1_pinot_original/Pinot.cpa" />
+  <path kind="cva" file="Pinot.cpa" />
   <restructuring>
     <set version="3" name="Action list 1" hiview="Codemap" active="true" todo="false" list="0">
       <action type="group-smart-move" active="true" last-applied="true" description="Move pinot/src to root">
@@ -2103,7 +2103,7 @@
     <set version="3" name="Action list 2" hiview="Codemap" active="false" todo="false" list="0" />
   </restructuring>
   <sourcepaths>
-    <pathentry type="file" path="C:\Program Files\Structure101 Studio 6\cpa\pinot\src" />
+    <pathentry type="file" path="D:\Academics\17Jan\SoftwareEvolutionPinot\analysis\2_pinot_refactor_fat_folders\D:\Academics\17Jan\SoftwareEvolutionPinot\analysis\2_pinot_refactor_fat_folders\C:\Program Files\Structure101 Studio 6\cpa\pinot\src" />
   </sourcepaths>
   <grid-set sep="/" version="5.0.16419">
     <grid name="Architecture Diagram" enforce="true" locked="true" strict="true">
@@ -2258,7 +2258,7 @@
         </cell>
       </row>
     </grid>
-    <grid name="Ast" enforce="true" locked="false" strict="false">
+    <grid name="Ast" enforce="true" locked="true" strict="false">
       <row>
         <cell name="body.cpp" pattern="src/body.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
         <cell name="bytecode.cpp" pattern="src/bytecode.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
@@ -2280,7 +2280,7 @@
       </row>
       <description>Top-level breakout</description>
     </grid>
-    <grid name="Symbol" enforce="true" locked="false" strict="false">
+    <grid name="Symbol" enforce="true" locked="true" strict="false">
       <row>
         <cell name="symbol.cpp" pattern="src/symbol.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
       </row>
@@ -2310,7 +2310,7 @@
       </row>
       <description>Top-level breakout</description>
     </grid>
-    <grid name="Control" enforce="true" locked="false" strict="false">
+    <grid name="Control" enforce="true" locked="true" strict="false">
       <row>
         <cell name="control.cpp" pattern="src/control.cpp" vexpanded="false" illegal="false" visibility="public" drill="true" />
       </row>
@@ -2339,7 +2339,7 @@
       </row>
       <description>Top-level breakout</description>
     </grid>
-    <grid name="Arch diag 2" enforce="true" locked="true" strict="false">
+    <grid name="Fatfolder reduction Archi" enforce="true" locked="true" strict="false">
       <row>
         <cell name="Orchestration and Analysis of AST" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true" bgcolor="255,255,255">
           <grid>
